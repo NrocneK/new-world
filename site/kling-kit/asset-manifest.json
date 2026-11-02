@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-03",
+  "assets": [
+    {
+      "file": "01-references/coworker-face.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "245d48c753df570bb918b9f5f99832e72d3a7ad1ac29057976835f7c52d44ccf"
+    },
+    {
+      "file": "01-references/coworker.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "5107f83b0fad0af442d20d90e9da0d7adb24f6e7aa7a2af87267d881feefd136"
+    },
+    {
+      "file": "01-references/hero-face.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "64f1c1a264551dfcf5a3670cfd80908f61128b1ce98af6809367605e405e7e38"
+    },
+    {
+      "file": "01-references/hero.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "14934f53a38e0e1fc76d347236469a12584b49f4f95ef51ac4666ebc76989372"
+    },
+    {
+      "file": "02-scene-images/S01-start.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "3f752789aabda5f1e3113b6f4089d1226dba1efd26d46813cd989aa774e667c1"
+    },
+    {
+      "file": "02-scene-images/S02-start.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "b5836e6294a82297bf5c0f659dd90dec04f0c9d2866d96e4c6f6e4e2ed571d8c"
+    },
+    {
+      "file": "02-scene-images/S03-start.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "832efdc91ee08df788bffa40246f0ff3961f6325abb9fb67a34f0ca5e26c60d1"
+    },
+    {
+      "file": "02-scene-images/S04-end.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "52490174d52a5ca4c92239ec315df028c39ac4205adaec356ec336f78d24e535"
+    },
+    {
+      "file": "02-scene-images/S04-start.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "c26f90d2ca52a59ca1be67bf20fde8e7affcbb887ecc593d9c71b82172cf9142"
+    },
+    {
+      "file": "02-scene-images/S05-start.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "7a8a94c8b649dc24bce87935d8995d65d843b399729666880e538567a1365c0a"
+    },
+    {
+      "file": "02-scene-images/S06-start.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "de8a274a6f36207b337c169ae91d2ddee09586c2f4a8614f5e84c991ebeee89b"
+    },
+    {
+      "file": "04-editing/end-title.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "9e1525dd41f84bd49804bc92e807c69784a336f92d1da791147c8aeba72951cd"
+    }
+  ]
+}

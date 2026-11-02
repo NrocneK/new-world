@@ -1,0 +1,8 @@
+shot,record_in_seconds,record_out_seconds,used_seconds,source_seconds,filename,purpose
+S01,0,4,4,5,S01.mp4,Đêm muộn ngoài công ty
+S02,4,9,5,5,S02.mp4,Nhân viên ở lại làm việc
+S03,9,14,5,5,S03.mp4,Sàn nhà rạn vỡ
+S04,14,19,5,5,S04.mp4,Kéo đồng nghiệp lên
+S05,19,24,5,5,S05.mp4,Tinh linh thức tỉnh
+S06,24,28,4,5,S06.mp4,Cú đấm khí lực bảo vệ
+TITLE,28,30,2,still,end-title.png,Tên game

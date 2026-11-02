@@ -1,0 +1,17 @@
+S01 — append only when Native Audio is enabled:
+Sound: Steady exterior rain, distant city air, one low distant thunder roll. No dialogue or music.
+
+S02 — append only when Native Audio is enabled:
+Sound: Soft rain behind windows, a few light keyboard taps, a chair creak and a faint structural rumble near the end. No dialogue or music.
+
+S03 — append only when Native Audio is enabled:
+Sound: A deep structural rumble, cracking concrete, a rattling light fitting and a few falling fragments. No dialogue or music.
+
+S04 — append only when Native Audio is enabled:
+Sound: Falling grit, fabric strain, a braced sneaker scraping concrete, and one relieved breath when she reaches the slab. No dialogue or music.
+
+S05 — append only when Native Audio is enabled:
+Sound: Soft room tone, a delicate airy chime and a gentle rising breath of wind. No dialogue or music.
+
+S06 — append only when Native Audio is enabled:
+Sound: A brief gathering wind, a sharp air-pressure impact, a low creature recoil and scattering floor grit. No dialogue or music.

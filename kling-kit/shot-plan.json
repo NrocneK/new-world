@@ -1,0 +1,132 @@
+{
+  "title": "Dị Môn — Đêm thức tỉnh",
+  "date": "03/11/2026",
+  "runtime_seconds": 30,
+  "aspect_ratio": "16:9",
+  "timeline_fps": 30,
+  "status": "input-art-and-prompts; Kling generation not run",
+  "shots": [
+    {
+      "id": "S01",
+      "name": "Đêm muộn ngoài công ty",
+      "time": "00:00–00:04",
+      "start": 0,
+      "end": 4,
+      "source": 5,
+      "refs": [],
+      "image": "S01-start.png",
+      "goal": "Mưa và ánh đèn dẫn vào một đêm làm việc muộn.",
+      "prompt": "Rain falls across the dark office tower and splashes into puddles on the empty street. Warm light remains steady in the single lit upper office window. Tree leaves sway gently in the wind. The camera makes a restrained slow push toward that lit window, keeping the building geometry stable. A faint violet flicker briefly lights the distant clouds near the end. Continuous hand-drawn 2D anime background animation, quiet suspense, one uninterrupted shot.",
+      "audio": "Steady exterior rain, distant city air, one low distant thunder roll. No dialogue or music.",
+      "check": "Đường thẳng tòa nhà giữ ổn định; mưa và lá có chuyển động; cửa sổ sáng không nhảy vị trí."
+    },
+    {
+      "id": "S02",
+      "name": "Nhân viên ở lại làm việc",
+      "time": "00:04–00:09",
+      "start": 4,
+      "end": 9,
+      "source": 5,
+      "refs": [
+        "hero",
+        "coworker"
+      ],
+      "image": "S02-start.png",
+      "goal": "Giới thiệu nhân vật qua diễn xuất nhỏ, có chuyển động thật.",
+      "prompt": "The man seated on the left types naturally with both hands resting at the keyboard. His shoulders move subtly with his breathing and he blinks once. After a brief pause, he stops typing, lifts his eyes from the monitor and turns his head slightly toward the woman and the faint sound behind him. The woman in the background turns her head toward the windows. Reflections of rain move softly across the glass. The camera makes a very slow push in; the man remains seated. Preserve the supplied hand-drawn 2D anime design, adult proportions, glasses, hair silhouette and clothing colors throughout. Animate believable changing poses, natural joint movement and cloth following the body. One continuous shot. Silent character acting.",
+      "audio": "Soft rain behind windows, a few light keyboard taps, a chair creak and a faint structural rumble near the end. No dialogue or music.",
+      "check": "Có gõ phím, dừng tay và quay đầu; kính không tan hoặc đổi gọng; camera không chỉ lướt trên ảnh tĩnh."
+    },
+    {
+      "id": "S03",
+      "name": "Sàn nhà rạn vỡ",
+      "time": "00:09–00:14",
+      "start": 9,
+      "end": 14,
+      "source": 5,
+      "refs": [
+        "hero",
+        "coworker"
+      ],
+      "image": "S03-start.png",
+      "goal": "Giữ rõ bên trái an toàn, bên phải nguy hiểm.",
+      "prompt": "The ceiling light swings and small concrete fragments fall as the office begins to shake. The floor crack widens on the right. The woman on the right loses her footing and drops to one knee at the broken edge, bracing one palm on the remaining slab. The man on the left takes one quick grounded step toward her and reaches his right arm out. Both bodies respond to gravity with clear weight shifts. Keep the safe floor on the left and the opening on the right. The camera holds this wide composition with only a slight earthquake tremor. Preserve the supplied hand-drawn 2D anime design, adult proportions, glasses, hair silhouette and clothing colors throughout. Animate believable changing poses, natural joint movement and cloth following the body. One continuous shot. Silent character acting.",
+      "audio": "A deep structural rumble, cracking concrete, a rattling light fitting and a few falling fragments. No dialogue or music.",
+      "check": "Sàn vỡ ở bên phải; không đảo vị trí hai người; nhân vật có trọng lượng và chân chạm sàn; không cần mô tả một cú rơi dài."
+    },
+    {
+      "id": "S04",
+      "name": "Kéo đồng nghiệp lên",
+      "time": "00:14–00:19",
+      "start": 14,
+      "end": 19,
+      "source": 5,
+      "refs": [
+        "hero",
+        "coworker"
+      ],
+      "image": "S04-start.png",
+      "optional_end": "S04-end.png",
+      "goal": "Một hành động duy nhất: kéo người lên từ tư thế đã nắm chắc.",
+      "prompt": "The man on the left already has a secure two-handed grip on the woman's left forearm. He tightens that existing grip, shifts his weight back through his braced right foot and pulls her upward in one sustained effort. The woman pushes her free right palm against the ledge and brings one knee onto the safe slab on the left. She ends supported on the intact floor beside him, visibly relieved. Maintain the same forearm grip until she is supported. Keep the anatomy and contact physically continuous. The camera stays locked in this same side-view composition. Preserve the supplied hand-drawn 2D anime design, adult proportions, glasses, hair silhouette and clothing colors throughout. Animate believable changing poses, natural joint movement and cloth following the body. One continuous shot. Silent character acting.",
+      "audio": "Falling grit, fabric strain, a braced sneaker scraping concrete, and one relieved breath when she reaches the slab. No dialogue or music.",
+      "check": "Hai bàn tay không hòa làm một; điểm nắm cẳng tay liên tục; chân trụ và đầu gối có điểm tì; người nữ lên được sàn an toàn."
+    },
+    {
+      "id": "S05",
+      "name": "Tinh linh thức tỉnh",
+      "time": "00:19–00:24",
+      "start": 19,
+      "end": 24,
+      "source": 5,
+      "refs": [
+        "hero",
+        "coworker"
+      ],
+      "image": "S05-start.png",
+      "goal": "Cảm xúc trên khuôn mặt dẫn cảnh, ánh sáng chỉ hỗ trợ.",
+      "prompt": "The tiny mint spirit hovering above the man's open palm gently circles once, trailing a few delicate translucent sparks. His open palm remains steady. His eyes follow the light; his brows gradually settle from surprise into calm determination, and his breathing becomes controlled. The spirit slowly sinks into his palm, leaving a faint mint reflection along his glasses and fingertips. The woman behind him takes a recovering breath on the safe floor. The camera slowly pushes closer to his face while keeping his eyes visible. Preserve the supplied hand-drawn 2D anime design, adult proportions, glasses, hair silhouette and clothing colors throughout. Animate believable changing poses, natural joint movement and cloth following the body. One continuous shot. Silent character acting.",
+      "audio": "Soft room tone, a delicate airy chime and a gentle rising breath of wind. No dialogue or music.",
+      "check": "Có đổi ánh mắt và biểu cảm; ánh sáng không che mặt; lòng bàn tay giữ giải phẫu ổn định; tinh linh nhỏ, không biến thành khối khói trắng."
+    },
+    {
+      "id": "S06",
+      "name": "Cú đấm khí lực bảo vệ",
+      "time": "00:24–00:28",
+      "start": 24,
+      "end": 28,
+      "source": 5,
+      "refs": [
+        "hero",
+        "coworker"
+      ],
+      "image": "S06-start.png",
+      "goal": "Một cú đấm rõ lực, bảo vệ người ở phía sau.",
+      "prompt": "The dark claw advances out of the portal from the right. The man plants his rear sneaker, rotates his hips and shoulder, then delivers exactly one decisive right straight punch toward the claw. His arm extends only to its natural reach. A compact transparent air-pressure crescent bursts forward from his fist and continues beyond his hand, driving the claw back toward the portal. Fine wind filaments and a little floor dust reveal the force while his body and face remain readable. The woman stays safely behind him on the left. He finishes in a grounded protective stance. Keep the camera in this side-view composition, with a short restrained impact tremor at the strike. Preserve the supplied hand-drawn 2D anime design, adult proportions, glasses, hair silhouette and clothing colors throughout. Animate believable changing poses, natural joint movement and cloth following the body. One continuous shot. Silent character acting.",
+      "audio": "A brief gathering wind, a sharp air-pressure impact, a low creature recoil and scattering floor grit. No dialogue or music.",
+      "check": "Chỉ một cú đấm; cánh tay không kéo dài thành đòn đánh; khí lực đi tiếp từ nắm đấm; không có mây trắng che người; đồng nghiệp đứng sau đường đánh."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Kling Image-to-Video — Subject + Movement",
+      "url": "https://kling.ai/quickstart/image-to-video-guide"
+    },
+    {
+      "title": "Start and End Frames",
+      "url": "https://kling.ai/quickstart/ai-video-start-end-frames"
+    },
+    {
+      "title": "Kling 4.0 User Guide",
+      "url": "https://kling.ai/quickstart/kling-4-model-user-guide"
+    },
+    {
+      "title": "Kling VIDEO 3.0 User Guide",
+      "url": "https://kling.ai/quickstart/klingai-video-3-model-user-guide"
+    },
+    {
+      "title": "Element Library",
+      "url": "https://kling.ai/quickstart/klingai-element-library-3-user-guide"
+    }
+  ]
+}
