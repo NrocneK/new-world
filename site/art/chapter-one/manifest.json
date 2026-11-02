@@ -108,5 +108,76 @@
         "anchorY": 556
       }
     ]
+  },
+  "gatekeeper": {
+    "src": "art/chapter-one/gatekeeper.png",
+    "width": 1774,
+    "height": 887,
+    "frames": [
+      {
+        "x": 28,
+        "y": 7,
+        "w": 324,
+        "h": 440,
+        "anchorX": 192,
+        "anchorY": 441
+      },
+      {
+        "x": 444,
+        "y": 0,
+        "w": 443,
+        "h": 450,
+        "anchorX": 219,
+        "anchorY": 448
+      },
+      {
+        "x": 887,
+        "y": 5,
+        "w": 337,
+        "h": 446,
+        "anchorX": 220,
+        "anchorY": 443
+      },
+      {
+        "x": 1297,
+        "y": 8,
+        "w": 468,
+        "h": 443,
+        "anchorX": 283,
+        "anchorY": 440
+      },
+      {
+        "x": 23,
+        "y": 499,
+        "w": 420,
+        "h": 350,
+        "anchorX": 197,
+        "anchorY": 345
+      },
+      {
+        "x": 443,
+        "y": 468,
+        "w": 444,
+        "h": 381,
+        "anchorX": 220,
+        "anchorY": 376
+      },
+      {
+        "x": 887,
+        "y": 568,
+        "w": 443,
+        "h": 288,
+        "anchorX": 220,
+        "anchorY": 276
+      },
+      {
+        "x": 1330,
+        "y": 678,
+        "w": 438,
+        "h": 173,
+        "anchorX": 250,
+        "anchorY": 166
+      }
+    ]
   }
 }

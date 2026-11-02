@@ -4,11 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#091317" />
-  <meta name="description" content="Dị Môn — Chương 01. Chiến đấu, cứu đồng nghiệp và thoát khỏi tòa nhà bị dị giới xâm chiếm." />
+  <meta name="description" content="Dị Môn — Chương 01. Đi xuống 7 tầng lầu, cứu đồng nghiệp và hạ boss giữ cửa ở tầng trệt." />
   <title>Dị Môn — Khi cánh cổng mở</title>
-  <link rel="stylesheet" href="./level.css" />
-  <script src="./level-config.js" defer></script>
-  <script src="./level.js" defer></script>
+  <link rel="stylesheet" href="./level.css?v=d4d6b0537f5a" />
+  <script src="./level-config.js?v=d4d6b0537f5a" defer></script>
+  <script src="./level-physics.js?v=d4d6b0537f5a" defer></script>
+  <script src="./level.js?v=d4d6b0537f5a" defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -18,7 +19,7 @@
   </header>
   <main>
     <section class="game-shell" aria-label="Màn chơi Thoát khỏi tòa nhà">
-      <div class="scene-topline" aria-hidden="true"><span><i></i> KHU VĂN PHÒNG / TẦNG 07</span><span>23:47 <b>·</b> ĐÊM XÂM LẤN</span></div>
+      <div class="scene-topline" aria-hidden="true"><span><i></i> <span id="floorCoordinate">TẦNG 07 / KHU LÀM VIỆC</span></span><span>23:47 <b>·</b> ĐÊM XÂM LẤN</span></div>
       <div class="game-viewport" id="gameViewport">
         <canvas id="levelCanvas" width="1280" height="720" tabindex="0" aria-label="Dị Môn. A D để di chuyển, Space để nhảy hai lần, J đánh, K né, U lửa, I gió, Escape tạm dừng."></canvas>
         <div class="hud" id="hud" hidden>
@@ -26,10 +27,12 @@
           <div class="objective"><span>NHIỆM VỤ HỆ THỐNG</span><strong id="objectiveTitle">Thoát khỏi tòa nhà</strong><p id="objectiveDetail">Tìm người còn sống ở phía đông.</p></div>
           <button class="pause-button" id="pauseButton" type="button" aria-label="Tạm dừng màn chơi">Ⅱ</button>
         </div>
+        <div class="floor-tower" id="floorTower" aria-label="Các tầng của tòa nhà"></div>
+        <div class="boss-bar" id="bossBar" hidden><div><strong id="bossPhase">KẺ GÁC CỬA</strong><span id="bossHp">360 / 360</span></div><div class="boss-track"><i id="bossHealth"></i></div></div>
         <div class="spellbar" id="spellbar" hidden><span class="spell" id="fireSlot"><kbd>U</kbd><i>♨</i><span>LỬA</span><b id="fireCooldown">KHÓA</b></span><span class="spell" id="windSlot"><kbd>I</kbd><i>≋</i><span>GIÓ</span><b id="windCooldown">KHÓA</b></span><span class="jump-status" id="jumpStatus">↑ NHẢY LẦN HAI SẴN SÀNG</span></div>
         <div class="toast" id="toast" role="status" hidden></div>
         <div class="screen-overlay title-overlay" id="titleScreen">
-          <div class="title-copy"><span class="overline">CHƯƠNG 01 <i></i> TẦNG 07</span><h1>Khi cánh<br/>cổng <em>mở.</em></h1><p>Một ca làm muộn.<br/>Một thế giới không còn như cũ.</p><div class="title-buttons"><button class="primary-button" id="startButton" type="button" disabled>BẮT ĐẦU HÀNH TRÌNH <span>→</span></button><button class="quiet-button" id="continueButton" type="button" hidden>Tiếp tục từ điểm đã lưu</button></div><span class="loading-text" id="loadingText">Đang chuẩn bị màn chơi…</span></div>
+          <div class="title-copy"><span class="overline">CHƯƠNG 01 <i></i> TẦNG 07 → TẦNG TRỆT</span><h1>Bảy tầng.<br/>Một <em>lối ra.</em></h1><p>Sàn đang vỡ. Tòa nhà đang sập.<br/>Đưa người còn sống xuống tầng trệt.</p><div class="title-buttons"><button class="primary-button" id="startButton" type="button" disabled>BẮT ĐẦU HÀNH TRÌNH <span>→</span></button><button class="quiet-button" id="continueButton" type="button" hidden>Tiếp tục từ điểm đã lưu</button></div><span class="loading-text" id="loadingText">Đang chuẩn bị màn chơi…</span></div>
           <div class="title-caption"><span>01 / THỨC TỈNH</span><p>“Anh không còn một mình.”</p><span class="tiny-orb"></span> TINH LINH HỆ THỐNG</div>
         </div>
         <div class="dialogue" id="dialogue" role="dialog" aria-label="Hội thoại cốt truyện" aria-modal="true" hidden><div class="dialogue-orb" aria-hidden="true">✦</div><div class="dialogue-content"><span id="dialogueSpeaker">TINH LINH</span><p id="dialogueText"></p><button id="dialogueNext" type="button">Tiếp tục <kbd>ENTER</kbd><span>→</span></button></div></div>
@@ -40,6 +43,6 @@
     <div class="below-stage"><p><span class="key-group"><kbd>A</kbd><kbd>D</kbd> Di chuyển</span><span class="key-group"><kbd>SHIFT</kbd> Chạy</span><span class="key-group"><kbd>SPACE</kbd> Nhảy ×2</span><span class="key-group"><kbd>J</kbd> Đánh / nối combo</span><span class="key-group"><kbd>K</kbd> Né</span><span class="key-group"><kbd>ESC</kbd> Tạm dừng</span></p><a class="offline-link" href="./downloads/di-mon-chapter-one.zip" download>TẢI BẢN OFFLINE ↓</a><button id="fullscreenButton" type="button">TOÀN MÀN HÌNH <span>⛶</span></button></div>
     <div class="touch-controls" id="levelTouch" aria-label="Điều khiển cảm ứng"><div><button data-key="left" aria-label="Đi sang trái">←</button><button data-key="right" aria-label="Đi sang phải">→</button><button data-key="run" class="touch-run" aria-label="Giữ để chạy nhanh">CHẠY</button></div><div><button data-key="fire" aria-label="Thi triển lửa">♨</button><button data-key="wind" aria-label="Thi triển gió">≋</button><button data-key="dodge" aria-label="Né">»</button><button data-key="jump" aria-label="Nhảy, bấm lần hai để nhảy trên không">↑</button><button data-key="attack" class="touch-attack" aria-label="Đánh, bấm liên tiếp để nối combo">✕</button></div></div>
   </main>
-  <footer><span>DỊ MÔN <b>/</b> BẢN CHƠI THỬ ĐẦU TIÊN</span><span>Cứu một người. Tìm một lối ra.</span><span id="saveStatus">TIẾN TRÌNH LƯU TRÊN MÁY</span></footer>
+  <footer><span>DỊ MÔN <b>/</b> BẢN CHƠI THỬ ĐẦU TIÊN</span><span>Xuống bảy tầng. Cứu người. Hạ kẻ giữ cửa.</span><span id="saveStatus">TIẾN TRÌNH LƯU TRÊN MÁY</span></footer>
 </body>
 </html>

@@ -9,7 +9,7 @@
 - Tải ZIP: https://di-mon-demo.vercel.app/downloads/di-mon-vfx-v6.zip
 - Tải HTML offline: https://di-mon-demo.vercel.app/downloads/di-mon-vfx-v6.html
 
-Trang chính trong `site/index.html` là màn chơi Chương 01: chiến đấu, cứu đồng nghiệp và thoát khỏi tòa nhà. Phòng thử 17 động tác được giữ ở `site/character-lab.html`. Màn chơi có bản HTML offline đóng gói trong ZIP và service worker lưu tài nguyên sau lần tải đầu. Hai đòn đấm thẳng đã thay các khối trắng vẽ bằng Canvas bằng texture khí lực trong `art/vfx/air-pressure-v2/sources/straight-clear.png`, bỏ lớp mây trắng và thu gọn tỷ lệ hiển thị. Bản xem VFX mới là trang phụ `site/vfx-review.html`, dùng cùng nguồn, điểm neo và tỷ lệ cho hai đòn này. Các động tác khác giữ nguyên.
+Trang chính trong `site/index.html` là màn chơi Chương 01: từ tầng 7 đi xuống qua sàn vỡ của 7 tầng lầu, cứu đồng nghiệp và hạ boss giữ cửa ở tầng trệt. Phòng thử 17 động tác được giữ ở `site/character-lab.html`. Màn chơi có bản HTML offline đóng gói trong ZIP và service worker lưu tài nguyên sau lần tải đầu. Hai đòn đấm thẳng đã thay các khối trắng vẽ bằng Canvas bằng texture khí lực trong `art/vfx/air-pressure-v2/sources/straight-clear.png`, bỏ lớp mây trắng và thu gọn tỷ lệ hiển thị. Bản xem VFX mới là trang phụ `site/vfx-review.html`, dùng cùng nguồn, điểm neo và tỷ lệ cho hai đòn này. Các động tác khác giữ nguyên.
 
 Các tệp tải đã được kiểm tra nằm trong `site/downloads/`:
 
@@ -26,3 +26,5 @@ Khi import repository vào Vercel, chọn nhánh `codex/vfx-v5-downloads`, Frame
 Để agent triển khai trực tiếp bằng CLI, cần cấp `VERCEL_TOKEN` qua phần Secrets của môi trường, cho phép API `api.vercel.com` và các trang `*.vercel.app`. Không gửi token vào chat. Việc lưu draft cấu hình môi trường chưa triển khai website hay cấp thông tin đăng nhập; cần áp dụng cấu hình qua giao diện môi trường.
 
 Bản production đã được Vercel xác nhận `READY`; domain chính và đường tải trả HTTP 200 khi không đăng nhập. Trong môi trường quản lý, triển khai dùng REST API được Vercel công bố để tương thích với credential proxy; không đưa token vào source hoặc tệp tải xuống.
+
+Bản map dọc dùng `level-physics.js` và dữ liệu `office-descent-7-v2`. Mã và CSS vào trang được gắn phiên bản theo hash, JSON có phiên bản map để tránh service worker cũ trả cấu trúc map ngang. Worker mới đọc cache theo đường dẫn bỏ query phiên bản và có cache riêng theo hash tài nguyên. Bản lưu map ngang cũ được tách khỏi bản lưu map dọc.

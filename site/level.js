@@ -1,11 +1,11 @@
 /* Dị Môn: opening chapter. Whole-character artwork is shared with the lab. */
 (() => {
   'use strict';
-  const C = window.DI_MON_CHAPTER, $ = id => document.getElementById(id);
+  const C = window.DI_MON_CHAPTER, P = window.DiMonPhysics, $ = id => document.getElementById(id);
   const canvas = $('levelCanvas'), ctx = canvas.getContext('2d', { alpha:false });
   const W=1280, H=720, G=C.ground, HEAD=110, ART_SCALE=HEAD/132;
   const GRAVITY=1850, JUMP=-700, WALK=235, RUN=370, STEP=1/120;
-  const SAVE_KEY='di-mon:chapter-one:v1';
+  const SAVE_KEY='di-mon:chapter-one:descent-v2';
   const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
   const overlaps=(a,b)=>a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y;
@@ -20,20 +20,34 @@
   };
   const motions=Object.fromEntries(Object.entries(defs).map(([id,[fps,loop]])=>[id,{fps,loop,frames:[],blinks:[]}]));
   const held=new Set(), touch=new Set(), textures=new Map();
-  const assets={}, s={ready:false,mode:'title',time:0,elapsed:0,camera:0,checkpoint:0,rescued:false,kills:0,xp:0,level:1,deaths:0,hitCount:0,combo:0,queue:0,lastAttack:-10,fireCd:0,windCd:0,toast:0,shake:0,noticeGap:false,noticeEnemy:false};
-  const p={x:C.startX,y:G,vx:0,vy:0,facing:1,grounded:true,doubleJumpUsed:false,action:'idle',age:0,frame:0,stride:0,effectDone:false,hp:100,maxHp:100,invuln:0,coyote:0};
-  let enemies=[], bursts=[], shots=[], effects=[], labels=[], npc={x:C.rescueX,y:G,frame:0,facing:1};
+  const assets={}, s={ready:false,mode:'title',time:0,elapsed:0,camera:0,cameraY:0,checkpoint:0,rescued:false,deepest:0,bossSeen:false,kills:0,xp:0,level:1,deaths:0,hitCount:0,combo:0,queue:0,lastAttack:-10,fireCd:0,windCd:0,toast:0,shake:0,noticeGap:false,noticeEnemy:false};
+  const p={floor:0,x:C.startX,y:G,vx:0,vy:0,facing:1,grounded:true,doubleJumpUsed:false,action:'idle',age:0,frame:0,stride:0,effectDone:false,hp:100,maxHp:100,invuln:0,coyote:0};
+  let enemies=[], bursts=[], shots=[], effects=[], labels=[], npc=makeNpc();
   let dialogue=null,last=0,accumulator=0,audio=null,soundEnabled=false,saved=null;
   let uiStamp='',inputStamp=0;
+
+
+  const floorSolids=C.floors.flatMap(f=>{
+    const spans=f.hole?[[0,f.hole[0]],[f.hole[1],C.width]]:[[0,C.width]];
+    return spans.map(([a,b])=>({x:a,y:f.y,w:b-a,h:48,floor:f.index,kind:'slab'}));
+  });
+  const openSolids=[...floorSolids,...C.platforms];
+  const rescueBridge={x:C.floors[C.rescueFloor].hole[0],y:C.floors[C.rescueFloor].y,w:380,h:48,floor:C.rescueFloor,kind:'rescue-bridge'};
+  const closedSolids=[...openSolids,rescueBridge];
+  const solids=()=>s.rescued?openSolids:closedSolids;
+  const floorName=i=>C.floors[i].number?'TẦNG '+String(C.floors[i].number).padStart(2,'0'):'TẦNG TRỆT';
+  function makeNpc(floor=C.rescueFloor,x=C.rescueX,rescued=false){return{floor,x,y:C.floors[floor].y,vx:0,vy:0,grounded:true,bodyHalf:17,footHalf:11,bodyHeight:140,frame:rescued?1:0,facing:1};}
+  function checkpoint(){return C.checkpoints.find(c=>c.id===s.checkpoint)||C.checkpoints[0];}
 
   function readSave(){
     try {
       const a=JSON.parse(localStorage.getItem(SAVE_KEY));
-      if(!a||a.chapter!==C.id||![1,2].includes(a.checkpoint)||!Array.isArray(a.defeated))return null;
+      if(!a||a.chapter!==C.id||!C.checkpoints.some(c=>c.id===a.checkpoint&&c.id>0)||!Array.isArray(a.defeated))return null;
       const valid=new Set(C.encounters.map(e=>e.id));
-      return{checkpoint:a.checkpoint,rescued:a.checkpoint===2,xp:clamp(Number(a.xp)||0,0,1000),elapsed:clamp(Number(a.elapsed)||0,0,86400),defeated:a.defeated.filter(id=>valid.has(id))};
+      return{checkpoint:a.checkpoint,rescued:Boolean(a.rescued),xp:clamp(Number(a.xp)||0,0,1000),elapsed:clamp(Number(a.elapsed)||0,0,86400),defeated:[...new Set(a.defeated.filter(id=>valid.has(id)))]};
     }catch{return null;}
   }
+
   function save(){
     if(!s.checkpoint)return;
     const value={chapter:C.id,checkpoint:s.checkpoint,rescued:s.rescued,xp:s.xp,elapsed:s.elapsed,defeated:enemies.filter(e=>e.hp<=0).map(e=>e.id)};
@@ -66,17 +80,19 @@
     if(++dialogue.index<dialogue.lines.length){renderDialogue();return;}
     const after=dialogue.after;dialogue=null;$('dialogue').hidden=true;s.mode='playing';canvas.focus({preventScroll:true});if(after)after();
   }
-  function makeEnemies(defeated=[]){return C.encounters.map((e,i)=>({...e,maxHp:e.hp,hp:defeated.includes(e.id)?0:e.hp,y:G,phase:'patrol',age:0,cooldown:.6+i*.13,face:-1,attackHit:false,deadAge:defeated.includes(e.id)?10:0,flash:0}));}
+  function makeEnemies(defeated=[]){return C.encounters.map((e,i)=>({...e,maxHp:e.hp,hp:defeated.includes(e.id)?0:e.hp,phase:'patrol',age:0,cooldown:.6+i*.13,face:-1,attackCount:0,attackType:'charge',attackHit:false,deadAge:defeated.includes(e.id)?10:0,flash:0}));}
   function start(continuing=false){
     if(!s.ready)return;
     const a=continuing?saved:null;
-    Object.assign(s,{mode:'playing',time:0,elapsed:a?.elapsed||0,camera:0,checkpoint:a?.checkpoint||0,rescued:a?.rescued||false,kills:a?.defeated.length||0,xp:a?.xp||0,level:1,deaths:0,hitCount:0,combo:0,queue:0,lastAttack:-10,fireCd:0,windCd:0,shake:0,toast:0,noticeGap:false,noticeEnemy:false});
+    Object.assign(s,{mode:'playing',time:0,elapsed:a?.elapsed||0,camera:0,cameraY:0,checkpoint:a?.checkpoint||0,deepest:0,bossSeen:false,rescued:a?.rescued||false,kills:a?.defeated.length||0,xp:a?.xp||0,level:1,deaths:0,hitCount:0,combo:0,queue:0,lastAttack:-10,fireCd:0,windCd:0,shake:0,toast:0,noticeGap:false,noticeEnemy:false});
     s.level=s.xp>=80?2:1;
-    Object.assign(p,{x:a?(a.checkpoint===2?3680:2840):C.startX,y:G,vx:0,vy:0,facing:1,grounded:true,doubleJumpUsed:false,hp:s.level===2?115:100,maxHp:s.level===2?115:100,invuln:0,coyote:0});
-    animate('idle',true);enemies=makeEnemies(a?.defeated);bursts=[];shots=[];effects=[];labels=[];npc={x:a?.rescued?p.x-120:C.rescueX,y:G,frame:a?.rescued?1:0,facing:1};
+    const cp=checkpoint();
+    Object.assign(p,{floor:cp.floor,x:cp.x,y:C.floors[cp.floor].y,vx:0,vy:0,facing:cp.floor%2?-1:1,grounded:true,doubleJumpUsed:false,hp:s.level===2?115:100,maxHp:s.level===2?115:100,invuln:0,coyote:0});
+    s.deepest=cp.floor;s.bossSeen=cp.floor===7;
+    animate('idle',true);enemies=makeEnemies(a?.defeated);bursts=[];shots=[];effects=[];labels=[];npc=s.rescued?makeNpc(cp.floor,p.x+100,true):makeNpc();
     release();dialogue=null;$('dialogue').hidden=true;$('titleScreen').hidden=true;$('menuScreen').hidden=true;$('hud').hidden=false;$('spellbar').hidden=false;$('toast').hidden=true;
     document.body.classList.add('is-playing');
-    s.camera=clamp(p.x-410,0,C.width-W);canvas.focus({preventScroll:true});updateUI(true);
+    s.camera=clamp(p.x-W/2,0,C.width-W);s.cameraY=clamp(p.y-520,0,C.height-H);canvas.focus({preventScroll:true});updateUI(true);
     inputStamp=-10;
     if(!a)showDialogue(C.intro,()=>toast('A / D di chuyển · J đánh · Space nhảy',4));
     else toast('Đã trở lại điểm hồi sinh.');
@@ -85,7 +101,7 @@
     release();s.mode=kind;$('menuScreen').hidden=false;$('resumeButton').hidden=kind!=='paused';$('resultStats').hidden=kind!=='complete';$('retryButton').hidden=kind==='complete';
     $('menuLabel').textContent=kind==='complete'?'CHƯƠNG 01 / HOÀN THÀNH':kind==='dead'?'TÍN HIỆU BỊ GIÁN ĐOẠN':'TẠM DỪNG';
     $('menuTitle').textContent=kind==='complete'?'Bên kia cánh cửa.':kind==='dead'?'Đứng dậy lần nữa.':'Một nhịp thở.';
-    $('menuText').textContent=kind==='complete'?'Anh đã cứu đồng nghiệp và thoát khỏi tầng 07. Bên ngoài, đêm xâm lấn mới chỉ bắt đầu.':kind==='dead'?'Tinh linh giữ lại ký ức tại điểm hồi sinh gần nhất.':'Hành trình vẫn đang chờ anh.';
+    $('menuText').textContent=kind==='complete'?'Anh đã đi từ tầng 7 xuống tầng trệt, cứu đồng nghiệp và hạ Kẻ Gác Cửa. Bên ngoài, đêm xâm lấn mới chỉ bắt đầu.':kind==='dead'?'Tinh linh giữ lại ký ức tại điểm hồi sinh gần nhất.':'Hành trình vẫn đang chờ anh.';
     if(kind==='complete'){
       const stats=[[s.kills,'QUÁI HẠ GỤC'],[`${Math.floor(s.elapsed/60)}:${String(Math.floor(s.elapsed%60)).padStart(2,'0')}`,'THỜI GIAN'],['01','NGƯỜI ĐƯỢC CỨU']];
       $('resultStats').replaceChildren(...stats.map(([value,label])=>{const el=document.createElement('span'),n=document.createElement('strong');n.textContent=value;el.append(n,label);return el;}));
@@ -95,11 +111,15 @@
   function resume(){if(s.mode!=='paused')return;s.mode='playing';$('menuScreen').hidden=true;release();canvas.focus({preventScroll:true});}
   function retry(){
     if(!['dead','paused'].includes(s.mode))return;
-    s.deaths++;s.mode='playing';p.x=s.checkpoint===2?3680:s.checkpoint===1?2840:C.startX;p.y=G;p.vx=0;p.vy=0;p.grounded=true;p.doubleJumpUsed=false;p.hp=p.maxHp;p.invuln=1.5;p.coyote=0;
+    const cp=checkpoint();s.deaths++;s.mode='playing';
+    Object.assign(p,{floor:cp.floor,x:cp.x,y:C.floors[cp.floor].y,vx:0,vy:0,grounded:true,doubleJumpUsed:false,hp:p.maxHp,invuln:1.5,coyote:0});
     s.queue=0;s.lastAttack=-10;s.fireCd=0;s.windCd=0;animate('idle',true);
-    for(const e of enemies)if(e.hp>0){const spec=C.encounters.find(a=>a.id===e.id);Object.assign(e,{x:spec.x,hp:spec.hp,phase:'patrol',age:0,cooldown:1,flash:0});}
-    if(s.rescued){npc.x=p.x-120;npc.y=G;}bursts=[];effects=[];shots=[];labels=[];release();$('menuScreen').hidden=true;$('toast').hidden=true;s.camera=clamp(p.x-410,0,C.width-W);canvas.focus({preventScroll:true});toast('Điểm hồi sinh đã phục hồi.');updateUI(true);
+    for(const e of enemies)if(e.hp>0){const spec=C.encounters.find(a=>a.id===e.id);Object.assign(e,{x:spec.x,y:spec.y,hp:spec.hp,phase:'patrol',age:0,cooldown:1,flash:0,attackHit:false});}
+    if(s.rescued)npc=makeNpc(cp.floor,p.x+90,true);
+    bursts=[];effects=[];shots=[];labels=[];release();$('menuScreen').hidden=true;$('toast').hidden=true;
+    s.camera=clamp(p.x-W/2,0,C.width-W);s.cameraY=clamp(p.y-520,0,C.height-H);canvas.focus({preventScroll:true});toast('Điểm hồi sinh đã phục hồi.');updateUI(true);
   }
+
   function input(key){
     if(s.mode!=='playing')return;
     if(key==='jump'){
@@ -130,7 +150,7 @@
   }
   function damageEnemy(e,damage,kind,face){
     if(e.hp<=0)return;
-    e.hp=Math.max(0,e.hp-damage);e.flash=.12;e.phase='hurt';e.age=0;e.x=clamp(e.x+face*(kind==='attack4'?40:14),e.minX,e.maxX);label(String(damage),e.x,e.y-(e.elite?140:100));emit(e.x,e.y-45,'#9acbd3',8);tone('hit');s.hitCount++;s.shake=reduced?0:kind==='attack4'?4:1.5;
+    e.hp=Math.max(0,e.hp-damage);e.flash=.12;if(!e.boss||['attack3','attack4','wind'].includes(kind)&&e.phase!=='attack'){e.phase='hurt';e.age=0;}e.x=clamp(e.x+face*(kind==='attack4'?40:14),e.minX,e.maxX);label(String(damage),e.x,e.y-(e.elite?140:100));emit(e.x,e.y-45,'#9acbd3',8);tone('hit');s.hitCount++;s.shake=reduced?0:kind==='attack4'?4:1.5;
     if(e.hp===0){
       e.phase='dead';e.deadAge=0;s.kills++;const reward=e.elite?40:15;grantExperience(reward);label('+'+reward+' KN',e.x,e.y-125,'#d3dc9d');
       if(s.kills===1){toast('HỎA NĂNG THỨC TỈNH · U để thi triển',4);tone('quest');}
@@ -144,7 +164,7 @@
     const b=attacks[kind]?.box;if(!b)return null;
     return{x:p.x+(p.facing>0?b[0]:-b[2])*ART_SCALE,y:p.y+b[1]*ART_SCALE,w:(b[2]-b[0])*ART_SCALE,h:(b[3]-b[1])*ART_SCALE};
   }
-  function enemyBox(e){const q=e.elite?1.35:1;return{x:e.x-44*q,y:e.y-78*q,w:91*q,h:74*q};}
+  function enemyBox(e){if(e.boss)return{x:e.x-80,y:e.y-220,w:160,h:215};const q=e.elite?1.35:1;return{x:e.x-44*q,y:e.y-78*q,w:91*q,h:74*q};}
   function strike(){
     if(p.effectDone)return;p.effectDone=true;
     const spec=attacks[p.action];
@@ -155,34 +175,20 @@
       shots.push({kind:p.action,x:p.x+p.facing*60,y:p.y-74,vx:p.facing*(p.action==='fire'?650:800),face:p.facing,age:0,life:p.action==='fire'?1.05:.7,hit:new Set()});
     }
   }
-  function supports(x){return C.groundSections.some(([a,b])=>x>=a&&x<=b);}
   function updatePlayer(dt){
     p.age+=dt;p.invuln=Math.max(0,p.invuln-dt);p.coyote=Math.max(0,p.coyote-dt);
-    const dir=move(),oldX=p.x,oldY=p.y;
+    const dir=move();
     if(p.grounded&&p.action==='dodge')p.vx=p.facing*600*Math.max(.1,1-p.age/.45);
     else if(!busy()){if(dir)p.facing=dir;p.vx=dir*(running()?RUN:WALK);}
     else if(p.grounded)p.vx=0;
     else if(dir)p.vx=dir*(running()?RUN:WALK);
-    p.x=clamp(p.x+p.vx*dt,45,C.width-100);
-    // Solid obstacle sides, not merely decorative art.
-    for(const b of C.platforms)if(p.y>b.y+3&&oldY-145<b.y+b.h&&p.x+21>b.x&&p.x-21<b.x+b.w){
-      if(oldX+21<=b.x+.1)p.x=b.x-21;
-      else if(oldX-21>=b.x+b.w-.1)p.x=b.x+b.w+21;
-    }
-    const standingPlatform=C.platforms.some(b=>p.x+14>b.x&&p.x-14<b.x+b.w&&Math.abs(p.y-b.y)<1);
-    if(p.grounded&&!standingPlatform&&!supports(p.x)){p.grounded=false;p.coyote=.1;p.vy=0;animate('fall',true);}
-    if(!p.grounded){
-      p.vy+=GRAVITY*dt;p.y+=p.vy*dt;
-      let floor=null;
-      if(p.vy>=0){
-        if(supports(p.x)&&oldY<=G+1&&p.y>=G)floor=G;
-        for(const b of C.platforms)if(p.x+14>b.x&&p.x-14<b.x+b.w&&oldY<=b.y+1&&p.y>=b.y)floor=Math.min(floor??Infinity,b.y);
-      }
-      if(floor!==null){p.y=floor;p.vy=0;p.grounded=true;p.doubleJumpUsed=false;p.coyote=0;animate('land',true);emit(p.x,p.y-2,'#6f9995',5);}
-      else if(p.vy>0&&p.action==='jump')animate('fall');
-      if(p.y>H+180){p.hp=0;animate('death',true);s.mode='dying';p.y=H+180;release();return;}
-    }
-    const traveled=Math.abs(p.x-oldX),m=motions[p.action];
+    const result=P.step(p,dt,solids(),{width:C.width,gravity:GRAVITY});
+    if(result.leftGround){p.coyote=.1;if(!busy())animate('fall',true);}
+    if(result.landing){
+      p.floor=result.landing.floor;p.doubleJumpUsed=false;p.coyote=0;animate('land',true);emit(p.x,p.y-2,'#6f9995',5);
+    }else if(p.vy>0&&p.action==='jump')animate('fall');
+    if(p.y>C.height+180){p.hp=0;animate('death',true);s.mode='dying';release();return;}
+    const traveled=result.traveled,m=motions[p.action];
     if(['walk','run'].includes(p.action)){p.stride=(p.stride+traveled/(p.action==='run'?228:188))%1;p.frame=Math.floor(p.stride*m.frames.length);}
     else p.frame=m.loop?Math.floor(p.age*m.fps)%m.frames.length:Math.min(m.frames.length-1,Math.floor(p.age*m.fps));
     const contact=attacks[p.action]?.contact??2;
@@ -193,24 +199,48 @@
     }
     if(p.grounded&&['idle','walk','run'].includes(p.action))animate(traveled>.01?(running()?'run':'walk'):'idle');
   }
+  function updateBoss(e,dt){
+    if(p.floor!==e.floor||!s.bossSeen)return;
+    const delta=p.x-e.x,enraged=e.hp<e.maxHp*.5;
+    if(e.phase==='hurt'){if(e.age>.15){e.phase='patrol';e.age=0;e.cooldown=.25;}return;}
+    if(e.phase==='windup'){
+      if(e.age>(enraged?.65:.85)){e.phase='attack';e.age=0;e.attackHit=false;tone('hit');}return;
+    }
+    if(e.phase==='attack'){
+      if(e.attackType==='charge'){
+        if(e.age<.36)e.x=clamp(e.x+e.face*(enraged?720:600)*dt,e.minX,e.maxX);
+        const box={x:e.x+(e.face>0?10:-140),y:e.y-150,w:130,h:145};
+        if(!e.attackHit&&e.age<.38&&overlaps(box,{x:p.x-20,y:p.y-125,w:40,h:125})){e.attackHit=true;hurt(enraged?24:20,e.x);}
+      }else{
+        const radius=Math.min(380,e.age*700),distance=Math.abs(p.x-e.x);
+        if(!e.attackHit&&distance<radius&&distance>radius-80&&Math.abs(p.y-e.y)<28){e.attackHit=true;hurt(enraged?24:20,e.x);}
+      }
+      if(e.age>.7){e.phase='patrol';e.age=0;e.cooldown=enraged?.8:1.2;}return;
+    }
+    e.face=delta>=0?1:-1;
+    if(e.cooldown===0&&Math.abs(delta)<470){e.attackType=e.attackCount++%2?'slam':'charge';e.phase='windup';e.age=0;}
+    else if(Math.abs(delta)>145)e.x=clamp(e.x+e.face*(enraged?105:75)*dt,e.minX,e.maxX);
+  }
+
   function updateEnemies(dt){
     for(const e of enemies){
       e.age+=dt;e.cooldown=Math.max(0,e.cooldown-dt);e.flash=Math.max(0,e.flash-dt);
       if(e.hp<=0){e.deadAge+=dt;continue;}
-      const delta=p.x-e.x,near=Math.abs(delta)<420&&p.x>e.minX-180&&p.x<e.maxX+180;
+      if(e.boss){updateBoss(e,dt);continue;}
+      const delta=p.x-e.x,near=p.floor===e.floor&&Math.abs(delta)<420&&p.x>e.minX-180&&p.x<e.maxX+180;
       if(e.phase==='hurt'){if(e.age>.23){e.phase='patrol';e.age=0;e.cooldown=Math.max(e.cooldown,.3);}continue;}
       if(e.phase==='windup'){
         if(e.age>.62){e.phase='attack';e.age=0;e.attackHit=false;tone('hit');}continue;
       }
       if(e.phase==='attack'){
         if(e.age<.23)e.x=clamp(e.x+e.face*(e.elite?550:410)*dt,e.minX,e.maxX);
-        const range={x:e.x+(e.face>0?15:-112),y:G-100,w:100,h:92};
+        const range={x:e.x+(e.face>0?15:-112),y:e.y-100,w:100,h:92};
         if(!e.attackHit&&e.age<.24&&overlaps(range,{x:p.x-20,y:p.y-125,w:40,h:125})){e.attackHit=true;hurt(e.elite?22:14,e.x);}
         if(e.age>.45){e.phase='patrol';e.age=0;e.cooldown=e.elite?1.1:1.25;}continue;
       }
       if(near){
         e.face=delta>=0?1:-1;
-        if(Math.abs(delta)<145&&e.cooldown===0&&Math.abs(p.y-G)<145){e.phase='windup';e.age=0;}
+        if(Math.abs(delta)<145&&e.cooldown===0&&Math.abs(p.y-e.y)<145){e.phase='windup';e.age=0;}
         else if(Math.abs(delta)>94)e.x=clamp(e.x+e.face*(e.elite?85:76)*dt,e.minX,e.maxX);
       }else{
         e.x+=e.face*24*dt;if(e.x<=e.minX||e.x>=e.maxX){e.x=clamp(e.x,e.minX,e.maxX);e.face*=-1;}
@@ -225,26 +255,39 @@
     }
     shots=shots.filter(b=>b.life>0);
   }
+  function updateCoworker(dt){
+    if(!s.rescued)return;
+    const floor=C.floors[npc.floor],boss=enemies.find(e=>e.boss);
+    let target;
+    if(npc.floor<p.floor&&floor.hole)target=(floor.hole[0]+floor.hole[1])/2;
+    else if(npc.floor===7&&boss.hp>0)target=1810;
+    else target=p.x-p.facing*110;
+    const delta=target-npc.x;npc.facing=delta>=0?1:-1;
+    npc.vx=Math.abs(delta)>20?Math.sign(delta)*390:0;
+    if(npc.grounded&&npc.vx&&C.platforms.some(b=>b.floor===npc.floor&&(npc.vx>0?b.x-npc.x<80&&b.x>npc.x:b.x+b.w-npc.x>-80&&b.x+b.w<npc.x))){npc.vy=-620;npc.grounded=false;}
+    const result=P.step(npc,dt,solids(),{width:C.width});
+    if(result.landing)npc.floor=result.landing.floor;
+    npc.frame=!npc.grounded?2:Math.abs(npc.vx)>0?2+Math.floor(s.time*7)%2:1;
+  }
   function events(dt){
-    if(!s.noticeEnemy&&p.x>680){s.noticeEnemy=true;toast('J nối từng đòn · K né khi quái chớp báo hiệu',4);}
-    if(!s.noticeGap&&p.x>2050){s.noticeGap=true;toast('SÀN BỊ ĐỨT · Chạy và nhảy, bấm Space lần hai trên không',5);}
-    if(s.checkpoint<1&&p.x>C.checkpointX&&p.grounded){s.checkpoint=1;p.hp=p.maxHp;save();toast('ĐIỂM HỒI SINH · Sinh lực đã hồi đầy');tone('quest');}
-    if(!s.rescued&&Math.abs(p.x-C.rescueX)<155&&p.grounded&&!enemies.some(e=>e.id.startsWith('guard')&&e.hp>0)){
-      animate('idle',true);showDialogue(C.rescue,()=>{s.rescued=true;s.checkpoint=2;grantExperience(25);p.hp=p.maxHp;npc.frame=1;save();toast('ĐỒNG NGHIỆP ĐÃ ĐI CÙNG · Phong năng mở khóa',4);tone('quest');});return;
+    if(!s.noticeEnemy&&p.floor===0&&p.x>520){s.noticeEnemy=true;toast('J nối từng đòn · K né khi quái chớp báo hiệu',4);}
+    const f=C.floors[p.floor];
+    if(p.floor>s.deepest){s.deepest=p.floor;s.noticeGap=false;toast(floorName(p.floor)+' · '+f.name,2.2);}
+    if(!s.noticeGap&&f.hole&&Math.abs(p.x-(f.hole[0]+f.hole[1])/2)<300){s.noticeGap=true;toast('SÀN ĐÃ SẬP · Đi qua mép vỡ để xuống tầng dưới',3.5);}
+    for(const cp of C.checkpoints)if(cp.id>s.checkpoint&&cp.floor===p.floor&&p.grounded&&Math.abs(p.y-f.y)<1){s.checkpoint=cp.id;p.hp=p.maxHp;save();toast('ĐIỂM HỒI SINH · '+floorName(cp.floor),3);tone('quest');}
+    if(!s.rescued&&p.floor===C.rescueFloor&&Math.abs(p.x-C.rescueX)<165&&p.grounded&&!enemies.some(e=>e.id.startsWith('guard')&&e.hp>0)){
+      animate('idle',true);showDialogue(C.rescue,()=>{s.rescued=true;grantExperience(25);p.hp=p.maxHp;npc.frame=1;save();emit(230,f.y,'#9ab3a7',22);toast('ĐỒNG NGHIỆP ĐI CÙNG · Lối xuống tầng 3 đã mở',4);tone('quest');});return;
     }
-    if(s.rescued){
-      const target=p.x-p.facing*112,dist=target-npc.x;
-      npc.facing=dist>=0?1:-1;
-      if(Math.abs(dist)>20){npc.x+=Math.sign(dist)*Math.min(RUN*1.08*dt,Math.abs(dist));npc.frame=2+Math.floor(s.time*7)%2;}else npc.frame=1;
-      // The rescued coworker follows the safe corridor; climbing rubble uses a clear hop.
-      npc.y=G;for(const b of C.platforms)if(npc.x>b.x-20&&npc.x<b.x+b.w+20)npc.y=b.y;
-    }
-    const finalHostiles=enemies.some(e=>(e.id.startsWith('rift')||e.id==='warden')&&e.hp>0);
-    if(p.x>6060&&(!s.rescued||finalHostiles)){p.x=6060;if(s.time-inputStamp>3){toast(!s.rescued?'Còn một người mắc kẹt phía sau.':'Hạ kẻ canh cổng để mở đường thoát.');inputStamp=s.time;}}
-    if(p.x>C.exitX&&s.rescued&&!finalHostiles&&Math.abs(npc.x-p.x)<260&&p.grounded){
+    if(!s.rescued&&p.floor===C.rescueFloor&&p.x<520&&s.time-inputStamp>4){toast('Còn đồng nghiệp mắc kẹt trên tầng này.');inputStamp=s.time;}
+    updateCoworker(dt);
+    if(p.floor===7&&p.grounded&&!s.bossSeen&&p.x<1750){s.bossSeen=true;animate('idle',true);showDialogue(C.bossIntro);return;}
+    const boss=enemies.find(e=>e.boss);
+    if(p.floor===7&&p.x<310&&boss.hp>0){p.x=310;if(s.time-inputStamp>3){toast('Kẻ Gác Cửa đang khóa lối ra.');inputStamp=s.time;}}
+    if(p.floor===7&&p.x<270&&boss.hp<=0&&s.rescued&&npc.floor===7&&Math.abs(npc.x-p.x)<190&&p.grounded){
       animate('idle',true);showDialogue(C.ending,()=>{try{localStorage.removeItem(SAVE_KEY);}catch{}saved=null;menu('complete');tone('quest');});
     }
   }
+
   function update(dt){
     if(s.mode==='dying'){p.age+=dt;p.frame=Math.min(3,Math.floor(p.age*6));if(p.age>.9)menu('dead');return;}
     if(s.mode!=='playing')return;
@@ -254,7 +297,7 @@
     for(const e of effects)e.age+=dt;effects=effects.filter(e=>e.age<e.duration);
     for(const b of bursts){b.x+=b.vx*dt;b.y+=b.vy*dt;b.vy+=240*dt;b.life-=dt;}bursts=bursts.filter(b=>b.life>0);
     for(const l of labels){l.y-=28*dt;l.life-=dt;}labels=labels.filter(l=>l.life>0);
-    const aim=clamp(p.x-410,0,C.width-W);s.camera+= (aim-s.camera)*(1-Math.exp(-dt*6));
+    const follow=1-Math.exp(-dt*8);s.camera+=(clamp(p.x-W/2,0,C.width-W)-s.camera)*follow;s.cameraY+=(clamp(p.y-(p.vy>200?410:520),0,C.height-H)-s.cameraY)*follow;
   }
   function rect(x,y,w,h,color){ctx.fillStyle=color;ctx.fillRect(Math.round(x),Math.round(y),w,h);}
   function line(points,color,width=1){ctx.beginPath();points.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke();}
@@ -267,69 +310,88 @@
   function hero(x=p.x,y=p.y){
     const m=motions[p.action],cycle=Math.floor(s.time*m.fps/m.frames.length);let f=m.frames[p.frame]||m.frames[0];
     if(m.blink&&cycle%m.blink.everyCycles===m.blink.cycleOffset&&m.blink.poses.includes(p.frame))f=m.blinks.find(a=>a.order===p.frame)||f;
-    const scale=HEAD/f.headWidth;shadow(x,G,38);
+    const scale=HEAD/f.headWidth;const support=solids().filter(b=>b.y>=y-.5&&x>b.x&&x<b.x+b.w).sort((a,b)=>a.y-b.y)[0];if(support&&support.y-y<200)shadow(x,support.y,38);
     ctx.save();ctx.translate(Math.round(x),Math.round(y));ctx.scale(p.facing,1);ctx.imageSmoothingEnabled=false;
     if(p.invuln>0&&Math.floor(s.time*14)%2===0)ctx.globalAlpha=.55;
     ctx.drawImage(f.image,f.x,f.y,f.w,f.h,-f.anchorX*scale,-f.anchorY*scale,f.w*scale,f.h*scale);ctx.restore();
     const ox=x-p.facing*70,oy=y-145+(reduced?0:Math.sin(s.time*3)*5);glow(ox,oy,22,'#cde8b544');rect(ox-3,oy-3,6,6,'#dce9b1');rect(ox-1,oy-1,2,2,'#ffffe4');
   }
+  function visibleFloors(){return C.floors.filter(f=>f.y+130>s.cameraY&&f.y-630<s.cameraY+H);}
   function drawBackground(){
-    rect(0,0,W,H,'#0b1820');ctx.imageSmoothingEnabled=false;
-    // Art is the distant layer; architecture and collidable floor use world coordinates.
-    const tileW=1600,offset=-(s.camera*.27)%tileW;
-    for(let i=-1;i<2;i++)ctx.drawImage(assets.office,offset+i*tileW,-4,tileW,720);
-    rect(0,0,W,H,'#05131b33');
-    for(let i=0;i<24;i++){const x=((i*163+37-s.camera*.45)%W+W)%W,y=(i*79+s.time*(6+i%3))%550;rect(x,y,i%5===0?2:1,2,i%4?'#a2c5b329':'#cce7d066');}
+    rect(0,0,W,H,'#08131e');ctx.imageSmoothingEnabled=false;
+    for(const f of visibleFloors()){
+      const y=f.y-600-s.cameraY,im=f.index===7?assets.lobby:assets.office;
+      ctx.drawImage(im,-s.camera*.65,y,C.width,720);
+      rect(0,y,W,720,f.index%2?'#07172538':'#06121e22');
+      for(let i=0;i<15;i++){const x=((i*163+37-s.camera*.45)%W+W)%W,py=f.y-580+(i*79+s.time*(9+i%3))%570-s.cameraY;rect(x,py,i%5===0?2:1,2,i%4?'#a2c5b329':'#cce7d066');}
+    }
   }
   function drawArchitecture(){
-    for(const [a,b]of C.groundSections){
-      rect(a,G,b-a,H-G,'#14232a');rect(a,G,b-a,5,'#6d8781');rect(a,G+5,b-a,3,'#21393f');
-      for(let x=Math.floor(a/96)*96;x<b;x+=96){line([[x,G+9],[x-35,H]],'#30434a77');rect(x+15,G+44,35,1,'#68877922');}
-      rect(a,H-22,b-a,22,'#0b181f');
+    const visible=visibleFloors();
+    for(const f of visible){
+      const y=f.y,parts=floorSolids.filter(b=>b.floor===f.index);
+      for(const b of parts){
+        rect(b.x,y,b.w,5,'#81978c');rect(b.x,y+5,b.w,39,'#293d43');rect(b.x,y+43,b.w,5,'#0a1820');
+        for(let x=b.x+12;x<b.x+b.w-10;x+=59){rect(x,y+12,34,5,'#3f5557');rect(x+9,y+28,19,3,'#172d36');}
+      }
+      rect(0,y-610,C.width,12,'#0b1b25');
+      text(floorName(f.index),75,y-493,22,'#c3d9c8');text(f.name,76,y-470,10,'#8ba8a5');
+      for(let i=0;i<3;i++){const x=520+i*610+(f.index%2)*70;line([[x,y-600],[x+13,y-528],[x-8,y-490]],'#233c45',3);rect(x-30,y-544,70,5,'#526961');rect(x-25,y-539,50,2,'#b5ba9088');}
+      for(let i=0;i<10;i++){const x=485+i*131;if(f.hole&&x>f.hole[0]-20&&x<f.hole[1]+20)continue;rect(x,y-5,13+i%4*5,5,'#4b6260');rect(x+21,y-3,8,3,'#819085');}
+      if(f.hole){
+        const [left,right]=f.hole;
+        rect(left,y-4,right-left,75,'#07111ccc');
+        for(const [edge,dir]of[[left,-1],[right,1]]){
+          for(let n=0;n<5;n++){line([[edge+dir*3,y+7+n*7],[edge-dir*(16+n*4),y+18+n*10]],'#536970',2);rect(edge+dir*(8+n*15),y-10,12,5,n%2?'#99906d':'#243c43');}
+        }
+        if(f.index===C.rescueFloor&&!s.rescued){
+          rect(left,y,right-left,16,'#5b5d4b');rect(left,y+16,right-left,32,'#2a4145');
+          for(let x=left;x<right;x+=35)line([[x,y+5],[x+25,y+13]],'#c2b078',4);
+          text('CÒN NGƯỜI MẮC KẸT',(left+right)/2,y-28,10,'#dcc99f','center');
+        }else{
+          const cx=(left+right)/2;line([[cx,y-70],[cx,y-35],[cx-7,y-43],[cx,y-35],[cx+7,y-43]],'#b7d1b5',2);text('XUỐNG '+floorName(f.index+1),cx,y-89,10,'#b7d1b5','center');
+        }
+      }
+      for(const b of C.platforms.filter(b=>b.floor===f.index)){
+        rect(b.x,b.y,b.w,b.h,'#263e46');rect(b.x,b.y,b.w,4,'#7b9188');rect(b.x+4,b.y+5,b.w-8,b.h-9,'#20353d');
+        for(let x=b.x+9;x<b.x+b.w-8;x+=31){rect(x,b.y+12,23,b.h-24,b.kind==='cabinet'?'#374b50':'#3c4a50');rect(x+8,b.y+20,9,2,'#81918a');}
+        if(b.kind==='rubble')line([[b.x,b.y+30],[b.x+43,b.y+13],[b.x+72,b.y+52],[b.x+b.w,b.y+15]],'#8aa09a66',2);
+      }
+      const cp=C.checkpoints.find(c=>c.floor===f.index&&c.id>0);
+      if(cp){const x=cp.x;rect(x-8,y-58,16,58,'#29464b');rect(x-12,y-61,24,5,'#8cbcb2');glow(x,y-47,25,'#a6dfba33');rect(x-3,y-48,6,15,s.checkpoint>=cp.id?'#d5edb4':'#85c8c0');text('HỒI SINH',x,y-77,9,'#acd5c5','center');}
+      if(f.index===7){
+        const boss=enemies.find(e=>e.boss),open=boss?.hp<=0,door=C.exitX;
+        rect(door-105,y-360,210,360,'#10232ba8');rect(door-110,y-366,220,8,'#728f81');rect(door-110,y-358,7,358,'#567567');rect(door+103,y-358,7,358,'#567567');
+        for(let x=door-82;x<door+95;x+=82){rect(x,y-340,70,330,open?'#46745d55':'#142e35aa');line([[x+65,y-180],[x+65,y-140]],'#c8dec4',3);}
+        rect(door-75,y-410,150,28,open?'#c9e6a8':'#8a9690');text(open?'← LỐI RA ĐÃ MỞ':'CỬA RA BỊ KHÓA',door,y-391,11,'#163329','center');
+        if(!open)for(let i=0;i<5;i++)line([[door-95,y-325+i*66],[door+95,y-290+i*66]],'#8a70ad88',3);
+      }
     }
-    // Deep cut in the floor; never a painted gap over a solid collider.
-    rect(2320,G-20,300,H-G+20,'#050e18');
-    for(let i=0;i<8;i++){line([[2320-i*2,G+5+i*10],[2340+i*5,G+17+i*13]],'#364c53',3);line([[2620+i*2,G+7+i*9],[2600-i*4,G+25+i*12]],'#273d4b',3);}
-    glow(2470,690,120,'#4060a026');
-    for(const b of C.platforms){
-      rect(b.x,b.y,b.w,b.h,'#243b42');rect(b.x,b.y,b.w,4,'#718c87');rect(b.x+4,b.y+5,b.w-8,b.h-9,'#1c3039');
-      for(let x=b.x+9;x<b.x+b.w-8;x+=31){rect(x,b.y+12,23,b.h-24,b.kind==='cabinet'?'#30434b':'#34434c');rect(x+8,b.y+20,9,2,'#72847c');}
-      if(b.kind==='rubble')line([[b.x,b.y+30],[b.x+43,b.y+13],[b.x+72,b.y+52],[b.x+b.w,b.y+15]],'#78908a66',2);
-    }
-    // Identifiable places and small environmental storytelling.
-    for(const x of [180,800,1900,2820,3650,4430,5670]){
-      rect(x,123,127,31,'#0b1c25e8');rect(x,123,3,31,'#739b8a');
-      text(x<2200?'KHU LÀM VIỆC':x<3800?'HÀNH LANG ĐÔNG':'LỐI THOÁT →',x+12,143,9,'#b6cec1');
-    }
-    for(let i=0;i<18;i++){const x=480+i*317;if(x>2290&&x<2670)continue;rect(x,G-5,17+i%4*6,5,'#34494b');rect(x+24,G-3,10,3,'#6c7f75');}
-    // Checkpoint beacon.
-    const bx=C.checkpointX+32;rect(bx-9,G-59,18,59,'#263f45');rect(bx-13,G-61,26,5,'#8cbcb2');glow(bx,G-50,30,'#a6dfba33');rect(bx-3,G-48,6,15,s.checkpoint?'#d5edb4':'#85c8c0');text('ĐIỂM HỒI SINH',bx,G-77,9,'#acd5c5','center');
-    // Invasion portal and stairwell door are landmarks, not teleport mechanics.
-    const px=4930;glow(px,340,250,'#55419138');
-    for(let n=0;n<4;n++){ctx.strokeStyle=n%2?'#8dbde36b':'#8975bf7a';ctx.lineWidth=n===0?3:1;ctx.beginPath();ctx.ellipse(px,350,66+n*9+Math.sin(s.time+n)*2,177+n*4,0,0,Math.PI*2);ctx.stroke();}
-    for(let i=0;i<10;i++){const a=s.time*.3+i*.63;rect(px+Math.cos(a)*(76+i%2*9),350+Math.sin(a)*180,3,9,'#b7b2e577');}
-    const door=C.exitX;rect(door-75,246,152,G-246,'#0b1e25');rect(door-81,240,164,9,'#57746c');rect(door-81,249,8,G-249,'#3d5b57');rect(door+75,249,8,G-249,'#3d5b57');
-    rect(door-66,258,132,G-258,s.rescued&&!enemies.some(e=>(e.id.startsWith('rift')||e.id==='warden')&&e.hp>0)?'#193f3b':'#122b30');
-    for(let i=0;i<5;i++)rect(door-40+i*15,G-70-i*23,70-i*10,8,'#496861');
-    rect(door-59,204,118,23,'#aac8a3');text('THOÁT HIỂM →',door,220,10,'#142e2a','center');glow(door,300,130,'#9bcb9b18');
   }
   function drawEnemy(e){
     if(e.hp<=0&&e.deadAge>1.5)return;
-    const scale=e.elite?.58:.43;let frame=e.phase==='windup'?3:e.phase==='attack'?4:e.phase==='hurt'?5:e.hp<=0?(e.deadAge<.2?6:7):1+Math.floor(s.time*6)%2;
-    shadow(e.x,G,e.elite?65:46);ctx.save();if(e.hp<=0)ctx.globalAlpha=clamp(1-(e.deadAge-.6)/.9,0,1);
-    worldArt('void-crawler',frame,e.x,e.y,scale,-e.face);ctx.restore();
-    if(e.hp>0){
-      const w=e.elite?96:64,y=G-(e.elite?145:111);rect(e.x-w/2,y,w,3,'#263b46');rect(e.x-w/2,y,w*e.hp/e.maxHp,3,e.elite?'#b89ccc':'#89b8b3');
-      if(e.elite)text('KẺ CANH CỔNG',e.x,y-12,9,'#c8b7dc','center');
-      if(e.phase==='windup'){text('!',e.x,G-(e.elite?165:135),21,'#f0bb82','center');ctx.strokeStyle='#d9a97a99';ctx.lineWidth=2;ctx.beginPath();ctx.ellipse(e.x+e.face*45,G-3,66,8,0,0,Math.PI*2);ctx.stroke();}
+    const scale=e.boss?.60:e.elite?.58:.43;
+    const frame=e.phase==='windup'?3:e.phase==='attack'?4:e.phase==='hurt'?5:e.hp<=0?(e.deadAge<.2?6:7):1+Math.floor(s.time*(e.boss?3:6))%2;
+    shadow(e.x,e.y,e.boss?86:e.elite?65:46);ctx.save();if(e.hp<=0)ctx.globalAlpha=clamp(1-(e.deadAge-.6)/.9,0,1);
+    worldArt(e.boss?'gatekeeper':'void-crawler',frame,e.x,e.y,scale,-e.face);ctx.restore();
+    if(e.hp<=0)return;
+    if(!e.boss){const w=64,y=e.y-111;rect(e.x-w/2,y,w,3,'#263b46');rect(e.x-w/2,y,w*e.hp/e.maxHp,3,'#89b8b3');}
+    if(e.phase==='windup'){
+      text(e.boss?(e.attackType==='slam'?'NHẢY!':'NÉ!'):'!',e.x,e.y-(e.boss?288:135),e.boss?12:21,'#f0bb82','center');
+      ctx.strokeStyle='#d9a97a99';ctx.lineWidth=2;ctx.beginPath();ctx.ellipse(e.x+(e.boss?0:e.face*45),e.y-3,e.boss?e.attackType==='slam'?260:105:66,8,0,0,Math.PI*2);ctx.stroke();
+    }
+    if(e.boss&&e.phase==='attack'&&e.attackType==='slam'){
+      const r=Math.min(380,e.age*700);ctx.strokeStyle='#b1cde3aa';ctx.lineWidth=3;ctx.beginPath();ctx.ellipse(e.x,e.y-3,r,6+r*.035,0,0,Math.PI*2);ctx.stroke();
+      ctx.strokeStyle='#8b84b655';ctx.lineWidth=1;ctx.beginPath();ctx.ellipse(e.x,e.y-3,Math.max(0,r-28),6+r*.025,0,0,Math.PI*2);ctx.stroke();
     }
   }
+
   function drawPressure(effect,front=false){
     const a=assets.vfx.actions[effect.kind],frame=a.frames[Math.min(7,Math.floor(effect.age*a.fps))];
     const fist=attacks[effect.kind].fist,root=a.effectRoot||fist;
     const ox=effect.x+effect.face*root[0]*ART_SCALE,oy=effect.y+root[1]*ART_SCALE,scale=a.uniformSourceScale*ART_SCALE;
     ctx.save();
-    if(effect.kind==='attack4'){ctx.beginPath();ctx.rect(s.camera,front?oy:0,W,front?H-oy:oy);ctx.clip();}
+    if(effect.kind==='attack4'){ctx.beginPath();ctx.rect(s.camera,front?oy:s.cameraY,W,front?s.cameraY+H-oy:oy-s.cameraY);ctx.clip();}
     ctx.translate(ox,oy);ctx.scale(effect.face,1);ctx.globalCompositeOperation='source-over';ctx.globalAlpha=a.opacity;ctx.filter='none';ctx.shadowBlur=0;ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
     ctx.drawImage(textures.get(a.image),frame.x,frame.y,frame.w,frame.h,-frame.anchorX*scale,-frame.anchorY*scale,frame.w*scale,frame.h*scale);ctx.restore();
   }
@@ -347,12 +409,12 @@
     if(!s.ready)return;
     ctx.setTransform(1,0,0,1,0,0);drawBackground();ctx.save();
     const shake=s.mode==='playing'&&!reduced?s.shake:0;
-    ctx.translate(-Math.round(s.camera)+Math.sin(s.time*92)*shake,Math.cos(s.time*71)*shake*.5);drawArchitecture();
+    ctx.translate(-Math.round(s.camera)+Math.sin(s.time*92)*shake,-Math.round(s.cameraY)+Math.cos(s.time*71)*shake*.5);drawArchitecture();
     if(s.mode==='title'){hero(860,G);text('CÔNG TY / TẦNG 07',850,G+38,9,'#aac4b2','center');}
     else{
-      for(const e of enemies)if(e.x>s.camera-250&&e.x<s.camera+W+250)drawEnemy(e);
+      for(const e of enemies)if(e.x>s.camera-300&&e.x<s.camera+W+300&&e.y>s.cameraY-100&&e.y<s.cameraY+H+300)drawEnemy(e);
       shadow(npc.x,npc.y,35);worldArt('coworker',npc.frame,npc.x,npc.y,.29,npc.facing);
-      if(!s.rescued){text('CÓ NGƯỜI CÒN SỐNG',npc.x,G-185,9,'#d9c3a0','center');text('◆',npc.x,G-203,12,'#ddc58d','center');}
+      if(!s.rescued){text('CÓ NGƯỜI CÒN SỐNG',npc.x,npc.y-185,9,'#d9c3a0','center');text('◆',npc.x,npc.y-203,12,'#ddc58d','center');}
       for(const e of effects)drawPressure(e);
       hero();for(const e of effects)if(e.kind==='attack4')drawPressure(e,true);
       for(const b of shots)drawShot(b);
@@ -364,17 +426,23 @@
     updateUI();
   }
   function updateUI(force=false){
-    const stage=p.x<2200?0:p.x<3450?1:p.x<4250?2:3;
-    const objective=s.rescued?'Cùng đồng nghiệp tới lối thoát':p.x>2730?'Cứu đồng nghiệp mắc kẹt':'Tìm người còn sống';
-    const detail=s.rescued?'Dọn sạch quái quanh cổng. Cầu thang ở phía đông.':p.x>2730?'Hạ hai quái vật đang chặn hành lang.':p.x>2050?'Vượt sàn đứt bằng nhảy lần hai.':'Tiến về phía đông. Tinh linh sẽ dẫn đường.';
-    const stamp=[p.hp,p.maxHp,s.xp,s.level,s.rescued,s.kills,stage,objective,detail,Math.ceil(s.fireCd*10),Math.ceil(s.windCd*10),p.doubleJumpUsed,p.grounded,Math.floor(p.x/10)].join(':');if(!force&&stamp===uiStamp)return;uiStamp=stamp;
+    const f=C.floors[p.floor],boss=enemies.find(e=>e.boss),bossAlive=!boss||boss.hp>0;
+    const objective=p.floor===7?(bossAlive?'Hạ Kẻ Gác Cửa':'Đưa đồng nghiệp ra ngoài'):!s.rescued?(p.floor===C.rescueFloor?'Cứu đồng nghiệp ở tầng 4':'Đi xuống tầng trệt'):'Dẫn đồng nghiệp xuống tầng trệt';
+    const detail=p.floor===7?(bossAlive?'Né cú lao. Nhảy qua sóng đập sàn.':'Cửa phía trái đã mở. Chờ đồng nghiệp đi cùng.'):p.floor===C.rescueFloor&&!s.rescued?'Hạ hai quái chặn đường rồi tới gần đồng nghiệp.':'Tìm sàn vỡ ở '+(p.floor%2?'bên trái':'bên phải')+' để xuống '+floorName(p.floor+1)+'.';
+    const stamp=[p.hp,p.maxHp,s.xp,s.level,s.rescued,s.kills,p.floor,objective,Math.ceil(s.fireCd*10),Math.ceil(s.windCd*10),p.doubleJumpUsed,p.grounded,Math.floor(p.y/10),boss?.hp].join(':');if(!force&&stamp===uiStamp)return;uiStamp=stamp;
     $('healthFill').style.width=p.hp/p.maxHp*100+'%';$('healthText').textContent=p.hp+' / '+p.maxHp;$('healthBar').setAttribute('aria-valuenow',p.hp);$('healthBar').setAttribute('aria-valuemax',p.maxHp);$('xpText').textContent=s.xp+' KN';$('levelNumber').textContent='LV. 0'+s.level;
     $('objectiveTitle').textContent=objective;$('objectiveDetail').textContent=detail;
     for(const kind of ['fire','wind']){const locked=kind==='fire'?s.kills===0:!s.rescued;const e=$(kind+'Cooldown');e.hidden=!locked&&s[kind+'Cd']===0;e.textContent=locked?'KHÓA':s[kind+'Cd'].toFixed(1)+'s';}
-    $('jumpStatus').textContent=p.doubleJumpUsed?'↑ ĐÃ DÙNG NHẢY LẦN HAI':p.grounded?'↑ NHẢY LẦN HAI SẴN SÀNG':'↑ SPACE LẦN NỮA ĐỂ NHẢY';
-    $('progressFill').style.width=clamp(p.x/C.exitX*100,0,100)+'%';$('locationLabel').textContent=['01 / KHU LÀM VIỆC','02 / SÀN ĐỔ VỠ','03 / ĐỒNG NGHIỆP','04 / LỐI THOÁT'][stage];$('progressText').textContent=s.rescued?'ĐỒNG NGHIỆP ĐI CÙNG →':'TÌM LỐI THOÁT →';
+    $('jumpStatus').textContent=p.doubleJumpUsed?'↑ ĐÃ DÙNG NHẢY LẦN HAI':p.grounded?'↓ ĐI QUA SÀN VỠ ĐỂ XUỐNG DƯỚI':'↑ CÓ THỂ NHẢY LẦN HAI';
+    $('progressFill').style.width=clamp((p.y-G)/(C.floors.at(-1).y-G)*100,0,100)+'%';$('locationLabel').textContent=floorName(p.floor)+' / '+f.name;$('progressText').textContent=p.floor===7?'← CỬA THOÁT HIỂM':'TẦNG TRỆT ↓';
+    $('floorCoordinate').textContent=floorName(p.floor)+' / '+f.name;
+    for(const row of document.querySelectorAll('[data-floor]')){const active=Number(row.dataset.floor)===p.floor;row.classList.toggle('is-current',active);row.classList.toggle('is-passed',Number(row.dataset.floor)<s.deepest);row.setAttribute('aria-current',active?'step':'false');}
+    $('bossBar').hidden=p.floor!==7||!boss||boss.hp<=0;
+    if(boss){$('bossHealth').style.width=boss.hp/boss.maxHp*100+'%';$('bossHp').textContent=boss.hp+' / '+boss.maxHp;$('bossPhase').textContent=boss.hp<boss.maxHp*.5?'CUỒNG NỘ':'KẺ GÁC CỬA';}
   }
+
   function bind(){
+    for(const f of C.floors){const row=document.createElement('span');row.dataset.floor=f.index;row.textContent=f.number?'T'+f.number:'TRỆT';$('floorTower').append(row);}
     $('startButton').onclick=()=>start(false);$('continueButton').onclick=()=>start(true);$('dialogueNext').onclick=advanceDialogue;$('pauseButton').onclick=()=>{if(s.mode==='playing')menu('paused');};$('resumeButton').onclick=resume;$('retryButton').onclick=retry;$('newGameButton').onclick=()=>start(false);
     $('soundButton').onclick=async()=>{soundEnabled=!soundEnabled;if(soundEnabled){const A=window.AudioContext||window.webkitAudioContext;if(A){audio||=new A();await audio.resume();tone('quest');}else soundEnabled=false;}$('soundButton').setAttribute('aria-pressed',soundEnabled);$('soundState').textContent=soundEnabled?'BẬT':'TẮT';};
     $('fullscreenButton').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await $('gameViewport').requestFullscreen();}catch{toast('Trình duyệt này chưa hỗ trợ chế độ toàn màn hình.');}};
@@ -406,7 +474,7 @@
     }
     canvas.onpointerdown=()=>canvas.focus({preventScroll:true});
   }
-  async function json(path){const r=await fetch(path,{cache:'no-cache'});if(!r.ok)throw Error('Không tải được '+path);return r.json();}
+  async function json(path){const r=await fetch(path+'?v='+encodeURIComponent(C.id),{cache:'no-cache'});if(!r.ok)throw Error('Không tải được '+path);return r.json();}
   async function image(path){const im=new Image();im.src=path;await im.decode();return im;}
   async function load(){
     try{
@@ -423,17 +491,18 @@
             for(let row=0;row<2;row++)for(let col=0;col<4;col++){const x=Math.floor(col*im.width/4),y=Math.floor(row*im.height/2),w=64,g=c.createLinearGradient(x,0,x+w,0);g.addColorStop(0,'#000');g.addColorStop(.35,'#000b');g.addColorStop(1,'#0000');c.fillStyle=g;c.fillRect(x,y,w,Math.ceil(im.height/2));}textures.set(name,material);
           }else textures.set(name,im);
         }),
-        image(embedded?embedded.office:'./art/chapter-one/office-night.png').then(im=>assets.office=im)
+        image(embedded?embedded.office:'./art/chapter-one/office-night.png').then(im=>assets.office=im),
+        image(embedded?embedded.lobby:'./art/chapter-one/lobby-night.png').then(im=>assets.lobby=im)
       ]);
       for(const m of Object.values(motions)){m.frames.sort((a,b)=>(a.order??a.row*4+a.col)-(b.order??b.row*4+b.col));if(!m.frames.length)throw Error('Thiếu hoạt ảnh nhân vật');}
       saved=readSave();$('continueButton').hidden=!saved;s.ready=true;$('startButton').disabled=false;$('loadingText').textContent='A / D DI CHUYỂN · J CHIẾN ĐẤU · SPACE NHẢY ×2';bind();requestAnimationFrame(loop);
-      if(!embedded&&'serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./level-sw.js').catch(()=>{});
+      if(!embedded&&'serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./level-sw.js',{updateViaCache:'none'}).then(registration=>registration.update()).catch(()=>{});
     }catch(e){console.error(e);$('loadingText').textContent='Không tải được màn chơi. Hãy tải lại trang.';}
   }
   function loop(now){
     const dt=last?clamp((now-last)/1000,0,.1):0;last=now;accumulator+=dt;
     while(accumulator>=STEP){update(STEP);accumulator-=STEP;}draw();requestAnimationFrame(loop);
   }
-  window.diMonLevel=Object.freeze({getState:()=>({ready:s.ready,mode:s.mode,x:p.x,y:p.y,vx:p.vx,vy:p.vy,grounded:p.grounded,doubleJumpUsed:p.doubleJumpUsed,action:p.action,frame:p.frame,hp:p.hp,maxHp:p.maxHp,invulnerable:p.invuln>0,checkpoint:s.checkpoint,rescued:s.rescued,kills:s.kills,xp:s.xp,level:s.level,elapsed:s.elapsed,camera:s.camera,combo:s.combo+1,queuedStrikes:s.queue,hitCount:s.hitCount,fireCooldown:s.fireCd,windCooldown:s.windCd,npc:{...npc},enemies:enemies.map(e=>({id:e.id,x:e.x,hp:e.hp,phase:e.phase,age:e.age,face:e.face})),effects:effects.map(e=>({...e})),projectiles:shots.length,dialogueIndex:dialogue?.index??null,renderer:'whole-character-frames',headWidth:HEAD}),getAttackBox:attackBox});
+  window.diMonLevel=Object.freeze({getState:()=>({ready:s.ready,mode:s.mode,x:p.x,y:p.y,vx:p.vx,vy:p.vy,grounded:p.grounded,doubleJumpUsed:p.doubleJumpUsed,action:p.action,frame:p.frame,hp:p.hp,maxHp:p.maxHp,invulnerable:p.invuln>0,checkpoint:s.checkpoint,rescued:s.rescued,kills:s.kills,xp:s.xp,level:s.level,elapsed:s.elapsed,camera:s.camera,cameraY:s.cameraY,floor:p.floor,floorNumber:C.floors[p.floor].number,totalFloors:C.floors.length,support:P.support(p,solids())?.kind||null,combo:s.combo+1,queuedStrikes:s.queue,hitCount:s.hitCount,fireCooldown:s.fireCd,windCooldown:s.windCd,npc:{...npc},enemies:enemies.map(e=>({id:e.id,x:e.x,y:e.y,floor:e.floor,hp:e.hp,maxHp:e.maxHp,boss:Boolean(e.boss),attackType:e.attackType,phase:e.phase,age:e.age,face:e.face})),effects:effects.map(e=>({...e})),projectiles:shots.length,dialogueIndex:dialogue?.index??null,renderer:'whole-character-frames',headWidth:HEAD}),getAttackBox:attackBox});
   load();
 })();
