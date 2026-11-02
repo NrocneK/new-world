@@ -40,3 +40,5 @@ Khung chiến dịch 10 màn và chuẩn đoạn mẫu được xuất từ hai 
 Màn 2 dùng bộ cảnh vẽ viền/mảng màu mới: `manifest-chibi.json`, `city-chibi.png`, `evacuation-chibi.png`, `street-props-chibi.png`. Bus đỗ sau tuyến đi có tỷ lệ riêng, không còn dùng sprite bus làm khối vật cản 70 đơn vị. Những khối bê tông trước cảnh giữ va chạm/che đạn. Ảnh chụp cảnh thực tế tại `/art/chapter-two/style-preview.png`; nhân vật và VFX giữ nguyên.
 
 Màn 2 hiện dùng một ảnh `street-panorama.png` cuộn xuyên suốt; không còn đổi giữa hai nền tại hố/mốc camera. `level-view.js` áp dụng zoom 0,72 cho cả thế giới để thấy khoảng 1778 đơn vị ngang, giữ HUD/cảm ứng nguyên kích thước. Builder nhúng panorama một lần trong HTML offline và đưa module chiếu vào tên tệp theo hash/cache. Bản lưu và vị trí các nhiệm vụ giữ nguyên.
+
+Màn 2 hiện còn có `actorScale: 0.72` độc lập với camera 0.72: nhóm nhân vật/NPC/quái thu thêm 28% so với cảnh giữ nguyên, kèm vùng đánh, collider và VFX tương ứng. So sánh ảnh cùng camera tại `/actor-size-review`; ảnh trước/sau được chụp trực tiếp từ game và không sửa pixel. Bản lưu và toàn bộ ảnh sprite được giữ nguyên.

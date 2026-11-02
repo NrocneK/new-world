@@ -6,7 +6,7 @@
     chapter:2,id:'city-evacuation-v2',saveKey:'di-mon:chapter-two:v2',width,height:820,ground,startX:220,
     legacySaveKey:'di-mon:chapter-two:v1',legacyChapterId:'city-evacuation-v1',
     sample:new URLSearchParams(location.search).get('sample')==='clinic',sampleStartX:1280,
-    cameraZoom:.72,cameraGroundLine:540,cameraLockY:true,
+    cameraZoom:.72,cameraGroundLine:540,cameraLockY:true,actorScale:.72,
     worldManifest:'art/chapter-two/manifest-chibi.json',
     backgrounds:{panorama:'art/chapter-two/street-panorama.png'},
     // Parked vehicles sit behind the walking lane, with their own real-world scale.

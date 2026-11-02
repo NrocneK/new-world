@@ -24,3 +24,11 @@ Màn 2 dùng camera zoom **0,72** trên toàn bộ lớp thế giới: hero, NPC
 `level-view.js` quản lý khung nhìn, biên camera và bố trí panorama. Camera màn 2 cố định phương dọc để chân chạm mặt đường ở dòng 540; nhảy không kéo nền lên xuống. Màn 1 dùng zoom mặc định 1 và giữ cách theo dõi rơi trước đây. Không thay khóa lưu hay vị trí checkpoint.
 
 Kiểm tra bổ sung: `tests/level-view.spec.cjs` xác nhận tỷ lệ chiếu, độ phủ nền, cuộn qua hố/mốc cũ và camera mặc định màn 1. Bài chơi hết màn 2 quan sát các lệnh Canvas thật: một nguồn panorama, dịch chuyển liên tục theo camera cả khi đi tới lẫn quay lại, không nhảy ảnh tại mốc cũ. Hai bài nâng cache kiểm tra người chơi có worker/ảnh cũ nhận được module chiếu và panorama mới, sau đó chơi offline.
+
+## Thu nhóm nhân vật so với cảnh
+
+Màn 2 bổ sung `actorScale: 0.72` độc lập với camera zoom 0.72. Camera, panorama, bus, lều và vật cản giữ tỷ lệ của bản panorama; hero, NPC và quái thu thêm 28% tại cùng vị trí. Chiều cao idle đo từ lệnh Canvas thật giảm từ 123,49 xuống 88,91 pixel trên canvas 1280 × 720; NPC từ 119,22 xuống 85,84. Tỷ lệ đầu tương ứng khoảng 57 pixel trên màn hình. Toàn bộ sprite vẫn dùng nguyên khung và màu đã duyệt.
+
+Hộp thân/đòn đánh, tầm cận chiến, vị trí tay và miệng phóng đạn, kích thước đạn, bóng chân và VFX dùng cùng `actorScale`. Bước chân điều chỉnh chu kỳ theo quãng đường của thân nhỏ hơn. Giữ sức nhảy và vận tốc di chuyển để tiếp tục vượt địa hình hiện tại. Barrel/bus/lều là đồ vật của cảnh, không thu theo nhóm actor. Không thay save key, checkpoint hay tham số mặc định của màn 1.
+
+Trang `/actor-size-review` cho kéo so sánh hai ảnh gốc chụp cùng camera và vị trí. Kiểm tra metadata của các lệnh vẽ xác nhận hero/NPC/quái giảm đúng 0,72 lần, trong khi panorama và bus giống hệt. Đã kiểm tra lại toàn tuyến hai màn, combo, phản đạn (theo vị trí miệng/tay mới), leo vật cản, cứu người, boss, bản lưu cũ, cảm ứng và offline.
