@@ -1,0 +1,293 @@
+{
+  "void-crawler": {
+    "src": "art/chapter-one/void-crawler.png",
+    "width": 1774,
+    "height": 887,
+    "frames": [
+      {
+        "x": 20,
+        "y": 167,
+        "w": 423,
+        "h": 217,
+        "anchorX": 150,
+        "anchorY": 219
+      },
+      {
+        "x": 443,
+        "y": 173,
+        "w": 444,
+        "h": 211,
+        "anchorX": 170,
+        "anchorY": 213
+      },
+      {
+        "x": 901,
+        "y": 173,
+        "w": 429,
+        "h": 211,
+        "anchorX": 156,
+        "anchorY": 213
+      },
+      {
+        "x": 1330,
+        "y": 173,
+        "w": 435,
+        "h": 211,
+        "anchorX": 170,
+        "anchorY": 213
+      },
+      {
+        "x": 8,
+        "y": 594,
+        "w": 435,
+        "h": 214,
+        "anchorX": 162,
+        "anchorY": 218
+      },
+      {
+        "x": 443,
+        "y": 566,
+        "w": 444,
+        "h": 242,
+        "anchorX": 170,
+        "anchorY": 246
+      },
+      {
+        "x": 887,
+        "y": 658,
+        "w": 443,
+        "h": 152,
+        "anchorX": 170,
+        "anchorY": 154
+      },
+      {
+        "x": 1330,
+        "y": 679,
+        "w": 436,
+        "h": 129,
+        "anchorX": 170,
+        "anchorY": 133
+      }
+    ]
+  },
+  "coworker": {
+    "src": "art/chapter-one/coworker.png",
+    "width": 1312,
+    "height": 1199,
+    "frames": [
+      {
+        "x": 247,
+        "y": 156,
+        "w": 347,
+        "h": 432,
+        "anchorX": 173.5,
+        "anchorY": 430
+      },
+      {
+        "x": 777,
+        "y": 21,
+        "w": 304,
+        "h": 571,
+        "anchorX": 152.0,
+        "anchorY": 569
+      },
+      {
+        "x": 222,
+        "y": 619,
+        "w": 334,
+        "h": 556,
+        "anchorX": 167.0,
+        "anchorY": 554
+      },
+      {
+        "x": 777,
+        "y": 619,
+        "w": 327,
+        "h": 558,
+        "anchorX": 163.5,
+        "anchorY": 556
+      }
+    ]
+  },
+  "spore-spitter": {
+    "src": "art/chapter-two/spore-spitter.png",
+    "width": 1774,
+    "height": 887,
+    "frames": [
+      {
+        "x": 56,
+        "y": 96,
+        "w": 344,
+        "h": 315,
+        "anchorX": 172.0,
+        "anchorY": 315
+      },
+      {
+        "x": 503,
+        "y": 96,
+        "w": 341,
+        "h": 315,
+        "anchorX": 170.5,
+        "anchorY": 315
+      },
+      {
+        "x": 947,
+        "y": 159,
+        "w": 347,
+        "h": 254,
+        "anchorX": 173.5,
+        "anchorY": 252
+      },
+      {
+        "x": 1377,
+        "y": 100,
+        "w": 360,
+        "h": 313,
+        "anchorX": 180.0,
+        "anchorY": 311
+      },
+      {
+        "x": 48,
+        "y": 514,
+        "w": 377,
+        "h": 311,
+        "anchorX": 188.5,
+        "anchorY": 314
+      },
+      {
+        "x": 497,
+        "y": 544,
+        "w": 356,
+        "h": 282,
+        "anchorX": 178.0,
+        "anchorY": 284
+      },
+      {
+        "x": 912,
+        "y": 588,
+        "w": 391,
+        "h": 239,
+        "anchorX": 195.5,
+        "anchorY": 240
+      },
+      {
+        "x": 1354,
+        "y": 667,
+        "w": 398,
+        "h": 160,
+        "anchorX": 199.0,
+        "anchorY": 161
+      }
+    ]
+  },
+  "rift-hunter": {
+    "src": "art/chapter-two/rift-hunter.png",
+    "width": 1774,
+    "height": 887,
+    "frames": [
+      {
+        "x": 34,
+        "y": 68,
+        "w": 409,
+        "h": 343,
+        "anchorX": 186,
+        "anchorY": 348
+      },
+      {
+        "x": 473,
+        "y": 68,
+        "w": 414,
+        "h": 344,
+        "anchorX": 190,
+        "anchorY": 348
+      },
+      {
+        "x": 921,
+        "y": 68,
+        "w": 409,
+        "h": 346,
+        "anchorX": 186,
+        "anchorY": 348
+      },
+      {
+        "x": 1330,
+        "y": 132,
+        "w": 424,
+        "h": 284,
+        "anchorX": 220,
+        "anchorY": 284
+      },
+      {
+        "x": 7,
+        "y": 468,
+        "w": 537,
+        "h": 309,
+        "anchorX": 253,
+        "anchorY": 370
+      },
+      {
+        "x": 544,
+        "y": 462,
+        "w": 343,
+        "h": 363,
+        "anchorX": 119,
+        "anchorY": 376
+      },
+      {
+        "x": 887,
+        "y": 545,
+        "w": 438,
+        "h": 282,
+        "anchorX": 220,
+        "anchorY": 293
+      },
+      {
+        "x": 1340,
+        "y": 646,
+        "w": 428,
+        "h": 178,
+        "anchorX": 210,
+        "anchorY": 192
+      }
+    ]
+  },
+  "rift-nest": {
+    "src": "art/chapter-two/rift-nest.png",
+    "width": 1536,
+    "height": 1024,
+    "frames": [
+      {
+        "x": 93,
+        "y": 13,
+        "w": 653,
+        "h": 485,
+        "anchorX": 326.5,
+        "anchorY": 483
+      },
+      {
+        "x": 813,
+        "y": 7,
+        "w": 645,
+        "h": 494,
+        "anchorX": 322.5,
+        "anchorY": 492
+      },
+      {
+        "x": 84,
+        "y": 530,
+        "w": 678,
+        "h": 464,
+        "anchorX": 339.0,
+        "anchorY": 462
+      },
+      {
+        "x": 799,
+        "y": 627,
+        "w": 704,
+        "h": 367,
+        "anchorX": 352.0,
+        "anchorY": 365
+      }
+    ]
+  }
+}

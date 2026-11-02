@@ -1,5 +1,7 @@
 # Chương 01 — Tòa nhà sụp đổ
 
+**Trạng thái: tạm duyệt.** Nâng cấp tổng thể để sau khi hoàn thành game; bước tiếp theo là xây dựng màn 2.
+
 Map đi xuống theo chiều dọc, chơi trên màn hình ngang: **7 tầng lầu và tầng trệt**. Bắt đầu ở tầng 7, qua các khoảng sàn vỡ so le ở mỗi tầng để tới sảnh tầng trệt. Tòa nhà có dầm nứt, sàn đứt, cốt thép lộ và bụi rơi. Camera theo cả hai trục, nhìn xuống sớm khi nhân vật đang rơi; bảng tầng T7 → TRỆT chỉ vị trí hiện tại.
 
 Có hai quái thường ở mỗi tầng lầu. Tầng 4 có đồng nghiệp mắc kẹt: dọn hai quái, tới gần để cứu, sau đó lối xuống mở. Đồng nghiệp tự chạy, nhảy qua vật cản và rơi qua sàn vỡ bằng cùng bộ vật lý với người chơi. Không dịch chuyển đồng nghiệp giữa các tầng trong lúc chơi. Các điểm hồi sinh nằm ở tầng 6, 4, 2 và tầng trệt, lưu đúng tầng/độ cao cùng tiến trình cứu người.

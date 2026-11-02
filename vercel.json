@@ -53,6 +53,16 @@
       "source": "/downloads/di-mon-chapter-one.zip",
       "destination": "https://github.com/NrocneK/new-world/raw/refs/heads/codex/vfx-v5-downloads/site/downloads/di-mon-chapter-one.zip",
       "permanent": false
+    },
+    {
+      "source": "/downloads/di-mon-chapter-two.zip",
+      "destination": "https://github.com/NrocneK/new-world/raw/refs/heads/codex/vfx-v5-downloads/site/downloads/di-mon-chapter-two.zip",
+      "permanent": false
+    },
+    {
+      "source": "/downloads/di-mon-game.zip",
+      "destination": "https://github.com/NrocneK/new-world/raw/refs/heads/codex/vfx-v5-downloads/site/downloads/di-mon-game.zip",
+      "permanent": false
     }
   ]
 }

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#091317" />
+  <meta name="description" content="Dị Môn — Chương 02. Hộ tống tới trạm cứu thương, phá các ổ dị giới và mở tuyến sơ tán." />
+  <title>Dị Môn — Đêm vỡ trận</title>
+  <link rel="stylesheet" href="./level-290994ea0f60.css" />
+  <script src="./campaign-290994ea0f60.js" defer></script>
+  <script src="./chapter-two-config-290994ea0f60.js" defer></script>
+  <script src="./chapter-two-world-290994ea0f60.js" defer></script>
+  <script src="./level-physics-290994ea0f60.js" defer></script>
+  <script src="./level-290994ea0f60.js" defer></script>
+</head>
+<body data-chapter="2">
+  <header class="topbar">
+    <a class="wordmark" href="./" aria-label="Dị Môn — Trang chủ"><span class="portal-mark" aria-hidden="true">◈</span><span>DỊ MÔN<small>THE AWAKENING</small></span></a>
+    <div class="chapter-label"><span>CHƯƠNG 02</span><i></i>ĐÊM VỠ TRẬN</div>
+    <nav aria-label="Điều hướng"><a href="./character-lab.html">Phòng thử nhân vật <span>↗</span></a><button id="soundButton" type="button" aria-pressed="false" aria-label="Bật âm thanh">ÂM THANH <span id="soundState">TẮT</span></button></nav>
+  </header>
+  <main>
+    <section class="game-shell" aria-label="Màn chơi Đêm vỡ trận">
+      <div class="scene-topline" aria-hidden="true"><span><i></i> <span id="floorCoordinate">ĐẠI LỘ / ĐÊM XÂM LẤN</span></span><span>23:47 <b>·</b> ĐÊM XÂM LẤN</span></div>
+      <div class="game-viewport" id="gameViewport">
+        <canvas id="levelCanvas" width="1280" height="720" tabindex="0" aria-label="Dị Môn. A D để di chuyển, Space để nhảy hai lần, J đánh, K né, U lửa, I gió, Escape tạm dừng."></canvas>
+        <div class="hud" id="hud" hidden>
+          <div class="vitals"><span class="player-tag"><i></i> NHÂN VIÊN 01 <b id="levelNumber">LV. 01</b></span><div class="health-track" role="progressbar" aria-label="Máu" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" id="healthBar"><span id="healthFill"></span></div><div class="vital-caption"><span id="healthText">100 / 100</span><span id="xpText">0 KN</span></div></div>
+          <div class="objective"><span>NHIỆM VỤ HỆ THỐNG</span><strong id="objectiveTitle">Mở tuyến sơ tán</strong><p id="objectiveDetail">Đưa đồng nghiệp tới trạm cứu thương.</p></div>
+          <button class="pause-button" id="pauseButton" type="button" aria-label="Tạm dừng màn chơi">Ⅱ</button>
+        </div>
+        <div class="floor-tower" id="floorTower" aria-label="Các chặng của tuyến sơ tán"></div>
+        <div class="boss-bar" id="bossBar" hidden><div><strong id="bossPhase">KẺ TRUY SÁT</strong><span id="bossHp">420 / 420</span></div><div class="boss-track"><i id="bossHealth"></i></div></div>
+        <div class="spellbar" id="spellbar" hidden><span class="spell" id="fireSlot"><kbd>U</kbd><i>♨</i><span>LỬA</span><b id="fireCooldown">KHÓA</b></span><span class="spell" id="windSlot"><kbd>I</kbd><i>≋</i><span>GIÓ</span><b id="windCooldown">KHÓA</b></span><span class="jump-status" id="jumpStatus">↑ NHẢY LẦN HAI SẴN SÀNG</span></div>
+        <div class="toast" id="toast" role="status" hidden></div>
+        <div class="screen-overlay title-overlay" id="titleScreen">
+          <div class="title-copy"><span class="overline">CHƯƠNG 02 <i></i> ĐẠI LỘ → KHU SƠ TÁN</span><h1>Đêm dài.<br/>Một <em>con đường.</em></h1><p>Đưa đồng nghiệp tới trạm cứu thương.<br/>Mở đường cho những người còn sống.</p><div class="title-buttons"><button class="primary-button" id="startButton" type="button" disabled>BẮT ĐẦU HÀNH TRÌNH <span>→</span></button><button class="quiet-button" id="continueButton" type="button" hidden>Tiếp tục từ điểm đã lưu</button></div><div class="chapter-picker"><a href="./level.html">← MÀN 01</a><a href="./chapter-two.html" aria-current="page">MÀN 02</a></div><span class="loading-text" id="loadingText">Đang chuẩn bị màn chơi…</span></div>
+          <div class="title-caption"><span>02 / NGOÀI KIA LÀ CHIẾN TRƯỜNG</span><p>“Vẫn còn những người đang chờ.”</p><span class="tiny-orb"></span> TINH LINH HỆ THỐNG</div>
+        </div>
+        <div class="dialogue" id="dialogue" role="dialog" aria-label="Hội thoại cốt truyện" aria-modal="true" hidden><div class="dialogue-orb" aria-hidden="true">✦</div><div class="dialogue-content"><span id="dialogueSpeaker">TINH LINH</span><p id="dialogueText"></p><button id="dialogueNext" type="button">Tiếp tục <kbd>ENTER</kbd><span>→</span></button></div></div>
+        <div class="screen-overlay menu-overlay" id="menuScreen" hidden><div class="menu-card"><span class="overline" id="menuLabel">TẠM DỪNG</span><h2 id="menuTitle">Một nhịp thở.</h2><p id="menuText">Hành trình vẫn đang chờ anh.</p><div id="resultStats" class="result-stats" hidden></div><button class="primary-button" id="resumeButton" type="button">TIẾP TỤC <span>→</span></button><button class="secondary-button" id="retryButton" type="button">Chơi lại từ điểm hồi sinh</button><a class="primary-button" id="nextChapterButton" href="./chapter-two.html" hidden>TIẾP TỤC MÀN 02 <span>→</span></a><button class="quiet-button" id="newGameButton" type="button">Bắt đầu lại chương</button></div></div>
+      </div>
+      <div class="chapter-progress"><span id="locationLabel">01 <b>/</b> KHU LÀM VIỆC</span><div class="progress-rail" aria-label="Tiến độ màn chơi"><span id="progressFill"></span><i style="left:0"></i><i style="left:40%"></i><i style="left:58%"></i><i style="left:99%"></i></div><span id="progressText">TÌM LỐI THOÁT <b>→</b></span></div>
+    </section>
+    <div class="below-stage"><p><span class="key-group"><kbd>A</kbd><kbd>D</kbd> Di chuyển</span><span class="key-group"><kbd>SHIFT</kbd> Chạy</span><span class="key-group"><kbd>SPACE</kbd> Nhảy ×2</span><span class="key-group"><kbd>J</kbd> Đánh / nối combo</span><span class="key-group"><kbd>K</kbd> Né</span><span class="key-group"><kbd>ESC</kbd> Tạm dừng</span></p><a class="offline-link" href="./downloads/di-mon-game.zip" download>TẢI BẢN OFFLINE ↓</a><button id="fullscreenButton" type="button">TOÀN MÀN HÌNH <span>⛶</span></button></div>
+    <div class="touch-controls" id="levelTouch" aria-label="Điều khiển cảm ứng"><div><button data-key="left" aria-label="Đi sang trái">←</button><button data-key="right" aria-label="Đi sang phải">→</button><button data-key="run" class="touch-run" aria-label="Giữ để chạy nhanh">CHẠY</button></div><div><button data-key="fire" aria-label="Thi triển lửa">♨</button><button data-key="wind" aria-label="Thi triển gió">≋</button><button data-key="dodge" aria-label="Né">»</button><button data-key="jump" aria-label="Nhảy, bấm lần hai để nhảy trên không">↑</button><button data-key="attack" class="touch-attack" aria-label="Đánh, bấm liên tiếp để nối combo">✕</button></div></div>
+  </main>
+  <footer><span>DỊ MÔN <b>/</b> BẢN CHƠI THỬ ĐẦU TIÊN</span><span>Hộ tống. Phá phong tỏa. Mở đường sơ tán.</span><span id="saveStatus">TIẾN TRÌNH LƯU TRÊN MÁY</span></footer>
+</body>
+</html>
