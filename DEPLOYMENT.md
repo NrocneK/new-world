@@ -2,12 +2,14 @@
 
 Đã triển khai Vercel production:
 
-- Demo chơi được: https://di-mon-demo.vercel.app/
+- Chương 01 chơi được: https://di-mon-demo.vercel.app/
+- Phòng thử nhân vật: https://di-mon-demo.vercel.app/character-lab
+- Tải chương offline: https://di-mon-demo.vercel.app/downloads/di-mon-chapter-one.zip
 - Trang VFX mới: https://di-mon-demo.vercel.app/vfx-review
 - Tải ZIP: https://di-mon-demo.vercel.app/downloads/di-mon-vfx-v6.zip
 - Tải HTML offline: https://di-mon-demo.vercel.app/downloads/di-mon-vfx-v6.html
 
-Trang chính trong `site/index.html` là demo điều khiển nhân vật đầy đủ: di chuyển, chiến đấu, nguyên tố, nhảy hai lần, xem từng động tác và điều khiển cảm ứng. Hai đòn đấm thẳng đã thay các khối trắng vẽ bằng Canvas bằng texture khí lực trong `art/vfx/air-pressure-v2/sources/straight-clear.png`, bỏ lớp mây trắng và thu gọn tỷ lệ hiển thị. Bản xem VFX mới là trang phụ `site/vfx-review.html`, dùng cùng nguồn, điểm neo và tỷ lệ cho hai đòn này. Các động tác khác giữ nguyên.
+Trang chính trong `site/index.html` là màn chơi Chương 01: chiến đấu, cứu đồng nghiệp và thoát khỏi tòa nhà. Phòng thử 17 động tác được giữ ở `site/character-lab.html`. Màn chơi có bản HTML offline đóng gói trong ZIP và service worker lưu tài nguyên sau lần tải đầu. Hai đòn đấm thẳng đã thay các khối trắng vẽ bằng Canvas bằng texture khí lực trong `art/vfx/air-pressure-v2/sources/straight-clear.png`, bỏ lớp mây trắng và thu gọn tỷ lệ hiển thị. Bản xem VFX mới là trang phụ `site/vfx-review.html`, dùng cùng nguồn, điểm neo và tỷ lệ cho hai đòn này. Các động tác khác giữ nguyên.
 
 Các tệp tải đã được kiểm tra nằm trong `site/downloads/`:
 
@@ -17,7 +19,7 @@ Các tệp tải đã được kiểm tra nằm trong `site/downloads/`:
 
 ## Vercel
 
-Dự án là web tĩnh, không cần cài thư viện, build hoặc biến môi trường để chạy. `vercel.json` đã đặt output là `site` và trang chính là demo chơi được. Không đặt Root Directory thành trang VFX.
+Dự án là web tĩnh, không cần cài thư viện, build hoặc biến môi trường để chạy. `vercel.json` đã đặt output là `site` và trang chính là demo chơi được. Không đặt Root Directory thành trang VFX. Chạy `npm run build:level` rồi `node tools/build-vercel-site.mjs` để đóng gói. ZIP lưu trên GitHub và Vercel chuyển hướng tải về, không tải ZIP vào API file upload.
 
 Khi import repository vào Vercel, chọn nhánh `codex/vfx-v5-downloads`, Framework Preset **Other**, Root Directory để trống, Output Directory **site**. Không bật build command. Vercel phục vụ `/` là demo và `/vfx-review` là trang VFX. HTML tải xuống dùng `Content-Disposition: attachment`; ZIP chuyển đến bản gốc công khai đã tải lên GitHub.
 

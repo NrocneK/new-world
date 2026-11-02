@@ -27,6 +27,15 @@
           "value": "public, max-age=3600"
         }
       ]
+    },
+    {
+      "source": "/level-sw.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
+        }
+      ]
     }
   ],
   "redirects": [
@@ -38,6 +47,11 @@
     {
       "source": "/downloads/di-mon-vfx-v6.zip",
       "destination": "https://github.com/NrocneK/new-world/raw/refs/heads/codex/vfx-v5-downloads/site/downloads/di-mon-vfx-v6.zip",
+      "permanent": false
+    },
+    {
+      "source": "/downloads/di-mon-chapter-one.zip",
+      "destination": "https://github.com/NrocneK/new-world/raw/refs/heads/codex/vfx-v5-downloads/site/downloads/di-mon-chapter-one.zip",
       "permanent": false
     }
   ]

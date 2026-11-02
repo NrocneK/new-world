@@ -1,0 +1,112 @@
+{
+  "void-crawler": {
+    "src": "art/chapter-one/void-crawler.png",
+    "width": 1774,
+    "height": 887,
+    "frames": [
+      {
+        "x": 20,
+        "y": 167,
+        "w": 423,
+        "h": 217,
+        "anchorX": 150,
+        "anchorY": 219
+      },
+      {
+        "x": 443,
+        "y": 173,
+        "w": 444,
+        "h": 211,
+        "anchorX": 170,
+        "anchorY": 213
+      },
+      {
+        "x": 901,
+        "y": 173,
+        "w": 429,
+        "h": 211,
+        "anchorX": 156,
+        "anchorY": 213
+      },
+      {
+        "x": 1330,
+        "y": 173,
+        "w": 435,
+        "h": 211,
+        "anchorX": 170,
+        "anchorY": 213
+      },
+      {
+        "x": 8,
+        "y": 594,
+        "w": 435,
+        "h": 214,
+        "anchorX": 162,
+        "anchorY": 218
+      },
+      {
+        "x": 443,
+        "y": 566,
+        "w": 444,
+        "h": 242,
+        "anchorX": 170,
+        "anchorY": 246
+      },
+      {
+        "x": 887,
+        "y": 658,
+        "w": 443,
+        "h": 152,
+        "anchorX": 170,
+        "anchorY": 154
+      },
+      {
+        "x": 1330,
+        "y": 679,
+        "w": 436,
+        "h": 129,
+        "anchorX": 170,
+        "anchorY": 133
+      }
+    ]
+  },
+  "coworker": {
+    "src": "art/chapter-one/coworker.png",
+    "width": 1312,
+    "height": 1199,
+    "frames": [
+      {
+        "x": 247,
+        "y": 156,
+        "w": 347,
+        "h": 432,
+        "anchorX": 173.5,
+        "anchorY": 430
+      },
+      {
+        "x": 777,
+        "y": 21,
+        "w": 304,
+        "h": 571,
+        "anchorX": 152.0,
+        "anchorY": 569
+      },
+      {
+        "x": 222,
+        "y": 619,
+        "w": 334,
+        "h": 556,
+        "anchorX": 167.0,
+        "anchorY": 554
+      },
+      {
+        "x": 777,
+        "y": 619,
+        "w": 327,
+        "h": 558,
+        "anchorX": 163.5,
+        "anchorY": 556
+      }
+    ]
+  }
+}
