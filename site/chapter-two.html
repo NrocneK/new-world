@@ -6,12 +6,12 @@
   <meta name="theme-color" content="#091317" />
   <meta name="description" content="Dị Môn — Chương 02. Hộ tống tới trạm cứu thương, phá các ổ dị giới và mở tuyến sơ tán." />
   <title>Dị Môn — Đêm vỡ trận</title>
-  <link rel="stylesheet" href="./level-290994ea0f60.css" />
-  <script src="./campaign-290994ea0f60.js" defer></script>
-  <script src="./chapter-two-config-290994ea0f60.js" defer></script>
-  <script src="./chapter-two-world-290994ea0f60.js" defer></script>
-  <script src="./level-physics-290994ea0f60.js" defer></script>
-  <script src="./level-290994ea0f60.js" defer></script>
+  <link rel="stylesheet" href="./level-b3d1414301e9.css" />
+  <script src="./campaign-b3d1414301e9.js" defer></script>
+  <script src="./chapter-two-config-b3d1414301e9.js" defer></script>
+  <script src="./chapter-two-world-b3d1414301e9.js" defer></script>
+  <script src="./level-physics-b3d1414301e9.js" defer></script>
+  <script src="./level-b3d1414301e9.js" defer></script>
 </head>
 <body data-chapter="2">
   <header class="topbar">
@@ -33,8 +33,9 @@
         <div class="boss-bar" id="bossBar" hidden><div><strong id="bossPhase">KẺ TRUY SÁT</strong><span id="bossHp">420 / 420</span></div><div class="boss-track"><i id="bossHealth"></i></div></div>
         <div class="spellbar" id="spellbar" hidden><span class="spell" id="fireSlot"><kbd>U</kbd><i>♨</i><span>LỬA</span><b id="fireCooldown">KHÓA</b></span><span class="spell" id="windSlot"><kbd>I</kbd><i>≋</i><span>GIÓ</span><b id="windCooldown">KHÓA</b></span><span class="jump-status" id="jumpStatus">↑ NHẢY LẦN HAI SẴN SÀNG</span></div>
         <div class="toast" id="toast" role="status" hidden></div>
+        <div class="screen-overlay menu-overlay" id="sampleDebrief" role="dialog" aria-modal="true" aria-labelledby="sampleHeading" hidden><div class="menu-card"><span class="overline">ĐOẠN MẪU / HOÀN THÀNH</span><h2 id="sampleHeading">Đường tới trạm đã thông.</h2><p>Đồng nghiệp đã được bàn giao an toàn. Đây là đoạn thử giao tranh; chương 2 vẫn còn tuyến sơ tán phía trước.</p><p id="sampleStats"></p><button class="primary-button" id="sampleContinue" type="button">ĐI TIẾP MÀN 02 <span>→</span></button><button class="secondary-button" id="sampleReplay" type="button">Chơi lại ngã tư</button></div></div>
         <div class="screen-overlay title-overlay" id="titleScreen">
-          <div class="title-copy"><span class="overline">CHƯƠNG 02 <i></i> ĐẠI LỘ → KHU SƠ TÁN</span><h1>Đêm dài.<br/>Một <em>con đường.</em></h1><p>Đưa đồng nghiệp tới trạm cứu thương.<br/>Mở đường cho những người còn sống.</p><div class="title-buttons"><button class="primary-button" id="startButton" type="button" disabled>BẮT ĐẦU HÀNH TRÌNH <span>→</span></button><button class="quiet-button" id="continueButton" type="button" hidden>Tiếp tục từ điểm đã lưu</button></div><div class="chapter-picker"><a href="./level.html">← MÀN 01</a><a href="./chapter-two.html" aria-current="page">MÀN 02</a></div><span class="loading-text" id="loadingText">Đang chuẩn bị màn chơi…</span></div>
+          <div class="title-copy"><span class="overline">CHƯƠNG 02 <i></i> ĐẠI LỘ → KHU SƠ TÁN</span><h1>Đêm dài.<br/>Một <em>con đường.</em></h1><p>Đưa đồng nghiệp tới trạm cứu thương.<br/>Mở đường cho những người còn sống.</p><div class="title-buttons"><button class="primary-button" id="startButton" type="button" disabled>BẮT ĐẦU HÀNH TRÌNH <span>→</span></button><button class="quiet-button" id="continueButton" type="button" hidden>Tiếp tục từ điểm đã lưu</button></div><div class="chapter-picker"><a href="./level.html">← MÀN 01</a><a href="./chapter-two.html" aria-current="page">MÀN 02</a><a href="./chapter-two.html?sample=clinic">THỬ NGÃ TƯ</a><a href="./campaign.html">HÀNH TRÌNH 10 MÀN ↗</a></div><span class="loading-text" id="loadingText">Đang chuẩn bị màn chơi…</span></div>
           <div class="title-caption"><span>02 / NGOÀI KIA LÀ CHIẾN TRƯỜNG</span><p>“Vẫn còn những người đang chờ.”</p><span class="tiny-orb"></span> TINH LINH HỆ THỐNG</div>
         </div>
         <div class="dialogue" id="dialogue" role="dialog" aria-label="Hội thoại cốt truyện" aria-modal="true" hidden><div class="dialogue-orb" aria-hidden="true">✦</div><div class="dialogue-content"><span id="dialogueSpeaker">TINH LINH</span><p id="dialogueText"></p><button id="dialogueNext" type="button">Tiếp tục <kbd>ENTER</kbd><span>→</span></button></div></div>

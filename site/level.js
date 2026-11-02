@@ -5,7 +5,7 @@
   const canvas = $('levelCanvas'), ctx = canvas.getContext('2d', { alpha:false });
   const W=1280, H=720, G=C.ground, HEAD=110, ART_SCALE=HEAD/132;
   const GRAVITY=1850, JUMP=-700, WALK=235, RUN=370, STEP=1/120;
-  const SAVE_KEY=C.saveKey||'di-mon:chapter-one:descent-v2';
+  const SAVE_KEY=(C.saveKey||'di-mon:chapter-one:descent-v2')+(C.sample?':sample':'');
   const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
   const overlaps=(a,b)=>a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y;
@@ -35,7 +35,7 @@
   const rescueHole=C.floors[C.rescueFloor].hole;
   const rescueBridge=rescueHole?{x:rescueHole[0],y:C.floors[C.rescueFloor].y,w:380,h:48,floor:C.rescueFloor,kind:'rescue-bridge'}:null;
   const closedSolids=rescueBridge?[...openSolids,rescueBridge]:openSolids;
-  const street=C.chapter===2?window.DiMonStreet.create({C,P,ctx,W,H,s,p,assets,clamp,overlaps,rect,line,text,glow,shadow,worldArt,toast,showDialogue,animate,save,grantExperience,hurt,emit,tone,enemies:()=>enemies,npc:()=>npc,setNpc:value=>npc=value,makeNpc,complete:finishChapter}):null;
+  const street=C.chapter===2?window.DiMonStreet.create({C,P,ctx,W,H,s,p,assets,clamp,overlaps,rect,line,text,glow,shadow,worldArt,toast,showDialogue,animate,save,grantExperience,hurt,emit,tone,label,damageEnemy,enemyBox,release,focus:()=>canvas.focus({preventScroll:true}),enemies:()=>enemies,npc:()=>npc,setNpc:value=>npc=value,makeNpc,complete:finishChapter}):null;
   const solids=()=>street?street.solids():s.rescued?openSolids:closedSolids;
   const floorName=i=>C.floors[i].number?'TẦNG '+String(C.floors[i].number).padStart(2,'0'):'TẦNG TRỆT';
   function makeNpc(floor=C.rescueFloor,x=C.rescueX,rescued=false){return{floor,x,y:C.floors[floor].y,vx:0,vy:0,grounded:true,bodyHalf:17,footHalf:11,bodyHeight:140,frame:rescued?1:0,facing:1};}
@@ -43,10 +43,12 @@
 
   function readSave(){
     try {
-      const a=JSON.parse(localStorage.getItem(SAVE_KEY));
-      if(!a||a.chapter!==C.id||!C.checkpoints.some(c=>c.id===a.checkpoint&&c.id>0)||!Array.isArray(a.defeated))return null;
+      const a=JSON.parse(localStorage.getItem(SAVE_KEY)||(!C.sample&&C.legacySaveKey?localStorage.getItem(C.legacySaveKey):null));
+      if(!a||![C.id,...(!C.sample&&C.legacyChapterId?[C.legacyChapterId]:[])].includes(a.chapter)||!C.checkpoints.some(c=>c.id===a.checkpoint&&c.id>0)||!Array.isArray(a.defeated))return null;
       const valid=new Set(C.encounters.map(e=>e.id));
-      return{checkpoint:a.checkpoint,rescued:Boolean(a.rescued),xp:clamp(Number(a.xp)||0,0,1000),elapsed:clamp(Number(a.elapsed)||0,0,86400),defeated:[...new Set(a.defeated.filter(id=>valid.has(id)))],street:street?.sanitizeSave(a.street)};
+      const defeated=new Set(a.defeated.filter(id=>valid.has(id)));
+      if(a.chapter===C.legacyChapterId&&a.street?.delivered)for(const e of C.encounters)if(e.wave)defeated.add(e.id);
+      return{checkpoint:a.checkpoint,rescued:Boolean(a.rescued),xp:clamp(Number(a.xp)||0,0,1000),elapsed:clamp(Number(a.elapsed)||0,0,86400),defeated:[...defeated],street:street?.sanitizeSave(a.street)};
     }catch{return null;}
   }
 
@@ -85,21 +87,22 @@
   function makeEnemies(defeated=[]){return C.encounters.map((e,i)=>({...e,maxHp:e.hp,hp:defeated.includes(e.id)?0:e.hp,phase:'patrol',age:0,cooldown:.6+i*.13,face:-1,attackCount:0,attackType:'charge',attackHit:false,deadAge:defeated.includes(e.id)?10:0,flash:0}));}
   function start(continuing=false){
     if(!s.ready)return;
-    const a=continuing?saved:null;
+    const a=continuing?saved:null;s.hitstop=0;
     Object.assign(s,{mode:'playing',time:0,elapsed:a?.elapsed||0,camera:0,cameraY:0,checkpoint:a?.checkpoint||0,deepest:0,bossSeen:false,rescued:a?.rescued||Boolean(C.startRescued),kills:a?.defeated.length||0,xp:a?.xp??window.DiMonCampaign?.entry(C.chapter||1,{xp:C.startXP||0}).xp??(C.startXP||0),level:1,deaths:0,hitCount:0,combo:0,queue:0,lastAttack:-10,fireCd:0,windCd:0,shake:0,toast:0,noticeGap:false,noticeEnemy:false});
     const rules=C.levelRules||[{xp:80,level:2,maxHp:115}],rank=rules.filter(r=>s.xp>=r.xp).at(-1);s.level=rank?.level||1;const maxHp=rank?.maxHp||100;
-    const cp=checkpoint();
+    if(C.sample&&!a)s.checkpoint=1;
+    const cp=C.sample&&!a?{floor:0,x:C.sampleStartX}:checkpoint();
     Object.assign(p,{floor:cp.floor,x:cp.x,y:C.floors[cp.floor].y,vx:0,vy:0,facing:cp.floor%2?-1:1,grounded:true,doubleJumpUsed:false,hp:maxHp,maxHp,invuln:0,coyote:0});
     s.deepest=cp.floor;s.bossSeen=cp.floor===7;
-    animate('idle',true);enemies=makeEnemies(a?.defeated);bursts=[];shots=[];effects=[];labels=[];npc=s.rescued?makeNpc(cp.floor,p.x+(C.chapter===2?-100:100),true):makeNpc();street?.reset(a?.street);
+    animate('idle',true);enemies=makeEnemies(a?.defeated);bursts=[];shots=[];effects=[];labels=[];npc=s.rescued?makeNpc(cp.floor,p.x+(C.chapter===2?-100:100),true):makeNpc();street?.reset(a?.street);if(street)s.kills=enemies.filter(e=>e.hp<=0&&!e.environmental&&!(C.sample&&e.id==='street-hound')).length;
     release();dialogue=null;$('dialogue').hidden=true;$('titleScreen').hidden=true;$('menuScreen').hidden=true;$('hud').hidden=false;$('spellbar').hidden=false;$('toast').hidden=true;
     document.body.classList.add('is-playing');
     s.camera=clamp(p.x-W/2,0,C.width-W);s.cameraY=clamp(p.y-520,0,C.height-H);canvas.focus({preventScroll:true});updateUI(true);
     inputStamp=-10;
-    if(!a)showDialogue(C.intro,()=>toast(C.chapter===2?'Hộ tống tới trạm cứu thương · U / I dùng lửa / gió':'A / D di chuyển · J đánh · Space nhảy',4));
+    if(!a)showDialogue(C.sample?C.sampleIntro:C.intro,()=>toast(C.chapter===2?'Hộ tống tới trạm cứu thương · U / I dùng lửa / gió':'A / D di chuyển · J đánh · Space nhảy',4));
     else toast('Đã trở lại điểm hồi sinh.');
   }
-  function finishChapter(){try{localStorage.removeItem(SAVE_KEY);}catch{}saved=null;menu('complete');tone('quest');}
+  function finishChapter(){try{localStorage.removeItem(SAVE_KEY);if(!C.sample&&C.legacySaveKey)localStorage.removeItem(C.legacySaveKey);}catch{}saved=null;menu('complete');tone('quest');}
   function menu(kind){
     release();s.mode=kind;$('menuScreen').hidden=false;$('resumeButton').hidden=kind!=='paused';$('resultStats').hidden=kind!=='complete';$('retryButton').hidden=kind==='complete';
     $('menuLabel').textContent=kind==='complete'?'CHƯƠNG 01 / HOÀN THÀNH':kind==='dead'?'TÍN HIỆU BỊ GIÁN ĐOẠN':'TẠM DỪNG';
@@ -119,7 +122,7 @@
     if(!['dead','paused'].includes(s.mode))return;
     const cp=checkpoint();s.deaths++;s.mode='playing';
     Object.assign(p,{floor:cp.floor,x:cp.x,y:C.floors[cp.floor].y,vx:0,vy:0,grounded:true,doubleJumpUsed:false,hp:p.maxHp,invuln:1.5,coyote:0});
-    s.queue=0;s.lastAttack=-10;s.fireCd=0;s.windCd=0;animate('idle',true);
+    s.queue=0;s.lastAttack=-10;s.fireCd=0;s.windCd=0;s.hitstop=0;animate('idle',true);
     for(const e of enemies)if(e.hp>0){const spec=C.encounters.find(a=>a.id===e.id);Object.assign(e,{x:spec.x,y:spec.y,hp:spec.hp,phase:'patrol',age:0,cooldown:1,flash:0,attackHit:false});}
     if(s.rescued)npc=makeNpc(cp.floor,p.x+90,true);street?.afterRetry();
     bursts=[];effects=[];shots=[];labels=[];release();$('menuScreen').hidden=true;$('toast').hidden=true;
@@ -155,10 +158,12 @@
     if(!p.hp){s.mode='dying';release();}else if(p.grounded)p.x=clamp(p.x+Math.sign(p.x-fromX)*18,40,C.width-80);
   }
   function damageEnemy(e,damage,kind,face){
-    if(e.hp<=0)return;
-    e.hp=Math.max(0,e.hp-damage);e.flash=.12;if(!e.boss||['attack3','attack4','wind'].includes(kind)&&e.phase!=='attack'){e.phase='hurt';e.age=0;}e.x=clamp(e.x+face*(kind==='attack4'?40:14),e.minX,e.maxX);label(String(damage),e.x,e.y-(e.elite?140:100));emit(e.x,e.y-45,'#9acbd3',8);tone('hit');s.hitCount++;s.shake=reduced?0:kind==='attack4'?4:1.5;
+    if(e.hp<=0||e.dormant)return;
+    damage=street?.beforeDamage(e,damage,kind)??damage;
+    e.hp=Math.max(0,e.hp-damage);e.flash=.12;if(!e.resistStagger&&(!e.boss||['attack3','attack4','wind'].includes(kind)&&e.phase!=='attack')){e.phase='hurt';e.age=0;}if(kind!=='burn')e.x=clamp(e.x+face*(kind==='attack4'?40:14),e.minX,e.maxX);label(String(damage),e.x,e.y-(e.elite?140:100));if(kind!=='burn'){emit(e.x,e.y-45,'#9acbd3',8);tone('hit');s.hitCount++;s.shake=reduced?0:kind==='attack4'?4:1.5;if(street)s.hitstop=Math.max(s.hitstop||0,kind==='attack4'?.065:.035);}
+    street?.afterDamage(e,kind);
     if(e.hp===0){
-      e.phase='dead';e.deadAge=0;s.kills++;const reward=e.reward??(e.elite?40:15);grantExperience(reward);label('+'+reward+' KN',e.x,e.y-125,'#d3dc9d');
+      e.phase='dead';e.deadAge=0;if(!e.environmental)s.kills++;const reward=e.reward??(e.elite?40:15);grantExperience(reward);if(reward)label('+'+reward+' KN',e.x,e.y-125,'#d3dc9d');
       if(s.kills===1&&!C.startFire){toast('HỎA NĂNG THỨC TỈNH · U để thi triển',4);tone('quest');}
     }
   }
@@ -171,7 +176,7 @@
     const b=attacks[kind]?.box;if(!b)return null;
     return{x:p.x+(p.facing>0?b[0]:-b[2])*ART_SCALE,y:p.y+b[1]*ART_SCALE,w:(b[2]-b[0])*ART_SCALE,h:(b[3]-b[1])*ART_SCALE};
   }
-  function enemyBox(e){if(e.boss)return{x:e.x-80,y:e.y-(e.kind==='hunter'?145:220),w:160,h:e.kind==='hunter'?140:215};if(e.kind==='nest')return{x:e.x-72,y:e.y-130,w:144,h:130};const q=e.elite?1.35:1;return{x:e.x-44*q,y:e.y-78*q,w:91*q,h:74*q};}
+  function enemyBox(e){if(e.kind==='barrel')return{x:e.x-22,y:e.y-74,w:44,h:74};if(e.kind==='spitter')return{x:e.x-44,y:e.y-104,w:88,h:104};if(e.boss)return{x:e.x-80,y:e.y-(e.kind==='hunter'?145:220),w:160,h:e.kind==='hunter'?140:215};if(e.kind==='nest')return{x:e.x-72,y:e.y-130,w:144,h:130};const q=e.elite?1.35:1;return{x:e.x-44*q,y:e.y-78*q,w:91*q,h:74*q};}
   function strike(){
     if(p.effectDone)return;p.effectDone=true;
     const spec=attacks[p.action];
@@ -231,6 +236,7 @@
 
   function updateEnemies(dt){
     for(const e of enemies){
+      if(e.dormant)continue;
       e.age+=dt;e.cooldown=Math.max(0,e.cooldown-dt);e.flash=Math.max(0,e.flash-dt);
       if(e.hp<=0){e.deadAge+=dt;continue;}
       if(street?.updateEnemy(e,dt))continue;
@@ -259,7 +265,8 @@
     for(const b of shots){
       const old=b.x;b.x+=b.vx*dt;b.age+=dt;b.life-=dt;
       const box={x:Math.min(old,b.x)-13,y:b.y-24,w:Math.abs(b.x-old)+26,h:48};
-      for(const e of enemies)if(e.hp>0&&!b.hit.has(e.id)&&overlaps(box,enemyBox(e))){b.hit.add(e.id);damageEnemy(e,b.kind==='fire'?34:24,b.kind,b.face);if(b.kind==='fire'){b.life=0;emit(b.x,b.y,'#f4b07b',12);break;}e.x=clamp(e.x+b.face*55,e.minX,e.maxX);}
+      if(b.kind==='wind')street?.reflect(box,b.face);
+      for(const e of enemies)if(e.hp>0&&!e.dormant&&!b.hit.has(e.id)&&overlaps(box,enemyBox(e))){b.hit.add(e.id);damageEnemy(e,b.kind==='fire'?34:24,b.kind,b.face);if(b.kind==='fire'){b.life=0;emit(b.x,b.y,'#f4b07b',12);break;}e.x=clamp(e.x+b.face*55,e.minX,e.maxX);}
     }
     shots=shots.filter(b=>b.life>0);
   }
@@ -300,6 +307,7 @@
   function update(dt){
     if(s.mode==='dying'){p.age+=dt;p.frame=Math.min(3,Math.floor(p.age*6));if(p.age>.9)menu('dead');return;}
     if(s.mode!=='playing')return;
+    if(s.hitstop>0){s.hitstop=Math.max(0,s.hitstop-dt);return;}
     s.time+=dt;s.elapsed+=dt;s.fireCd=Math.max(0,s.fireCd-dt);s.windCd=Math.max(0,s.windCd-dt);s.shake=Math.max(0,s.shake-dt*22);
     if(s.toast>0){s.toast-=dt;if(s.toast<=0)$('toast').hidden=true;}
     updatePlayer(dt);if(s.mode!=='playing')return;updateEnemies(dt);updateShots(dt);street?.update(dt);events(dt);
@@ -380,6 +388,7 @@
     }
   }
   function drawEnemy(e){
+    if(e.dormant)return;
     if(street?.drawEnemy(e))return;
     if(e.hp<=0&&e.deadAge>1.5)return;
     const scale=e.boss?.60:e.elite?.58:.43;
@@ -516,6 +525,6 @@
     const dt=last?clamp((now-last)/1000,0,.1):0;last=now;accumulator+=dt;
     while(accumulator>=STEP){update(STEP);accumulator-=STEP;}draw();requestAnimationFrame(loop);
   }
-  window.diMonLevel=Object.freeze({getState:()=>({chapter:C.chapter||1,street:street?.getState(),ready:s.ready,mode:s.mode,x:p.x,y:p.y,vx:p.vx,vy:p.vy,grounded:p.grounded,doubleJumpUsed:p.doubleJumpUsed,action:p.action,frame:p.frame,hp:p.hp,maxHp:p.maxHp,invulnerable:p.invuln>0,checkpoint:s.checkpoint,rescued:s.rescued,kills:s.kills,xp:s.xp,level:s.level,elapsed:s.elapsed,camera:s.camera,cameraY:s.cameraY,floor:p.floor,floorNumber:C.floors[p.floor].number,totalFloors:C.floors.length,support:P.support(p,solids())?.kind||null,combo:s.combo+1,queuedStrikes:s.queue,hitCount:s.hitCount,fireCooldown:s.fireCd,windCooldown:s.windCd,npc:{...npc},enemies:enemies.map(e=>({id:e.id,x:e.x,y:e.y,floor:e.floor,hp:e.hp,maxHp:e.maxHp,boss:Boolean(e.boss),kind:e.kind||'hound',attackType:e.attackType,phase:e.phase,age:e.age,face:e.face})),effects:effects.map(e=>({...e})),projectiles:shots.length,dialogueIndex:dialogue?.index??null,renderer:'whole-character-frames',headWidth:HEAD}),getAttackBox:attackBox});
+  window.diMonLevel=Object.freeze({getState:()=>({chapter:C.chapter||1,street:street?.getState(),ready:s.ready,mode:s.mode,x:p.x,y:p.y,vx:p.vx,vy:p.vy,grounded:p.grounded,doubleJumpUsed:p.doubleJumpUsed,action:p.action,frame:p.frame,hp:p.hp,maxHp:p.maxHp,invulnerable:p.invuln>0,checkpoint:s.checkpoint,rescued:s.rescued,kills:s.kills,xp:s.xp,level:s.level,elapsed:s.elapsed,camera:s.camera,cameraY:s.cameraY,floor:p.floor,floorNumber:C.floors[p.floor].number,totalFloors:C.floors.length,support:P.support(p,solids())?.kind||null,combo:s.combo+1,queuedStrikes:s.queue,hitCount:s.hitCount,fireCooldown:s.fireCd,windCooldown:s.windCd,npc:{...npc},enemies:enemies.map(e=>({id:e.id,x:e.x,y:e.y,floor:e.floor,hp:e.hp,maxHp:e.maxHp,boss:Boolean(e.boss),kind:e.kind||'hound',attackType:e.attackType,phase:e.phase,age:e.age,face:e.face,dormant:Boolean(e.dormant),environmental:Boolean(e.environmental),guard:e.guard||0,burning:(e.burn||0)>0})),effects:effects.map(e=>({...e})),projectiles:shots.length,dialogueIndex:dialogue?.index??null,renderer:'whole-character-frames',headWidth:HEAD}),getAttackBox:attackBox});
   load();
 })();

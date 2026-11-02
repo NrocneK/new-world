@@ -15,3 +15,13 @@ Sau khi thoát khỏi tòa nhà ở màn 1, nhân vật và đồng nghiệp đi
 `art/chapter-two/` gồm hai nền phố, quái phun đạn, Kẻ Truy Sát và ổ dị giới. `tools/measure-chapter-two.py` chỉ đo vùng khung/điểm neo, không sửa pixel. `npm run build:level` tạo hai HTML offline độc lập, gói riêng từng màn và gói cả hai màn. Gói đầy đủ chứa `level.html` cùng `chapter-two.html`; mở `level.html` để bắt đầu. Website dùng một service worker lưu tài nguyên của cả hai màn.
 
 Kiểm tra: `node tests/chapter-two.spec.cjs` đi toàn tuyến bằng phím thật, bàn giao đồng nghiệp, phá ổ, mở màn chắn, quan sát hai đòn boss, hoàn thành, tải lại checkpoint, offline và chuyển kinh nghiệm. `tests/chapter-one.spec.cjs` kiểm tra lại màn 1 cùng nút chuyển màn. `tests/chapter-cache-upgrade.spec.cjs` kiểm tra người chơi đang giữ cache của bản màn 1 cũ có thể cập nhật và chơi cả hai màn offline.
+
+## Đoạn mẫu ngã tư (bản nâng cấp)
+
+`/chapter-two?sample=clinic` vào ngay trước xác xe, với tải kỹ năng lửa/gió và một ô lưu riêng (`di-mon:chapter-two:v2:sample`). Chơi ở đường dẫn màn 2 đầy đủ vẫn gặp cùng đoạn giao tranh này. Hai đợt có quái trên cao, quái giáp và quái đánh từ phía sau. Thân xe chặn đạn; gió phản đạn thành sát thương địch; đòn móc/kết thúc phá giáp; lửa gây cháy và thùng dầu nổ sau cảnh báo. Không thay texture nhân vật hay VFX đã duyệt.
+
+Đợt sau chỉ kích hoạt khi đợt trước đã dọn xong và qua hai giây nghỉ. Giáp có thanh độ bền riêng, khi vỡ tạo khoảng phản công 0,85 giây. Bắn xa khóa hướng ngắm trước khi phóng. Va chạm có dừng hình 35–65 ms riêng màn 2; tất cả vật lý cùng dừng để không làm đổi đường bay. Trạm chỉ trở thành checkpoint khi đã bàn giao an toàn. Nếu chạy vượt quái, HUD chỉ số còn lại và hướng quay về.
+
+Kết thúc đoạn mẫu mở bảng kết quả, cho phép chơi lại hoặc đi tiếp phần còn lại. Bảng này không ghi nhận hoàn thành chương. Bản lưu màn 2 phiên bản 1 được đọc chuyển tiếp, giữ XP và nhiệm vụ bàn giao; không bắt đánh lại ngã tư nếu đã tới trạm. Khung chiến dịch và chuẩn đánh giá nằm ở `docs/campaign-outline.md`, `docs/combat-standard.md`, có trang đọc `/campaign`.
+
+Kiểm tra thêm: `npm run test:clinic` gồm mô phỏng vật lý đạn/vật chắn, giáp, nổ, cháy, hai đợt và bài browser chơi thật từ vào đoạn mẫu tới kết quả. Browser cũng kiểm tra phản đạn bằng phím, tách save, chuyển bản lưu cũ, cảm ứng nhiều ngón, nhảy lần hai thẳng đứng, tạm dừng và bố cục điện thoại. Mỹ thuật vật thể mới dùng nguyên ảnh trong `street-props.png`, chỉ khai báo vùng sprite và scale đồng nhất.

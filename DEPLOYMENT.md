@@ -4,6 +4,8 @@
 
 - Chương 01 chơi được: https://di-mon-demo.vercel.app/
 - Chương 02: https://di-mon-demo.vercel.app/chapter-two
+- Đoạn mẫu ngã tư: https://di-mon-demo.vercel.app/chapter-two?sample=clinic
+- Khung hành trình tới kết thúc: https://di-mon-demo.vercel.app/campaign
 - Gói cả hai màn offline: https://di-mon-demo.vercel.app/downloads/di-mon-game.zip
 - Phòng thử nhân vật: https://di-mon-demo.vercel.app/character-lab
 - Tải chương offline: https://di-mon-demo.vercel.app/downloads/di-mon-chapter-one.zip
@@ -32,3 +34,5 @@ Bản production đã được Vercel xác nhận `READY`; domain chính và đ�
 Bản map dọc dùng `level-physics.js` và dữ liệu `office-descent-7-v2`. Mã và CSS vào trang được gắn phiên bản theo hash, JSON có phiên bản map để tránh service worker cũ trả cấu trúc map ngang. Worker mới đọc cache theo đường dẫn bỏ query phiên bản và có cache riêng theo hash tài nguyên. Bản lưu map ngang cũ được tách khỏi bản lưu map dọc.
 
 Màn 2 tại `site/chapter-two.html`, dùng `chapter-two-config.js` và `chapter-two-world.js` cùng nhân vật/vật lý hiện có. `campaign.js` giữ điểm kinh nghiệm chuyển màn; các checkpoint của hai màn độc lập. Cả hai dùng một service worker cache tài nguyên chung. Các tệp JS/CSS vào trang có tên chứa hash (`tools/level-entries.mjs`) để người chơi đang giữ cache của bản cũ nhận đúng engine mới. Gói `di-mon-game.zip` chứa `level.html` và `chapter-two.html` tự chạy offline. ZIP tiếp tục tải từ GitHub qua redirect, không gửi ZIP vào Vercel file API.
+
+Khung chiến dịch 10 màn và chuẩn đoạn mẫu được xuất từ hai tệp Markdown trong `docs/` qua `tools/build-campaign.mjs`, đọc tại `/campaign`. Lối thử nhanh `/chapter-two?sample=clinic` dùng ô lưu riêng, có màn kết quả riêng và không ghi hoàn thành chương 2. Gói đủ hai màn bao gồm trang thiết kế đọc offline. Màn 2 mới đọc tiếp được checkpoint phiên bản trước; tên tệp engine theo hash và cache mới chuyển người chơi sang cơ chế ngã tư mới.
