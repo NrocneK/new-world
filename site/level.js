@@ -75,6 +75,7 @@
     Object.assign(p,{x:a?(a.checkpoint===2?3680:2840):C.startX,y:G,vx:0,vy:0,facing:1,grounded:true,doubleJumpUsed:false,hp:s.level===2?115:100,maxHp:s.level===2?115:100,invuln:0,coyote:0});
     animate('idle',true);enemies=makeEnemies(a?.defeated);bursts=[];shots=[];effects=[];labels=[];npc={x:a?.rescued?p.x-120:C.rescueX,y:G,frame:a?.rescued?1:0,facing:1};
     release();dialogue=null;$('dialogue').hidden=true;$('titleScreen').hidden=true;$('menuScreen').hidden=true;$('hud').hidden=false;$('spellbar').hidden=false;$('toast').hidden=true;
+    document.body.classList.add('is-playing');
     s.camera=clamp(p.x-410,0,C.width-W);canvas.focus({preventScroll:true});updateUI(true);
     inputStamp=-10;
     if(!a)showDialogue(C.intro,()=>toast('A / D di chuyển · J đánh · Space nhảy',4));
