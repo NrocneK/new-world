@@ -4,15 +4,15 @@
 
 - Demo chơi được: https://di-mon-demo.vercel.app/
 - Trang VFX mới: https://di-mon-demo.vercel.app/vfx-review
-- Tải ZIP: https://di-mon-demo.vercel.app/downloads/di-mon-vfx-v5.zip
-- Tải HTML offline: https://di-mon-demo.vercel.app/downloads/di-mon-vfx-v5.html
+- Tải ZIP: https://di-mon-demo.vercel.app/downloads/di-mon-vfx-v6.zip
+- Tải HTML offline: https://di-mon-demo.vercel.app/downloads/di-mon-vfx-v6.html
 
-Trang chính trong `site/index.html` là demo điều khiển nhân vật đầy đủ: di chuyển, chiến đấu, nguyên tố, nhảy hai lần, xem từng động tác và điều khiển cảm ứng. Bản xem VFX mới là trang phụ `site/vfx-review.html`. Bộ VFX này vẫn tách riêng để xem và chỉnh; bước đóng gói không tự thay bộ hiệu ứng của demo chính.
+Trang chính trong `site/index.html` là demo điều khiển nhân vật đầy đủ: di chuyển, chiến đấu, nguyên tố, nhảy hai lần, xem từng động tác và điều khiển cảm ứng. Hai đòn đấm thẳng đã thay các khối trắng vẽ bằng Canvas bằng texture khí lực trong `art/vfx/air-pressure-v2/sources/straight-clear.png`, bỏ lớp mây trắng và thu gọn tỷ lệ hiển thị. Bản xem VFX mới là trang phụ `site/vfx-review.html`, dùng cùng nguồn, điểm neo và tỷ lệ cho hai đòn này. Các động tác khác giữ nguyên.
 
 Các tệp tải đã được kiểm tra nằm trong `site/downloads/`:
 
-- `di-mon-vfx-v5.zip`: gói VFX và bản xem offline.
-- `di-mon-vfx-v5.html`: bản xem VFX offline độc lập.
+- `di-mon-vfx-v6.zip`: gói VFX và bản xem offline.
+- `di-mon-vfx-v6.html`: bản xem VFX offline độc lập.
 - `air-kick-preview.png`: ảnh xem trước cú đá.
 
 ## Vercel

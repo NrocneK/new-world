@@ -1,0 +1,889 @@
+{
+  "version": 2,
+  "reviewRevision": 6,
+  "opacity": 0.75,
+  "status": "clear-compact-straight-pressure",
+  "blendMode": "source-over",
+  "filter": "none",
+  "concept": "art/vfx/concepts/air-pressure-v12.png",
+  "actions": {
+    "attack1": {
+      "image": "sources/straight-clear.png",
+      "sourceKind": "straight",
+      "sourceSha256": "37e2a24062d37cc2fffaa30dbabd99942564842f6817989ba46e1047c6a4af74",
+      "width": 1774,
+      "height": 887,
+      "fps": 40,
+      "loop": false,
+      "uniformSourceScale": 0.56,
+      "blendMode": "source-over",
+      "opacity": 0.75,
+      "tailFeatherPixels": 64,
+      "effectRoot": null,
+      "attachment": "pressure-curl",
+      "frames": [
+        {
+          "order": 0,
+          "x": 4,
+          "y": 0,
+          "w": 435,
+          "h": 435,
+          "anchorX": 186.8,
+          "anchorY": 243,
+          "sourceEmitter": [
+            144,
+            243
+          ],
+          "sourceHandPivot": [
+            190.8,
+            243
+          ],
+          "forwardExtent": 17.471999999999994,
+          "durationMs": 25.0
+        },
+        {
+          "order": 1,
+          "x": 447,
+          "y": 0,
+          "w": 436,
+          "h": 435,
+          "anchorX": 251.39999999999998,
+          "anchorY": 244,
+          "sourceEmitter": [
+            528,
+            244
+          ],
+          "sourceHandPivot": [
+            698.4,
+            244
+          ],
+          "forwardExtent": 63.616,
+          "durationMs": 25.0
+        },
+        {
+          "order": 2,
+          "x": 891,
+          "y": 0,
+          "w": 435,
+          "h": 435,
+          "anchorX": 256.4000000000001,
+          "anchorY": 244,
+          "sourceEmitter": [
+            959,
+            244
+          ],
+          "sourceHandPivot": [
+            1147.4,
+            244
+          ],
+          "forwardExtent": 70.33600000000001,
+          "durationMs": 25.0
+        },
+        {
+          "order": 3,
+          "x": 1334,
+          "y": 0,
+          "w": 436,
+          "h": 435,
+          "anchorX": 256.5999999999999,
+          "anchorY": 243,
+          "sourceEmitter": [
+            1371,
+            243
+          ],
+          "sourceHandPivot": [
+            1590.6,
+            243
+          ],
+          "forwardExtent": 81.984,
+          "durationMs": 25.0
+        },
+        {
+          "order": 4,
+          "x": 4,
+          "y": 456,
+          "w": 435,
+          "h": 431,
+          "anchorX": 299.2,
+          "anchorY": 198,
+          "sourceEmitter": [
+            107,
+            654
+          ],
+          "sourceHandPivot": [
+            303.2,
+            654
+          ],
+          "forwardExtent": 73.24800000000002,
+          "durationMs": 25.0
+        },
+        {
+          "order": 5,
+          "x": 447,
+          "y": 456,
+          "w": 436,
+          "h": 431,
+          "anchorX": 277.20000000000005,
+          "anchorY": 201,
+          "sourceEmitter": [
+            522,
+            657
+          ],
+          "sourceHandPivot": [
+            724.2,
+            657
+          ],
+          "forwardExtent": 75.48800000000001,
+          "durationMs": 25.0
+        },
+        {
+          "order": 6,
+          "x": 891,
+          "y": 456,
+          "w": 435,
+          "h": 431,
+          "anchorX": 254.20000000000005,
+          "anchorY": 202,
+          "sourceEmitter": [
+            958,
+            658
+          ],
+          "sourceHandPivot": [
+            1145.2,
+            658
+          ],
+          "forwardExtent": 69.88800000000002,
+          "durationMs": 25.0
+        },
+        {
+          "order": 7,
+          "x": 1334,
+          "y": 456,
+          "w": 436,
+          "h": 431,
+          "anchorX": 182.5999999999999,
+          "anchorY": 202,
+          "sourceEmitter": [
+            1399,
+            658
+          ],
+          "sourceHandPivot": [
+            1516.6,
+            658
+          ],
+          "forwardExtent": 43.90400000000001,
+          "durationMs": 25.0
+        }
+      ]
+    },
+    "attack2": {
+      "image": "sources/straight-clear.png",
+      "sourceKind": "straight",
+      "sourceSha256": "37e2a24062d37cc2fffaa30dbabd99942564842f6817989ba46e1047c6a4af74",
+      "width": 1774,
+      "height": 887,
+      "fps": 40,
+      "loop": false,
+      "uniformSourceScale": 0.6,
+      "blendMode": "source-over",
+      "opacity": 0.75,
+      "tailFeatherPixels": 64,
+      "effectRoot": null,
+      "attachment": "pressure-curl",
+      "frames": [
+        {
+          "order": 0,
+          "x": 4,
+          "y": 0,
+          "w": 435,
+          "h": 435,
+          "anchorX": 186.8,
+          "anchorY": 243,
+          "sourceEmitter": [
+            144,
+            243
+          ],
+          "sourceHandPivot": [
+            190.8,
+            243
+          ],
+          "forwardExtent": 18.71999999999999,
+          "durationMs": 25.0
+        },
+        {
+          "order": 1,
+          "x": 447,
+          "y": 0,
+          "w": 436,
+          "h": 435,
+          "anchorX": 251.39999999999998,
+          "anchorY": 244,
+          "sourceEmitter": [
+            528,
+            244
+          ],
+          "sourceHandPivot": [
+            698.4,
+            244
+          ],
+          "forwardExtent": 68.16,
+          "durationMs": 25.0
+        },
+        {
+          "order": 2,
+          "x": 891,
+          "y": 0,
+          "w": 435,
+          "h": 435,
+          "anchorX": 256.4000000000001,
+          "anchorY": 244,
+          "sourceEmitter": [
+            959,
+            244
+          ],
+          "sourceHandPivot": [
+            1147.4,
+            244
+          ],
+          "forwardExtent": 75.36000000000001,
+          "durationMs": 25.0
+        },
+        {
+          "order": 3,
+          "x": 1334,
+          "y": 0,
+          "w": 436,
+          "h": 435,
+          "anchorX": 256.5999999999999,
+          "anchorY": 243,
+          "sourceEmitter": [
+            1371,
+            243
+          ],
+          "sourceHandPivot": [
+            1590.6,
+            243
+          ],
+          "forwardExtent": 87.83999999999999,
+          "durationMs": 25.0
+        },
+        {
+          "order": 4,
+          "x": 4,
+          "y": 456,
+          "w": 435,
+          "h": 431,
+          "anchorX": 299.2,
+          "anchorY": 198,
+          "sourceEmitter": [
+            107,
+            654
+          ],
+          "sourceHandPivot": [
+            303.2,
+            654
+          ],
+          "forwardExtent": 78.48,
+          "durationMs": 25.0
+        },
+        {
+          "order": 5,
+          "x": 447,
+          "y": 456,
+          "w": 436,
+          "h": 431,
+          "anchorX": 277.20000000000005,
+          "anchorY": 201,
+          "sourceEmitter": [
+            522,
+            657
+          ],
+          "sourceHandPivot": [
+            724.2,
+            657
+          ],
+          "forwardExtent": 80.88000000000001,
+          "durationMs": 25.0
+        },
+        {
+          "order": 6,
+          "x": 891,
+          "y": 456,
+          "w": 435,
+          "h": 431,
+          "anchorX": 254.20000000000005,
+          "anchorY": 202,
+          "sourceEmitter": [
+            958,
+            658
+          ],
+          "sourceHandPivot": [
+            1145.2,
+            658
+          ],
+          "forwardExtent": 74.88000000000001,
+          "durationMs": 25.0
+        },
+        {
+          "order": 7,
+          "x": 1334,
+          "y": 456,
+          "w": 436,
+          "h": 431,
+          "anchorX": 182.5999999999999,
+          "anchorY": 202,
+          "sourceEmitter": [
+            1399,
+            658
+          ],
+          "sourceHandPivot": [
+            1516.6,
+            658
+          ],
+          "forwardExtent": 47.04,
+          "durationMs": 25.0
+        }
+      ]
+    },
+    "attack3": {
+      "image": "sources/uppercut.png",
+      "sourceKind": "uppercut",
+      "sourceSha256": "15b48ca1cf152dd043555015651568aa82238d8698dccf40403c048e94c1c96d",
+      "width": 1774,
+      "height": 887,
+      "fps": 33.333333333333336,
+      "loop": false,
+      "uniformSourceScale": 0.78,
+      "blendMode": "source-over",
+      "opacity": 0.75,
+      "tailFeatherPixels": 0,
+      "effectRoot": [
+        0,
+        -24
+      ],
+      "attachment": "feet",
+      "frames": [
+        {
+          "order": 0,
+          "x": 4,
+          "y": 0,
+          "w": 435,
+          "h": 435,
+          "anchorX": 153,
+          "anchorY": 371,
+          "sourceEmitter": [
+            157,
+            371
+          ],
+          "sourceHandPivot": [
+            157,
+            371
+          ],
+          "forwardExtent": null,
+          "durationMs": 29.999999999999996
+        },
+        {
+          "order": 1,
+          "x": 447,
+          "y": 0,
+          "w": 436,
+          "h": 435,
+          "anchorX": 153,
+          "anchorY": 372,
+          "sourceEmitter": [
+            600,
+            372
+          ],
+          "sourceHandPivot": [
+            600,
+            372
+          ],
+          "forwardExtent": null,
+          "durationMs": 29.999999999999996
+        },
+        {
+          "order": 2,
+          "x": 891,
+          "y": 0,
+          "w": 435,
+          "h": 435,
+          "anchorX": 147,
+          "anchorY": 375,
+          "sourceEmitter": [
+            1038,
+            375
+          ],
+          "sourceHandPivot": [
+            1038,
+            375
+          ],
+          "forwardExtent": null,
+          "durationMs": 29.999999999999996
+        },
+        {
+          "order": 3,
+          "x": 1334,
+          "y": 0,
+          "w": 436,
+          "h": 435,
+          "anchorX": 143,
+          "anchorY": 372,
+          "sourceEmitter": [
+            1477,
+            372
+          ],
+          "sourceHandPivot": [
+            1477,
+            372
+          ],
+          "forwardExtent": null,
+          "durationMs": 29.999999999999996
+        },
+        {
+          "order": 4,
+          "x": 4,
+          "y": 470,
+          "w": 435,
+          "h": 417,
+          "anchorX": 147,
+          "anchorY": 313,
+          "sourceEmitter": [
+            151,
+            783
+          ],
+          "sourceHandPivot": [
+            151,
+            783
+          ],
+          "forwardExtent": null,
+          "durationMs": 29.999999999999996
+        },
+        {
+          "order": 5,
+          "x": 447,
+          "y": 470,
+          "w": 436,
+          "h": 417,
+          "anchorX": 144,
+          "anchorY": 316,
+          "sourceEmitter": [
+            591,
+            786
+          ],
+          "sourceHandPivot": [
+            591,
+            786
+          ],
+          "forwardExtent": null,
+          "durationMs": 29.999999999999996
+        },
+        {
+          "order": 6,
+          "x": 891,
+          "y": 470,
+          "w": 435,
+          "h": 417,
+          "anchorX": 150,
+          "anchorY": 314,
+          "sourceEmitter": [
+            1041,
+            784
+          ],
+          "sourceHandPivot": [
+            1041,
+            784
+          ],
+          "forwardExtent": null,
+          "durationMs": 29.999999999999996
+        },
+        {
+          "order": 7,
+          "x": 1334,
+          "y": 470,
+          "w": 436,
+          "h": 417,
+          "anchorX": 147,
+          "anchorY": 315,
+          "sourceEmitter": [
+            1481,
+            785
+          ],
+          "sourceHandPivot": [
+            1481,
+            785
+          ],
+          "forwardExtent": null,
+          "durationMs": 29.999999999999996
+        }
+      ]
+    },
+    "attack4": {
+      "image": "sources/shockwave.png",
+      "sourceKind": "shockwave",
+      "sourceSha256": "3b8e27b0c61ab6f50debdf378c5c21a4bdc4ba2bb83d7a3393163cb7e7b792ab",
+      "width": 1774,
+      "height": 887,
+      "fps": 25,
+      "loop": false,
+      "uniformSourceScale": 1.0,
+      "blendMode": "source-over",
+      "opacity": 0.75,
+      "tailFeatherPixels": 0,
+      "effectRoot": null,
+      "attachment": "ground",
+      "frames": [
+        {
+          "order": 0,
+          "x": 4,
+          "y": 90,
+          "w": 435,
+          "h": 331,
+          "anchorX": 218,
+          "anchorY": 187,
+          "sourceEmitter": [
+            222,
+            277
+          ],
+          "sourceHandPivot": [
+            222,
+            277
+          ],
+          "forwardExtent": null,
+          "durationMs": 40.0
+        },
+        {
+          "order": 1,
+          "x": 447,
+          "y": 90,
+          "w": 436,
+          "h": 331,
+          "anchorX": 218,
+          "anchorY": 182,
+          "sourceEmitter": [
+            665,
+            272
+          ],
+          "sourceHandPivot": [
+            665,
+            272
+          ],
+          "forwardExtent": null,
+          "durationMs": 40.0
+        },
+        {
+          "order": 2,
+          "x": 891,
+          "y": 90,
+          "w": 435,
+          "h": 331,
+          "anchorX": 218,
+          "anchorY": 170,
+          "sourceEmitter": [
+            1109,
+            260
+          ],
+          "sourceHandPivot": [
+            1109,
+            260
+          ],
+          "forwardExtent": null,
+          "durationMs": 40.0
+        },
+        {
+          "order": 3,
+          "x": 1334,
+          "y": 90,
+          "w": 436,
+          "h": 331,
+          "anchorX": 218,
+          "anchorY": 165,
+          "sourceEmitter": [
+            1552,
+            255
+          ],
+          "sourceHandPivot": [
+            1552,
+            255
+          ],
+          "forwardExtent": null,
+          "durationMs": 40.0
+        },
+        {
+          "order": 4,
+          "x": 4,
+          "y": 480,
+          "w": 435,
+          "h": 355,
+          "anchorX": 218,
+          "anchorY": 189,
+          "sourceEmitter": [
+            222,
+            669
+          ],
+          "sourceHandPivot": [
+            222,
+            669
+          ],
+          "forwardExtent": null,
+          "durationMs": 40.0
+        },
+        {
+          "order": 5,
+          "x": 447,
+          "y": 480,
+          "w": 436,
+          "h": 355,
+          "anchorX": 218,
+          "anchorY": 191,
+          "sourceEmitter": [
+            665,
+            671
+          ],
+          "sourceHandPivot": [
+            665,
+            671
+          ],
+          "forwardExtent": null,
+          "durationMs": 40.0
+        },
+        {
+          "order": 6,
+          "x": 891,
+          "y": 480,
+          "w": 435,
+          "h": 355,
+          "anchorX": 218,
+          "anchorY": 191,
+          "sourceEmitter": [
+            1109,
+            671
+          ],
+          "sourceHandPivot": [
+            1109,
+            671
+          ],
+          "forwardExtent": null,
+          "durationMs": 40.0
+        },
+        {
+          "order": 7,
+          "x": 1334,
+          "y": 480,
+          "w": 436,
+          "h": 355,
+          "anchorX": 218,
+          "anchorY": 191,
+          "sourceEmitter": [
+            1552,
+            671
+          ],
+          "sourceHandPivot": [
+            1552,
+            671
+          ],
+          "forwardExtent": null,
+          "durationMs": 40.0
+        }
+      ]
+    },
+    "airAttack": {
+      "image": "sources/air-kick.png",
+      "sourceKind": "kick",
+      "sourceSha256": "1792ea0a3d277dd059c8458fa743b042ab278f7a2b05004ccf8b184b1137c62e",
+      "width": 1774,
+      "height": 887,
+      "fps": 33.333333333333336,
+      "loop": false,
+      "uniformSourceScale": 0.5,
+      "blendMode": "source-over",
+      "opacity": 0.75,
+      "tailFeatherPixels": 0,
+      "effectRoot": null,
+      "attachment": "airborne-sole",
+      "frames": [
+        {
+          "order": 0,
+          "x": 4,
+          "y": 0,
+          "w": 435,
+          "h": 435,
+          "anchorX": 216,
+          "anchorY": 280,
+          "sourceEmitter": [
+            220,
+            280
+          ],
+          "sourceHandPivot": [
+            220,
+            280
+          ],
+          "forwardExtent": null,
+          "durationMs": 29.999999999999996
+        },
+        {
+          "order": 1,
+          "x": 447,
+          "y": 0,
+          "w": 436,
+          "h": 435,
+          "anchorX": 226,
+          "anchorY": 265,
+          "sourceEmitter": [
+            673,
+            265
+          ],
+          "sourceHandPivot": [
+            673,
+            265
+          ],
+          "forwardExtent": null,
+          "durationMs": 29.999999999999996
+        },
+        {
+          "order": 2,
+          "x": 891,
+          "y": 0,
+          "w": 435,
+          "h": 435,
+          "anchorX": 236,
+          "anchorY": 260,
+          "sourceEmitter": [
+            1127,
+            260
+          ],
+          "sourceHandPivot": [
+            1127,
+            260
+          ],
+          "forwardExtent": null,
+          "durationMs": 29.999999999999996
+        },
+        {
+          "order": 3,
+          "x": 1334,
+          "y": 0,
+          "w": 436,
+          "h": 435,
+          "anchorX": 236,
+          "anchorY": 260,
+          "sourceEmitter": [
+            1570,
+            260
+          ],
+          "sourceHandPivot": [
+            1570,
+            260
+          ],
+          "forwardExtent": null,
+          "durationMs": 29.999999999999996
+        },
+        {
+          "order": 4,
+          "x": 4,
+          "y": 465,
+          "w": 435,
+          "h": 422,
+          "anchorX": 236,
+          "anchorY": 218,
+          "sourceEmitter": [
+            240,
+            683
+          ],
+          "sourceHandPivot": [
+            240,
+            683
+          ],
+          "forwardExtent": null,
+          "durationMs": 29.999999999999996
+        },
+        {
+          "order": 5,
+          "x": 447,
+          "y": 465,
+          "w": 436,
+          "h": 422,
+          "anchorX": 241,
+          "anchorY": 213,
+          "sourceEmitter": [
+            688,
+            678
+          ],
+          "sourceHandPivot": [
+            688,
+            678
+          ],
+          "forwardExtent": null,
+          "durationMs": 29.999999999999996
+        },
+        {
+          "order": 6,
+          "x": 891,
+          "y": 465,
+          "w": 435,
+          "h": 422,
+          "anchorX": 241,
+          "anchorY": 258,
+          "sourceEmitter": [
+            1132,
+            723
+          ],
+          "sourceHandPivot": [
+            1132,
+            723
+          ],
+          "forwardExtent": null,
+          "durationMs": 29.999999999999996
+        },
+        {
+          "order": 7,
+          "x": 1334,
+          "y": 465,
+          "w": 436,
+          "h": 422,
+          "anchorX": 241,
+          "anchorY": 238,
+          "sourceEmitter": [
+            1575,
+            703
+          ],
+          "sourceHandPivot": [
+            1575,
+            703
+          ],
+          "forwardExtent": null,
+          "durationMs": 29.999999999999996
+        }
+      ]
+    }
+  },
+  "sources": {
+    "straight": {
+      "file": "sources/straight-clear.png",
+      "sha256": "37e2a24062d37cc2fffaa30dbabd99942564842f6817989ba46e1047c6a4af74",
+      "width": 1774,
+      "height": 887,
+      "baseFile": "sources/straight.png",
+      "baseSha256": "feee6bb31b9fa29a0c147454028fa2ef05a440937df1e95731de49dc36fdb4f0",
+      "previousFile": "sources/straight-compact.png",
+      "editScope": "imagegen removal of milky cloud fill; thin transparent wind filaments, intact passing-air tail"
+    },
+    "uppercut": {
+      "file": "sources/uppercut.png",
+      "sha256": "15b48ca1cf152dd043555015651568aa82238d8698dccf40403c048e94c1c96d",
+      "width": 1774,
+      "height": 887
+    },
+    "shockwave": {
+      "file": "sources/shockwave.png",
+      "sha256": "3b8e27b0c61ab6f50debdf378c5c21a4bdc4ba2bb83d7a3393163cb7e7b792ab",
+      "width": 1774,
+      "height": 887
+    },
+    "kick": {
+      "file": "sources/air-kick.png",
+      "sha256": "1792ea0a3d277dd059c8458fa743b042ab278f7a2b05004ccf8b184b1137c62e",
+      "width": 1774,
+      "height": 887
+    }
+  }
+}

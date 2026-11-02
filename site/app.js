@@ -67,6 +67,7 @@
     sound: false, shake: 0, targetFlash: 0, targetKick: 0, stridePhase: 0, gaitPhase: 0, zoom: 1
   };
   let pages = [];
+  let straightPressure = {};
   let particles = [];
   let projectiles = [];
   let floating = [];
@@ -711,8 +712,29 @@
     fxShape(points, color);
   }
 
+  function drawStraightPressure(trail) {
+    const effect = straightPressure[trail.kind];
+    const { age, lead, duration } = trail;
+    // Burst around contact, then curl and dissolve through the remaining frames.
+    // Draw the original RGBA material once; no filled cone, bloom or white jet.
+    const index = reducedMotion ? 3 : clamp(Math.floor(age < 0 ? 3 * (1 + age / lead) : 3 + 5 * age / duration), 0, 7);
+    const frame = effect.frames[index], scale = effect.uniformSourceScale;
+    const fist = age < 0 ? (trail.kind === 'attack1' ? [33,-70] : [-8,-61]) : MELEE_FX[trail.kind].fist;
+    ctx.save();
+    ctx.translate(state.x + state.facing * fist[0], state.y + fist[1]);
+    ctx.scale(state.facing, 1);
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.globalAlpha = effect.opacity;
+    ctx.filter = 'none'; ctx.shadowBlur = 0;
+    ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = 'high';
+    ctx.drawImage(effect.texture, frame.x, frame.y, frame.w, frame.h,
+      -frame.anchorX * scale, -frame.anchorY * scale, frame.w * scale, frame.h * scale);
+    ctx.restore();
+  }
+
   function drawMeleeTrails() {
     const trail = meleeTrail(); if (!trail) return;
+    if (straightPressure[trail.kind]) { drawStraightPressure(trail); return; }
     pixelEffect(() => {
       const { kind, age, lead, duration } = trail, spec = MELEE_FX[kind];
       const progress = clamp(age / duration, 0, 1), q = reducedMotion ? .2 : progress;
@@ -726,27 +748,7 @@
         fxLine([[x-24,y+10],[x-5,y+6]], '#86b9c2', 2);
         return;
       }
-      if (kind === 'attack1' || kind === 'attack2') {
-        const end = spec.box[2], y = spec.fist[1], tall = kind === 'attack2' ? 46 : 33;
-        const drift = q * 12, rim = end - 23;
-        fx.save(); fx.globalAlpha *= .23;
-        fxShape([[30,y-9],[99,y-tall-7],[rim,y-tall-7],[end+8,y],[rim,y+tall+7],[96,y+tall+7],[30,y+8]], '#9bd6dd');
-        fx.restore();
-        fx.save(); fx.globalAlpha *= .50;
-        fxShape([[42,y-4],[104,y-tall+9],[rim,y-tall+5],[end,y],[rim,y+tall-5],[103,y+tall-9],[42,y+4]], '#b4deda');
-        fx.restore();
-        // Hollow compression bow, with a tapered white jet inside.
-        fxArc(rim+drift, y, 23, tall+q*8, -1.56, 1.56, 7, '#79b7c2');
-        fxArc(rim+drift-2, y, 21, tall-3+q*8, -1.5, 1.5, 4, '#f4ffef');
-        fxShape([[49,y-5],[103,y-14],[rim-3,y-10],[end-5,y],[rim-8,y+5],[106,y+6],[49,y+4]], spec.color);
-        fxShape([[63,y-2],[123,y-5],[end-8,y],[122,y+2]], '#ffffff');
-        fxArc(85+q*24, y, 11, tall*.65, -1.35, 1.35, 3, '#e8f8ed');
-        if(kind==='attack2') fxArc(123+q*17,y,13,tall*.85,-1.4,1.4,3,'#f7e6b6');
-        for(let i=0;i<5;i++) {
-          const sign=i%2?1:-1, x=67+i*25+q*18, dy=sign*(tall+10+i%2*6);
-          fxLine([[x-24,y+dy],[x,y+dy*.86],[x+14,y+dy*.82]], i%2?'#a1ccd0':'#e1f1dc', 2);
-        }
-      } else if (kind === 'attack3') {
+      if (kind === 'attack3') {
         // A broad rising crescent: separate outside contour, hollow center and wind ribbons.
         fx.save();fx.globalAlpha *= .25;
         fxShape([[14,-22],[84,-49],[128,-98],[134,-157],[109,-202],[72,-241],
@@ -884,6 +886,31 @@
         if (!response.ok) throw new Error('Không tải được dữ liệu chuyển động');
         return response.json();
       });
+      const pressureRoot = './art/vfx/air-pressure-v2/';
+      const pressure = window.DEMO_VFX_MANIFEST || await fetch(pressureRoot + 'manifest.json', { cache: 'no-cache' }).then(response => {
+        if (!response.ok) throw new Error('Không tải được dữ liệu khí lực');
+        return response.json();
+      });
+      const textures = new Map();
+      for (const kind of ['attack1', 'attack2']) {
+        const effect = pressure.actions[kind];
+        if (!textures.has(effect.image)) {
+          const image = new Image(); image.src = effect.image.startsWith('data:') ? effect.image : pressureRoot + effect.image;
+          await image.decode();
+          const texture = document.createElement('canvas'); texture.width = image.width; texture.height = image.height;
+          const material = texture.getContext('2d'); material.drawImage(image, 0, 0);
+          // Soften only the existing rear tips, without cropping the airflow.
+          material.globalCompositeOperation = 'destination-out';
+          for (let row = 0; row < 2; row++) for (let col = 0; col < 4; col++) {
+            const x = Math.floor(col * texture.width / 4), y = Math.floor(row * texture.height / 2), w = effect.tailFeatherPixels;
+            const fade = material.createLinearGradient(x, 0, x + w, 0);
+            fade.addColorStop(0, 'rgba(0,0,0,1)'); fade.addColorStop(.35, 'rgba(0,0,0,.7)'); fade.addColorStop(1, 'rgba(0,0,0,0)');
+            material.fillStyle = fade; material.fillRect(x, y, w, Math.ceil(texture.height / 2));
+          }
+          textures.set(effect.image, texture);
+        }
+        straightPressure[kind] = { ...effect, texture: textures.get(effect.image) };
+      }
       pages = manifest.pages;
       await Promise.all(pages.map(async (page) => {
         page.image = new Image();
@@ -910,7 +937,7 @@
       updateUI();
       requestAnimationFrame(loop);
     } catch (error) {
-      $('loadingState').textContent = 'Không tải được nhân vật. Hãy mở lại trang demo hoặc chạy npm start.';
+      $('loadingState').textContent = 'Không tải được dữ liệu demo. Hãy mở lại trang hoặc chạy npm start.';
       console.error(error);
     }
   }

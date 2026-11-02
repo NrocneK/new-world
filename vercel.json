@@ -34,6 +34,11 @@
       "source": "/downloads/di-mon-vfx-v5.zip",
       "destination": "https://github.com/NrocneK/new-world/raw/refs/heads/codex/vfx-v5-downloads/site/downloads/di-mon-vfx-v5.zip",
       "permanent": false
+    },
+    {
+      "source": "/downloads/di-mon-vfx-v6.zip",
+      "destination": "https://github.com/NrocneK/new-world/raw/refs/heads/codex/vfx-v5-downloads/site/downloads/di-mon-vfx-v6.zip",
+      "permanent": false
     }
   ]
 }
