@@ -4,6 +4,8 @@
   const C = window.DI_MON_CHAPTER, P = window.DiMonPhysics, $ = id => document.getElementById(id);
   const canvas = $('levelCanvas'), ctx = canvas.getContext('2d', { alpha:false });
   const W=1280, H=720, G=C.ground, HEAD=110, ART_SCALE=HEAD/132;
+  const view=window.DiMonView.create({canvasWidth:W,canvasHeight:H,worldWidth:C.width,worldHeight:C.height,ground:G,zoom:C.cameraZoom||1,groundLine:C.cameraGroundLine||520,lockY:Boolean(C.cameraLockY)});
+  const VIEW_W=view.width,VIEW_H=view.height;
   const GRAVITY=1850, JUMP=-700, WALK=235, RUN=370, STEP=1/120;
   const SAVE_KEY=(C.saveKey||'di-mon:chapter-one:descent-v2')+(C.sample?':sample':'');
   const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -35,7 +37,7 @@
   const rescueHole=C.floors[C.rescueFloor].hole;
   const rescueBridge=rescueHole?{x:rescueHole[0],y:C.floors[C.rescueFloor].y,w:380,h:48,floor:C.rescueFloor,kind:'rescue-bridge'}:null;
   const closedSolids=rescueBridge?[...openSolids,rescueBridge]:openSolids;
-  const street=C.chapter===2?window.DiMonStreet.create({C,P,ctx,W,H,s,p,assets,clamp,overlaps,rect,line,text,glow,shadow,worldArt,toast,showDialogue,animate,save,grantExperience,hurt,emit,tone,label,damageEnemy,enemyBox,release,focus:()=>canvas.focus({preventScroll:true}),enemies:()=>enemies,npc:()=>npc,setNpc:value=>npc=value,makeNpc,complete:finishChapter}):null;
+  const street=C.chapter===2?window.DiMonStreet.create({C,P,ctx,W,H,view,s,p,assets,clamp,overlaps,rect,line,text,glow,shadow,worldArt,toast,showDialogue,animate,save,grantExperience,hurt,emit,tone,label,damageEnemy,enemyBox,release,focus:()=>canvas.focus({preventScroll:true}),enemies:()=>enemies,npc:()=>npc,setNpc:value=>npc=value,makeNpc,complete:finishChapter}):null;
   const solids=()=>street?street.solids():s.rescued?openSolids:closedSolids;
   const floorName=i=>C.floors[i].number?'TẦNG '+String(C.floors[i].number).padStart(2,'0'):'TẦNG TRỆT';
   function makeNpc(floor=C.rescueFloor,x=C.rescueX,rescued=false){return{floor,x,y:C.floors[floor].y,vx:0,vy:0,grounded:true,bodyHalf:17,footHalf:11,bodyHeight:140,frame:rescued?1:0,facing:1};}
@@ -97,7 +99,7 @@
     animate('idle',true);enemies=makeEnemies(a?.defeated);bursts=[];shots=[];effects=[];labels=[];npc=s.rescued?makeNpc(cp.floor,p.x+(C.chapter===2?-100:100),true):makeNpc();street?.reset(a?.street);if(street)s.kills=enemies.filter(e=>e.hp<=0&&!e.environmental&&!(C.sample&&e.id==='street-hound')).length;
     release();dialogue=null;$('dialogue').hidden=true;$('titleScreen').hidden=true;$('menuScreen').hidden=true;$('hud').hidden=false;$('spellbar').hidden=false;$('toast').hidden=true;
     document.body.classList.add('is-playing');
-    s.camera=clamp(p.x-W/2,0,C.width-W);s.cameraY=clamp(p.y-520,0,C.height-H);canvas.focus({preventScroll:true});updateUI(true);
+    const camera=view.target(p);s.camera=camera.x;s.cameraY=camera.y;canvas.focus({preventScroll:true});updateUI(true);
     inputStamp=-10;
     if(!a)showDialogue(C.sample?C.sampleIntro:C.intro,()=>toast(C.chapter===2?'Hộ tống tới trạm cứu thương · U / I dùng lửa / gió':'A / D di chuyển · J đánh · Space nhảy',4));
     else toast('Đã trở lại điểm hồi sinh.');
@@ -126,7 +128,7 @@
     for(const e of enemies)if(e.hp>0){const spec=C.encounters.find(a=>a.id===e.id);Object.assign(e,{x:spec.x,y:spec.y,hp:spec.hp,phase:'patrol',age:0,cooldown:1,flash:0,attackHit:false});}
     if(s.rescued)npc=makeNpc(cp.floor,p.x+90,true);street?.afterRetry();
     bursts=[];effects=[];shots=[];labels=[];release();$('menuScreen').hidden=true;$('toast').hidden=true;
-    s.camera=clamp(p.x-W/2,0,C.width-W);s.cameraY=clamp(p.y-520,0,C.height-H);canvas.focus({preventScroll:true});toast('Điểm hồi sinh đã phục hồi.');updateUI(true);
+    const camera=view.target(p);s.camera=camera.x;s.cameraY=camera.y;canvas.focus({preventScroll:true});toast('Điểm hồi sinh đã phục hồi.');updateUI(true);
   }
 
   function input(key){
@@ -314,7 +316,7 @@
     for(const e of effects)e.age+=dt;effects=effects.filter(e=>e.age<e.duration);
     for(const b of bursts){b.x+=b.vx*dt;b.y+=b.vy*dt;b.vy+=240*dt;b.life-=dt;}bursts=bursts.filter(b=>b.life>0);
     for(const l of labels){l.y-=28*dt;l.life-=dt;}labels=labels.filter(l=>l.life>0);
-    const follow=1-Math.exp(-dt*8);s.camera+=(clamp(p.x-W/2,0,C.width-W)-s.camera)*follow;s.cameraY+=(clamp(p.y-(p.vy>200?410:520),0,C.height-H)-s.cameraY)*follow;
+    const follow=1-Math.exp(-dt*8),camera=view.target(p);s.camera+=(camera.x-s.camera)*follow;s.cameraY+=(camera.y-s.cameraY)*follow;
   }
   function rect(x,y,w,h,color){ctx.fillStyle=color;ctx.fillRect(Math.round(x),Math.round(y),w,h);}
   function line(points,color,width=1){ctx.beginPath();points.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke();}
@@ -412,7 +414,7 @@
     const fist=attacks[effect.kind].fist,root=a.effectRoot||fist;
     const ox=effect.x+effect.face*root[0]*ART_SCALE,oy=effect.y+root[1]*ART_SCALE,scale=a.uniformSourceScale*ART_SCALE;
     ctx.save();
-    if(effect.kind==='attack4'){ctx.beginPath();ctx.rect(s.camera,front?oy:s.cameraY,W,front?s.cameraY+H-oy:oy-s.cameraY);ctx.clip();}
+    if(effect.kind==='attack4'){ctx.beginPath();ctx.rect(s.camera,front?oy:s.cameraY,VIEW_W,front?s.cameraY+VIEW_H-oy:oy-s.cameraY);ctx.clip();}
     ctx.translate(ox,oy);ctx.scale(effect.face,1);ctx.globalCompositeOperation='source-over';ctx.globalAlpha=a.opacity;ctx.filter='none';ctx.shadowBlur=0;ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
     ctx.drawImage(textures.get(a.image),frame.x,frame.y,frame.w,frame.h,-frame.anchorX*scale,-frame.anchorY*scale,frame.w*scale,frame.h*scale);ctx.restore();
   }
@@ -430,10 +432,10 @@
     if(!s.ready)return;
     ctx.setTransform(1,0,0,1,0,0);drawBackground();ctx.save();
     const shake=s.mode==='playing'&&!reduced?s.shake:0;
-    ctx.translate(-Math.round(s.camera)+Math.sin(s.time*92)*shake,-Math.round(s.cameraY)+Math.cos(s.time*71)*shake*.5);drawArchitecture();
-    if(s.mode==='title'){hero(860,G);text('CÔNG TY / TẦNG 07',850,G+38,9,'#aac4b2','center');}
+    ctx.translate(Math.sin(s.time*92)*shake,Math.cos(s.time*71)*shake*.5);ctx.scale(view.zoom,view.zoom);ctx.translate(-Math.round(s.camera),-Math.round(s.cameraY));drawArchitecture();
+    if(s.mode==='title'){const x=street?VIEW_W*.7:860;hero(x,G);text(street?'ĐẠI LỘ / ĐÊM XÂM LẤN':'CÔNG TY / TẦNG 07',street?x:850,G+38,9,'#aac4b2','center');}
     else{
-      for(const e of enemies)if(e.x>s.camera-300&&e.x<s.camera+W+300&&e.y>s.cameraY-100&&e.y<s.cameraY+H+300)drawEnemy(e);
+      for(const e of enemies)if(e.x>s.camera-300&&e.x<s.camera+VIEW_W+300&&e.y>s.cameraY-100&&e.y<s.cameraY+VIEW_H+300)drawEnemy(e);
       shadow(npc.x,npc.y,35);worldArt('coworker',npc.frame,npc.x,npc.y,.29,npc.facing);
       if(!s.rescued){text('CÓ NGƯỜI CÒN SỐNG',npc.x,npc.y-185,9,'#d9c3a0','center');text('◆',npc.x,npc.y-203,12,'#ddc58d','center');}
       for(const e of effects)drawPressure(e);
@@ -513,10 +515,15 @@
             for(let row=0;row<2;row++)for(let col=0;col<4;col++){const x=Math.floor(col*im.width/4),y=Math.floor(row*im.height/2),w=64,g=c.createLinearGradient(x,0,x+w,0);g.addColorStop(0,'#000');g.addColorStop(.35,'#000b');g.addColorStop(1,'#0000');c.fillStyle=g;c.fillRect(x,y,w,Math.ceil(im.height/2));}textures.set(name,material);
           }else textures.set(name,im);
         }),
-        image(embedded?embedded.office:'./'+(C.backgrounds?.office||'art/chapter-one/office-night.png')).then(im=>assets.office=im),
-        image(embedded?embedded.lobby:'./'+(C.backgrounds?.lobby||'art/chapter-one/lobby-night.png')).then(im=>assets.lobby=im)
+        ...(C.backgrounds?.panorama?[
+          image(embedded?embedded.office:'./'+C.backgrounds.panorama).then(im=>{assets.office=assets.lobby=im;})
+        ]:[
+          image(embedded?embedded.office:'./'+(C.backgrounds?.office||'art/chapter-one/office-night.png')).then(im=>assets.office=im),
+          image(embedded?embedded.lobby:'./'+(C.backgrounds?.lobby||'art/chapter-one/lobby-night.png')).then(im=>assets.lobby=im)
+        ])
       ]);
       for(const m of Object.values(motions)){m.frames.sort((a,b)=>(a.order??a.row*4+a.col)-(b.order??b.row*4+b.col));if(!m.frames.length)throw Error('Thiếu hoạt ảnh nhân vật');}
+      if(street){const camera=view.target(p);s.camera=camera.x;s.cameraY=camera.y;}
       saved=readSave();$('continueButton').hidden=!saved;s.ready=true;$('startButton').disabled=false;$('loadingText').textContent='A / D DI CHUYỂN · J CHIẾN ĐẤU · SPACE NHẢY ×2';bind();requestAnimationFrame(loop);
       if(!embedded&&'serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./level-sw.js',{updateViaCache:'none'}).then(registration=>registration.update()).catch(()=>{});
     }catch(e){console.error(e);$('loadingText').textContent='Không tải được màn chơi. Hãy tải lại trang.';}
@@ -525,6 +532,6 @@
     const dt=last?clamp((now-last)/1000,0,.1):0;last=now;accumulator+=dt;
     while(accumulator>=STEP){update(STEP);accumulator-=STEP;}draw();requestAnimationFrame(loop);
   }
-  window.diMonLevel=Object.freeze({getState:()=>({chapter:C.chapter||1,street:street?.getState(),ready:s.ready,mode:s.mode,x:p.x,y:p.y,vx:p.vx,vy:p.vy,grounded:p.grounded,doubleJumpUsed:p.doubleJumpUsed,action:p.action,frame:p.frame,hp:p.hp,maxHp:p.maxHp,invulnerable:p.invuln>0,checkpoint:s.checkpoint,rescued:s.rescued,kills:s.kills,xp:s.xp,level:s.level,elapsed:s.elapsed,camera:s.camera,cameraY:s.cameraY,floor:p.floor,floorNumber:C.floors[p.floor].number,totalFloors:C.floors.length,support:P.support(p,solids())?.kind||null,combo:s.combo+1,queuedStrikes:s.queue,hitCount:s.hitCount,fireCooldown:s.fireCd,windCooldown:s.windCd,npc:{...npc},enemies:enemies.map(e=>({id:e.id,x:e.x,y:e.y,floor:e.floor,hp:e.hp,maxHp:e.maxHp,boss:Boolean(e.boss),kind:e.kind||'hound',attackType:e.attackType,phase:e.phase,age:e.age,face:e.face,dormant:Boolean(e.dormant),environmental:Boolean(e.environmental),guard:e.guard||0,burning:(e.burn||0)>0})),effects:effects.map(e=>({...e})),projectiles:shots.length,dialogueIndex:dialogue?.index??null,renderer:'whole-character-frames',headWidth:HEAD}),getAttackBox:attackBox});
+  window.diMonLevel=Object.freeze({getState:()=>({chapter:C.chapter||1,street:street?.getState(),ready:s.ready,mode:s.mode,x:p.x,y:p.y,vx:p.vx,vy:p.vy,grounded:p.grounded,doubleJumpUsed:p.doubleJumpUsed,action:p.action,frame:p.frame,hp:p.hp,maxHp:p.maxHp,invulnerable:p.invuln>0,checkpoint:s.checkpoint,rescued:s.rescued,kills:s.kills,xp:s.xp,level:s.level,elapsed:s.elapsed,camera:s.camera,cameraY:s.cameraY,floor:p.floor,floorNumber:C.floors[p.floor].number,totalFloors:C.floors.length,support:P.support(p,solids())?.kind||null,combo:s.combo+1,queuedStrikes:s.queue,hitCount:s.hitCount,fireCooldown:s.fireCd,windCooldown:s.windCd,npc:{...npc},enemies:enemies.map(e=>({id:e.id,x:e.x,y:e.y,floor:e.floor,hp:e.hp,maxHp:e.maxHp,boss:Boolean(e.boss),kind:e.kind||'hound',attackType:e.attackType,phase:e.phase,age:e.age,face:e.face,dormant:Boolean(e.dormant),environmental:Boolean(e.environmental),guard:e.guard||0,burning:(e.burn||0)>0})),effects:effects.map(e=>({...e})),projectiles:shots.length,dialogueIndex:dialogue?.index??null,renderer:'whole-character-frames',headWidth:HEAD,renderedHeadWidth:HEAD*view.zoom,cameraZoom:view.zoom,viewWidth:VIEW_W,viewHeight:VIEW_H,playerScreen:view.project(p.x,p.y,{x:s.camera,y:s.cameraY})}),getAttackBox:attackBox});
   load();
 })();

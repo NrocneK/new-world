@@ -134,10 +134,14 @@ window.DiMonStreet=Object.freeze({create(api){
   }
   function drawBackground(){
     rect(0,0,W,H,'#17233e');ctx.imageSmoothingEnabled=false;
-    const im=s.camera>4700?assets.lobby:assets.office,offset=-(s.camera*.32)%1600;
-    for(let i=-1;i<2;i++)ctx.drawImage(im,offset+i*1600,-5-s.cameraY,1600,720);
+    const im=assets.office,b=backgroundLayout();
+    ctx.save();ctx.scale(api.view.zoom,api.view.zoom);ctx.translate(0,-s.cameraY);ctx.drawImage(im,b.x,b.y,b.width,b.height);ctx.restore();
     rect(0,0,W,H,'#101d3010');
     for(let i=0;i<20;i++){const x=((i*173-s.camera*.5)%W+W)%W,y=(i*73+s.time*100)%H;line([[x,y],[x-3,y+9]],'#b3c1d41a',1);}
+  }
+  function backgroundLayout(){
+    if(!api.view||!assets.office)return null;
+    return window.DiMonView.panorama(api.view,{imageWidth:assets.office.width,imageHeight:assets.office.height,ground:G,cameraX:s.camera});
   }
   function drawArchitecture(){
     for(const [a,b]of C.groundSections){
@@ -223,5 +227,5 @@ window.DiMonStreet=Object.freeze({create(api){
     $('sampleReplay').onclick=()=>$('startButton').click();
     if(C.sample){$('titleScreen').classList.add('sample-title');$('titleScreen').querySelector('h1').innerHTML='Ngã tư.<br/>Một <em>đường sống.</em>';$('titleScreen').querySelector('.title-copy>p').textContent='Hai đợt giao tranh trước trạm cứu thương. Phá giáp, phản đạn và dùng địa hình mở đường.';$('startButton').firstChild.textContent='CHƠI ĐOẠN MẪU ';}
   }
-  return Object.freeze({solids:()=>geometry,reset,afterRetry,beforeDamage,afterDamage,reflect,serialize:()=>({delivered:world.delivered,bossSeen:world.bossSeen}),sanitizeSave:d=>({delivered:Boolean(d?.delivered),bossSeen:Boolean(d?.bossSeen)}),updateEnemy,update,events,drawBackground,drawArchitecture,drawEnemy,drawExtra,updateUI,bind,getState:()=>({sample:Boolean(C.sample),delivered:world.delivered,anchorsDown:anchorsDown(),bossSeen:world.bossSeen,wave:world.wave,cleared:world.cleared,breather:world.breather,barrel:world.barrel,stats:{...world.stats},artStyle:'outlined-cel-shading',scenery:(C.scenery||[]).map(prop=>({...prop,renderedWidth:assets.world?.['street-props']?prop.height*assets.world['street-props'].frames[0].w/assets.world['street-props'].frames[0].h:0,collidable:false})),hostileProjectiles:world.hostiles.length,bullets:world.hostiles.map(b=>({x:b.x,y:b.y,vx:b.vx,vy:b.vy,friendly:b.friendly}))})});
+  return Object.freeze({solids:()=>geometry,reset,afterRetry,beforeDamage,afterDamage,reflect,serialize:()=>({delivered:world.delivered,bossSeen:world.bossSeen}),sanitizeSave:d=>({delivered:Boolean(d?.delivered),bossSeen:Boolean(d?.bossSeen)}),updateEnemy,update,events,drawBackground,drawArchitecture,drawEnemy,drawExtra,updateUI,bind,getState:()=>({sample:Boolean(C.sample),delivered:world.delivered,anchorsDown:anchorsDown(),bossSeen:world.bossSeen,wave:world.wave,cleared:world.cleared,breather:world.breather,barrel:world.barrel,stats:{...world.stats},artStyle:'outlined-cel-shading',background:{src:C.backgrounds.panorama,...backgroundLayout()},scenery:(C.scenery||[]).map(prop=>({...prop,renderedWidth:assets.world?.['street-props']?prop.height*assets.world['street-props'].frames[0].w/assets.world['street-props'].frames[0].h:0,collidable:false})),hostileProjectiles:world.hostiles.length,bullets:world.hostiles.map(b=>({x:b.x,y:b.y,vx:b.vx,vy:b.vy,friendly:b.friendly}))})});
 }});

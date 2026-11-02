@@ -12,7 +12,7 @@ Sau khi thoát khỏi tòa nhà ở màn 1, nhân vật và đồng nghiệp đi
 
 `chapter-two-config.js` chứa vị trí quái, vật cản, điểm hồi sinh và lời thoại. `chapter-two-world.js` chứa hành vi đặc thù của đường phố, ổ dị giới, quái bắn xa và boss. Nhân vật, combo, vật lý, tỷ lệ và VFX dùng chung với màn 1. Màn 1 giữ cấu trúc đã tạm duyệt; bổ sung chuyển màn và lưu hành trình qua `campaign.js`.
 
-`art/chapter-two/` gồm hai nền phố, quái phun đạn, Kẻ Truy Sát và ổ dị giới. `tools/measure-chapter-two.py` chỉ đo vùng khung/điểm neo, không sửa pixel. `npm run build:level` tạo hai HTML offline độc lập, gói riêng từng màn và gói cả hai màn. Gói đầy đủ chứa `level.html` cùng `chapter-two.html`; mở `level.html` để bắt đầu. Website dùng một service worker lưu tài nguyên của cả hai màn.
+`art/chapter-two/` gồm panorama phố, quái phun đạn, Kẻ Truy Sát và ổ dị giới. `tools/measure-chapter-two.py` chỉ đo vùng khung/điểm neo, không sửa pixel. `npm run build:level` tạo hai HTML offline độc lập, gói riêng từng màn và gói cả hai màn. Gói đầy đủ chứa `level.html` cùng `chapter-two.html`; mở `level.html` để bắt đầu. Website dùng một service worker lưu tài nguyên của cả hai màn.
 
 Kiểm tra: `node tests/chapter-two.spec.cjs` đi toàn tuyến bằng phím thật, bàn giao đồng nghiệp, phá ổ, mở màn chắn, quan sát hai đòn boss, hoàn thành, tải lại checkpoint, offline và chuyển kinh nghiệm. `tests/chapter-one.spec.cjs` kiểm tra lại màn 1 cùng nút chuyển màn. `tests/chapter-cache-upgrade.spec.cjs` kiểm tra người chơi đang giữ cache của bản màn 1 cũ có thể cập nhật và chơi cả hai màn offline.
 
@@ -28,6 +28,6 @@ Kiểm tra thêm: `npm run test:clinic` gồm mô phỏng vật lý đạn/vật
 
 ## Đồng bộ mỹ thuật cảnh phố
 
-Nền và bộ vật thể màn 2 được vẽ lại theo nét viền/mảng màu của nhân vật, giảm bề mặt tả thực và chi tiết nhiễu. Bus được dựng đúng tỷ lệ ở lề đường phía sau: cao 270 so với nhân vật khoảng 172. Khối bê tông thấp ở tiền cảnh là vật cản/che đạn riêng, giữ nguyên kích thước va chạm đã kiểm tra. Lều tăng tỷ lệ cửa vào. Hai nền phố và sơ tán dùng cùng hướng vẽ. Xem `docs/chapter-two-art-direction.md` để biết quy ước phân lớp và cache.
+Nền và bộ vật thể màn 2 được vẽ lại theo nét viền/mảng màu của nhân vật, giảm bề mặt tả thực và chi tiết nhiễu. Bus được dựng đúng tỷ lệ ở lề đường phía sau: cao 270 so với nhân vật khoảng 172. Khối bê tông thấp ở tiền cảnh là vật cản/che đạn riêng, giữ nguyên kích thước va chạm đã kiểm tra. Lều tăng tỷ lệ cửa vào. Panorama nối phố sang khu sơ tán dùng cùng hướng vẽ. Xem `docs/chapter-two-art-direction.md` để biết quy ước phân lớp và cache.
 
 Bộ hero, VFX, shared engine, collider và toàn bộ tài nguyên màn 1 không thay đổi. Các thử nghiệm ngã tư, hoàn thành màn 2, chuyển bản lưu cũ, cảm ứng và nâng cấp service worker đã được chạy lại với bộ ảnh mới; bản HTML offline dùng đúng nguồn mới. Bài ngã tư kiểm tra thêm bus cao hơn nhân vật ít nhất 1,5 lần, dài hơn 4 lần chiều cao nhân vật, và không tham gia va chạm của tuyến đi trước.
