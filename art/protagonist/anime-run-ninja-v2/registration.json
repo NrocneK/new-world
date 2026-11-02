@@ -1,0 +1,90 @@
+{
+  "columns": 4,
+  "rows": 2,
+  "frameWidth": 384,
+  "frameHeight": 512,
+  "groundY": 480,
+  "fps": 12,
+  "frames": [
+    {
+      "index": 0,
+      "sourceX": 0,
+      "sourceY": 0,
+      "offsetX": 2,
+      "offsetY": -10,
+      "flight": false,
+      "floorGap": 0,
+      "headFrontX": 298
+    },
+    {
+      "index": 1,
+      "sourceX": 384,
+      "sourceY": 0,
+      "offsetX": 1,
+      "offsetY": -10,
+      "flight": false,
+      "floorGap": 0,
+      "headFrontX": 299
+    },
+    {
+      "index": 2,
+      "sourceX": 768,
+      "sourceY": 0,
+      "offsetX": 1,
+      "offsetY": -10,
+      "flight": false,
+      "floorGap": 0,
+      "headFrontX": 299
+    },
+    {
+      "index": 3,
+      "sourceX": 1152,
+      "sourceY": 0,
+      "offsetX": 1,
+      "offsetY": -10,
+      "flight": false,
+      "floorGap": 0,
+      "headFrontX": 299
+    },
+    {
+      "index": 4,
+      "sourceX": 0,
+      "sourceY": 512,
+      "offsetX": 2,
+      "offsetY": -10,
+      "flight": false,
+      "floorGap": 0,
+      "headFrontX": 298
+    },
+    {
+      "index": 5,
+      "sourceX": 384,
+      "sourceY": 512,
+      "offsetX": 1,
+      "offsetY": -10,
+      "flight": false,
+      "floorGap": 0,
+      "headFrontX": 299
+    },
+    {
+      "index": 6,
+      "sourceX": 768,
+      "sourceY": 512,
+      "offsetX": 1,
+      "offsetY": -10,
+      "flight": false,
+      "floorGap": 0,
+      "headFrontX": 299
+    },
+    {
+      "index": 7,
+      "sourceX": 1152,
+      "sourceY": 512,
+      "offsetX": 1,
+      "offsetY": -10,
+      "flight": false,
+      "floorGap": 0,
+      "headFrontX": 299
+    }
+  ]
+}
