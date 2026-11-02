@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101411" />
+    <meta name="description" content="Điều khiển nhân vật pixel art trong phòng thử chuyển động của Dị Môn. Di chuyển, né, chiến đấu và thử sức mạnh nguyên tố." />
+    <title>Dị Môn — Phòng thử chuyển động</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#playground">Đến khu vực chơi thử</a>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Dị Môn — Trang chủ">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="brand-wordmark">DỊ MÔN<span>THE AWAKENING</span></span>
+      </a>
+      <nav class="header-context" aria-label="Trang hiện tại">
+        <span class="context-line"></span>
+        <span>CHARACTER LAB</span>
+      </nav>
+      <div class="header-status"><span class="status-dot"></span><span>Bản thử nghiệm <span class="status-divider">/</span> Offline</span></div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="pageTitle">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line"></span>NHÂN VẬT 01 <span class="eyebrow-slash">/</span> PHÒNG THỬ CHUYỂN ĐỘNG</p>
+          <h1 id="pageTitle">Thức tỉnh.<span>Và thử sức.</span></h1>
+          <p class="intro-description">Một nhân viên văn phòng. Hai hướng sức mạnh.<br class="desktop-break" /> Điều khiển nhân vật và tìm nhịp chiến đấu của bạn.</p>
+          <p class="revision-note">Space để nhảy; bấm lại trên không để nhảy lần hai. Bấm J để đánh hoặc bay đá.</p>
+          <p class="revision-note"><a style="color:inherit" href="./vfx-review.html">Xem bộ VFX mới</a> · <a style="color:inherit" href="./downloads/di-mon-vfx-v5.zip" download>Tải gói kết quả</a></p>
+        </div>
+        <div class="intro-note">
+          <span class="note-symbol" aria-hidden="true">✦</span>
+          <p>Cổng đã mở.<br /><span>Đến lượt bạn di chuyển.</span></p>
+        </div>
+      </section>
+
+      <div class="workspace" id="playground">
+        <section class="play-area" aria-label="Khu vực điều khiển nhân vật">
+          <div class="stage-card">
+            <div class="stage-toolbar">
+              <div class="stage-title"><span class="live-dot"></span><span>THAO TRƯỜNG</span><span class="stage-version">01</span></div>
+              <div class="stage-toolbar-actions">
+                <button class="icon-button" id="zoomToggle" type="button" aria-pressed="false" title="Cận cảnh nhân vật" aria-label="Cận cảnh nhân vật"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M10 7v6M7 10h6"/></svg></button>
+                <button class="icon-button" id="soundToggle" type="button" aria-pressed="false" title="Bật hoặc tắt âm thanh" aria-label="Bật âm thanh"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5ZM16 9l5 6m0-6-5 6" /></svg></button>
+                <button class="icon-button" id="effectsToggle" type="button" aria-pressed="true" title="Bật hoặc tắt hiệu ứng" aria-label="Bật hoặc tắt hiệu ứng"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.4 6.6L21 12l-6.6 2.4L12 21l-2.4-6.6L3 12l6.6-2.4L12 3Z" /></svg></button>
+                <span class="toolbar-divider"></span>
+                <button class="icon-button" id="helpToggle" type="button" aria-expanded="false" aria-controls="helpPanel" title="Xem phím điều khiển" aria-label="Xem phím điều khiển"><span class="help-glyph">?</span></button>
+              </div>
+            </div>
+            <div class="canvas-wrap">
+              <canvas id="gameCanvas" width="1280" height="720" tabindex="0" aria-label="Thao trường Dị Môn. Dùng A hoặc D để di chuyển, Space để nhảy và bấm lại để nhảy lần hai, J để đánh và K để né. Các nút cảm ứng nằm bên dưới.">Trình duyệt của bạn cần hỗ trợ Canvas để chạy bản demo.</canvas>
+              <div class="scene-coordinate" aria-hidden="true"><span class="coordinate-mark"></span>KHU VĂN PHÒNG <span>/</span> TẦNG 07</div>
+              <div id="loadingState" class="loading-state" role="status"><span class="loading-spinner"></span><strong>Đang đánh thức nhân vật…</strong><span>Chuẩn bị thao trường</span></div>
+              <div id="helpPanel" class="help-panel" hidden>
+                <div class="help-heading"><span>PHÍM ĐIỀU KHIỂN</span><span>⌨</span></div>
+                <dl>
+                  <div><dt><kbd>A</kbd><kbd>D</kbd> / <kbd>←</kbd><kbd>→</kbd></dt><dd>Di chuyển</dd></div>
+                  <div><dt><kbd>Shift</kbd> + di chuyển</dt><dd>Chạy nhanh</dd></div>
+                  <div><dt><kbd>Space</kbd></dt><dd>Nhảy; bấm lại trên không để nhảy lần hai một lần</dd></div>
+                  <div><dt><kbd>J</kbd></dt><dd>Mỗi lần bấm một đòn; bấm liên tiếp để nối combo 4 đòn</dd></div>
+                  <div><dt><kbd>Space</kbd> rồi <kbd>J</kbd></dt><dd>Bay đá, tiếp tục di chuyển trên không</dd></div>
+                  <div><dt><kbd>K</kbd></dt><dd>Né</dd></div>
+                  <div><dt><kbd>U</kbd> / <kbd>I</kbd></dt><dd>Lửa / Gió</dd></div>
+                  <div><dt><kbd>H</kbd> / <kbd>X</kbd></dt><dd>Chịu đòn / Gục ngã</dd></div>
+                  <div><dt><kbd>R</kbd></dt><dd>Bắt đầu lại</dd></div>
+                </dl>
+              </div>
+            </div>
+            <div class="stage-statusbar">
+              <div class="current-action"><span class="status-caption">ĐANG THỰC HIỆN</span><strong id="currentAction">Đứng yên</strong></div>
+              <div class="stage-stats"><span class="hit-stat"><i aria-hidden="true">⌖</i> <strong id="hitCount">0</strong> <span>đòn trúng</span></span><span class="performance-stat"><i class="status-dot"></i><span id="fpsValue">60</span> FPS</span></div>
+            </div>
+          </div>
+
+          <div class="playback-panel">
+            <div class="playback-heading"><div><span class="section-eyebrow">XEM CHUYỂN ĐỘNG</span><span class="frame-counter" id="currentFrame">01 / 04</span></div><span id="statusText" class="playback-status" role="status">Sẵn sàng</span></div>
+            <div class="playback-content">
+              <div class="playback-buttons"><button type="button" id="playPause" class="play-button">Tạm dừng</button><button type="button" id="resetButton" class="reset-button" title="Bắt đầu lại (R)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10a8 8 0 1 1 1.3 7M4 4v6h6" /></svg><span>Làm lại</span></button></div>
+              <div id="frameStrip" class="frame-strip" aria-label="Chọn từng khung chuyển động"></div>
+              <label class="speed-control" for="speedControl"><span>Tốc độ <output id="speedValue" for="speedControl">1×</output></span><input type="range" id="speedControl" min="0.5" max="1.5" value="1" step="0.25" aria-label="Tốc độ chuyển động" /></label>
+            </div>
+          </div>
+
+          <div id="touchControls" class="touch-controls" aria-label="Nút điều khiển nhân vật">
+            <div class="direction-controls"><button type="button" data-control="left" class="direction-button" aria-label="Di chuyển sang trái"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></button><button type="button" data-control="right" class="direction-button" aria-label="Di chuyển sang phải"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></button><span>DI CHUYỂN</span></div>
+            <div class="action-controls"><button type="button" data-control="jump" aria-label="Nhảy; bấm lần nữa trên không để nhảy lần hai"><span class="control-icon">↥</span><span id="jumpLabel">Nhảy</span><kbd>SPACE</kbd></button><button type="button" data-control="dodge"><span class="control-icon">»</span><span>Né</span><kbd>K</kbd></button><button type="button" data-control="attack" class="attack-control"><span class="control-icon">✕</span><span>Đánh</span><kbd>J</kbd></button><button type="button" data-control="fire" class="fire-control"><span class="control-icon">♨</span><span>Lửa</span><kbd>U</kbd></button><button type="button" data-control="wind" class="wind-control"><span class="control-icon">≋</span><span>Gió</span><kbd>I</kbd></button></div>
+          </div>
+          <p id="controlHints" class="control-hints"><span class="keyboard-symbol" aria-hidden="true">⌨</span> Giữ <kbd>A</kbd>/<kbd>D</kbd> để di chuyển <span class="hint-divider">·</span> <kbd>Space</kbd> để nhảy <span class="hint-divider">·</span> Bấm lại <kbd>Space</kbd> trên không để nhảy lần hai</p>
+        </section>
+
+        <aside class="motion-panel" aria-labelledby="motionTitle">
+          <div class="motion-heading"><div><span class="section-eyebrow">BỘ CHUYỂN ĐỘNG</span><h2 id="motionTitle">Chọn một động tác</h2></div><span class="motion-count">17</span></div>
+          <p class="motion-description">Bấm để xem từng động tác, hoặc tự điều khiển trong thao trường.</p>
+          <div id="motionTabs" class="motion-tabs" role="group" aria-label="Lọc động tác"><button type="button" data-group="all" class="is-active" aria-pressed="true">Tất cả</button><button type="button" data-group="move" aria-pressed="false">Di chuyển</button><button type="button" data-group="combat" aria-pressed="false">Cận chiến</button><button type="button" data-group="magic" aria-pressed="false">Nguyên tố</button><button type="button" data-group="react" aria-pressed="false">Phản ứng</button></div>
+          <div id="motionGrid" class="motion-grid" aria-label="Danh sách động tác"></div>
+          <div class="spirit-note"><span class="spirit-orb" aria-hidden="true"></span><p>“Sức mạnh đã thức tỉnh.<br /><strong>Hãy học cách làm chủ nó.”</strong></p><span class="spirit-label">TINH LINH HỆ THỐNG</span></div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer"><span>DỊ MÔN <span class="footer-slash">/</span> CHARACTER LAB</span><p>Một bước nhỏ. Khởi đầu của một hành trình.</p><span class="footer-version">BẢN DEMO 11 <span aria-hidden="true">↗</span></span></footer>
+  </body>
+</html>

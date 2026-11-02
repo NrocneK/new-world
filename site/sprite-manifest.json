@@ -1,0 +1,3159 @@
+{
+  "version": 9,
+  "anchorSpace": "crop-relative",
+  "rowColumnBase": 0,
+  "preserveAspectRatio": true,
+  "locomotionRenderer": "whole-character-frames",
+  "locomotionStatus": "latest-walk-run-with-blinks",
+  "headReferenceWidth": 132,
+  "combat": {
+    "chain": [
+      "attack1",
+      "attack2",
+      "attack3",
+      "attack4"
+    ],
+    "inputWindowSeconds": 0.42
+  },
+  "identityVersion": 6,
+  "pages": [
+    {
+      "key": "locomotion",
+      "src": "art/protagonist/design-v2/01_locomotion.png",
+      "width": 1254,
+      "height": 1254,
+      "actions": [
+        "idle",
+        "land"
+      ],
+      "standingHeight": 323,
+      "frames": [
+        {
+          "row": 0,
+          "col": 0,
+          "action": "idle",
+          "order": 0,
+          "x": 89,
+          "y": 1,
+          "w": 221,
+          "h": 329,
+          "anchorX": 105.9,
+          "anchorY": 325,
+          "headBounds": {
+            "x": 5,
+            "y": 6,
+            "w": 211,
+            "h": 177
+          },
+          "headWidth": 211,
+          "displayScale": 0.6255924170616114
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "action": "idle",
+          "order": 1,
+          "x": 389,
+          "y": 1,
+          "w": 222,
+          "h": 328,
+          "anchorX": 106.0,
+          "anchorY": 324,
+          "headBounds": {
+            "x": 5,
+            "y": 6,
+            "w": 211,
+            "h": 174
+          },
+          "headWidth": 211,
+          "displayScale": 0.6255924170616114
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "action": "idle",
+          "order": 2,
+          "x": 673,
+          "y": 1,
+          "w": 224,
+          "h": 329,
+          "anchorX": 106.0,
+          "anchorY": 325,
+          "headBounds": {
+            "x": 5,
+            "y": 6,
+            "w": 213,
+            "h": 174
+          },
+          "headWidth": 213,
+          "displayScale": 0.6197183098591549
+        },
+        {
+          "row": 0,
+          "col": 3,
+          "action": "idle",
+          "order": 3,
+          "x": 962,
+          "y": 6,
+          "w": 218,
+          "h": 324,
+          "anchorX": 101.0,
+          "anchorY": 320,
+          "headBounds": {
+            "x": 5,
+            "y": 5,
+            "w": 207,
+            "h": 170
+          },
+          "headWidth": 207,
+          "displayScale": 0.6376811594202898
+        },
+        {
+          "row": 0,
+          "col": 0,
+          "action": "land",
+          "order": 3,
+          "x": 89,
+          "y": 1,
+          "w": 221,
+          "h": 329,
+          "anchorX": 105.9,
+          "anchorY": 325,
+          "headBounds": {
+            "x": 5,
+            "y": 6,
+            "w": 211,
+            "h": 177
+          },
+          "headWidth": 211,
+          "displayScale": 0.6255924170616114,
+          "sourceAction": "idle",
+          "sourceOrder": 0,
+          "canonicalNeutral": true
+        }
+      ]
+    },
+    {
+      "key": "movement-v6",
+      "src": "art/protagonist/identity-v6/movement-v6.png",
+      "width": 2560,
+      "height": 2560,
+      "standingHeight": 427,
+      "actions": [
+        "jump",
+        "fall",
+        "land",
+        "dodge"
+      ],
+      "frames": [
+        {
+          "action": "jump",
+          "order": 0,
+          "row": 0,
+          "col": 0,
+          "x": 0,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 223,
+            "y": 267,
+            "w": 280,
+            "h": 201
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/jump-01.png",
+          "sha256": "086a5ffe6a3b7463dd3965525e094121a426c5814980ff5eb0e66d5af50244c4",
+          "sourceCrop": [
+            0,
+            0,
+            385,
+            453
+          ],
+          "placement": {
+            "x": 211,
+            "y": 258,
+            "w": 301,
+            "h": 354
+          },
+          "uniformPackScale": 0.7821229050279329,
+          "proportions": {
+            "headHeightToWidth": 0.776536312849162,
+            "chinToSoleOverHead": 0.5755395683453237,
+            "sourceHeadWidth": 358,
+            "sourceHeadHeight": 278
+          },
+          "hairColor": {
+            "before": [
+              89,
+              61,
+              54
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "order": 1,
+          "row": 0,
+          "col": 1,
+          "x": 640,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 242,
+            "y": 215,
+            "w": 280,
+            "h": 213
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/jump-02.png",
+          "sha256": "5e8131de36c8dd35061b9127c9c2a57051c3549ee5a6a92ab05f5e737122b6e8",
+          "sourceCrop": [
+            0,
+            0,
+            383,
+            510
+          ],
+          "placement": {
+            "x": 226,
+            "y": 205,
+            "w": 306,
+            "h": 407
+          },
+          "uniformPackScale": 0.7977207977207977,
+          "proportions": {
+            "headHeightToWidth": 0.7891737891737892,
+            "chinToSoleOverHead": 0.7833935018050542,
+            "sourceHeadWidth": 351,
+            "sourceHeadHeight": 277
+          },
+          "hairColor": {
+            "before": [
+              90,
+              62,
+              55
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "order": 2,
+          "row": 0,
+          "col": 2,
+          "x": 1280,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 196,
+            "y": 238,
+            "w": 280,
+            "h": 209
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/jump-03.png",
+          "sha256": "7db3137a86d0543fc9b0abf68d67e9e0111d4f9d88b2ea93066e8959560fce63",
+          "sourceCrop": [
+            0,
+            0,
+            392,
+            501
+          ],
+          "placement": {
+            "x": 185,
+            "y": 229,
+            "w": 300,
+            "h": 383
+          },
+          "uniformPackScale": 0.7650273224043715,
+          "proportions": {
+            "headHeightToWidth": 0.76775956284153,
+            "chinToSoleOverHead": 0.7259786476868327,
+            "sourceHeadWidth": 366,
+            "sourceHeadHeight": 281
+          },
+          "hairColor": {
+            "before": [
+              88,
+              61,
+              54
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          }
+        },
+        {
+          "action": "jump",
+          "order": 3,
+          "row": 0,
+          "col": 3,
+          "x": 1920,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 194,
+            "y": 228,
+            "w": 280,
+            "h": 209
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/jump-04.png",
+          "sha256": "dbe19265b2747a84c87dc4628d33baf56cea373314e653d3a7adbb9176909f40",
+          "sourceCrop": [
+            0,
+            0,
+            389,
+            508
+          ],
+          "placement": {
+            "x": 182,
+            "y": 219,
+            "w": 301,
+            "h": 393
+          },
+          "uniformPackScale": 0.7734806629834254,
+          "proportions": {
+            "headHeightToWidth": 0.787292817679558,
+            "chinToSoleOverHead": 0.7263157894736842,
+            "sourceHeadWidth": 362,
+            "sourceHeadHeight": 285
+          },
+          "hairColor": {
+            "before": [
+              88,
+              61,
+              54
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          }
+        },
+        {
+          "action": "fall",
+          "order": 0,
+          "row": 1,
+          "col": 0,
+          "x": 0,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 206,
+            "y": 224,
+            "w": 280,
+            "h": 215
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/fall-01.png",
+          "sha256": "4054382397659bbb50a33b3929e3856caa6f494cc299006c1eb7e92340c99699",
+          "sourceCrop": [
+            0,
+            0,
+            420,
+            562
+          ],
+          "placement": {
+            "x": 198,
+            "y": 216,
+            "w": 295,
+            "h": 395
+          },
+          "uniformPackScale": 0.7035175879396985,
+          "proportions": {
+            "headHeightToWidth": 0.7839195979899497,
+            "chinToSoleOverHead": 0.7532051282051282,
+            "sourceHeadWidth": 398,
+            "sourceHeadHeight": 312
+          },
+          "hairColor": {
+            "before": [
+              94,
+              63,
+              55
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          }
+        },
+        {
+          "action": "fall",
+          "order": 1,
+          "row": 1,
+          "col": 1,
+          "x": 640,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 168,
+            "y": 222,
+            "w": 280,
+            "h": 214
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/fall-02.png",
+          "sha256": "2d08a020a9fdcb7478ad5083d77cb0c803c742561cc0895d6968747f9224768b",
+          "sourceCrop": [
+            0,
+            0,
+            419,
+            561
+          ],
+          "placement": {
+            "x": 159,
+            "y": 214,
+            "w": 297,
+            "h": 398
+          },
+          "uniformPackScale": 0.7088607594936709,
+          "proportions": {
+            "headHeightToWidth": 0.789873417721519,
+            "chinToSoleOverHead": 0.75,
+            "sourceHeadWidth": 395,
+            "sourceHeadHeight": 312
+          },
+          "hairColor": {
+            "before": [
+              93,
+              63,
+              54
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          }
+        },
+        {
+          "action": "fall",
+          "order": 2,
+          "row": 1,
+          "col": 2,
+          "x": 1280,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 182,
+            "y": 233,
+            "w": 280,
+            "h": 206
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/fall-03.png",
+          "sha256": "bc28ba83b83e866270d8980b0522386768f97524df8c1e7440f2b6d108c9bc0a",
+          "sourceCrop": [
+            0,
+            0,
+            422,
+            549
+          ],
+          "placement": {
+            "x": 173,
+            "y": 225,
+            "w": 297,
+            "h": 386
+          },
+          "uniformPackScale": 0.7035175879396985,
+          "proportions": {
+            "headHeightToWidth": 0.7839195979899497,
+            "chinToSoleOverHead": 0.7115384615384616,
+            "sourceHeadWidth": 398,
+            "sourceHeadHeight": 312
+          },
+          "hairColor": {
+            "before": [
+              93,
+              62,
+              54
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          }
+        },
+        {
+          "action": "fall",
+          "order": 3,
+          "row": 1,
+          "col": 3,
+          "x": 1920,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 197,
+            "y": 247,
+            "w": 280,
+            "h": 210
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/fall-04.png",
+          "sha256": "aa8ff495714d542152c3e03959264da2e673b4d7b570e088ccb20486a0c4add9",
+          "sourceCrop": [
+            0,
+            0,
+            421,
+            530
+          ],
+          "placement": {
+            "x": 189,
+            "y": 239,
+            "w": 296,
+            "h": 373
+          },
+          "uniformPackScale": 0.7035175879396985,
+          "proportions": {
+            "headHeightToWidth": 0.7989949748743719,
+            "chinToSoleOverHead": 0.6194968553459119,
+            "sourceHeadWidth": 398,
+            "sourceHeadHeight": 318
+          },
+          "hairColor": {
+            "before": [
+              93,
+              63,
+              55
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          }
+        },
+        {
+          "action": "land",
+          "order": 0,
+          "row": 2,
+          "col": 0,
+          "x": 0,
+          "y": 1280,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 208,
+            "y": 233,
+            "w": 280,
+            "h": 227
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/land-01.png",
+          "sha256": "74656b1e6b01277e0d4f0567f086e0eaed263c67d756f438152018e1cc4c4952",
+          "sourceCrop": [
+            0,
+            0,
+            407,
+            532
+          ],
+          "placement": {
+            "x": 201,
+            "y": 226,
+            "w": 295,
+            "h": 386
+          },
+          "uniformPackScale": 0.7253886010362695,
+          "proportions": {
+            "headHeightToWidth": 0.7901554404145078,
+            "chinToSoleOverHead": 0.6983606557377049,
+            "sourceHeadWidth": 386,
+            "sourceHeadHeight": 305
+          },
+          "hairColor": {
+            "before": [
+              92,
+              62,
+              54
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          }
+        },
+        {
+          "action": "land",
+          "order": 1,
+          "row": 2,
+          "col": 1,
+          "x": 640,
+          "y": 1280,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 216,
+            "y": 266,
+            "w": 280,
+            "h": 206
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/land-02.png",
+          "sha256": "f3471415e0bd1c52a514fed88ff5299480524fee6d92c6f20734a26d29673b10",
+          "sourceCrop": [
+            0,
+            0,
+            398,
+            475
+          ],
+          "placement": {
+            "x": 208,
+            "y": 258,
+            "w": 296,
+            "h": 354
+          },
+          "uniformPackScale": 0.7446808510638298,
+          "proportions": {
+            "headHeightToWidth": 0.800531914893617,
+            "chinToSoleOverHead": 0.5282392026578073,
+            "sourceHeadWidth": 376,
+            "sourceHeadHeight": 301
+          },
+          "hairColor": {
+            "before": [
+              92,
+              62,
+              54
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          }
+        },
+        {
+          "action": "land",
+          "order": 2,
+          "row": 2,
+          "col": 2,
+          "x": 1280,
+          "y": 1280,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 210,
+            "y": 243,
+            "w": 280,
+            "h": 212
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/land-03.png",
+          "sha256": "ecb1995f02318e92afd53ed24dc2af631ab8a7affeec3f2c319c5d315d6900a1",
+          "sourceCrop": [
+            0,
+            0,
+            407,
+            520
+          ],
+          "placement": {
+            "x": 204,
+            "y": 236,
+            "w": 294,
+            "h": 375
+          },
+          "uniformPackScale": 0.7216494845360825,
+          "proportions": {
+            "headHeightToWidth": 0.7989690721649485,
+            "chinToSoleOverHead": 0.632258064516129,
+            "sourceHeadWidth": 388,
+            "sourceHeadHeight": 310
+          },
+          "hairColor": {
+            "before": [
+              90,
+              61,
+              54
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          }
+        },
+        {
+          "action": "dodge",
+          "order": 0,
+          "row": 3,
+          "col": 0,
+          "x": 0,
+          "y": 1920,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 199,
+            "y": 226,
+            "w": 280,
+            "h": 211
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/dodge-01.png",
+          "sha256": "2152d7f2edcd3c531af0490d679ee803461207e8700d33f4508d519a952b1ee8",
+          "sourceCrop": [
+            0,
+            0,
+            404,
+            538
+          ],
+          "placement": {
+            "x": 192,
+            "y": 218,
+            "w": 295,
+            "h": 393
+          },
+          "uniformPackScale": 0.7310704960835509,
+          "proportions": {
+            "headHeightToWidth": 0.7911227154046997,
+            "chinToSoleOverHead": 0.7260726072607261,
+            "sourceHeadWidth": 383,
+            "sourceHeadHeight": 303
+          },
+          "hairColor": {
+            "before": [
+              93,
+              62,
+              55
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          }
+        },
+        {
+          "action": "dodge",
+          "order": 1,
+          "row": 3,
+          "col": 1,
+          "x": 640,
+          "y": 1920,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 250,
+            "y": 249,
+            "w": 280,
+            "h": 205
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/dodge-02.png",
+          "sha256": "5d610ef844a63323151614a6ef05e745a4612f8bdc40bb75c9ca8479bc6208e3",
+          "sourceCrop": [
+            0,
+            0,
+            453,
+            503
+          ],
+          "placement": {
+            "x": 205,
+            "y": 242,
+            "w": 333,
+            "h": 370
+          },
+          "uniformPackScale": 0.7349081364829396,
+          "proportions": {
+            "headHeightToWidth": 0.8031496062992126,
+            "chinToSoleOverHead": 0.5980392156862745,
+            "sourceHeadWidth": 381,
+            "sourceHeadHeight": 306
+          },
+          "hairColor": {
+            "before": [
+              92,
+              62,
+              54
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          }
+        },
+        {
+          "action": "dodge",
+          "order": 2,
+          "row": 3,
+          "col": 2,
+          "x": 1280,
+          "y": 1920,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 256,
+            "y": 290,
+            "w": 280,
+            "h": 201
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/dodge-03.png",
+          "sha256": "083ac6a16b0e81a07f116425a1290ea20b8045855e44ed53725cdfca7d85707b",
+          "sourceCrop": [
+            0,
+            0,
+            471,
+            441
+          ],
+          "placement": {
+            "x": 192,
+            "y": 282,
+            "w": 353,
+            "h": 330
+          },
+          "uniformPackScale": 0.7486631016042781,
+          "proportions": {
+            "headHeightToWidth": 0.7967914438502673,
+            "chinToSoleOverHead": 0.42953020134228187,
+            "sourceHeadWidth": 374,
+            "sourceHeadHeight": 298
+          },
+          "hairColor": {
+            "before": [
+              92,
+              62,
+              54
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          }
+        },
+        {
+          "action": "dodge",
+          "order": 3,
+          "row": 3,
+          "col": 3,
+          "x": 1920,
+          "y": 1920,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 200,
+            "y": 241,
+            "w": 280,
+            "h": 225
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/dodge-04.png",
+          "sha256": "7f107df35b3e981406d85d4c0032054be0aea919cdabe2f5fd54ae8d9c6352f8",
+          "sourceCrop": [
+            0,
+            0,
+            416,
+            532
+          ],
+          "placement": {
+            "x": 192,
+            "y": 233,
+            "w": 296,
+            "h": 378
+          },
+          "uniformPackScale": 0.7106598984771574,
+          "proportions": {
+            "headHeightToWidth": 0.7893401015228426,
+            "chinToSoleOverHead": 0.662379421221865,
+            "sourceHeadWidth": 394,
+            "sourceHeadHeight": 311
+          },
+          "hairColor": {
+            "before": [
+              92,
+              62,
+              54
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "combat-v6",
+      "src": "art/protagonist/identity-v6/combat-v6.png",
+      "width": 2560,
+      "height": 2560,
+      "standingHeight": 427,
+      "actions": [
+        "attack1",
+        "attack2",
+        "attack3",
+        "attack4",
+        "airAttack"
+      ],
+      "frames": [
+        {
+          "action": "attack1",
+          "order": 0,
+          "row": 0,
+          "col": 0,
+          "x": 0,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 178,
+            "y": 213,
+            "w": 280,
+            "h": 244
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/straight-01.png",
+          "sha256": "3424e3cf0e63388622d9435ec4f3fc3055fd1a2bb60e9451a696a3fab9a5203b",
+          "sourceCrop": [
+            0,
+            0,
+            397,
+            541
+          ],
+          "placement": {
+            "x": 168,
+            "y": 203,
+            "w": 300,
+            "h": 408
+          },
+          "uniformPackScale": 0.7547169811320755,
+          "proportions": {
+            "headHeightToWidth": 0.7978436657681941,
+            "chinToSoleOverHead": 0.7702702702702703,
+            "sourceHeadWidth": 371,
+            "sourceHeadHeight": 296
+          },
+          "hairColor": {
+            "before": [
+              90,
+              61,
+              53
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          },
+          "sourceAction": "attack1",
+          "sourceOrder": 0
+        },
+        {
+          "action": "attack1",
+          "order": 1,
+          "row": 0,
+          "col": 1,
+          "x": 640,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 182,
+            "y": 210,
+            "w": 280,
+            "h": 224
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/straight-02.png",
+          "sha256": "5a2412d41bc741cf4c046ac2c26c62c3d312d9126a05fe09fec88ddb9ff4d224",
+          "sourceCrop": [
+            0,
+            0,
+            396,
+            541
+          ],
+          "placement": {
+            "x": 171,
+            "y": 201,
+            "w": 300,
+            "h": 411
+          },
+          "uniformPackScale": 0.7588075880758808,
+          "proportions": {
+            "headHeightToWidth": 0.8048780487804879,
+            "chinToSoleOverHead": 0.7676767676767676,
+            "sourceHeadWidth": 369,
+            "sourceHeadHeight": 297
+          },
+          "hairColor": {
+            "before": [
+              89,
+              60,
+              52
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          },
+          "sourceAction": "attack1",
+          "sourceOrder": 1
+        },
+        {
+          "action": "attack1",
+          "order": 2,
+          "row": 0,
+          "col": 3,
+          "x": 1920,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 178,
+            "y": 213,
+            "w": 280,
+            "h": 244
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/straight-04.png",
+          "sha256": "3424e3cf0e63388622d9435ec4f3fc3055fd1a2bb60e9451a696a3fab9a5203b",
+          "sourceCrop": [
+            0,
+            0,
+            397,
+            541
+          ],
+          "placement": {
+            "x": 168,
+            "y": 203,
+            "w": 300,
+            "h": 408
+          },
+          "uniformPackScale": 0.7547169811320755,
+          "proportions": {
+            "headHeightToWidth": 0.7978436657681941,
+            "chinToSoleOverHead": 0.7702702702702703,
+            "sourceHeadWidth": 371,
+            "sourceHeadHeight": 296
+          },
+          "hairColor": {
+            "before": [
+              90,
+              61,
+              53
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          },
+          "sourceAction": "attack1",
+          "sourceOrder": 3
+        },
+        {
+          "action": "attack2",
+          "order": 0,
+          "row": 0,
+          "col": 0,
+          "x": 0,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 178,
+            "y": 213,
+            "w": 280,
+            "h": 244
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/straight-01.png",
+          "sha256": "3424e3cf0e63388622d9435ec4f3fc3055fd1a2bb60e9451a696a3fab9a5203b",
+          "sourceCrop": [
+            0,
+            0,
+            397,
+            541
+          ],
+          "placement": {
+            "x": 168,
+            "y": 203,
+            "w": 300,
+            "h": 408
+          },
+          "uniformPackScale": 0.7547169811320755,
+          "proportions": {
+            "headHeightToWidth": 0.7978436657681941,
+            "chinToSoleOverHead": 0.7702702702702703,
+            "sourceHeadWidth": 371,
+            "sourceHeadHeight": 296
+          },
+          "hairColor": {
+            "before": [
+              90,
+              61,
+              53
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          },
+          "sourceAction": "attack1",
+          "sourceOrder": 0
+        },
+        {
+          "action": "attack2",
+          "order": 1,
+          "row": 0,
+          "col": 2,
+          "x": 1280,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 176,
+            "y": 219,
+            "w": 280,
+            "h": 220
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/straight-03.png",
+          "sha256": "67360595c7c13834c54503c91a3342e7c5f8935b5266f3a9aab1d2b18c971179",
+          "sourceCrop": [
+            0,
+            0,
+            398,
+            532
+          ],
+          "placement": {
+            "x": 166,
+            "y": 210,
+            "w": 300,
+            "h": 402
+          },
+          "uniformPackScale": 0.7547169811320755,
+          "proportions": {
+            "headHeightToWidth": 0.7897574123989218,
+            "chinToSoleOverHead": 0.7610921501706485,
+            "sourceHeadWidth": 371,
+            "sourceHeadHeight": 293
+          },
+          "hairColor": {
+            "before": [
+              89,
+              60,
+              52
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          },
+          "sourceAction": "attack1",
+          "sourceOrder": 2
+        },
+        {
+          "action": "attack2",
+          "order": 2,
+          "row": 0,
+          "col": 3,
+          "x": 1920,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 178,
+            "y": 213,
+            "w": 280,
+            "h": 244
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/straight-04.png",
+          "sha256": "3424e3cf0e63388622d9435ec4f3fc3055fd1a2bb60e9451a696a3fab9a5203b",
+          "sourceCrop": [
+            0,
+            0,
+            397,
+            541
+          ],
+          "placement": {
+            "x": 168,
+            "y": 203,
+            "w": 300,
+            "h": 408
+          },
+          "uniformPackScale": 0.7547169811320755,
+          "proportions": {
+            "headHeightToWidth": 0.7978436657681941,
+            "chinToSoleOverHead": 0.7702702702702703,
+            "sourceHeadWidth": 371,
+            "sourceHeadHeight": 296
+          },
+          "hairColor": {
+            "before": [
+              90,
+              61,
+              53
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          },
+          "sourceAction": "attack1",
+          "sourceOrder": 3
+        },
+        {
+          "action": "attack3",
+          "order": 0,
+          "row": 1,
+          "col": 0,
+          "x": 0,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 188,
+            "y": 215,
+            "w": 280,
+            "h": 214
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/hook-01.png",
+          "sha256": "6322a2c62c253c30d22b84a1a9a3ab6eaa2063aa41429f5d7b7873bde5523037",
+          "sourceCrop": [
+            0,
+            0,
+            388,
+            525
+          ],
+          "placement": {
+            "x": 179,
+            "y": 207,
+            "w": 299,
+            "h": 405
+          },
+          "uniformPackScale": 0.7713498622589532,
+          "proportions": {
+            "headHeightToWidth": 0.7878787878787878,
+            "chinToSoleOverHead": 0.7832167832167832,
+            "sourceHeadWidth": 363,
+            "sourceHeadHeight": 286
+          },
+          "hairColor": {
+            "before": [
+              92,
+              62,
+              54
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          },
+          "sourceAction": "attack3",
+          "sourceOrder": 0
+        },
+        {
+          "action": "attack3",
+          "order": 1,
+          "row": 1,
+          "col": 1,
+          "x": 640,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 165,
+            "y": 183,
+            "w": 280,
+            "h": 228
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/hook-02.png",
+          "sha256": "5287810cb7789ff36d7fadb15ae106816213bdad35e62c0e9a1613e43e881b60",
+          "sourceCrop": [
+            0,
+            0,
+            422,
+            551
+          ],
+          "placement": {
+            "x": 155,
+            "y": 175,
+            "w": 335,
+            "h": 437
+          },
+          "uniformPackScale": 0.7932011331444759,
+          "proportions": {
+            "headHeightToWidth": 0.8045325779036827,
+            "chinToSoleOverHead": 0.8908450704225352,
+            "sourceHeadWidth": 353,
+            "sourceHeadHeight": 284
+          },
+          "hairColor": {
+            "before": [
+              94,
+              63,
+              55
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          },
+          "sourceAction": "attack3",
+          "sourceOrder": 1
+        },
+        {
+          "action": "attack3",
+          "order": 2,
+          "row": 1,
+          "col": 2,
+          "x": 1280,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 130,
+            "y": 190,
+            "w": 280,
+            "h": 239
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/hook-03.png",
+          "sha256": "72215a82bc20777f7deaa0b9b9aa325de63beadfa26968a9499d2dea14915559",
+          "sourceCrop": [
+            0,
+            0,
+            415,
+            536
+          ],
+          "placement": {
+            "x": 120,
+            "y": 181,
+            "w": 334,
+            "h": 431
+          },
+          "uniformPackScale": 0.8045977011494253,
+          "proportions": {
+            "headHeightToWidth": 0.8074712643678161,
+            "chinToSoleOverHead": 0.8540925266903915,
+            "sourceHeadWidth": 348,
+            "sourceHeadHeight": 281
+          },
+          "hairColor": {
+            "before": [
+              90,
+              60,
+              53
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          },
+          "sourceAction": "attack3",
+          "sourceOrder": 2
+        },
+        {
+          "action": "attack3",
+          "order": 3,
+          "row": 1,
+          "col": 3,
+          "x": 1920,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 178,
+            "y": 213,
+            "w": 280,
+            "h": 244
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/hook-04.png",
+          "sha256": "3424e3cf0e63388622d9435ec4f3fc3055fd1a2bb60e9451a696a3fab9a5203b",
+          "sourceCrop": [
+            0,
+            0,
+            397,
+            541
+          ],
+          "placement": {
+            "x": 168,
+            "y": 203,
+            "w": 300,
+            "h": 408
+          },
+          "uniformPackScale": 0.7547169811320755,
+          "proportions": {
+            "headHeightToWidth": 0.7978436657681941,
+            "chinToSoleOverHead": 0.7702702702702703,
+            "sourceHeadWidth": 371,
+            "sourceHeadHeight": 296
+          },
+          "hairColor": {
+            "before": [
+              90,
+              61,
+              53
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          },
+          "sourceAction": "attack3",
+          "sourceOrder": 3
+        },
+        {
+          "action": "attack4",
+          "order": 0,
+          "row": 2,
+          "col": 0,
+          "x": 0,
+          "y": 1280,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 178,
+            "y": 205,
+            "w": 280,
+            "h": 230
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/finisher-01.png",
+          "sha256": "073a202f1c47988e4e40c571a7f724cb514a0d81b7ae70cab60800dec90a0253",
+          "sourceCrop": [
+            0,
+            0,
+            402,
+            563
+          ],
+          "placement": {
+            "x": 170,
+            "y": 198,
+            "w": 295,
+            "h": 414
+          },
+          "uniformPackScale": 0.7349081364829396,
+          "proportions": {
+            "headHeightToWidth": 0.7585301837270341,
+            "chinToSoleOverHead": 0.8996539792387543,
+            "sourceHeadWidth": 381,
+            "sourceHeadHeight": 289
+          },
+          "hairColor": {
+            "before": [
+              91,
+              61,
+              52
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          },
+          "sourceAction": "attack4",
+          "sourceOrder": 0
+        },
+        {
+          "action": "attack4",
+          "order": 1,
+          "row": 2,
+          "col": 1,
+          "x": 640,
+          "y": 1280,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 218,
+            "y": 221,
+            "w": 280,
+            "h": 201
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/finisher-02.png",
+          "sha256": "b408a472ffaffe287267e840112dd77347fa359b3f3b00a0df6aff0aab9c1f91",
+          "sourceCrop": [
+            0,
+            0,
+            463,
+            570
+          ],
+          "placement": {
+            "x": 184,
+            "y": 214,
+            "w": 322,
+            "h": 397
+          },
+          "uniformPackScale": 0.6965174129353234,
+          "proportions": {
+            "headHeightToWidth": 0.7736318407960199,
+            "chinToSoleOverHead": 0.7877813504823151,
+            "sourceHeadWidth": 402,
+            "sourceHeadHeight": 311
+          },
+          "hairColor": {
+            "before": [
+              99,
+              64,
+              56
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          },
+          "sourceAction": "attack4",
+          "sourceOrder": 1
+        },
+        {
+          "action": "attack4",
+          "order": 2,
+          "row": 2,
+          "col": 2,
+          "x": 1280,
+          "y": 1280,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 266,
+            "y": 289,
+            "w": 280,
+            "h": 205
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/finisher-03.png",
+          "sha256": "8f4bbd94f67e7ae5ca5c72f8ef38117d6e12e0c8aeb62dd8d23e65c66ee6f25b",
+          "sourceCrop": [
+            0,
+            0,
+            522,
+            461
+          ],
+          "placement": {
+            "x": 181,
+            "y": 281,
+            "w": 375,
+            "h": 331
+          },
+          "uniformPackScale": 0.717948717948718,
+          "proportions": {
+            "headHeightToWidth": 0.8102564102564103,
+            "chinToSoleOverHead": 0.41139240506329117,
+            "sourceHeadWidth": 390,
+            "sourceHeadHeight": 316
+          },
+          "hairColor": {
+            "before": [
+              95,
+              62,
+              55
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          },
+          "sourceAction": "attack4",
+          "sourceOrder": 2
+        },
+        {
+          "action": "attack4",
+          "order": 3,
+          "row": 2,
+          "col": 3,
+          "x": 1920,
+          "y": 1280,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 178,
+            "y": 213,
+            "w": 280,
+            "h": 244
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/finisher-04.png",
+          "sha256": "3424e3cf0e63388622d9435ec4f3fc3055fd1a2bb60e9451a696a3fab9a5203b",
+          "sourceCrop": [
+            0,
+            0,
+            397,
+            541
+          ],
+          "placement": {
+            "x": 168,
+            "y": 203,
+            "w": 300,
+            "h": 408
+          },
+          "uniformPackScale": 0.7547169811320755,
+          "proportions": {
+            "headHeightToWidth": 0.7978436657681941,
+            "chinToSoleOverHead": 0.7702702702702703,
+            "sourceHeadWidth": 371,
+            "sourceHeadHeight": 296
+          },
+          "hairColor": {
+            "before": [
+              90,
+              61,
+              53
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          },
+          "sourceAction": "attack4",
+          "sourceOrder": 3
+        },
+        {
+          "action": "airAttack",
+          "order": 0,
+          "row": 3,
+          "col": 0,
+          "x": 0,
+          "y": 1920,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 196,
+            "y": 238,
+            "w": 280,
+            "h": 209
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/airAttack-01.png",
+          "sha256": "7db3137a86d0543fc9b0abf68d67e9e0111d4f9d88b2ea93066e8959560fce63",
+          "sourceCrop": [
+            0,
+            0,
+            392,
+            501
+          ],
+          "placement": {
+            "x": 185,
+            "y": 229,
+            "w": 300,
+            "h": 383
+          },
+          "uniformPackScale": 0.7650273224043715,
+          "proportions": {
+            "headHeightToWidth": 0.76775956284153,
+            "chinToSoleOverHead": 0.7259786476868327,
+            "sourceHeadWidth": 366,
+            "sourceHeadHeight": 281
+          },
+          "hairColor": {
+            "before": [
+              88,
+              61,
+              54
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          },
+          "sourceAction": "airAttack",
+          "sourceOrder": 0
+        },
+        {
+          "action": "airAttack",
+          "order": 1,
+          "row": 3,
+          "col": 1,
+          "x": 640,
+          "y": 1920,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 158,
+            "y": 207,
+            "w": 280,
+            "h": 211
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/airAttack-02.png",
+          "sha256": "81b7adbf11b0866be2739f5be04973ab4e194d126daf1849074062dc636648ce",
+          "sourceCrop": [
+            0,
+            0,
+            460,
+            521
+          ],
+          "placement": {
+            "x": 151,
+            "y": 199,
+            "w": 365,
+            "h": 413
+          },
+          "uniformPackScale": 0.7932011331444759,
+          "proportions": {
+            "headHeightToWidth": 0.7592067988668555,
+            "chinToSoleOverHead": 0.8917910447761194,
+            "sourceHeadWidth": 353,
+            "sourceHeadHeight": 268
+          },
+          "hairColor": {
+            "before": [
+              91,
+              61,
+              53
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          },
+          "sourceAction": "airAttack",
+          "sourceOrder": 1
+        },
+        {
+          "action": "airAttack",
+          "order": 2,
+          "row": 3,
+          "col": 2,
+          "x": 1280,
+          "y": 1920,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 180,
+            "y": 214,
+            "w": 280,
+            "h": 205
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/airAttack-03.png",
+          "sha256": "ca4d158b225a0e8197dc22cb8aebe6163fb142da2cc3b957511714492afb4f0e",
+          "sourceCrop": [
+            0,
+            0,
+            484,
+            511
+          ],
+          "placement": {
+            "x": 172,
+            "y": 206,
+            "w": 385,
+            "h": 406
+          },
+          "uniformPackScale": 0.7954545454545454,
+          "proportions": {
+            "headHeightToWidth": 0.7556818181818182,
+            "chinToSoleOverHead": 0.868421052631579,
+            "sourceHeadWidth": 352,
+            "sourceHeadHeight": 266
+          },
+          "hairColor": {
+            "before": [
+              89,
+              60,
+              52
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          },
+          "sourceAction": "airAttack",
+          "sourceOrder": 2
+        },
+        {
+          "action": "airAttack",
+          "order": 3,
+          "row": 3,
+          "col": 3,
+          "x": 1920,
+          "y": 1920,
+          "w": 640,
+          "h": 640,
+          "anchorX": 320,
+          "anchorY": 608,
+          "headWidth": 280,
+          "displayScale": 0.4714285714285714,
+          "headBounds": {
+            "x": 194,
+            "y": 228,
+            "w": 280,
+            "h": 209
+          },
+          "anatomyCorrected": true,
+          "canonicalNeutral": false,
+          "source": "frames/airAttack-04.png",
+          "sha256": "dbe19265b2747a84c87dc4628d33baf56cea373314e653d3a7adbb9176909f40",
+          "sourceCrop": [
+            0,
+            0,
+            389,
+            508
+          ],
+          "placement": {
+            "x": 182,
+            "y": 219,
+            "w": 301,
+            "h": 393
+          },
+          "uniformPackScale": 0.7734806629834254,
+          "proportions": {
+            "headHeightToWidth": 0.787292817679558,
+            "chinToSoleOverHead": 0.7263157894736842,
+            "sourceHeadWidth": 362,
+            "sourceHeadHeight": 285
+          },
+          "hairColor": {
+            "before": [
+              88,
+              61,
+              54
+            ],
+            "reference": [
+              89,
+              60,
+              53
+            ]
+          },
+          "sourceAction": "airAttack",
+          "sourceOrder": 3
+        }
+      ]
+    },
+    {
+      "key": "elements",
+      "src": "art/protagonist/design-v2/04_elements_reactions.png",
+      "width": 1254,
+      "height": 1254,
+      "actions": [
+        "fire",
+        "wind",
+        "hurt",
+        "death"
+      ],
+      "standingHeight": 304,
+      "frames": [
+        {
+          "row": 0,
+          "col": 0,
+          "action": "fire",
+          "order": 0,
+          "x": 68,
+          "y": 6,
+          "w": 197,
+          "h": 310,
+          "anchorX": 97.5,
+          "anchorY": 306,
+          "headBounds": {
+            "x": 4,
+            "y": 3,
+            "w": 190,
+            "h": 163
+          },
+          "headWidth": 190,
+          "displayScale": 0.6947368421052632
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "action": "fire",
+          "order": 1,
+          "x": 373,
+          "y": 9,
+          "w": 199,
+          "h": 308,
+          "anchorX": 101.5,
+          "anchorY": 304,
+          "headBounds": {
+            "x": 3,
+            "y": 1,
+            "w": 192,
+            "h": 165
+          },
+          "headWidth": 192,
+          "displayScale": 0.6875
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "action": "fire",
+          "order": 2,
+          "x": 679,
+          "y": 13,
+          "w": 256,
+          "h": 304,
+          "anchorX": 89.0,
+          "anchorY": 300,
+          "headBounds": {
+            "x": 2,
+            "y": 1,
+            "w": 206,
+            "h": 163
+          },
+          "headWidth": 206,
+          "displayScale": 0.6407766990291263
+        },
+        {
+          "row": 0,
+          "col": 3,
+          "action": "fire",
+          "order": 3,
+          "x": 997,
+          "y": 5,
+          "w": 196,
+          "h": 312,
+          "anchorX": 95.0,
+          "anchorY": 308,
+          "headBounds": {
+            "x": 2,
+            "y": 3,
+            "w": 190,
+            "h": 164
+          },
+          "headWidth": 190,
+          "displayScale": 0.6947368421052632
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "action": "wind",
+          "order": 0,
+          "x": 69,
+          "y": 320,
+          "w": 196,
+          "h": 312,
+          "anchorX": 96.5,
+          "anchorY": 308,
+          "headBounds": {
+            "x": 3,
+            "y": 1,
+            "w": 190,
+            "h": 167
+          },
+          "headWidth": 190,
+          "displayScale": 0.6947368421052632
+        },
+        {
+          "row": 1,
+          "col": 1,
+          "action": "wind",
+          "order": 1,
+          "x": 372,
+          "y": 326,
+          "w": 236,
+          "h": 306,
+          "anchorX": 101.84,
+          "anchorY": 302,
+          "headBounds": {
+            "x": 3,
+            "y": 1,
+            "w": 192,
+            "h": 175
+          },
+          "headWidth": 192,
+          "displayScale": 0.6875
+        },
+        {
+          "row": 1,
+          "col": 2,
+          "action": "wind",
+          "order": 2,
+          "x": 670,
+          "y": 326,
+          "w": 293,
+          "h": 306,
+          "anchorX": 92.0,
+          "anchorY": 302,
+          "headBounds": {
+            "x": 1,
+            "y": 1,
+            "w": 203,
+            "h": 163
+          },
+          "headWidth": 203,
+          "displayScale": 0.6502463054187192
+        },
+        {
+          "row": 1,
+          "col": 3,
+          "action": "wind",
+          "order": 3,
+          "x": 997,
+          "y": 320,
+          "w": 196,
+          "h": 312,
+          "anchorX": 95.0,
+          "anchorY": 308,
+          "headBounds": {
+            "x": 3,
+            "y": 1,
+            "w": 190,
+            "h": 166
+          },
+          "headWidth": 190,
+          "displayScale": 0.6947368421052632
+        },
+        {
+          "row": 2,
+          "col": 0,
+          "action": "hurt",
+          "order": 0,
+          "x": 69,
+          "y": 635,
+          "w": 196,
+          "h": 310,
+          "anchorX": 96.0,
+          "anchorY": 306,
+          "headBounds": {
+            "x": 3,
+            "y": 1,
+            "w": 190,
+            "h": 166
+          },
+          "headWidth": 190,
+          "displayScale": 0.6947368421052632
+        },
+        {
+          "row": 2,
+          "col": 1,
+          "action": "hurt",
+          "order": 1,
+          "x": 382,
+          "y": 655,
+          "w": 202,
+          "h": 291,
+          "anchorX": 72.0,
+          "anchorY": 287,
+          "headBounds": {
+            "x": 3,
+            "y": 1,
+            "w": 196,
+            "h": 152
+          },
+          "headWidth": 196,
+          "displayScale": 0.673469387755102
+        },
+        {
+          "row": 2,
+          "col": 2,
+          "action": "hurt",
+          "order": 2,
+          "x": 647,
+          "y": 643,
+          "w": 266,
+          "h": 303,
+          "anchorX": 181.5,
+          "anchorY": 299,
+          "headBounds": {
+            "x": 4,
+            "y": 0,
+            "w": 177,
+            "h": 172
+          },
+          "headWidth": 177,
+          "displayScale": 0.7457627118644068
+        },
+        {
+          "row": 2,
+          "col": 3,
+          "action": "hurt",
+          "order": 3,
+          "x": 997,
+          "y": 635,
+          "w": 196,
+          "h": 310,
+          "anchorX": 95.0,
+          "anchorY": 306,
+          "headBounds": {
+            "x": 4,
+            "y": 1,
+            "w": 189,
+            "h": 167
+          },
+          "headWidth": 189,
+          "displayScale": 0.6984126984126984
+        },
+        {
+          "row": 3,
+          "col": 0,
+          "action": "death",
+          "order": 0,
+          "x": 94,
+          "y": 955,
+          "w": 196,
+          "h": 282,
+          "anchorX": 59.0,
+          "anchorY": 278,
+          "headBounds": {
+            "x": 3,
+            "y": 1,
+            "w": 190,
+            "h": 168
+          },
+          "headWidth": 190,
+          "displayScale": 0.6947368421052632
+        },
+        {
+          "row": 3,
+          "col": 1,
+          "action": "death",
+          "order": 1,
+          "x": 365,
+          "y": 993,
+          "w": 243,
+          "h": 232,
+          "anchorX": 81.5,
+          "anchorY": 228,
+          "headBounds": {
+            "x": 51,
+            "y": 1,
+            "w": 188,
+            "h": 172
+          },
+          "headWidth": 188,
+          "displayScale": 0.7021276595744681
+        },
+        {
+          "row": 3,
+          "col": 2,
+          "action": "death",
+          "order": 2,
+          "x": 625,
+          "y": 1040,
+          "w": 289,
+          "h": 177,
+          "anchorX": 151.0,
+          "anchorY": 173,
+          "headBounds": {
+            "x": 0,
+            "y": 2,
+            "w": 166,
+            "h": 173
+          },
+          "headWidth": 166,
+          "displayScale": 0.7951807228915663
+        },
+        {
+          "row": 3,
+          "col": 3,
+          "action": "death",
+          "order": 3,
+          "x": 944,
+          "y": 1074,
+          "w": 300,
+          "h": 150,
+          "anchorX": 153.0,
+          "anchorY": 146,
+          "headBounds": {
+            "x": 2,
+            "y": 2,
+            "w": 155,
+            "h": 147
+          },
+          "headWidth": 155,
+          "displayScale": 0.8516129032258064
+        }
+      ]
+    },
+    {
+      "key": "walk",
+      "src": "art/protagonist/walk-hair-blink/walk-with-blink.png",
+      "width": 2048,
+      "height": 2048,
+      "actions": [
+        "walk"
+      ],
+      "standingHeight": 420,
+      "frames": [
+        {
+          "order": 0,
+          "x": 0,
+          "y": 0,
+          "w": 512,
+          "h": 512,
+          "anchorX": 256,
+          "anchorY": 488,
+          "action": "walk",
+          "variant": "open",
+          "headBounds": {
+            "x": 115,
+            "y": 71,
+            "w": 284,
+            "h": 242
+          },
+          "headWidth": 284,
+          "displayScale": 0.4647887323943662
+        },
+        {
+          "order": 1,
+          "x": 512,
+          "y": 0,
+          "w": 512,
+          "h": 512,
+          "anchorX": 256,
+          "anchorY": 488,
+          "action": "walk",
+          "variant": "open",
+          "headBounds": {
+            "x": 115,
+            "y": 74,
+            "w": 283,
+            "h": 236
+          },
+          "headWidth": 283,
+          "displayScale": 0.4664310954063604
+        },
+        {
+          "order": 2,
+          "x": 1024,
+          "y": 0,
+          "w": 512,
+          "h": 512,
+          "anchorX": 256,
+          "anchorY": 488,
+          "action": "walk",
+          "variant": "open",
+          "headBounds": {
+            "x": 112,
+            "y": 74,
+            "w": 288,
+            "h": 232
+          },
+          "headWidth": 288,
+          "displayScale": 0.4583333333333333
+        },
+        {
+          "order": 3,
+          "x": 1536,
+          "y": 0,
+          "w": 512,
+          "h": 512,
+          "anchorX": 256,
+          "anchorY": 488,
+          "action": "walk",
+          "variant": "open",
+          "headBounds": {
+            "x": 114,
+            "y": 71,
+            "w": 286,
+            "h": 237
+          },
+          "headWidth": 286,
+          "displayScale": 0.46153846153846156
+        },
+        {
+          "order": 4,
+          "x": 0,
+          "y": 512,
+          "w": 512,
+          "h": 512,
+          "anchorX": 256,
+          "anchorY": 488,
+          "action": "walk",
+          "variant": "open",
+          "headBounds": {
+            "x": 110,
+            "y": 72,
+            "w": 294,
+            "h": 247
+          },
+          "headWidth": 294,
+          "displayScale": 0.4489795918367347
+        },
+        {
+          "order": 5,
+          "x": 512,
+          "y": 512,
+          "w": 512,
+          "h": 512,
+          "anchorX": 256,
+          "anchorY": 488,
+          "action": "walk",
+          "variant": "open",
+          "headBounds": {
+            "x": 110,
+            "y": 69,
+            "w": 293,
+            "h": 241
+          },
+          "headWidth": 293,
+          "displayScale": 0.45051194539249145
+        },
+        {
+          "order": 6,
+          "x": 1024,
+          "y": 512,
+          "w": 512,
+          "h": 512,
+          "anchorX": 256,
+          "anchorY": 488,
+          "action": "walk",
+          "variant": "open",
+          "headBounds": {
+            "x": 107,
+            "y": 70,
+            "w": 296,
+            "h": 241
+          },
+          "headWidth": 296,
+          "displayScale": 0.44594594594594594
+        },
+        {
+          "order": 7,
+          "x": 1536,
+          "y": 512,
+          "w": 512,
+          "h": 512,
+          "anchorX": 256,
+          "anchorY": 488,
+          "action": "walk",
+          "variant": "open",
+          "headBounds": {
+            "x": 111,
+            "y": 74,
+            "w": 292,
+            "h": 240
+          },
+          "headWidth": 292,
+          "displayScale": 0.4520547945205479
+        },
+        {
+          "order": 0,
+          "x": 0,
+          "y": 1024,
+          "w": 512,
+          "h": 512,
+          "anchorX": 256,
+          "anchorY": 488,
+          "action": "walk",
+          "variant": "blink",
+          "headBounds": {
+            "x": 115,
+            "y": 71,
+            "w": 284,
+            "h": 242
+          },
+          "headWidth": 284,
+          "displayScale": 0.4647887323943662
+        },
+        {
+          "order": 1,
+          "x": 512,
+          "y": 1024,
+          "w": 512,
+          "h": 512,
+          "anchorX": 256,
+          "anchorY": 488,
+          "action": "walk",
+          "variant": "blink",
+          "headBounds": {
+            "x": 115,
+            "y": 74,
+            "w": 283,
+            "h": 236
+          },
+          "headWidth": 283,
+          "displayScale": 0.4664310954063604
+        },
+        {
+          "order": 2,
+          "x": 1024,
+          "y": 1024,
+          "w": 512,
+          "h": 512,
+          "anchorX": 256,
+          "anchorY": 488,
+          "action": "walk",
+          "variant": "blink",
+          "headBounds": {
+            "x": 113,
+            "y": 74,
+            "w": 287,
+            "h": 232
+          },
+          "headWidth": 287,
+          "displayScale": 0.45993031358885017
+        },
+        {
+          "order": 3,
+          "x": 1536,
+          "y": 1024,
+          "w": 512,
+          "h": 512,
+          "anchorX": 256,
+          "anchorY": 488,
+          "action": "walk",
+          "variant": "blink",
+          "headBounds": {
+            "x": 109,
+            "y": 68,
+            "w": 292,
+            "h": 236
+          },
+          "headWidth": 292,
+          "displayScale": 0.4520547945205479
+        },
+        {
+          "order": 4,
+          "x": 0,
+          "y": 1536,
+          "w": 512,
+          "h": 512,
+          "anchorX": 256,
+          "anchorY": 488,
+          "action": "walk",
+          "variant": "blink",
+          "headBounds": {
+            "x": 109,
+            "y": 69,
+            "w": 293,
+            "h": 243
+          },
+          "headWidth": 293,
+          "displayScale": 0.45051194539249145
+        },
+        {
+          "order": 5,
+          "x": 512,
+          "y": 1536,
+          "w": 512,
+          "h": 512,
+          "anchorX": 256,
+          "anchorY": 488,
+          "action": "walk",
+          "variant": "blink",
+          "headBounds": {
+            "x": 110,
+            "y": 69,
+            "w": 293,
+            "h": 241
+          },
+          "headWidth": 293,
+          "displayScale": 0.45051194539249145
+        },
+        {
+          "order": 6,
+          "x": 1024,
+          "y": 1536,
+          "w": 512,
+          "h": 512,
+          "anchorX": 256,
+          "anchorY": 488,
+          "action": "walk",
+          "variant": "blink",
+          "headBounds": {
+            "x": 107,
+            "y": 70,
+            "w": 296,
+            "h": 241
+          },
+          "headWidth": 296,
+          "displayScale": 0.44594594594594594
+        },
+        {
+          "order": 7,
+          "x": 1536,
+          "y": 1536,
+          "w": 512,
+          "h": 512,
+          "anchorX": 256,
+          "anchorY": 488,
+          "action": "walk",
+          "variant": "blink",
+          "headBounds": {
+            "x": 111,
+            "y": 74,
+            "w": 292,
+            "h": 240
+          },
+          "headWidth": 292,
+          "displayScale": 0.4520547945205479
+        }
+      ],
+      "fps": 10,
+      "blink": {
+        "everyCycles": 4,
+        "cycleOffset": 1,
+        "poses": [
+          2,
+          3,
+          4
+        ],
+        "sequence": [
+          "half",
+          "closed",
+          "half"
+        ],
+        "durationMsAtNormalSpeed": 300
+      }
+    },
+    {
+      "key": "run",
+      "src": "art/protagonist/run-consistent-blink/run-with-blink.png",
+      "width": 5120,
+      "height": 3840,
+      "actions": [
+        "run"
+      ],
+      "standingHeight": 1100,
+      "frames": [
+        {
+          "order": 0,
+          "x": 0,
+          "y": 0,
+          "w": 1280,
+          "h": 1280,
+          "anchorX": 640,
+          "anchorY": 1210,
+          "action": "run",
+          "variant": "open",
+          "headBounds": {
+            "x": 263,
+            "y": 97,
+            "w": 755,
+            "h": 674
+          },
+          "headWidth": 755,
+          "displayScale": 0.17483443708609273
+        },
+        {
+          "order": 1,
+          "x": 1280,
+          "y": 0,
+          "w": 1280,
+          "h": 1280,
+          "anchorX": 640,
+          "anchorY": 1210,
+          "action": "run",
+          "variant": "open",
+          "headBounds": {
+            "x": 264,
+            "y": 136,
+            "w": 753,
+            "h": 609
+          },
+          "headWidth": 753,
+          "displayScale": 0.1752988047808765
+        },
+        {
+          "order": 2,
+          "x": 2560,
+          "y": 0,
+          "w": 1280,
+          "h": 1280,
+          "anchorX": 640,
+          "anchorY": 1210,
+          "action": "run",
+          "variant": "open",
+          "headBounds": {
+            "x": 265,
+            "y": 134,
+            "w": 751,
+            "h": 667
+          },
+          "headWidth": 751,
+          "displayScale": 0.17576564580559254
+        },
+        {
+          "order": 3,
+          "x": 3840,
+          "y": 0,
+          "w": 1280,
+          "h": 1280,
+          "anchorX": 640,
+          "anchorY": 1210,
+          "action": "run",
+          "variant": "open",
+          "headBounds": {
+            "x": 264,
+            "y": 118,
+            "w": 753,
+            "h": 670
+          },
+          "headWidth": 753,
+          "displayScale": 0.1752988047808765
+        },
+        {
+          "order": 4,
+          "x": 0,
+          "y": 1280,
+          "w": 1280,
+          "h": 1280,
+          "anchorX": 640,
+          "anchorY": 1210,
+          "action": "run",
+          "variant": "open",
+          "headBounds": {
+            "x": 263,
+            "y": 119,
+            "w": 755,
+            "h": 700
+          },
+          "headWidth": 755,
+          "displayScale": 0.17483443708609273
+        },
+        {
+          "order": 5,
+          "x": 1280,
+          "y": 1280,
+          "w": 1280,
+          "h": 1280,
+          "anchorX": 640,
+          "anchorY": 1210,
+          "action": "run",
+          "variant": "open",
+          "headBounds": {
+            "x": 262,
+            "y": 121,
+            "w": 755,
+            "h": 688
+          },
+          "headWidth": 755,
+          "displayScale": 0.17483443708609273
+        },
+        {
+          "order": 6,
+          "x": 2560,
+          "y": 1280,
+          "w": 1280,
+          "h": 1280,
+          "anchorX": 640,
+          "anchorY": 1210,
+          "action": "run",
+          "variant": "open",
+          "headBounds": {
+            "x": 264,
+            "y": 115,
+            "w": 759,
+            "h": 671
+          },
+          "headWidth": 759,
+          "displayScale": 0.17391304347826086
+        },
+        {
+          "order": 7,
+          "x": 3840,
+          "y": 1280,
+          "w": 1280,
+          "h": 1280,
+          "anchorX": 640,
+          "anchorY": 1210,
+          "action": "run",
+          "variant": "open",
+          "headBounds": {
+            "x": 264,
+            "y": 136,
+            "w": 755,
+            "h": 681
+          },
+          "headWidth": 755,
+          "displayScale": 0.17483443708609273
+        },
+        {
+          "order": 2,
+          "x": 0,
+          "y": 2560,
+          "w": 1280,
+          "h": 1280,
+          "anchorX": 640,
+          "anchorY": 1210,
+          "action": "run",
+          "variant": "blink",
+          "headBounds": {
+            "x": 265,
+            "y": 134,
+            "w": 751,
+            "h": 667
+          },
+          "headWidth": 751,
+          "displayScale": 0.17576564580559254
+        },
+        {
+          "order": 3,
+          "x": 1280,
+          "y": 2560,
+          "w": 1280,
+          "h": 1280,
+          "anchorX": 640,
+          "anchorY": 1210,
+          "action": "run",
+          "variant": "blink",
+          "headBounds": {
+            "x": 264,
+            "y": 118,
+            "w": 753,
+            "h": 670
+          },
+          "headWidth": 753,
+          "displayScale": 0.1752988047808765
+        }
+      ],
+      "fps": 12.5,
+      "blink": {
+        "everyCycles": 5,
+        "cycleOffset": 2,
+        "poses": [
+          2,
+          3
+        ],
+        "durationMs": 160
+      }
+    },
+    {
+      "key": "doubleJump",
+      "src": "art/protagonist/double-jump/double-jump-spritesheet.png",
+      "width": 2048,
+      "height": 1024,
+      "standingHeight": 492,
+      "actions": [
+        "doubleJump"
+      ],
+      "fps": 12.5,
+      "frames": [
+        {
+          "order": 0,
+          "action": "doubleJump",
+          "label": "thu gối lấy đà",
+          "x": 0,
+          "y": 0,
+          "w": 512,
+          "h": 512,
+          "durationMs": 80,
+          "anchorX": 239,
+          "anchorY": 492,
+          "headBounds": {
+            "x": 106,
+            "y": 48,
+            "w": 300,
+            "h": 237
+          },
+          "source": "sources/vertical-double-jump.png",
+          "sourceCrop": {
+            "x": 56,
+            "y": 7,
+            "w": 358,
+            "h": 480
+          },
+          "uniformScale": 0.8823529411764706,
+          "headWidth": 300,
+          "variant": "open",
+          "row": 0,
+          "col": 0,
+          "displayScale": 0.44
+        },
+        {
+          "order": 1,
+          "action": "doubleJump",
+          "label": "nén người",
+          "x": 512,
+          "y": 0,
+          "w": 512,
+          "h": 512,
+          "durationMs": 80,
+          "anchorX": 239,
+          "anchorY": 492,
+          "headBounds": {
+            "x": 106,
+            "y": 48,
+            "w": 300,
+            "h": 239
+          },
+          "source": "sources/vertical-double-jump.png",
+          "sourceCrop": {
+            "x": 421,
+            "y": 7,
+            "w": 356,
+            "h": 471
+          },
+          "uniformScale": 0.8875739644970414,
+          "headWidth": 300,
+          "variant": "open",
+          "row": 0,
+          "col": 1,
+          "displayScale": 0.44
+        },
+        {
+          "order": 2,
+          "action": "doubleJump",
+          "label": "duỗi chân bật lên",
+          "x": 1024,
+          "y": 0,
+          "w": 512,
+          "h": 512,
+          "durationMs": 80,
+          "anchorX": 239,
+          "anchorY": 492,
+          "headBounds": {
+            "x": 106,
+            "y": 48,
+            "w": 300,
+            "h": 238
+          },
+          "source": "sources/vertical-double-jump.png",
+          "sourceCrop": {
+            "x": 785,
+            "y": 7,
+            "w": 357,
+            "h": 506
+          },
+          "uniformScale": 0.8849557522123894,
+          "headWidth": 300,
+          "variant": "open",
+          "row": 0,
+          "col": 2,
+          "displayScale": 0.44
+        },
+        {
+          "order": 3,
+          "action": "doubleJump",
+          "label": "thu chân khi đang lên",
+          "x": 1536,
+          "y": 0,
+          "w": 512,
+          "h": 512,
+          "durationMs": 80,
+          "anchorX": 239,
+          "anchorY": 492,
+          "headBounds": {
+            "x": 106,
+            "y": 48,
+            "w": 300,
+            "h": 239
+          },
+          "source": "sources/vertical-double-jump.png",
+          "sourceCrop": {
+            "x": 1149,
+            "y": 7,
+            "w": 358,
+            "h": 482
+          },
+          "uniformScale": 0.8875739644970414,
+          "headWidth": 300,
+          "variant": "open",
+          "row": 0,
+          "col": 3,
+          "displayScale": 0.44
+        },
+        {
+          "order": 4,
+          "action": "doubleJump",
+          "label": "giữ gối qua đỉnh",
+          "x": 0,
+          "y": 512,
+          "w": 512,
+          "h": 512,
+          "durationMs": 80,
+          "anchorX": 239,
+          "anchorY": 492,
+          "headBounds": {
+            "x": 106,
+            "y": 48,
+            "w": 300,
+            "h": 234
+          },
+          "source": "sources/vertical-double-jump.png",
+          "sourceCrop": {
+            "x": 44,
+            "y": 510,
+            "w": 362,
+            "h": 469
+          },
+          "uniformScale": 0.8771929824561403,
+          "headWidth": 300,
+          "variant": "open",
+          "row": 1,
+          "col": 0,
+          "displayScale": 0.44
+        },
+        {
+          "order": 5,
+          "action": "doubleJump",
+          "label": "thả lỏng khi hạ",
+          "x": 512,
+          "y": 512,
+          "w": 512,
+          "h": 512,
+          "durationMs": 80,
+          "anchorX": 239,
+          "anchorY": 492,
+          "headBounds": {
+            "x": 106,
+            "y": 48,
+            "w": 300,
+            "h": 236
+          },
+          "source": "sources/vertical-double-jump.png",
+          "sourceCrop": {
+            "x": 419,
+            "y": 510,
+            "w": 358,
+            "h": 474
+          },
+          "uniformScale": 0.8823529411764706,
+          "headWidth": 300,
+          "variant": "open",
+          "row": 1,
+          "col": 1,
+          "displayScale": 0.44
+        },
+        {
+          "order": 6,
+          "action": "doubleJump",
+          "label": "hạ chân chuẩn bị rơi",
+          "x": 1024,
+          "y": 512,
+          "w": 512,
+          "h": 512,
+          "durationMs": 80,
+          "anchorX": 239,
+          "anchorY": 492,
+          "headBounds": {
+            "x": 106,
+            "y": 48,
+            "w": 300,
+            "h": 237
+          },
+          "source": "sources/vertical-double-jump.png",
+          "sourceCrop": {
+            "x": 787,
+            "y": 510,
+            "w": 357,
+            "h": 488
+          },
+          "uniformScale": 0.8902077151335311,
+          "headWidth": 300,
+          "variant": "open",
+          "row": 1,
+          "col": 2,
+          "displayScale": 0.44
+        },
+        {
+          "order": 7,
+          "action": "doubleJump",
+          "label": "chuyển sang rơi",
+          "x": 1536,
+          "y": 512,
+          "w": 512,
+          "h": 512,
+          "durationMs": 80,
+          "anchorX": 239,
+          "anchorY": 492,
+          "headBounds": {
+            "x": 106,
+            "y": 48,
+            "w": 300,
+            "h": 237
+          },
+          "source": "sources/vertical-double-jump.png",
+          "sourceCrop": {
+            "x": 1150,
+            "y": 510,
+            "w": 358,
+            "h": 500
+          },
+          "uniformScale": 0.8849557522123894,
+          "headWidth": 300,
+          "variant": "open",
+          "row": 1,
+          "col": 3,
+          "displayScale": 0.44
+        }
+      ]
+    }
+  ]
+}
