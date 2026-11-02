@@ -18,10 +18,16 @@ Kiểm tra: `node tests/chapter-two.spec.cjs` đi toàn tuyến bằng phím th�
 
 ## Đoạn mẫu ngã tư (bản nâng cấp)
 
-`/chapter-two?sample=clinic` vào ngay trước xác xe, với tải kỹ năng lửa/gió và một ô lưu riêng (`di-mon:chapter-two:v2:sample`). Chơi ở đường dẫn màn 2 đầy đủ vẫn gặp cùng đoạn giao tranh này. Hai đợt có quái trên cao, quái giáp và quái đánh từ phía sau. Thân xe chặn đạn; gió phản đạn thành sát thương địch; đòn móc/kết thúc phá giáp; lửa gây cháy và thùng dầu nổ sau cảnh báo. Không thay texture nhân vật hay VFX đã duyệt.
+`/chapter-two?sample=clinic` vào ngay trước đống bê tông, với tải kỹ năng lửa/gió và một ô lưu riêng (`di-mon:chapter-two:v2:sample`). Chơi ở đường dẫn màn 2 đầy đủ vẫn gặp cùng đoạn giao tranh này. Hai đợt có quái trên cao, quái giáp và quái đánh từ phía sau. Khối bê tông chặn đạn; gió phản đạn thành sát thương địch; đòn móc/kết thúc phá giáp; lửa gây cháy và thùng dầu nổ sau cảnh báo. Không thay texture nhân vật hay VFX đã duyệt.
 
 Đợt sau chỉ kích hoạt khi đợt trước đã dọn xong và qua hai giây nghỉ. Giáp có thanh độ bền riêng, khi vỡ tạo khoảng phản công 0,85 giây. Bắn xa khóa hướng ngắm trước khi phóng. Va chạm có dừng hình 35–65 ms riêng màn 2; tất cả vật lý cùng dừng để không làm đổi đường bay. Trạm chỉ trở thành checkpoint khi đã bàn giao an toàn. Nếu chạy vượt quái, HUD chỉ số còn lại và hướng quay về.
 
 Kết thúc đoạn mẫu mở bảng kết quả, cho phép chơi lại hoặc đi tiếp phần còn lại. Bảng này không ghi nhận hoàn thành chương. Bản lưu màn 2 phiên bản 1 được đọc chuyển tiếp, giữ XP và nhiệm vụ bàn giao; không bắt đánh lại ngã tư nếu đã tới trạm. Khung chiến dịch và chuẩn đánh giá nằm ở `docs/campaign-outline.md`, `docs/combat-standard.md`, có trang đọc `/campaign`.
 
 Kiểm tra thêm: `npm run test:clinic` gồm mô phỏng vật lý đạn/vật chắn, giáp, nổ, cháy, hai đợt và bài browser chơi thật từ vào đoạn mẫu tới kết quả. Browser cũng kiểm tra phản đạn bằng phím, tách save, chuyển bản lưu cũ, cảm ứng nhiều ngón, nhảy lần hai thẳng đứng, tạm dừng và bố cục điện thoại. Mỹ thuật vật thể mới dùng nguyên ảnh trong `street-props.png`, chỉ khai báo vùng sprite và scale đồng nhất.
+
+## Đồng bộ mỹ thuật cảnh phố
+
+Nền và bộ vật thể màn 2 được vẽ lại theo nét viền/mảng màu của nhân vật, giảm bề mặt tả thực và chi tiết nhiễu. Bus được dựng đúng tỷ lệ ở lề đường phía sau: cao 270 so với nhân vật khoảng 172. Khối bê tông thấp ở tiền cảnh là vật cản/che đạn riêng, giữ nguyên kích thước va chạm đã kiểm tra. Lều tăng tỷ lệ cửa vào. Hai nền phố và sơ tán dùng cùng hướng vẽ. Xem `docs/chapter-two-art-direction.md` để biết quy ước phân lớp và cache.
+
+Bộ hero, VFX, shared engine, collider và toàn bộ tài nguyên màn 1 không thay đổi. Các thử nghiệm ngã tư, hoàn thành màn 2, chuyển bản lưu cũ, cảm ứng và nâng cấp service worker đã được chạy lại với bộ ảnh mới; bản HTML offline dùng đúng nguồn mới. Bài ngã tư kiểm tra thêm bus cao hơn nhân vật ít nhất 1,5 lần, dài hơn 4 lần chiều cao nhân vật, và không tham gia va chạm của tuyến đi trước.

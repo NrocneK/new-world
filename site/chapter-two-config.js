@@ -6,13 +6,15 @@
     chapter:2,id:'city-evacuation-v2',saveKey:'di-mon:chapter-two:v2',width,height:820,ground,startX:220,
     legacySaveKey:'di-mon:chapter-two:v1',legacyChapterId:'city-evacuation-v1',
     sample:new URLSearchParams(location.search).get('sample')==='clinic',sampleStartX:1280,
-    worldManifest:'art/chapter-two/manifest.json',
-    backgrounds:{office:'art/chapter-two/city-night.png',lobby:'art/chapter-two/evacuation-night.png'},
+    worldManifest:'art/chapter-two/manifest-chibi.json',
+    backgrounds:{office:'art/chapter-two/city-chibi.png',lobby:'art/chapter-two/evacuation-chibi.png'},
+    // Parked vehicles sit behind the walking lane, with their own real-world scale.
+    scenery:[{kind:'bus',x:1800,y:ground-26,height:270},{kind:'bus',x:4270,y:ground-26,height:270,face:-1}],
     startRescued:true,startFire:true,startXP:235,
     levelRules:[{xp:80,level:2,maxHp:115},{xp:320,level:3,maxHp:130},{xp:500,level:4,maxHp:145}],
     floors:[{index:0,number:0,y:ground,name:'ĐẠI LỘ ĐÊM XÂM LẤN',hole:null,entryX:220}],
     groundSections:[[0,2660],[2840,5160],[5320,width]],
-    platforms:[{x:1460,y:514,w:200,h:70,kind:'wreck',floor:0},{x:4140,y:490,w:220,h:94,kind:'bus',floor:0}],
+    platforms:[{x:1460,y:514,w:200,h:70,kind:'rubble',floor:0},{x:4140,y:490,w:220,h:94,kind:'rubble',floor:0}],
     checkpoints:[{id:0,floor:0,x:220},{id:1,floor:0,x:1180},{id:2,floor:0,x:2400},{id:3,floor:0,x:4540},{id:4,floor:0,x:6120}],
     rescueFloor:0,rescueX:120,medicalX:2350,exitX:7340,
     encounters:[
@@ -35,8 +37,8 @@
       ['TINH LINH','Đưa cô ấy tới trạm cứu thương. Hỏa năng và phong năng của anh vẫn còn. Sau đó chúng ta phải mở đường tới khu sơ tán.']
     ],
     sampleIntro:[
-      ['TINH LINH','Ngã tư trước trạm cứu thương đang bị chặn. Một con bắn từ trên xe, một con có giáp ở mặt đường.'],
-      ['TINH LINH','Đấm móc hoặc đòn kết thúc phá giáp. Gió có thể phản đạn; lửa kích nổ thùng dầu. Chiếc xe chắn được những viên đạn bay thấp.']
+      ['TINH LINH','Ngã tư trước trạm cứu thương đang bị chặn. Một con bắn từ trên đống bê tông, một con có giáp ở mặt đường.'],
+      ['TINH LINH','Đấm móc hoặc đòn kết thúc phá giáp. Gió có thể phản đạn; lửa kích nổ thùng dầu. Khối bê tông chắn được những viên đạn bay thấp.']
     ],
     delivery:[
       ['TỔ CỨU HỘ','Để cô ấy lại đây, chúng tôi sẽ chăm sóc. Nhưng hai ổ dị giới đang làm nhiễu toàn bộ tuyến đường.'],

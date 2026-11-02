@@ -133,27 +133,37 @@ window.DiMonStreet=Object.freeze({create(api){
     if(p.x>C.exitX&&boss.hp<=0&&anchorsDown()===2&&world.delivered&&p.grounded){animate('idle',true);showDialogue(C.ending,api.complete);}
   }
   function drawBackground(){
-    rect(0,0,W,H,'#0a1621');ctx.imageSmoothingEnabled=false;
+    rect(0,0,W,H,'#17233e');ctx.imageSmoothingEnabled=false;
     const im=s.camera>4700?assets.lobby:assets.office,offset=-(s.camera*.32)%1600;
     for(let i=-1;i<2;i++)ctx.drawImage(im,offset+i*1600,-5-s.cameraY,1600,720);
-    rect(0,0,W,H,'#05121b22');
-    for(let i=0;i<34;i++){const x=((i*109-s.camera*.5)%W+W)%W,y=(i*73+s.time*120)%H;line([[x,y],[x-3,y+10]],'#a9c9d322',1);}
+    rect(0,0,W,H,'#101d3010');
+    for(let i=0;i<20;i++){const x=((i*173-s.camera*.5)%W+W)%W,y=(i*73+s.time*100)%H;line([[x,y],[x-3,y+9]],'#b3c1d41a',1);}
   }
   function drawArchitecture(){
-    for(const [a,b]of C.groundSections){rect(a,G,b-a,5,'#7b8d87');rect(a,G+5,b-a,48,'#223740');rect(a,G+53,b-a,H,'#0a1821');for(let x=a+30;x<b;x+=105){rect(x,G+15,50,2,'#3b535b');rect(x+20,G+37,30,2,'#132b35');}}
+    for(const [a,b]of C.groundSections){
+      rect(a,G,b-a,4,'#57627d');rect(a,G+4,b-a,35,'#303b55');rect(a,G+39,b-a,5,'#111c30');rect(a,G+44,b-a,H,'#111c30');
+      for(let x=a+30;x<b;x+=170){line([[x,G+9],[x+65,G+9],[x+83,G+31]],'#19243d',3);line([[x+105,G+24],[x+138,G+24]],'#45516d',2);}
+    }
+    // These buses are parked on the rear curb, not shrunk into the walking lane.
+    for(const prop of C.scenery||[]){
+      const f=assets.world['street-props'].frames[0],scale=prop.height/f.h;
+      shadow(prop.x,prop.y,f.w*scale*.43);worldArt('street-props',0,prop.x,prop.y,scale,prop.face||1);
+    }
     for(const [left,right]of [[2660,2840],[5160,5320]]){rect(left,G-7,right-left,100,'#07101c');for(let i=0;i<5;i++){line([[left,G+i*7],[left+15+i*5,G+20+i*12]],'#4a6269',2);line([[right,G+i*7],[right-15-i*5,G+20+i*12]],'#3b515e',2);}text('SÀN ĐƯỜNG ĐỨT',left+(right-left)/2,G-38,9,'#b1c9bc','center');}
     for(const b of C.platforms){
-      if(assets.world['street-props']){worldArt('street-props',0,b.x+b.w/2,G,b.h/assets.world['street-props'].frames[0].h);continue;}
-      rect(b.x,b.y,b.w,b.h,'#2a4148');rect(b.x,b.y,b.w,5,'#83968b');rect(b.x+10,b.y+12,b.w-20,b.h-22,'#1c303c');
-      for(let x=b.x+15;x<b.x+b.w-20;x+=41)rect(x,b.y+14,32,b.h-35,'#557079');
-      rect(b.x-7,b.y+b.h-17,28,17,'#15242d');rect(b.x+b.w-21,b.y+b.h-17,28,17,'#15242d');line([[b.x+5,b.y+7],[b.x+b.w-10,b.y+20]],'#9b918b66',2);
+      // A flat concrete top matches the physical support exactly; coarse outlined
+      // blocks read as debris, rather than miniature windows/tires of a bus.
+      rect(b.x,b.y,b.w,b.h,'#444d68');rect(b.x,b.y,b.w,7,'#a1a4b5');
+      line([[b.x,b.y+b.h],[b.x,b.y],[b.x+b.w,b.y],[b.x+b.w,b.y+b.h]],'#121b30',3);
+      for(let i=0;i<3;i++){const x=b.x+b.w*(i+.22)/3;line([[x,b.y+8],[x+9,b.y+b.h*.44],[x-6,b.y+b.h*.73],[x+4,b.y+b.h]],'#232e48',3);}
+      line([[b.x+5,b.y+8],[b.x+b.w-5,b.y+8]],'#c3c0cb',2);line([[b.x+8,b.y+b.h*.63],[b.x+b.w*.42,b.y+b.h*.63],[b.x+b.w*.5,b.y+b.h*.72],[b.x+b.w-4,b.y+b.h*.72]],'#626c85',3);
     }
     for(const x of[400,1150,2230,3250,4490,5680,6940]){rect(x,G-360,5,360,'#35464a');rect(x-17,G-365,68,6,'#7d8980');glow(x+25,G-344,75,'#e1ba6c18');rect(x+17,G-358,24,3,'#cfbf8e');}
     // The clinic is the handoff point; the coworker stays safely here afterwards.
     const mx=C.medicalX;
-    if(assets.world['street-props'])worldArt('street-props',1,mx,G,230/assets.world['street-props'].frames[1].h);
+    if(assets.world['street-props'])worldArt('street-props',1,mx,G-8,310/assets.world['street-props'].frames[1].h);
     else{rect(mx-120,G-160,240,160,'#203c3c');ctx.fillStyle='#526f69';ctx.beginPath();ctx.moveTo(mx-146,G-160);ctx.lineTo(mx,G-230);ctx.lineTo(mx+146,G-160);ctx.closePath();ctx.fill();rect(mx-42,G-155,84,155,'#10272d');rect(mx-15,G-206,30,8,'#c6dec3');rect(mx-4,G-217,8,30,'#c6dec3');}
-    text('TRẠM CỨU THƯƠNG',mx,G-242,11,'#c3d9c0','center');
+    text('TRẠM CỨU THƯƠNG',mx,G-332,11,'#c3d9c0','center');
     for(const cp of C.checkpoints.filter(c=>c.id>0&&c.id!==2)){rect(cp.x-8,G-50,16,50,'#2e464a');rect(cp.x-4,G-44,8,16,s.checkpoint>=cp.id?'#c8e9b9':'#7fb7bb');text('HỒI SINH',cp.x,G-69,8,'#b1c7bb','center');}
     const open=anchorsDown()===2;
     if(!open){for(let i=0;i<7;i++)line([[6170+i%2*4,G-265+i*39],[6150-i%2*9,G-235+i*39]],'#9a8ac3bb',4);text('MÀN CHẮN DỊ GIỚI',6155,G-292,10,'#c9bbdf','center');}
@@ -194,7 +204,7 @@ window.DiMonStreet=Object.freeze({create(api){
     const fighting=world.wave>0&&world.wave<3;
     const objective=!world.delivered?(fighting?'Dọn ngã tư · Đợt '+world.wave+' / 2':'Đưa đồng nghiệp tới trạm cứu thương'):count<2?'Phá các ổ dị giới · '+count+' / 2':boss?.hp>0?'Hạ Kẻ Truy Sát':'Tới khu sơ tán';
     const remaining=enemies().filter(e=>e.wave===world.wave&&e.hp>0).length;
-    const detail=!world.delivered?(world.wave===1?'Đánh trên xe hoặc phản đạn bằng gió. Móc/kết thúc phá giáp.':world.wave===2?'Còn '+remaining+' quái · Kiểm tra phía sau trước khi tới trạm.':world.cleared?'Đường đã thông. Tới gần lều để bàn giao đồng nghiệp.':'Tiến qua xe đổ. Dùng gió phản đạn hoặc đánh trên cao.'):count<2?'Đòn đánh, lửa và gió đều phá được các lõi phát sáng.':boss?.hp>0?'Né cú vồ. Nhảy hoặc né để tránh loạt gai.':'Cổng phía đông đã mở. Tiếp tục sang phải.';
+    const detail=!world.delivered?(world.wave===1?'Lên khối bê tông hoặc phản đạn bằng gió. Móc/kết thúc phá giáp.':world.wave===2?'Còn '+remaining+' quái · Kiểm tra phía sau trước khi tới trạm.':world.cleared?'Đường đã thông. Tới gần lều để bàn giao đồng nghiệp.':'Tiến qua đống bê tông. Dùng gió phản đạn hoặc đánh trên cao.'):count<2?'Đòn đánh, lửa và gió đều phá được các lõi phát sáng.':boss?.hp>0?'Né cú vồ. Nhảy hoặc né để tránh loạt gai.':'Cổng phía đông đã mở. Tiếp tục sang phải.';
     const stamp=[objective,remaining,p.hp,p.maxHp,s.level,s.xp,Math.floor(p.x/12),Math.ceil(s.fireCd*10),Math.ceil(s.windCd*10),p.doubleJumpUsed,boss?.hp].join(':');if(!force&&stamp===uiStamp)return;uiStamp=stamp;
     $('healthFill').style.width=p.hp/p.maxHp*100+'%';$('healthText').textContent=p.hp+' / '+p.maxHp;$('healthBar').setAttribute('aria-valuenow',p.hp);$('healthBar').setAttribute('aria-valuemax',p.maxHp);$('xpText').textContent=s.xp+' KN';$('levelNumber').textContent='LV. 0'+s.level;$('objectiveTitle').textContent=objective;$('objectiveDetail').textContent=detail;
     for(const kind of ['fire','wind']){$(kind+'Cooldown').hidden=s[kind+'Cd']===0;$(kind+'Cooldown').textContent=s[kind+'Cd'].toFixed(1)+'s';}
@@ -204,7 +214,7 @@ window.DiMonStreet=Object.freeze({create(api){
   }
   function debrief(){
     api.release();s.mode='sampleComplete';$('sampleDebrief').hidden=false;
-    $('sampleStats').textContent='Phá giáp: '+world.stats.guardBreaks+' · Phản đạn: '+world.stats.reflections+' · Đạn phản trúng: '+world.stats.reflectedHits+' · Đạn bị xe chặn: '+world.stats.coverBlocks+' · Quái trúng nổ: '+world.stats.barrelHits;
+    $('sampleStats').textContent='Phá giáp: '+world.stats.guardBreaks+' · Phản đạn: '+world.stats.reflections+' · Đạn phản trúng: '+world.stats.reflectedHits+' · Đạn bị vật chắn chặn: '+world.stats.coverBlocks+' · Quái trúng nổ: '+world.stats.barrelHits;
     $('sampleContinue').focus({preventScroll:true});
   }
   function bind(){
@@ -213,5 +223,5 @@ window.DiMonStreet=Object.freeze({create(api){
     $('sampleReplay').onclick=()=>$('startButton').click();
     if(C.sample){$('titleScreen').classList.add('sample-title');$('titleScreen').querySelector('h1').innerHTML='Ngã tư.<br/>Một <em>đường sống.</em>';$('titleScreen').querySelector('.title-copy>p').textContent='Hai đợt giao tranh trước trạm cứu thương. Phá giáp, phản đạn và dùng địa hình mở đường.';$('startButton').firstChild.textContent='CHƠI ĐOẠN MẪU ';}
   }
-  return Object.freeze({solids:()=>geometry,reset,afterRetry,beforeDamage,afterDamage,reflect,serialize:()=>({delivered:world.delivered,bossSeen:world.bossSeen}),sanitizeSave:d=>({delivered:Boolean(d?.delivered),bossSeen:Boolean(d?.bossSeen)}),updateEnemy,update,events,drawBackground,drawArchitecture,drawEnemy,drawExtra,updateUI,bind,getState:()=>({sample:Boolean(C.sample),delivered:world.delivered,anchorsDown:anchorsDown(),bossSeen:world.bossSeen,wave:world.wave,cleared:world.cleared,breather:world.breather,barrel:world.barrel,stats:{...world.stats},hostileProjectiles:world.hostiles.length,bullets:world.hostiles.map(b=>({x:b.x,y:b.y,vx:b.vx,vy:b.vy,friendly:b.friendly}))})});
+  return Object.freeze({solids:()=>geometry,reset,afterRetry,beforeDamage,afterDamage,reflect,serialize:()=>({delivered:world.delivered,bossSeen:world.bossSeen}),sanitizeSave:d=>({delivered:Boolean(d?.delivered),bossSeen:Boolean(d?.bossSeen)}),updateEnemy,update,events,drawBackground,drawArchitecture,drawEnemy,drawExtra,updateUI,bind,getState:()=>({sample:Boolean(C.sample),delivered:world.delivered,anchorsDown:anchorsDown(),bossSeen:world.bossSeen,wave:world.wave,cleared:world.cleared,breather:world.breather,barrel:world.barrel,stats:{...world.stats},artStyle:'outlined-cel-shading',scenery:(C.scenery||[]).map(prop=>({...prop,renderedWidth:assets.world?.['street-props']?prop.height*assets.world['street-props'].frames[0].w/assets.world['street-props'].frames[0].h:0,collidable:false})),hostileProjectiles:world.hostiles.length,bullets:world.hostiles.map(b=>({x:b.x,y:b.y,vx:b.vx,vy:b.vy,friendly:b.friendly}))})});
 }});

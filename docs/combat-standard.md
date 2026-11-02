@@ -2,7 +2,7 @@
 
 ## Nhịp chơi
 
-Điểm vào nằm sau quái hướng dẫn, trước xe đổ. Đợt một gồm quái bắn trên xe và quái có giáp ở mặt đường. Sau khi dọn xong có khoảng nghỉ hai giây trước đợt hai: quái bắn mặt đường và quái áp sát từ phía sau. Đưa đồng nghiệp đến lều để kết thúc đoạn mẫu; hồi máu và lưu trước khi tiếp tục phần còn lại của màn 2.
+Điểm vào nằm sau quái hướng dẫn, trước đống bê tông. Đợt một gồm quái bắn trên khối bê tông và quái có giáp ở mặt đường. Sau khi dọn xong có khoảng nghỉ hai giây trước đợt hai: quái bắn mặt đường và quái áp sát từ phía sau. Đưa đồng nghiệp đến lều để kết thúc đoạn mẫu; hồi máu và lưu trước khi tiếp tục phần còn lại của màn 2.
 
 Đoạn mẫu có đường dẫn riêng để thử nhanh, dùng ô lưu riêng. Hoàn thành đoạn mẫu không được ghi nhận hoàn thành chương 2.
 
@@ -12,8 +12,8 @@
 | --- | --- |
 | Đánh thường liên tiếp | Bốn đòn theo bốn lần bấm; hai đòn đầu gặp giáp bị giảm sát thương, đấm móc/đòn kết thúc phá giáp nhanh hơn. |
 | Né rồi phản công | Đọc báo đòn, qua khoảng nguy hiểm, đánh trong thời gian hồi của quái. |
-| Nhảy lên xe | Tiếp cận quái bắn trên cao; đi khỏi xe phải rơi ngay, không treo trên không. |
-| Dùng xe làm vật chắn | Đạn địch va vào phần thân xe sẽ bị chặn; không xuyên qua khối va chạm. |
+| Nhảy lên khối bê tông | Tiếp cận quái bắn trên cao; đi khỏi mép bê tông phải rơi ngay, không treo trên không. |
+| Dùng bê tông làm vật chắn | Đạn địch va vào khối bê tông sẽ bị chặn; không xuyên qua khối va chạm. |
 | Gió | Phá độ bền giáp và đổi đạn địch thành đạn phản lại, có thể gây sát thương địch. |
 | Lửa | Sát thương trực tiếp và cháy ngắn; có thể kích nổ thùng dầu từ xa. |
 | Thùng dầu | Báo cháy ngắn trước khi nổ, gây sát thương vùng và phá giáp; đứng quá gần cũng có rủi ro. Không tính thùng là quái hạ gục. |
