@@ -1,0 +1,38 @@
+{
+  "hook": {
+    "path": "hook-source.png",
+    "file": "hook-source.png",
+    "columns": 4,
+    "rows": 2
+  },
+  "retract": {
+    "path": "retract-source.png",
+    "file": "retract-source.png",
+    "columns": 4,
+    "rows": 2
+  },
+  "chamber": {
+    "path": "chamber-source.png",
+    "file": "chamber-source.png",
+    "columns": 1,
+    "rows": 1
+  },
+  "impact": {
+    "path": "impact-source.png",
+    "file": "impact-source.png",
+    "columns": 1,
+    "rows": 1
+  },
+  "downstroke": {
+    "path": "downstroke-source.png",
+    "file": "downstroke-source.png",
+    "columns": 2,
+    "rows": 1
+  },
+  "recovery": {
+    "path": "recovery-source.png",
+    "file": "recovery-source.png",
+    "columns": 4,
+    "rows": 2
+  }
+}

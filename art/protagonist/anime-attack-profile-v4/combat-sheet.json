@@ -1,0 +1,950 @@
+{
+  "version": 1,
+  "reviewRevision": 4,
+  "image": "combat-sheet.png",
+  "columns": 4,
+  "rows": 10,
+  "frameWidth": 640,
+  "frameHeight": 640,
+  "groundY": 620,
+  "rootAnchorX": 320,
+  "stage": {
+    "width": 896,
+    "height": 848,
+    "actorX": 96,
+    "actorY": 20,
+    "floorY": 640
+  },
+  "loop": false,
+  "durationMs": 2170,
+  "combo": [
+    "attack1",
+    "attack2",
+    "attack3",
+    "attack4"
+  ],
+  "guardImage": "guard.png",
+  "peakImage": "hook-peak.png",
+  "idleImage": "idle-first.png",
+  "handConvention": {
+    "near": "right/hand1",
+    "far": "left/hand2"
+  },
+  "idle": {
+    "image": "idle-sheet.png",
+    "offsetX": 138,
+    "offsetY": 120,
+    "loopDurationMs": 3360,
+    "frames": [
+      {
+        "index": 0,
+        "x": 0,
+        "y": 0,
+        "w": 384,
+        "h": 512,
+        "durationMs": 600,
+        "phase": "rest",
+        "eyes": "open",
+        "startMs": 0
+      },
+      {
+        "index": 1,
+        "x": 384,
+        "y": 0,
+        "w": 384,
+        "h": 512,
+        "durationMs": 500,
+        "phase": "inhale",
+        "eyes": "open",
+        "startMs": 600
+      },
+      {
+        "index": 2,
+        "x": 768,
+        "y": 0,
+        "w": 384,
+        "h": 512,
+        "durationMs": 600,
+        "phase": "inhale-peak",
+        "eyes": "open",
+        "startMs": 1100
+      },
+      {
+        "index": 3,
+        "x": 1152,
+        "y": 0,
+        "w": 384,
+        "h": 512,
+        "durationMs": 500,
+        "phase": "exhale",
+        "eyes": "open",
+        "startMs": 1700
+      },
+      {
+        "index": 4,
+        "x": 0,
+        "y": 512,
+        "w": 384,
+        "h": 512,
+        "durationMs": 500,
+        "phase": "settle",
+        "eyes": "open",
+        "startMs": 2200
+      },
+      {
+        "index": 5,
+        "x": 384,
+        "y": 512,
+        "w": 384,
+        "h": 512,
+        "durationMs": 80,
+        "phase": "blink-closing",
+        "eyes": "half-closed",
+        "startMs": 2700
+      },
+      {
+        "index": 6,
+        "x": 768,
+        "y": 512,
+        "w": 384,
+        "h": 512,
+        "durationMs": 80,
+        "phase": "blink-closed",
+        "eyes": "closed",
+        "startMs": 2780
+      },
+      {
+        "index": 7,
+        "x": 1152,
+        "y": 512,
+        "w": 384,
+        "h": 512,
+        "durationMs": 500,
+        "phase": "rest-open",
+        "eyes": "open",
+        "startMs": 2860
+      }
+    ]
+  },
+  "vfxManifest": "../../vfx/air-pressure-v2/manifest.json",
+  "actions": {
+    "attack1": {
+      "key": "attack1",
+      "name": "Đấm thẳng · Tay phải / gần",
+      "image": "attack1-sheet.png",
+      "gif": "attack1-preview.gif",
+      "columns": 4,
+      "rows": 2,
+      "atlasRowOffset": 0,
+      "loop": false,
+      "durationMs": 250,
+      "onComplete": "guard",
+      "impact": {
+        "frameIndex": 3,
+        "timeMs": 70,
+        "fist": [
+          471.0,
+          259.0
+        ],
+        "direction": "forward",
+        "handBounds": [
+          455,
+          246,
+          487,
+          272
+        ]
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "startMs": 0,
+          "durationMs": 30,
+          "phase": "guard",
+          "inspectionFist": [
+            347.5,
+            271.5
+          ]
+        },
+        {
+          "index": 1,
+          "x": 640,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "startMs": 30,
+          "durationMs": 20,
+          "phase": "load",
+          "inspectionFist": [
+            331.5,
+            304.0
+          ]
+        },
+        {
+          "index": 2,
+          "x": 1280,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "startMs": 50,
+          "durationMs": 20,
+          "phase": "drive",
+          "inspectionFist": [
+            415.5,
+            270.5
+          ]
+        },
+        {
+          "index": 3,
+          "x": 1920,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "startMs": 70,
+          "durationMs": 40,
+          "phase": "contact",
+          "inspectionFist": [
+            471.0,
+            259.0
+          ]
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "startMs": 110,
+          "durationMs": 30,
+          "phase": "follow-through",
+          "inspectionFist": [
+            462.5,
+            260.0
+          ]
+        },
+        {
+          "index": 5,
+          "x": 640,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "startMs": 140,
+          "durationMs": 30,
+          "phase": "recoil",
+          "inspectionFist": [
+            412.0,
+            269.5
+          ]
+        },
+        {
+          "index": 6,
+          "x": 1280,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "startMs": 170,
+          "durationMs": 30,
+          "phase": "recover",
+          "inspectionFist": [
+            345.5,
+            272.5
+          ]
+        },
+        {
+          "index": 7,
+          "x": 1920,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "startMs": 200,
+          "durationMs": 50,
+          "phase": "guard",
+          "inspectionFist": [
+            347.5,
+            271.5
+          ]
+        }
+      ]
+    },
+    "attack2": {
+      "key": "attack2",
+      "name": "Đấm thẳng · Tay trái / xa",
+      "image": "attack2-sheet.png",
+      "gif": "attack2-preview.gif",
+      "columns": 4,
+      "rows": 2,
+      "atlasRowOffset": 2,
+      "loop": false,
+      "durationMs": 250,
+      "onComplete": "guard",
+      "impact": {
+        "frameIndex": 3,
+        "timeMs": 70,
+        "fist": [
+          496.0,
+          248.5
+        ],
+        "direction": "forward",
+        "handBounds": [
+          482,
+          236,
+          510,
+          261
+        ]
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "startMs": 0,
+          "durationMs": 30,
+          "phase": "guard",
+          "inspectionFist": [
+            376.5,
+            247.0
+          ]
+        },
+        {
+          "index": 1,
+          "x": 640,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "startMs": 30,
+          "durationMs": 20,
+          "phase": "load",
+          "inspectionFist": [
+            412.0,
+            253.5
+          ]
+        },
+        {
+          "index": 2,
+          "x": 1280,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "startMs": 50,
+          "durationMs": 20,
+          "phase": "drive",
+          "inspectionFist": [
+            453.5,
+            248.5
+          ]
+        },
+        {
+          "index": 3,
+          "x": 1920,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "startMs": 70,
+          "durationMs": 40,
+          "phase": "contact",
+          "inspectionFist": [
+            496.0,
+            248.5
+          ]
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "startMs": 110,
+          "durationMs": 30,
+          "phase": "follow-through",
+          "inspectionFist": [
+            471.5,
+            248.0
+          ]
+        },
+        {
+          "index": 5,
+          "x": 640,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "startMs": 140,
+          "durationMs": 30,
+          "phase": "recoil",
+          "inspectionFist": [
+            433.0,
+            250.0
+          ]
+        },
+        {
+          "index": 6,
+          "x": 1280,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "startMs": 170,
+          "durationMs": 30,
+          "phase": "recover",
+          "inspectionFist": [
+            371.0,
+            229.5
+          ]
+        },
+        {
+          "index": 7,
+          "x": 1920,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "startMs": 200,
+          "durationMs": 50,
+          "phase": "guard",
+          "inspectionFist": [
+            376.5,
+            247.0
+          ]
+        }
+      ]
+    },
+    "attack3": {
+      "key": "attack3",
+      "name": "Đấm móc theo cung",
+      "image": "attack3-sheet.png",
+      "gif": "attack3-preview.gif",
+      "columns": 4,
+      "rows": 2,
+      "atlasRowOffset": 4,
+      "loop": false,
+      "durationMs": 360,
+      "onComplete": "hook-peak",
+      "impact": {
+        "frameIndex": 5,
+        "timeMs": 230,
+        "fist": [
+          399.5,
+          197.5
+        ],
+        "direction": "arc-forward-up",
+        "handBounds": [
+          385,
+          181,
+          414,
+          214
+        ],
+        "vfxRoot": [
+          244.0,
+          620
+        ],
+        "vfxScale": 1.3434711184031531,
+        "vfxRotationRad": -0.08162225881428276,
+        "vfxSourceVector": [
+          141.0,
+          -304
+        ],
+        "vfxTargetVector": [
+          155.5,
+          -422.5
+        ]
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "startMs": 0,
+          "durationMs": 40,
+          "phase": "guard",
+          "inspectionFist": [
+            347.5,
+            271.5
+          ]
+        },
+        {
+          "index": 1,
+          "x": 640,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "startMs": 40,
+          "durationMs": 40,
+          "phase": "hook-chamber",
+          "inspectionFist": [
+            301.0,
+            378.0
+          ]
+        },
+        {
+          "index": 2,
+          "x": 1280,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "startMs": 80,
+          "durationMs": 40,
+          "phase": "hook-forward-low",
+          "inspectionFist": [
+            402.0,
+            378.5
+          ]
+        },
+        {
+          "index": 3,
+          "x": 1920,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "startMs": 120,
+          "durationMs": 55,
+          "phase": "hook-forward",
+          "inspectionFist": [
+            428.5,
+            330.0
+          ]
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "startMs": 175,
+          "durationMs": 55,
+          "phase": "hook-arc-up",
+          "inspectionFist": [
+            424.0,
+            279.5
+          ]
+        },
+        {
+          "index": 5,
+          "x": 640,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "startMs": 230,
+          "durationMs": 50,
+          "phase": "hook-peak",
+          "inspectionFist": [
+            399.5,
+            197.5
+          ]
+        },
+        {
+          "index": 6,
+          "x": 1280,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "startMs": 280,
+          "durationMs": 40,
+          "phase": "hook-peak",
+          "inspectionFist": [
+            399.5,
+            197.5
+          ]
+        },
+        {
+          "index": 7,
+          "x": 1920,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "startMs": 320,
+          "durationMs": 40,
+          "phase": "hook-peak",
+          "inspectionFist": [
+            399.5,
+            197.5
+          ]
+        }
+      ]
+    },
+    "attack4": {
+      "key": "attack4",
+      "name": "Tụ lực · Đấm đất · Thu quyền",
+      "image": "attack4-sheet.png",
+      "gif": "attack4-preview.gif",
+      "columns": 4,
+      "rows": 4,
+      "atlasRowOffset": 6,
+      "loop": false,
+      "durationMs": 1310,
+      "onComplete": "idle",
+      "impact": {
+        "frameIndex": 7,
+        "timeMs": 440,
+        "fist": [
+          360.5,
+          608.5
+        ],
+        "direction": "down",
+        "handBounds": [
+          348,
+          596,
+          373,
+          621
+        ],
+        "ground": [
+          360.5,
+          620
+        ],
+        "radialDegrees": 360,
+        "vfxScale": 1.2
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "startMs": 0,
+          "durationMs": 50,
+          "phase": "hook-peak",
+          "inspectionFist": [
+            399.5,
+            197.5
+          ]
+        },
+        {
+          "index": 1,
+          "x": 640,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "startMs": 50,
+          "durationMs": 60,
+          "phase": "retract-to-waist",
+          "inspectionFist": [
+            375.0,
+            302.5
+          ]
+        },
+        {
+          "index": 2,
+          "x": 1280,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "startMs": 110,
+          "durationMs": 70,
+          "phase": "power-chamber",
+          "inspectionFist": [
+            281.0,
+            403.5
+          ]
+        },
+        {
+          "index": 3,
+          "x": 1920,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "startMs": 180,
+          "durationMs": 80,
+          "phase": "power-chamber",
+          "inspectionFist": [
+            281.0,
+            403.5
+          ]
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "startMs": 260,
+          "durationMs": 100,
+          "phase": "power-chamber",
+          "inspectionFist": [
+            281.0,
+            403.5
+          ]
+        },
+        {
+          "index": 5,
+          "x": 640,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "startMs": 360,
+          "durationMs": 45,
+          "phase": "downstroke",
+          "inspectionFist": [
+            372.5,
+            530.5
+          ]
+        },
+        {
+          "index": 6,
+          "x": 1280,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "startMs": 405,
+          "durationMs": 35,
+          "phase": "approach-ground",
+          "inspectionFist": [
+            377.5,
+            597.5
+          ]
+        },
+        {
+          "index": 7,
+          "x": 1920,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "startMs": 440,
+          "durationMs": 75,
+          "phase": "contact-ground",
+          "inspectionFist": [
+            360.5,
+            608.5
+          ]
+        },
+        {
+          "index": 8,
+          "x": 0,
+          "y": 1280,
+          "w": 640,
+          "h": 640,
+          "startMs": 515,
+          "durationMs": 65,
+          "phase": "settle",
+          "inspectionFist": [
+            360.5,
+            608.5
+          ]
+        },
+        {
+          "index": 9,
+          "x": 640,
+          "y": 1280,
+          "w": 640,
+          "h": 640,
+          "startMs": 580,
+          "durationMs": 70,
+          "phase": "lift-fist",
+          "inspectionFist": [
+            363.0,
+            573.5
+          ]
+        },
+        {
+          "index": 10,
+          "x": 1280,
+          "y": 1280,
+          "w": 640,
+          "h": 640,
+          "startMs": 650,
+          "durationMs": 80,
+          "phase": "recover-waist",
+          "inspectionFist": [
+            350.5,
+            452.0
+          ]
+        },
+        {
+          "index": 11,
+          "x": 1920,
+          "y": 1280,
+          "w": 640,
+          "h": 640,
+          "startMs": 730,
+          "durationMs": 90,
+          "phase": "rise-guard",
+          "inspectionFist": [
+            368.0,
+            366.5
+          ]
+        },
+        {
+          "index": 12,
+          "x": 0,
+          "y": 1920,
+          "w": 640,
+          "h": 640,
+          "startMs": 820,
+          "durationMs": 110,
+          "phase": "guard",
+          "inspectionFist": [
+            347.5,
+            271.5
+          ]
+        },
+        {
+          "index": 13,
+          "x": 640,
+          "y": 1920,
+          "w": 640,
+          "h": 640,
+          "startMs": 930,
+          "durationMs": 110,
+          "phase": "relax-guard",
+          "inspectionFist": [
+            346.5,
+            325.0
+          ]
+        },
+        {
+          "index": 14,
+          "x": 1280,
+          "y": 1920,
+          "w": 640,
+          "h": 640,
+          "startMs": 1040,
+          "durationMs": 120,
+          "phase": "relax-arms",
+          "inspectionFist": [
+            373.5,
+            413.0
+          ]
+        },
+        {
+          "index": 15,
+          "x": 1920,
+          "y": 1920,
+          "w": 640,
+          "h": 640,
+          "startMs": 1160,
+          "durationMs": 150,
+          "phase": "idle-pose",
+          "inspectionFist": [
+            319.5,
+            402.5
+          ]
+        }
+      ]
+    }
+  },
+  "transitions": {
+    "hookToSlam": {
+      "from": {
+        "action": "attack3",
+        "frameIndex": 7
+      },
+      "peak": {
+        "action": "attack3",
+        "frameIndex": 5
+      },
+      "to": {
+        "action": "attack4",
+        "frameIndex": 0
+      },
+      "kind": "identical full cel"
+    },
+    "returnGuard": {
+      "action": "attack4",
+      "frameIndex": 12,
+      "reference": {
+        "action": "attack1",
+        "frameIndex": 0
+      }
+    },
+    "returnIdle": {
+      "action": "attack4",
+      "frameIndex": 15,
+      "source": "approved idle frame0"
+    }
+  },
+  "choreography": {
+    "hook": "right fist follows forward-then-up arc; elbow bent at apex; palm toward self, dorsum out toward opponent",
+    "slam": "retract near right fist to waist, far left fist abdomen; load lowered wide stance; near right fist down, far left chambered at waist mostly occluded; near right leg straight rear/camera-facing toe; far left leg folded as flat-foot support; recover through guard then idle"
+  },
+  "effectOverrides": {
+    "attack4": {
+      "image": "ground-impact-source.png",
+      "width": 1536,
+      "height": 1024,
+      "fps": 25,
+      "loop": false,
+      "uniformSourceScale": 1.2,
+      "opacity": 0.65,
+      "blendMode": "source-over",
+      "filter": "none",
+      "attachment": "ground",
+      "frames": [
+        {
+          "order": 0,
+          "x": 0,
+          "y": 0,
+          "w": 384,
+          "h": 512,
+          "anchorX": 192,
+          "anchorY": 422
+        },
+        {
+          "order": 1,
+          "x": 384,
+          "y": 0,
+          "w": 384,
+          "h": 512,
+          "anchorX": 192,
+          "anchorY": 422
+        },
+        {
+          "order": 2,
+          "x": 768,
+          "y": 0,
+          "w": 384,
+          "h": 512,
+          "anchorX": 192,
+          "anchorY": 422
+        },
+        {
+          "order": 3,
+          "x": 1152,
+          "y": 0,
+          "w": 384,
+          "h": 512,
+          "anchorX": 192,
+          "anchorY": 422
+        },
+        {
+          "order": 4,
+          "x": 0,
+          "y": 512,
+          "w": 384,
+          "h": 512,
+          "anchorX": 192,
+          "anchorY": 422
+        },
+        {
+          "order": 5,
+          "x": 384,
+          "y": 512,
+          "w": 384,
+          "h": 512,
+          "anchorX": 192,
+          "anchorY": 422
+        },
+        {
+          "order": 6,
+          "x": 768,
+          "y": 512,
+          "w": 384,
+          "h": 512,
+          "anchorX": 192,
+          "anchorY": 422
+        },
+        {
+          "order": 7,
+          "x": 1152,
+          "y": 512,
+          "w": 384,
+          "h": 512,
+          "anchorX": 192,
+          "anchorY": 422
+        }
+      ]
+    }
+  }
+}
