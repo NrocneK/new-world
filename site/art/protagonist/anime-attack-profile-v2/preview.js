@@ -66,7 +66,7 @@ function render(key,index,effects,complete) {
   const x=meta.stage.actorX+p[0],y=meta.stage.actorY+p[1];
   const sx=Math.max(0,Math.min(canvas.width-140,x-70)),sy=Math.max(0,Math.min(canvas.height-140,y-70));
   zoom.clearRect(0,0,280,280);zoom.drawImage(canvas,sx,sy,140,140,0,0,280,280);
-  footZoom.clearRect(0,0,560,180);footZoom.drawImage(canvas,64,448,350,112.5,0,0,560,180);
+  footZoom.clearRect(0,0,560,180);footZoom.drawImage(canvas,64,432,448,144,0,0,560,180);
   stateLabel.textContent=mode==='inspect'?'XEM TỪNG KHUNG':complete?'ĐÃ PHÁT XONG · VỀ THẾ THỦ':selection==='combo'?'COMBO · '+(meta.combo.indexOf(key)+1)+' / 4':'PHÁT RIÊNG · '+a.name;
   status.textContent=a.name+' · khung '+String(index+1).padStart(2,'0')+' / 08 · '+(phaseNames[f.phase]??f.phase)+(index===a.impact.frameIndex?' · ĐIỂM RA ĐÒN':'');
 }
