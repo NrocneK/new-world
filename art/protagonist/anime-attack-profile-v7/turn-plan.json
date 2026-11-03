@@ -1,0 +1,40 @@
+{
+  "yawDegrees": [
+    0,
+    30,
+    60,
+    90,
+    120,
+    150,
+    180,
+    210,
+    240,
+    270,
+    300,
+    330,
+    360,
+    360,
+    360,
+    360
+  ],
+  "views": [
+    "right-profile",
+    "rear-right-three-quarter",
+    "near-back",
+    "BACK",
+    "back-left-three-quarter",
+    "near-left-profile",
+    "LEFT-PROFILE",
+    "front-left-three-quarter",
+    "near-front",
+    "FRONT",
+    "front-right-three-quarter",
+    "high-sweep-front-right",
+    "high-sweep-right",
+    "retract-right",
+    "lower-foot-right",
+    "guard-right"
+  ],
+  "strikingLeg": "right",
+  "supportLeg": "left"
+}

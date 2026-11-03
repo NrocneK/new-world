@@ -1,0 +1,487 @@
+{
+  "policy": "one fixed scale for all16cels; lock planted left support shoe; rigid full-pose placement only",
+  "sourceOrder": [
+    [
+      "spin-a-source.png",
+      0
+    ],
+    [
+      "spin-a-source.png",
+      1
+    ],
+    [
+      "spin-a-source.png",
+      2
+    ],
+    [
+      "spin-a-source.png",
+      3
+    ],
+    [
+      "spin-a-source.png",
+      4
+    ],
+    [
+      "spin-a-source.png",
+      5
+    ],
+    [
+      "spin-a-source.png",
+      6
+    ],
+    [
+      "spin-a-source.png",
+      7
+    ],
+    [
+      "spin-b-source.png",
+      1
+    ],
+    [
+      "spin-b-source.png",
+      0
+    ],
+    [
+      "spin-b-source.png",
+      2
+    ],
+    [
+      "spin-b-source.png",
+      3
+    ],
+    [
+      "spin-b-source.png",
+      4
+    ],
+    [
+      "spin-b-source.png",
+      5
+    ],
+    [
+      "spin-b-source.png",
+      6
+    ],
+    [
+      "spin-b-source.png",
+      7
+    ]
+  ],
+  "frames": [
+    {
+      "index": 0,
+      "image": "spin-a-source.png",
+      "sourceIndex": 0,
+      "sx": 74,
+      "sy": 23,
+      "sw": 229,
+      "sh": 466,
+      "scale": 1.0454545454545454,
+      "dx": 266.5681818181818,
+      "dy": 135.9545454545455,
+      "supportShoe": {
+        "bounds": [
+          220,
+          454,
+          299,
+          485
+        ],
+        "center": [
+          259.5,
+          469.5
+        ],
+        "area": 1738
+      },
+      "floor": 486
+    },
+    {
+      "index": 1,
+      "image": "spin-a-source.png",
+      "sourceIndex": 1,
+      "sx": 485,
+      "sy": 22,
+      "sw": 156,
+      "sh": 467,
+      "scale": 1.0454545454545454,
+      "dx": 333.47727272727275,
+      "dy": 134.90909090909093,
+      "supportShoe": {
+        "bounds": [
+          216,
+          454,
+          277,
+          476
+        ],
+        "center": [
+          246.5,
+          465.0
+        ],
+        "area": 954
+      },
+      "floor": 486
+    },
+    {
+      "index": 2,
+      "image": "spin-a-source.png",
+      "sourceIndex": 2,
+      "sx": 884,
+      "sy": 23,
+      "sw": 142,
+      "sh": 467,
+      "scale": 1.0454545454545454,
+      "dx": 408.75,
+      "dy": 134.90909090909093,
+      "supportShoe": {
+        "bounds": [
+          160,
+          456,
+          219,
+          486
+        ],
+        "center": [
+          189.5,
+          471.0
+        ],
+        "area": 1296
+      },
+      "floor": 487
+    },
+    {
+      "index": 3,
+      "image": "spin-a-source.png",
+      "sourceIndex": 3,
+      "sx": 1250,
+      "sy": 23,
+      "sw": 169,
+      "sh": 466,
+      "scale": 1.0454545454545454,
+      "dx": 384.1818181818182,
+      "dy": 135.9545454545455,
+      "supportShoe": {
+        "bounds": [
+          178,
+          456,
+          212,
+          485
+        ],
+        "center": [
+          195.0,
+          470.5
+        ],
+        "area": 861
+      },
+      "floor": 486
+    },
+    {
+      "index": 4,
+      "image": "spin-a-source.png",
+      "sourceIndex": 4,
+      "sx": 113,
+      "sy": 533,
+      "sw": 154,
+      "sh": 469,
+      "scale": 1.0454545454545454,
+      "dx": 355.95454545454544,
+      "dy": 132.8181818181818,
+      "supportShoe": {
+        "bounds": [
+          177,
+          456,
+          249,
+          486
+        ],
+        "center": [
+          213.0,
+          471.0
+        ],
+        "area": 1481
+      },
+      "floor": 487
+    },
+    {
+      "index": 5,
+      "image": "spin-a-source.png",
+      "sourceIndex": 5,
+      "sx": 476,
+      "sy": 532,
+      "sw": 161,
+      "sh": 471,
+      "scale": 1.0454545454545454,
+      "dx": 342.3636363636364,
+      "dy": 130.72727272727275,
+      "supportShoe": {
+        "bounds": [
+          189,
+          457,
+          269,
+          486
+        ],
+        "center": [
+          229.0,
+          471.5
+        ],
+        "area": 1640
+      },
+      "floor": 488
+    },
+    {
+      "index": 6,
+      "image": "spin-a-source.png",
+      "sourceIndex": 6,
+      "sx": 851,
+      "sy": 533,
+      "sw": 172,
+      "sh": 470,
+      "scale": 1.0454545454545454,
+      "dx": 332.95454545454544,
+      "dy": 131.7727272727273,
+      "supportShoe": {
+        "bounds": [
+          188,
+          456,
+          270,
+          486
+        ],
+        "center": [
+          229.0,
+          471.0
+        ],
+        "area": 1718
+      },
+      "floor": 488
+    },
+    {
+      "index": 7,
+      "image": "spin-a-source.png",
+      "sourceIndex": 7,
+      "sx": 1234,
+      "sy": 535,
+      "sw": 184,
+      "sh": 468,
+      "scale": 1.0454545454545454,
+      "dx": 334.52272727272725,
+      "dy": 133.86363636363637,
+      "supportShoe": {
+        "bounds": [
+          194,
+          456,
+          259,
+          488
+        ],
+        "center": [
+          226.5,
+          472.0
+        ],
+        "area": 1461
+      },
+      "floor": 488
+    },
+    {
+      "index": 8,
+      "image": "spin-b-source.png",
+      "sourceIndex": 1,
+      "sx": 495,
+      "sy": 22,
+      "sw": 175,
+      "sh": 475,
+      "scale": 1.0454545454545454,
+      "dx": 361.1818181818182,
+      "dy": 126.54545454545456,
+      "supportShoe": {
+        "bounds": [
+          206,
+          462,
+          254,
+          491
+        ],
+        "center": [
+          230.0,
+          476.5
+        ],
+        "area": 1072
+      },
+      "floor": 494
+    },
+    {
+      "index": 9,
+      "image": "spin-b-source.png",
+      "sourceIndex": 0,
+      "sx": 132,
+      "sy": 26,
+      "sw": 170,
+      "sh": 471,
+      "scale": 1.0454545454545454,
+      "dx": 363.79545454545456,
+      "dy": 130.72727272727275,
+      "supportShoe": {
+        "bounds": [
+          186,
+          464,
+          263,
+          493
+        ],
+        "center": [
+          224.5,
+          478.5
+        ],
+        "area": 1501
+      },
+      "floor": 494
+    },
+    {
+      "index": 10,
+      "image": "spin-b-source.png",
+      "sourceIndex": 2,
+      "sx": 857,
+      "sy": 24,
+      "sw": 188,
+      "sh": 473,
+      "scale": 1.0454545454545454,
+      "dx": 362.75,
+      "dy": 128.63636363636368,
+      "supportShoe": {
+        "bounds": [
+          167,
+          462,
+          246,
+          491
+        ],
+        "center": [
+          206.5,
+          476.5
+        ],
+        "area": 1575
+      },
+      "floor": 494
+    },
+    {
+      "index": 11,
+      "image": "spin-b-source.png",
+      "sourceIndex": 3,
+      "sx": 1195,
+      "sy": 34,
+      "sw": 319,
+      "sh": 463,
+      "scale": 1.0454545454545454,
+      "dx": 319.3636363636364,
+      "dy": 139.09090909090912,
+      "supportShoe": {
+        "bounds": [
+          165,
+          462,
+          239,
+          492
+        ],
+        "center": [
+          202.0,
+          477.0
+        ],
+        "area": 1413
+      },
+      "floor": 494
+    },
+    {
+      "index": 12,
+      "image": "spin-b-source.png",
+      "sourceIndex": 4,
+      "sx": 61,
+      "sy": 539,
+      "sw": 312,
+      "sh": 469,
+      "scale": 1.0454545454545454,
+      "dx": 335.04545454545456,
+      "dy": 132.8181818181818,
+      "supportShoe": {
+        "bounds": [
+          146,
+          461,
+          216,
+          491
+        ],
+        "center": [
+          181.0,
+          476.0
+        ],
+        "area": 1459
+      },
+      "floor": 493
+    },
+    {
+      "index": 13,
+      "image": "spin-b-source.png",
+      "sourceIndex": 5,
+      "sx": 457,
+      "sy": 536,
+      "sw": 175,
+      "sh": 473,
+      "scale": 1.0454545454545454,
+      "dx": 359.6136363636364,
+      "dy": 128.63636363636368,
+      "supportShoe": {
+        "bounds": [
+          154,
+          462,
+          233,
+          491
+        ],
+        "center": [
+          193.5,
+          476.5
+        ],
+        "area": 1590
+      },
+      "floor": 494
+    },
+    {
+      "index": 14,
+      "image": "spin-b-source.png",
+      "sourceIndex": 6,
+      "sx": 843,
+      "sy": 538,
+      "sw": 154,
+      "sh": 471,
+      "scale": 1.0454545454545454,
+      "dx": 370.0681818181818,
+      "dy": 130.72727272727275,
+      "supportShoe": {
+        "bounds": [
+          145,
+          462,
+          226,
+          492
+        ],
+        "center": [
+          185.5,
+          477.0
+        ],
+        "area": 1631
+      },
+      "floor": 494
+    },
+    {
+      "index": 15,
+      "image": "spin-b-source.png",
+      "sourceIndex": 7,
+      "sx": 1192,
+      "sy": 541,
+      "sw": 230,
+      "sh": 468,
+      "scale": 1.0454545454545454,
+      "dx": 242.0,
+      "dy": 133.86363636363637,
+      "supportShoe": {
+        "bounds": [
+          256,
+          486,
+          290,
+          493
+        ],
+        "center": [
+          273.0,
+          489.5
+        ],
+        "area": 73
+      },
+      "floor": 494
+    }
+  ]
+}
