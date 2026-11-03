@@ -1,0 +1,12 @@
+{
+  "direction": "cubic Bezier sweep; direction only, not an outer silhouette",
+  "start": [260, 630],
+  "control1": [510, 640],
+  "control2": [760, 420],
+  "end": [650, 180],
+  "groundClipY": 640,
+  "brushSamples": 24,
+  "spriteFrames": 8,
+  "upperWidth": 228,
+  "lowerWidth": 18
+}
