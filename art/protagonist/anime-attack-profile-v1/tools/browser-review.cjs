@@ -16,7 +16,8 @@ const digest=b=>createHash('sha256').update(b).digest('hex');
  if(remote)await page.route(base+'/**',async route=>{const r=await api.get(route.request().url(),{timeout:90000});await route.fulfill({response:r});});
  try {
   await page.clock.install();
-  await page.goto(base+'/attack-profile-v1'+(remote?'':'.html'));
+  const reviewUrl=base+'/attack-profile-v2'+(remote?'':'.html');
+  await page.goto(reviewUrl);
   await page.waitForFunction(()=>document.querySelectorAll('#frame-controls button').length===8);
   await page.clock.pauseAt(await page.evaluate(()=>Date.now()+1000));
   const canvas=page.locator('#combat-preview');
@@ -55,9 +56,9 @@ const digest=b=>createHash('sha256').update(b).digest('hex');
   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'mobile overflow');
   await page.screenshot({path:path.join(out,'mobile.png'),fullPage:true});
   const visibleLinks=await page.locator('a[download]').evaluateAll(a=>a.map(x=>x.href));
-  const links=[...new Set([...visibleLinks,...meta.combo.flatMap(key=>['gif','png'].map(ext=>base+'/downloads/di-mon-'+key+'-profile-v1.'+ext))])];
-  const downloadMeta=JSON.parse(fs.readFileSync(path.join(repo,'site/downloads/di-mon-attack-profile-v1.json')));
-  assert.equal(downloadMeta.image,'di-mon-attack-profile-v1.png');
+  const links=[...new Set([...visibleLinks,...meta.combo.flatMap(key=>['gif','png'].map(ext=>base+'/downloads/di-mon-'+key+'-profile-v2.'+ext))])];
+  const downloadMeta=JSON.parse(fs.readFileSync(path.join(repo,'site/downloads/di-mon-attack-profile-v2.json')));
+  assert.equal(downloadMeta.image,'di-mon-attack-profile-v2.png');
   for(let a=0;a<4;a++)for(const f of downloadMeta.actions[meta.combo[a]].frames)assert.ok(f.y>=a*1024&&f.y<(a+1)*1024);
   if(remote) {
    for(const url of links) {
@@ -66,6 +67,13 @@ const digest=b=>createHash('sha256').update(b).digest('hex');
     assert.equal(digest(await r.body()),digest(fs.readFileSync(local)),url+' bytes');
    }
   }
+  await page.goto(reviewUrl+'?action=attack2&speed=0.25');
+  await page.waitForFunction(()=>document.querySelectorAll('#frame-controls button').length===8);await tick();
+  assert.equal((await data()).action,'attack2');assert.equal(await page.locator('#speed').inputValue(),'0.25');
+  await page.clock.runFor(1200);assert.equal((await data()).mode,'completed');
+  await page.goto(reviewUrl+'?action=attack4&speed=0.5&vfx=1');
+  await page.waitForFunction(()=>document.querySelectorAll('#frame-controls button').length===8);await page.clock.runFor(550);
+  assert.equal((await data()).action,'attack4');assert.equal((await data()).fx,'attack4');
   assert.deepEqual(errors,[]);console.log('PASS: all 32 cels selectable; 4 one-shot actions + combo + slow mode; VFX toggles; mobile fit; no browser errors'+(remote?'; public downloads match.':'.'));
  }finally{await page.unrouteAll({behavior:'wait'});await browser.close();if(api)await api.dispose();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

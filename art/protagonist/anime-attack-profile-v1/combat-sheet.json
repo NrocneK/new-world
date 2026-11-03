@@ -28,7 +28,7 @@
   "actions": {
     "attack1": {
       "key": "attack1",
-      "name": "\u0110\u1ea5m th\u1eb3ng \u00b7 Tay 1",
+      "name": "Đấm thẳng · Tay 1",
       "image": "attack1-sheet.png",
       "gif": "attack1-preview.gif",
       "loop": false,
@@ -137,7 +137,7 @@
     },
     "attack2": {
       "key": "attack2",
-      "name": "\u0110\u1ea5m th\u1eb3ng \u00b7 Tay 2",
+      "name": "Đấm thẳng · Tay 2",
       "image": "attack2-sheet.png",
       "gif": "attack2-preview.gif",
       "loop": false,
@@ -147,7 +147,7 @@
         "frameIndex": 3,
         "timeMs": 70,
         "fist": [
-          348.5,
+          347.0,
           132.0
         ],
         "direction": "forward",
@@ -242,11 +242,23 @@
           "phase": "guard",
           "source": "shared-guard"
         }
-      ]
+      ],
+      "continuity": {
+        "strikingHand": "far/right",
+        "guardHand": "near/left",
+        "guardAtCheekFrames": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "description": "Both hands guard before the far hand drives forward and retracts; the near hand never chambers or extends."
+      }
     },
     "attack3": {
       "key": "attack3",
-      "name": "\u0110\u1ea5m m\u00f3c",
+      "name": "Đấm móc",
       "image": "attack3-sheet.png",
       "gif": "attack3-preview.gif",
       "loop": false,
@@ -371,7 +383,7 @@
     },
     "attack4": {
       "key": "attack4",
-      "name": "\u0110\u1ea5m \u0111\u1ea5t \u00b7 M\u1ed9t tay",
+      "name": "Đấm đất · Một tay",
       "image": "attack4-sheet.png",
       "gif": "attack4-preview.gif",
       "loop": false,
@@ -381,17 +393,17 @@
         "frameIndex": 4,
         "timeMs": 220,
         "fist": [
-          226.5,
-          486.0
+          274.5,
+          480.0
         ],
         "direction": "down",
         "anchorMethod": "skin component, manually checked",
         "ground": [
-          226.5,
+          274.5,
           500
         ],
         "radialDegrees": 360,
-        "vfxScale": 1.1
+        "vfxScale": 1.2
       },
       "frames": [
         {
@@ -482,7 +494,98 @@
           "phase": "guard",
           "source": "shared-guard"
         }
-      ]
+      ],
+      "pose": "braced low lunge, rear knee off floor, free arm swept back"
+    }
+  },
+  "reviewRevision": 2,
+  "effectOverrides": {
+    "attack4": {
+      "image": "ground-impact-source.png",
+      "width": 1536,
+      "height": 1024,
+      "fps": 25,
+      "loop": false,
+      "uniformSourceScale": 1.2,
+      "opacity": 0.65,
+      "blendMode": "source-over",
+      "filter": "none",
+      "attachment": "ground",
+      "frames": [
+        {
+          "order": 0,
+          "x": 0,
+          "y": 0,
+          "w": 384,
+          "h": 512,
+          "anchorX": 192,
+          "anchorY": 422
+        },
+        {
+          "order": 1,
+          "x": 384,
+          "y": 0,
+          "w": 384,
+          "h": 512,
+          "anchorX": 192,
+          "anchorY": 422
+        },
+        {
+          "order": 2,
+          "x": 768,
+          "y": 0,
+          "w": 384,
+          "h": 512,
+          "anchorX": 192,
+          "anchorY": 422
+        },
+        {
+          "order": 3,
+          "x": 1152,
+          "y": 0,
+          "w": 384,
+          "h": 512,
+          "anchorX": 192,
+          "anchorY": 422
+        },
+        {
+          "order": 4,
+          "x": 0,
+          "y": 512,
+          "w": 384,
+          "h": 512,
+          "anchorX": 192,
+          "anchorY": 422
+        },
+        {
+          "order": 5,
+          "x": 384,
+          "y": 512,
+          "w": 384,
+          "h": 512,
+          "anchorX": 192,
+          "anchorY": 422
+        },
+        {
+          "order": 6,
+          "x": 768,
+          "y": 512,
+          "w": 384,
+          "h": 512,
+          "anchorX": 192,
+          "anchorY": 422
+        },
+        {
+          "order": 7,
+          "x": 1152,
+          "y": 512,
+          "w": 384,
+          "h": 512,
+          "anchorX": 192,
+          "anchorY": 422
+        }
+      ],
+      "description": "Thin ground ring, vertical gusts and stone chips; open impact center."
     }
   }
 }

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {sample,impactEvents} from '../../../../site/art/protagonist/anime-attack-profile-v1/timeline.js';
+import {sample,impactEvents} from '../../../../site/art/protagonist/anime-attack-profile-v2/timeline.js';
 
 const meta=JSON.parse(readFileSync(new URL('../combat-sheet.json',import.meta.url)));
 
