@@ -1,0 +1,1242 @@
+{
+  "version": 1,
+  "reviewRevision": 12,
+  "image": "di-mon-attack-profile-v12.png",
+  "columns": 4,
+  "rows": 14,
+  "frameWidth": 768,
+  "frameHeight": 640,
+  "groundY": 620,
+  "stage": {
+    "width": 896,
+    "height": 848,
+    "actorX": 32,
+    "actorY": 20,
+    "floorY": 640
+  },
+  "loop": false,
+  "combo": [
+    "kick1",
+    "kick2",
+    "kick3"
+  ],
+  "punchCombo": [
+    "attack1",
+    "attack2",
+    "attack3"
+  ],
+  "allActions": [
+    "attack1",
+    "attack2",
+    "attack3",
+    "kick1",
+    "kick2",
+    "kick3"
+  ],
+  "durationMs": 1710,
+  "handConvention": {
+    "near": "right/hand1",
+    "far": "left/hand2"
+  },
+  "actions": {
+    "attack1": {
+      "key": "attack1",
+      "name": "Đấm thẳng · Tay phải / gần",
+      "image": "di-mon-attack-profile-v12.png",
+      "gif": "di-mon-attack1-profile-v12.gif",
+      "columns": 4,
+      "rows": 2,
+      "atlasRowOffset": 0,
+      "loop": false,
+      "durationMs": 250,
+      "onComplete": "guard",
+      "impact": {
+        "frameIndex": 3,
+        "timeMs": 70,
+        "fist": [
+          535,
+          259
+        ],
+        "direction": "forward"
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 0,
+          "durationMs": 30,
+          "phase": "guard",
+          "inspectionFist": [
+            411.5,
+            271.5
+          ],
+          "inspectionPoint": [
+            411.5,
+            271.5
+          ]
+        },
+        {
+          "index": 1,
+          "x": 768,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 30,
+          "durationMs": 20,
+          "phase": "load",
+          "inspectionFist": [
+            395.5,
+            304
+          ],
+          "inspectionPoint": [
+            395.5,
+            304
+          ]
+        },
+        {
+          "index": 2,
+          "x": 1536,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 50,
+          "durationMs": 20,
+          "phase": "drive",
+          "inspectionFist": [
+            479.5,
+            270.5
+          ],
+          "inspectionPoint": [
+            479.5,
+            270.5
+          ]
+        },
+        {
+          "index": 3,
+          "x": 2304,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 70,
+          "durationMs": 40,
+          "phase": "contact",
+          "inspectionFist": [
+            535,
+            259
+          ],
+          "inspectionPoint": [
+            535,
+            259
+          ]
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 110,
+          "durationMs": 30,
+          "phase": "follow-through",
+          "inspectionFist": [
+            526.5,
+            260
+          ],
+          "inspectionPoint": [
+            526.5,
+            260
+          ]
+        },
+        {
+          "index": 5,
+          "x": 768,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 140,
+          "durationMs": 30,
+          "phase": "recoil",
+          "inspectionFist": [
+            476,
+            269.5
+          ],
+          "inspectionPoint": [
+            476,
+            269.5
+          ]
+        },
+        {
+          "index": 6,
+          "x": 1536,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 170,
+          "durationMs": 30,
+          "phase": "recover",
+          "inspectionFist": [
+            409.5,
+            272.5
+          ],
+          "inspectionPoint": [
+            409.5,
+            272.5
+          ]
+        },
+        {
+          "index": 7,
+          "x": 2304,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 200,
+          "durationMs": 50,
+          "phase": "guard",
+          "inspectionFist": [
+            411.5,
+            271.5
+          ],
+          "inspectionPoint": [
+            411.5,
+            271.5
+          ]
+        }
+      ]
+    },
+    "attack2": {
+      "key": "attack2",
+      "name": "Đấm thẳng · Tay trái / xa",
+      "image": "di-mon-attack-profile-v12.png",
+      "gif": "di-mon-attack2-profile-v12.gif",
+      "columns": 4,
+      "rows": 2,
+      "atlasRowOffset": 2,
+      "loop": false,
+      "durationMs": 250,
+      "onComplete": "guard",
+      "impact": {
+        "frameIndex": 3,
+        "timeMs": 70,
+        "fist": [
+          560,
+          248.5
+        ],
+        "direction": "forward"
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 1280,
+          "w": 768,
+          "h": 640,
+          "startMs": 0,
+          "durationMs": 30,
+          "phase": "guard",
+          "inspectionFist": [
+            440.5,
+            247
+          ],
+          "inspectionPoint": [
+            440.5,
+            247
+          ]
+        },
+        {
+          "index": 1,
+          "x": 768,
+          "y": 1280,
+          "w": 768,
+          "h": 640,
+          "startMs": 30,
+          "durationMs": 20,
+          "phase": "load",
+          "inspectionFist": [
+            476,
+            253.5
+          ],
+          "inspectionPoint": [
+            476,
+            253.5
+          ]
+        },
+        {
+          "index": 2,
+          "x": 1536,
+          "y": 1280,
+          "w": 768,
+          "h": 640,
+          "startMs": 50,
+          "durationMs": 20,
+          "phase": "drive",
+          "inspectionFist": [
+            517.5,
+            248.5
+          ],
+          "inspectionPoint": [
+            517.5,
+            248.5
+          ]
+        },
+        {
+          "index": 3,
+          "x": 2304,
+          "y": 1280,
+          "w": 768,
+          "h": 640,
+          "startMs": 70,
+          "durationMs": 40,
+          "phase": "contact",
+          "inspectionFist": [
+            560,
+            248.5
+          ],
+          "inspectionPoint": [
+            560,
+            248.5
+          ]
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 1920,
+          "w": 768,
+          "h": 640,
+          "startMs": 110,
+          "durationMs": 30,
+          "phase": "follow-through",
+          "inspectionFist": [
+            535.5,
+            248
+          ],
+          "inspectionPoint": [
+            535.5,
+            248
+          ]
+        },
+        {
+          "index": 5,
+          "x": 768,
+          "y": 1920,
+          "w": 768,
+          "h": 640,
+          "startMs": 140,
+          "durationMs": 30,
+          "phase": "recoil",
+          "inspectionFist": [
+            497,
+            250
+          ],
+          "inspectionPoint": [
+            497,
+            250
+          ]
+        },
+        {
+          "index": 6,
+          "x": 1536,
+          "y": 1920,
+          "w": 768,
+          "h": 640,
+          "startMs": 170,
+          "durationMs": 30,
+          "phase": "recover",
+          "inspectionFist": [
+            435,
+            229.5
+          ],
+          "inspectionPoint": [
+            435,
+            229.5
+          ]
+        },
+        {
+          "index": 7,
+          "x": 2304,
+          "y": 1920,
+          "w": 768,
+          "h": 640,
+          "startMs": 200,
+          "durationMs": 50,
+          "phase": "guard",
+          "inspectionFist": [
+            440.5,
+            247
+          ],
+          "inspectionPoint": [
+            440.5,
+            247
+          ]
+        }
+      ]
+    },
+    "attack3": {
+      "key": "attack3",
+      "name": "Đấm móc theo cung",
+      "image": "di-mon-attack-profile-v12.png",
+      "gif": "di-mon-attack3-profile-v12.gif",
+      "columns": 4,
+      "rows": 2,
+      "atlasRowOffset": 4,
+      "loop": false,
+      "durationMs": 360,
+      "onComplete": "hook-peak",
+      "impact": {
+        "frameIndex": 6,
+        "timeMs": 280,
+        "fist": [
+          459,
+          117
+        ],
+        "direction": "arc-forward-up"
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 2560,
+          "w": 768,
+          "h": 640,
+          "startMs": 0,
+          "durationMs": 40,
+          "phase": "guard",
+          "inspectionFist": [
+            411.5,
+            271.5
+          ],
+          "inspectionPoint": [
+            411.5,
+            271.5
+          ]
+        },
+        {
+          "index": 1,
+          "x": 768,
+          "y": 2560,
+          "w": 768,
+          "h": 640,
+          "startMs": 40,
+          "durationMs": 40,
+          "phase": "hook-chamber",
+          "inspectionFist": [
+            372,
+            361.5
+          ],
+          "inspectionPoint": [
+            372,
+            361.5
+          ]
+        },
+        {
+          "index": 2,
+          "x": 1536,
+          "y": 2560,
+          "w": 768,
+          "h": 640,
+          "startMs": 80,
+          "durationMs": 40,
+          "phase": "hook-forward-low",
+          "inspectionFist": [
+            465.5,
+            363
+          ],
+          "inspectionPoint": [
+            465.5,
+            363
+          ]
+        },
+        {
+          "index": 3,
+          "x": 2304,
+          "y": 2560,
+          "w": 768,
+          "h": 640,
+          "startMs": 120,
+          "durationMs": 55,
+          "phase": "hook-forward",
+          "inspectionFist": [
+            490.5,
+            313.5
+          ],
+          "inspectionPoint": [
+            490.5,
+            313.5
+          ]
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 3200,
+          "w": 768,
+          "h": 640,
+          "startMs": 175,
+          "durationMs": 55,
+          "phase": "hook-arc-up",
+          "inspectionFist": [
+            490,
+            254.5
+          ],
+          "inspectionPoint": [
+            490,
+            254.5
+          ]
+        },
+        {
+          "index": 5,
+          "x": 768,
+          "y": 3200,
+          "w": 768,
+          "h": 640,
+          "startMs": 230,
+          "durationMs": 50,
+          "phase": "hook-arc-up",
+          "inspectionFist": [
+            463.5,
+            182.5
+          ],
+          "inspectionPoint": [
+            463.5,
+            182.5
+          ]
+        },
+        {
+          "index": 6,
+          "x": 1536,
+          "y": 3200,
+          "w": 768,
+          "h": 640,
+          "startMs": 280,
+          "durationMs": 40,
+          "phase": "hook-peak",
+          "inspectionFist": [
+            459,
+            117
+          ],
+          "inspectionPoint": [
+            459,
+            117
+          ]
+        },
+        {
+          "index": 7,
+          "x": 2304,
+          "y": 3200,
+          "w": 768,
+          "h": 640,
+          "startMs": 320,
+          "durationMs": 40,
+          "phase": "hook-peak",
+          "inspectionFist": [
+            459,
+            117
+          ],
+          "inspectionPoint": [
+            459,
+            117
+          ]
+        }
+      ]
+    },
+    "kick1": {
+      "key": "kick1",
+      "name": "Đá phải · Bật chân trước",
+      "image": "di-mon-attack-profile-v12.png",
+      "gif": "di-mon-kick1-profile-v12.gif",
+      "columns": 4,
+      "rows": 2,
+      "atlasRowOffset": 6,
+      "loop": false,
+      "durationMs": 500,
+      "onComplete": "guard",
+      "strikingLeg": "right/near",
+      "supportLeg": "left/far",
+      "impact": {
+        "frameIndex": 4,
+        "timeMs": 225,
+        "direction": "front-snap-up",
+        "foot": [
+          624.5,
+          195.5
+        ],
+        "footBounds": [
+          608,
+          161,
+          641,
+          230
+        ]
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 3840,
+          "w": 768,
+          "h": 640,
+          "startMs": 0,
+          "durationMs": 50,
+          "phase": "guard",
+          "inspectionPoint": [
+            480.0,
+            602.0
+          ]
+        },
+        {
+          "index": 1,
+          "x": 768,
+          "y": 3840,
+          "w": 768,
+          "h": 640,
+          "startMs": 50,
+          "durationMs": 50,
+          "phase": "front-knee-rise",
+          "inspectionPoint": [
+            482.0,
+            602.5
+          ]
+        },
+        {
+          "index": 2,
+          "x": 1536,
+          "y": 3840,
+          "w": 768,
+          "h": 640,
+          "startMs": 100,
+          "durationMs": 90,
+          "phase": "front-knee-chamber",
+          "inspectionPoint": [
+            501.5,
+            424.5
+          ]
+        },
+        {
+          "index": 3,
+          "x": 2304,
+          "y": 3840,
+          "w": 768,
+          "h": 640,
+          "startMs": 190,
+          "durationMs": 35,
+          "phase": "front-snap-up",
+          "inspectionPoint": [
+            599.0,
+            257.5
+          ]
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 4480,
+          "w": 768,
+          "h": 640,
+          "startMs": 225,
+          "durationMs": 45,
+          "phase": "front-high-contact",
+          "inspectionPoint": [
+            624.5,
+            195.5
+          ]
+        },
+        {
+          "index": 5,
+          "x": 768,
+          "y": 4480,
+          "w": 768,
+          "h": 640,
+          "startMs": 270,
+          "durationMs": 80,
+          "phase": "front-refold",
+          "inspectionPoint": [
+            501.5,
+            424.5
+          ]
+        },
+        {
+          "index": 6,
+          "x": 1536,
+          "y": 4480,
+          "w": 768,
+          "h": 640,
+          "startMs": 350,
+          "durationMs": 65,
+          "phase": "front-lower",
+          "inspectionPoint": [
+            514.0,
+            495.0
+          ]
+        },
+        {
+          "index": 7,
+          "x": 2304,
+          "y": 4480,
+          "w": 768,
+          "h": 640,
+          "startMs": 415,
+          "durationMs": 85,
+          "phase": "guard",
+          "inspectionPoint": [
+            480.0,
+            602.0
+          ]
+        }
+      ]
+    },
+    "kick2": {
+      "key": "kick2",
+      "name": "Đá trái · Chân phải trụ, chân trái xa hạ xuống",
+      "image": "di-mon-attack-profile-v12.png",
+      "gif": "di-mon-kick2-profile-v12.gif",
+      "columns": 4,
+      "rows": 2,
+      "atlasRowOffset": 8,
+      "loop": false,
+      "durationMs": 440,
+      "onComplete": "guard",
+      "strikingLeg": "left/far",
+      "supportLeg": "right/near",
+      "impact": {
+        "frameIndex": 4,
+        "timeMs": 165,
+        "direction": "front-snap-up",
+        "foot": [
+          633.5,
+          187.0
+        ],
+        "footBounds": [
+          630,
+          182,
+          637,
+          192
+        ]
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 5120,
+          "w": 768,
+          "h": 640,
+          "startMs": 0,
+          "durationMs": 20,
+          "phase": "instant-right-support",
+          "armsSwitched": true,
+          "inspectionPoint": [
+            511.0,
+            496.5
+          ]
+        },
+        {
+          "index": 1,
+          "x": 768,
+          "y": 5120,
+          "w": 768,
+          "h": 640,
+          "startMs": 20,
+          "durationMs": 20,
+          "phase": "matched-left-rise",
+          "armsSwitched": true,
+          "inspectionPoint": [
+            522.0,
+            415.0
+          ]
+        },
+        {
+          "index": 2,
+          "x": 1536,
+          "y": 5120,
+          "w": 768,
+          "h": 640,
+          "startMs": 40,
+          "durationMs": 90,
+          "phase": "matched-left-chamber",
+          "armsSwitched": true,
+          "inspectionPoint": [
+            522.0,
+            415.0
+          ]
+        },
+        {
+          "index": 3,
+          "x": 2304,
+          "y": 5120,
+          "w": 768,
+          "h": 640,
+          "startMs": 130,
+          "durationMs": 35,
+          "phase": "matched-left-extension",
+          "armsSwitched": true,
+          "inspectionPoint": [
+            608.5,
+            256.0
+          ]
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 5760,
+          "w": 768,
+          "h": 640,
+          "startMs": 165,
+          "durationMs": 45,
+          "phase": "matched-left-contact",
+          "armsSwitched": true,
+          "inspectionPoint": [
+            633.5,
+            187.0
+          ]
+        },
+        {
+          "index": 5,
+          "x": 768,
+          "y": 5760,
+          "w": 768,
+          "h": 640,
+          "startMs": 210,
+          "durationMs": 80,
+          "phase": "matched-left-refold",
+          "armsSwitched": true,
+          "inspectionPoint": [
+            522.0,
+            415.0
+          ]
+        },
+        {
+          "index": 6,
+          "x": 1536,
+          "y": 5760,
+          "w": 768,
+          "h": 640,
+          "startMs": 290,
+          "durationMs": 65,
+          "phase": "matched-left-lower",
+          "armsSwitched": true,
+          "inspectionPoint": [
+            511.0,
+            496.5
+          ]
+        },
+        {
+          "index": 7,
+          "x": 2304,
+          "y": 5760,
+          "w": 768,
+          "h": 640,
+          "startMs": 355,
+          "durationMs": 85,
+          "phase": "guard",
+          "armsSwitched": false,
+          "inspectionPoint": [
+            480.0,
+            602.0
+          ]
+        }
+      ],
+      "armRoles": {
+        "frontGuard": "right/near",
+        "rearBalance": "left/far"
+      }
+    },
+    "kick3": {
+      "key": "kick3",
+      "name": "Xoay người · Đá vòng cao",
+      "image": "di-mon-attack-profile-v12.png",
+      "gif": "di-mon-kick3-profile-v12.gif",
+      "columns": 4,
+      "rows": 4,
+      "atlasRowOffset": 10,
+      "loop": false,
+      "durationMs": 900,
+      "onComplete": "guard",
+      "strikingLeg": "right/near",
+      "supportLeg": "left/far",
+      "impact": {
+        "frameIndex": 11,
+        "timeMs": 550,
+        "direction": "rotating-high-roundhouse",
+        "foot": [
+          615.0,
+          248.5
+        ],
+        "footBounds": [
+          592,
+          218,
+          638,
+          279
+        ]
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 6400,
+          "w": 768,
+          "h": 640,
+          "startMs": 0,
+          "durationMs": 60,
+          "phase": "right-profile",
+          "bodyYawDegrees": 0,
+          "inspectionPoint": [
+            480.0,
+            602.0
+          ]
+        },
+        {
+          "index": 1,
+          "x": 768,
+          "y": 6400,
+          "w": 768,
+          "h": 640,
+          "startMs": 60,
+          "durationMs": 50,
+          "phase": "rear-right",
+          "bodyYawDegrees": 30,
+          "inspectionPoint": [
+            483.0,
+            595.0
+          ]
+        },
+        {
+          "index": 2,
+          "x": 1536,
+          "y": 6400,
+          "w": 768,
+          "h": 640,
+          "startMs": 110,
+          "durationMs": 50,
+          "phase": "near-back",
+          "bodyYawDegrees": 60,
+          "inspectionPoint": [
+            534.0,
+            265.5
+          ]
+        },
+        {
+          "index": 3,
+          "x": 2304,
+          "y": 6400,
+          "w": 768,
+          "h": 640,
+          "startMs": 160,
+          "durationMs": 50,
+          "phase": "back",
+          "bodyYawDegrees": 90,
+          "inspectionPoint": [
+            518.5,
+            469.5
+          ]
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 7040,
+          "w": 768,
+          "h": 640,
+          "startMs": 210,
+          "durationMs": 50,
+          "phase": "back-left",
+          "bodyYawDegrees": 120,
+          "inspectionPoint": [
+            462.0,
+            359.0
+          ]
+        },
+        {
+          "index": 5,
+          "x": 768,
+          "y": 7040,
+          "w": 768,
+          "h": 640,
+          "startMs": 260,
+          "durationMs": 50,
+          "phase": "near-left",
+          "bodyYawDegrees": 150,
+          "inspectionPoint": [
+            467.5,
+            358.5
+          ]
+        },
+        {
+          "index": 6,
+          "x": 1536,
+          "y": 7040,
+          "w": 768,
+          "h": 640,
+          "startMs": 310,
+          "durationMs": 50,
+          "phase": "left-profile",
+          "bodyYawDegrees": 180,
+          "inspectionPoint": [
+            489.5,
+            603.0
+          ]
+        },
+        {
+          "index": 7,
+          "x": 2304,
+          "y": 7040,
+          "w": 768,
+          "h": 640,
+          "startMs": 360,
+          "durationMs": 50,
+          "phase": "front-left",
+          "bodyYawDegrees": 240,
+          "inspectionPoint": [
+            480.5,
+            368.5
+          ]
+        },
+        {
+          "index": 8,
+          "x": 0,
+          "y": 7680,
+          "w": 768,
+          "h": 640,
+          "startMs": 410,
+          "durationMs": 50,
+          "phase": "front",
+          "bodyYawDegrees": 270,
+          "inspectionPoint": [
+            498.0,
+            279.0
+          ]
+        },
+        {
+          "index": 9,
+          "x": 768,
+          "y": 7680,
+          "w": 768,
+          "h": 640,
+          "startMs": 460,
+          "durationMs": 50,
+          "phase": "front-right",
+          "bodyYawDegrees": 285,
+          "inspectionPoint": [
+            522.0,
+            282.0
+          ]
+        },
+        {
+          "index": 10,
+          "x": 1536,
+          "y": 7680,
+          "w": 768,
+          "h": 640,
+          "startMs": 510,
+          "durationMs": 40,
+          "phase": "front-right-extend",
+          "bodyYawDegrees": 310,
+          "inspectionPoint": [
+            541.5,
+            281.5
+          ]
+        },
+        {
+          "index": 11,
+          "x": 2304,
+          "y": 7680,
+          "w": 768,
+          "h": 640,
+          "startMs": 550,
+          "durationMs": 70,
+          "phase": "high-sweep",
+          "bodyYawDegrees": 335,
+          "inspectionPoint": [
+            615.0,
+            248.5
+          ]
+        },
+        {
+          "index": 12,
+          "x": 0,
+          "y": 8320,
+          "w": 768,
+          "h": 640,
+          "startMs": 620,
+          "durationMs": 55,
+          "phase": "high-follow-through",
+          "bodyYawDegrees": 360,
+          "inspectionPoint": [
+            644.0,
+            252.0
+          ]
+        },
+        {
+          "index": 13,
+          "x": 768,
+          "y": 8320,
+          "w": 768,
+          "h": 640,
+          "startMs": 675,
+          "durationMs": 65,
+          "phase": "retract",
+          "bodyYawDegrees": 360,
+          "inspectionPoint": [
+            520.5,
+            438.0
+          ]
+        },
+        {
+          "index": 14,
+          "x": 1536,
+          "y": 8320,
+          "w": 768,
+          "h": 640,
+          "startMs": 740,
+          "durationMs": 80,
+          "phase": "lower-foot",
+          "bodyYawDegrees": 360,
+          "inspectionPoint": [
+            484.0,
+            602.5
+          ]
+        },
+        {
+          "index": 15,
+          "x": 2304,
+          "y": 8320,
+          "w": 768,
+          "h": 640,
+          "startMs": 820,
+          "durationMs": 80,
+          "phase": "guard",
+          "bodyYawDegrees": 360,
+          "inspectionPoint": [
+            480.0,
+            602.0
+          ]
+        }
+      ]
+    }
+  },
+  "removedActions": [
+    "attack4"
+  ],
+  "choreography": "Left frames03–08 follow the same chamber/extension/contact/refold/lower/guard sequence and durations as right frames03–08, swapping legs and arms. Both use corresponding right support-foot position, no forward shift. Other5 actions unchanged.",
+  "turnViews": {
+    "back": {
+      "action": "kick3",
+      "frameIndex": 3
+    },
+    "left": {
+      "action": "kick3",
+      "frameIndex": 6
+    },
+    "front": {
+      "action": "kick3",
+      "frameIndex": 8
+    }
+  },
+  "nearKickViews": {
+    "chamber": {
+      "action": "kick1",
+      "frameIndex": 2
+    },
+    "contact": {
+      "action": "kick1",
+      "frameIndex": 4
+    },
+    "rechamber": {
+      "action": "kick1",
+      "frameIndex": 5
+    }
+  },
+  "playbackSequences": {
+    "combo": [
+      {
+        "key": "kick1",
+        "endFrame": 6,
+        "lastFrameDurationMs": 20
+      },
+      {
+        "key": "kick2"
+      },
+      {
+        "key": "kick3"
+      }
+    ],
+    "pair": [
+      {
+        "key": "kick1",
+        "endFrame": 6,
+        "lastFrameDurationMs": 20
+      },
+      {
+        "key": "kick2"
+      }
+    ]
+  },
+  "pairDurationMs": 810,
+  "transition": {
+    "from": {
+      "action": "kick1",
+      "frameIndex": 6
+    },
+    "to": {
+      "action": "kick2",
+      "frameIndex": 0
+    },
+    "kind": "instant support swap from right07 to left-knee-raised; no duplicate or landing cel"
+  },
+  "leftKickViews": {
+    "start": {
+      "action": "kick2",
+      "frameIndex": 0
+    },
+    "chamber": {
+      "action": "kick2",
+      "frameIndex": 2
+    },
+    "contact": {
+      "action": "kick2",
+      "frameIndex": 4
+    },
+    "rechamber": {
+      "action": "kick2",
+      "frameIndex": 5
+    }
+  },
+  "matchedFrames": {
+    "firstIndex": 2,
+    "lastIndex": 7,
+    "reference": "kick1",
+    "target": "kick2",
+    "supportPoints": {
+      "2": [
+        473.5,
+        620
+      ],
+      "3": [
+        474,
+        620
+      ],
+      "4": [
+        474,
+        620
+      ],
+      "5": [
+        473.5,
+        620
+      ],
+      "6": [
+        464.5,
+        620
+      ],
+      "7": [
+        381.5,
+        620
+      ]
+    }
+  },
+  "celCorrection": {
+    "frames": [
+      0,
+      6
+    ],
+    "nearSupport": "right",
+    "farLoweredLeg": "left",
+    "occlusion": "right near hip/support thigh in front of left far lifted thigh",
+    "source": "kick2-lower-source.png"
+  }
+}

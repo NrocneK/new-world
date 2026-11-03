@@ -1,0 +1,53 @@
+{
+  "policy": "single corrected far-leg lowered pose; near right support occludes far left thigh; uniform whole-figure scale and rigid translation only",
+  "changedFrameIndices": [
+    0,
+    6
+  ],
+  "frames": [
+    {
+      "image": "kick2-lower-source.png",
+      "sx": 568,
+      "sy": 253,
+      "sw": 407,
+      "sh": 861,
+      "scale": 0.5565927654609102,
+      "dx": 307.5408401400233,
+      "dy": 142.44340723453905,
+      "referenceSupport": [
+        464.5,
+        620
+      ],
+      "rasterTranslation": [
+        13,
+        1
+      ]
+    }
+  ],
+  "referenceSupport": {
+    "2": [
+      473.5,
+      620
+    ],
+    "3": [
+      474,
+      620
+    ],
+    "4": [
+      474,
+      620
+    ],
+    "5": [
+      473.5,
+      620
+    ],
+    "6": [
+      464.5,
+      620
+    ],
+    "7": [
+      381.5,
+      620
+    ]
+  }
+}
