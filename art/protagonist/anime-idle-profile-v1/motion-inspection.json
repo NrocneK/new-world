@@ -1,0 +1,85 @@
+{
+  "idle-preview.gif": {
+    "frames": 8,
+    "durationMs": 3360,
+    "frameDurationsMs": [
+      600,
+      500,
+      600,
+      500,
+      500,
+      80,
+      80,
+      500
+    ]
+  },
+  "idle-preview-slow.gif": {
+    "frames": 8,
+    "durationMs": 6720,
+    "frameDurationsMs": [
+      1200,
+      1000,
+      1200,
+      1000,
+      1000,
+      160,
+      160,
+      1000
+    ]
+  },
+  "footSpanX": [
+    [
+      148,
+      235
+    ],
+    [
+      148,
+      235
+    ],
+    [
+      148,
+      235
+    ],
+    [
+      148,
+      235
+    ],
+    [
+      148,
+      235
+    ],
+    [
+      148,
+      235
+    ],
+    [
+      148,
+      235
+    ],
+    [
+      148,
+      235
+    ]
+  ],
+  "headTopY": [
+    16,
+    16,
+    16,
+    16,
+    17,
+    17,
+    17,
+    17
+  ],
+  "chestFrontAtY145": [
+    218,
+    218,
+    220,
+    218,
+    217,
+    217,
+    217,
+    217
+  ],
+  "visualInspection": "Half-closed eyelid in06, closed eyelid in07, open eye elsewhere; black lens outline retained after identity cleanup."
+}

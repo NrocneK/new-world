@@ -1,0 +1,96 @@
+{
+  "image": "idle-sheet.png",
+  "animation": "idle",
+  "columns": 4,
+  "rows": 2,
+  "frameWidth": 384,
+  "frameHeight": 512,
+  "groundY": 500,
+  "loop": true,
+  "loopDurationMs": 3360,
+  "view": "strict-side-profile",
+  "direction": "right",
+  "timing": "per-frame-duration",
+  "frames": [
+    {
+      "index": 0,
+      "x": 0,
+      "y": 0,
+      "w": 384,
+      "h": 512,
+      "durationMs": 600,
+      "phase": "rest",
+      "eyes": "open"
+    },
+    {
+      "index": 1,
+      "x": 384,
+      "y": 0,
+      "w": 384,
+      "h": 512,
+      "durationMs": 500,
+      "phase": "inhale",
+      "eyes": "open"
+    },
+    {
+      "index": 2,
+      "x": 768,
+      "y": 0,
+      "w": 384,
+      "h": 512,
+      "durationMs": 600,
+      "phase": "inhale-peak",
+      "eyes": "open"
+    },
+    {
+      "index": 3,
+      "x": 1152,
+      "y": 0,
+      "w": 384,
+      "h": 512,
+      "durationMs": 500,
+      "phase": "exhale",
+      "eyes": "open"
+    },
+    {
+      "index": 4,
+      "x": 0,
+      "y": 512,
+      "w": 384,
+      "h": 512,
+      "durationMs": 500,
+      "phase": "settle",
+      "eyes": "open"
+    },
+    {
+      "index": 5,
+      "x": 384,
+      "y": 512,
+      "w": 384,
+      "h": 512,
+      "durationMs": 80,
+      "phase": "blink-closing",
+      "eyes": "half-closed"
+    },
+    {
+      "index": 6,
+      "x": 768,
+      "y": 512,
+      "w": 384,
+      "h": 512,
+      "durationMs": 80,
+      "phase": "blink-closed",
+      "eyes": "closed"
+    },
+    {
+      "index": 7,
+      "x": 1152,
+      "y": 512,
+      "w": 384,
+      "h": 512,
+      "durationMs": 500,
+      "phase": "rest-open",
+      "eyes": "open"
+    }
+  ]
+}

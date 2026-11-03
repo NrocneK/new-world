@@ -1,0 +1,31 @@
+{
+  "animations": {
+    "walk": {
+      "status": "approved",
+      "approvedBy": "user",
+      "approvedOn": "2026-11-03",
+      "assets": "art/protagonist/anime-walk-profile-v2",
+      "previewUrl": "https://di-mon-demo.vercel.app/walk-profile-v2",
+      "sha256": {
+        "walk-sheet.png": "189e2ec22de72390a6cabe6e898018c1df86f36a47693965029aae4a516803c4",
+        "walk-preview.gif": "ec7ec7492f247c48a6f55503709b221f63acf9fcb08ea8f92fae1a68c4e6643f"
+      }
+    },
+    "run": {
+      "status": "approved",
+      "approvedBy": "user",
+      "approvedOn": "2026-11-03",
+      "assets": "art/protagonist/anime-run-naruto-ref-v5",
+      "previewUrl": "https://di-mon-demo.vercel.app/run-ninja-v5",
+      "sha256": {
+        "run-sheet.png": "08fb16914d28cd9b63390b772ea0d80ca037db60f6954ab6839900b1462ef9c0",
+        "run-preview.gif": "ee5eaac14dd7376c029f7089ff0325894bbd016c8fb8b6df2a3db624838da975"
+      }
+    },
+    "idle": {
+      "status": "in-review",
+      "assets": "art/protagonist/anime-idle-profile-v1",
+      "previewUrl": "https://di-mon-demo.vercel.app/idle-profile-v1"
+    }
+  }
+}
