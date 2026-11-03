@@ -1,0 +1,51 @@
+{
+  "hook": {
+    "scale": 1.02,
+    "constantAcrossAllCels": true,
+    "faceWidthsDiagnosticOnly": [
+      53,
+      55,
+      57,
+      55,
+      56,
+      53,
+      53,
+      54
+    ]
+  },
+  "slam": {
+    "scale": 1.085,
+    "constantAcrossAllCels": true,
+    "faceWidthsDiagnosticOnly": [
+      52,
+      56,
+      52,
+      53,
+      56,
+      52,
+      53,
+      51
+    ]
+  },
+  "recovery": {
+    "scale": 1.085,
+    "constantAcrossAllCels": true,
+    "faceWidthsDiagnosticOnly": [
+      49,
+      52,
+      54,
+      55,
+      55,
+      54,
+      53,
+      54
+    ]
+  },
+  "peak": {
+    "scale": 0.53,
+    "constantAcrossAllCels": true,
+    "faceWidthsDiagnosticOnly": [
+      62
+    ]
+  }
+}

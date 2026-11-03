@@ -1,0 +1,792 @@
+{
+  "policy": "one fixed uniform scale per source atlas; no per-frame face/body normalization; full-pose translation only",
+  "idle": {
+    "offsetX": 138,
+    "offsetY": 120
+  },
+  "sources": {
+    "hook": [
+      {
+        "index": 0,
+        "image": "hook-source.png",
+        "sx": 56,
+        "sy": 18,
+        "sw": 240,
+        "sh": 476,
+        "dx": 198.82,
+        "dy": 135.5,
+        "scale": 1.02,
+        "sourceBounds": [
+          56,
+          18,
+          295,
+          493
+        ],
+        "sourceFloor": 493,
+        "face": {
+          "bounds": [
+            164,
+            70,
+            216,
+            114
+          ],
+          "center": [
+            190.0,
+            92.0
+          ],
+          "area": 1191
+        }
+      },
+      {
+        "index": 1,
+        "image": "hook-source.png",
+        "sx": 441,
+        "sy": 37,
+        "sw": 239,
+        "sh": 458,
+        "dx": 199.83999999999997,
+        "dy": 153.86,
+        "scale": 1.02,
+        "sourceBounds": [
+          57,
+          37,
+          295,
+          494
+        ],
+        "sourceFloor": 494,
+        "face": {
+          "bounds": [
+            167,
+            87,
+            221,
+            131
+          ],
+          "center": [
+            194.0,
+            109.0
+          ],
+          "area": 1255
+        }
+      },
+      {
+        "index": 2,
+        "image": "hook-source.png",
+        "sx": 826,
+        "sy": 39,
+        "sw": 238,
+        "sh": 456,
+        "dx": 200.85999999999999,
+        "dy": 155.89999999999998,
+        "scale": 1.02,
+        "sourceBounds": [
+          58,
+          39,
+          295,
+          494
+        ],
+        "sourceFloor": 494,
+        "face": {
+          "bounds": [
+            166,
+            90,
+            222,
+            133
+          ],
+          "center": [
+            194.0,
+            111.5
+          ],
+          "area": 1247
+        }
+      },
+      {
+        "index": 3,
+        "image": "hook-source.png",
+        "sx": 1210,
+        "sy": 39,
+        "sw": 238,
+        "sh": 456,
+        "dx": 200.85999999999999,
+        "dy": 155.89999999999998,
+        "scale": 1.02,
+        "sourceBounds": [
+          58,
+          39,
+          295,
+          494
+        ],
+        "sourceFloor": 494,
+        "face": {
+          "bounds": [
+            168,
+            90,
+            222,
+            131
+          ],
+          "center": [
+            195.0,
+            110.5
+          ],
+          "area": 1201
+        }
+      },
+      {
+        "index": 4,
+        "image": "hook-source.png",
+        "sx": 57,
+        "sy": 551,
+        "sw": 239,
+        "sh": 457,
+        "dx": 199.83999999999997,
+        "dy": 154.88,
+        "scale": 1.02,
+        "sourceBounds": [
+          57,
+          39,
+          295,
+          495
+        ],
+        "sourceFloor": 495,
+        "face": {
+          "bounds": [
+            167,
+            90,
+            222,
+            131
+          ],
+          "center": [
+            194.5,
+            110.5
+          ],
+          "area": 1205
+        }
+      },
+      {
+        "index": 5,
+        "image": "hook-source.png",
+        "sx": 441,
+        "sy": 550,
+        "sw": 239,
+        "sh": 458,
+        "dx": 199.83999999999997,
+        "dy": 153.86,
+        "scale": 1.02,
+        "sourceBounds": [
+          57,
+          38,
+          295,
+          495
+        ],
+        "sourceFloor": 495,
+        "face": {
+          "bounds": [
+            169,
+            88,
+            221,
+            125
+          ],
+          "center": [
+            195.0,
+            106.5
+          ],
+          "area": 1133
+        }
+      },
+      {
+        "index": 6,
+        "image": "hook-source.png",
+        "sx": 826,
+        "sy": 549,
+        "sw": 238,
+        "sh": 459,
+        "dx": 200.85999999999999,
+        "dy": 152.83999999999997,
+        "scale": 1.02,
+        "sourceBounds": [
+          58,
+          37,
+          295,
+          495
+        ],
+        "sourceFloor": 495,
+        "face": {
+          "bounds": [
+            169,
+            88,
+            221,
+            125
+          ],
+          "center": [
+            195.0,
+            106.5
+          ],
+          "area": 1121
+        }
+      },
+      {
+        "index": 7,
+        "image": "hook-source.png",
+        "sx": 1210,
+        "sy": 549,
+        "sw": 238,
+        "sh": 459,
+        "dx": 200.85999999999999,
+        "dy": 152.83999999999997,
+        "scale": 1.02,
+        "sourceBounds": [
+          58,
+          37,
+          295,
+          495
+        ],
+        "sourceFloor": 495,
+        "face": {
+          "bounds": [
+            168,
+            88,
+            221,
+            124
+          ],
+          "center": [
+            194.5,
+            106.0
+          ],
+          "area": 1117
+        }
+      }
+    ],
+    "slam": [
+      {
+        "index": 0,
+        "image": "slam-source.png",
+        "sx": 63,
+        "sy": 59,
+        "sw": 247,
+        "sh": 450,
+        "dx": 222.1175,
+        "dy": 132.83500000000004,
+        "scale": 1.085,
+        "sourceBounds": [
+          63,
+          59,
+          309,
+          508
+        ],
+        "sourceFloor": 508,
+        "face": {
+          "bounds": [
+            142,
+            113,
+            193,
+            147
+          ],
+          "center": [
+            167.5,
+            130.0
+          ],
+          "area": 1013
+        }
+      },
+      {
+        "index": 1,
+        "image": "slam-source.png",
+        "sx": 445,
+        "sy": 77,
+        "sw": 250,
+        "sh": 432,
+        "dx": 219.94750000000002,
+        "dy": 152.365,
+        "scale": 1.085,
+        "sourceBounds": [
+          61,
+          77,
+          310,
+          508
+        ],
+        "sourceFloor": 508,
+        "face": {
+          "bounds": [
+            148,
+            130,
+            203,
+            172
+          ],
+          "center": [
+            175.5,
+            151.0
+          ],
+          "area": 1343
+        }
+      },
+      {
+        "index": 2,
+        "image": "slam-source.png",
+        "sx": 829,
+        "sy": 104,
+        "sw": 251,
+        "sh": 405,
+        "dx": 219.94750000000002,
+        "dy": 181.66000000000003,
+        "scale": 1.085,
+        "sourceBounds": [
+          61,
+          104,
+          311,
+          508
+        ],
+        "sourceFloor": 508,
+        "face": {
+          "bounds": [
+            183,
+            157,
+            234,
+            199
+          ],
+          "center": [
+            208.5,
+            178.0
+          ],
+          "area": 1269
+        }
+      },
+      {
+        "index": 3,
+        "image": "slam-source.png",
+        "sx": 1214,
+        "sy": 148,
+        "sw": 251,
+        "sh": 361,
+        "dx": 221.03250000000003,
+        "dy": 229.40000000000003,
+        "scale": 1.085,
+        "sourceBounds": [
+          62,
+          148,
+          312,
+          508
+        ],
+        "sourceFloor": 508,
+        "face": {
+          "bounds": [
+            205,
+            200,
+            257,
+            243
+          ],
+          "center": [
+            231.0,
+            221.5
+          ],
+          "area": 1290
+        }
+      },
+      {
+        "index": 4,
+        "image": "slam-source.png",
+        "sx": 60,
+        "sy": 664,
+        "sw": 252,
+        "sh": 350,
+        "dx": 218.8625,
+        "dy": 241.33500000000004,
+        "scale": 1.085,
+        "sourceBounds": [
+          60,
+          152,
+          311,
+          501
+        ],
+        "sourceFloor": 501,
+        "face": {
+          "bounds": [
+            212,
+            208,
+            267,
+            247
+          ],
+          "center": [
+            239.5,
+            227.5
+          ],
+          "area": 1309
+        }
+      },
+      {
+        "index": 5,
+        "image": "slam-source.png",
+        "sx": 443,
+        "sy": 703,
+        "sw": 253,
+        "sh": 311,
+        "dx": 217.77750000000003,
+        "dy": 283.65000000000003,
+        "scale": 1.085,
+        "sourceBounds": [
+          59,
+          191,
+          311,
+          501
+        ],
+        "sourceFloor": 501,
+        "face": {
+          "bounds": [
+            227,
+            245,
+            278,
+            288
+          ],
+          "center": [
+            252.5,
+            266.5
+          ],
+          "area": 1283
+        }
+      },
+      {
+        "index": 6,
+        "image": "slam-source.png",
+        "sx": 827,
+        "sy": 747,
+        "sw": 254,
+        "sh": 265,
+        "dx": 217.77750000000003,
+        "dy": 333.56,
+        "scale": 1.085,
+        "sourceBounds": [
+          59,
+          235,
+          312,
+          499
+        ],
+        "sourceFloor": 499,
+        "face": {
+          "bounds": [
+            240,
+            291,
+            292,
+            330
+          ],
+          "center": [
+            266.0,
+            310.5
+          ],
+          "area": 1219
+        }
+      },
+      {
+        "index": 7,
+        "image": "slam-source.png",
+        "sx": 1208,
+        "sy": 772,
+        "sw": 264,
+        "sh": 242,
+        "dx": 214.5225,
+        "dy": 358.515,
+        "scale": 1.085,
+        "sourceBounds": [
+          56,
+          260,
+          319,
+          501
+        ],
+        "sourceFloor": 501,
+        "face": {
+          "bounds": [
+            246,
+            315,
+            296,
+            357
+          ],
+          "center": [
+            271.0,
+            336.0
+          ],
+          "area": 1201
+        }
+      }
+    ],
+    "recovery": [
+      {
+        "index": 0,
+        "image": "recovery-source.png",
+        "sx": 65,
+        "sy": 203,
+        "sw": 263,
+        "sh": 269,
+        "dx": 222.1175,
+        "dy": 329.22,
+        "scale": 1.085,
+        "sourceBounds": [
+          65,
+          203,
+          327,
+          471
+        ],
+        "sourceFloor": 471,
+        "face": {
+          "bounds": [
+            255,
+            259,
+            303,
+            301
+          ],
+          "center": [
+            279.0,
+            280.0
+          ],
+          "area": 1162
+        }
+      },
+      {
+        "index": 1,
+        "image": "recovery-source.png",
+        "sx": 443,
+        "sy": 169,
+        "sw": 261,
+        "sh": 303,
+        "dx": 215.60750000000002,
+        "dy": 292.33,
+        "scale": 1.085,
+        "sourceBounds": [
+          59,
+          169,
+          319,
+          471
+        ],
+        "sourceFloor": 471,
+        "face": {
+          "bounds": [
+            229,
+            225,
+            280,
+            266
+          ],
+          "center": [
+            254.5,
+            245.5
+          ],
+          "area": 1203
+        }
+      },
+      {
+        "index": 2,
+        "image": "recovery-source.png",
+        "sx": 818,
+        "sy": 122,
+        "sw": 266,
+        "sh": 351,
+        "dx": 191.63985000000002,
+        "dy": 240.25,
+        "scale": 1.085,
+        "sourceBounds": [
+          50,
+          122,
+          315,
+          472
+        ],
+        "sourceFloor": 472,
+        "face": {
+          "bounds": [
+            195,
+            178,
+            248,
+            216
+          ],
+          "center": [
+            221.5,
+            197.0
+          ],
+          "area": 1232
+        }
+      },
+      {
+        "index": 3,
+        "image": "recovery-source.png",
+        "sx": 1201,
+        "sy": 97,
+        "sw": 268,
+        "sh": 376,
+        "dx": 176.769925,
+        "dy": 213.125,
+        "scale": 1.085,
+        "sourceBounds": [
+          49,
+          97,
+          316,
+          472
+        ],
+        "sourceFloor": 472,
+        "face": {
+          "bounds": [
+            196,
+            152,
+            250,
+            196
+          ],
+          "center": [
+            223.0,
+            174.0
+          ],
+          "area": 1312
+        }
+      },
+      {
+        "index": 4,
+        "image": "recovery-source.png",
+        "sx": 67,
+        "sy": 547,
+        "sw": 256,
+        "sh": 458,
+        "dx": 182.515,
+        "dy": 124.15500000000003,
+        "scale": 1.085,
+        "sourceBounds": [
+          67,
+          35,
+          322,
+          492
+        ],
+        "sourceFloor": 492,
+        "face": {
+          "bounds": [
+            181,
+            87,
+            235,
+            128
+          ],
+          "center": [
+            208.0,
+            107.5
+          ],
+          "area": 1232
+        }
+      },
+      {
+        "index": 5,
+        "image": "recovery-source.png",
+        "sx": 451,
+        "sy": 543,
+        "sw": 255,
+        "sh": 462,
+        "dx": 182.515,
+        "dy": 119.815,
+        "scale": 1.085,
+        "sourceBounds": [
+          67,
+          31,
+          321,
+          492
+        ],
+        "sourceFloor": 492,
+        "face": {
+          "bounds": [
+            178,
+            85,
+            231,
+            126
+          ],
+          "center": [
+            204.5,
+            105.5
+          ],
+          "area": 1231
+        }
+      },
+      {
+        "index": 6,
+        "image": "recovery-source.png",
+        "sx": 834,
+        "sy": 541,
+        "sw": 256,
+        "sh": 464,
+        "dx": 181.43,
+        "dy": 117.64500000000004,
+        "scale": 1.085,
+        "sourceBounds": [
+          66,
+          29,
+          321,
+          492
+        ],
+        "sourceFloor": 492,
+        "face": {
+          "bounds": [
+            174,
+            80,
+            226,
+            122
+          ],
+          "center": [
+            200.0,
+            101.0
+          ],
+          "area": 1225
+        }
+      },
+      {
+        "index": 7,
+        "image": "recovery-source.png",
+        "sx": 1218,
+        "sy": 538,
+        "sw": 254,
+        "sh": 467,
+        "dx": 181.43,
+        "dy": 114.39000000000004,
+        "scale": 1.085,
+        "sourceBounds": [
+          66,
+          26,
+          319,
+          492
+        ],
+        "sourceFloor": 492,
+        "face": {
+          "bounds": [
+            168,
+            78,
+            221,
+            121
+          ],
+          "center": [
+            194.5,
+            99.5
+          ],
+          "area": 1249
+        }
+      }
+    ],
+    "peak": [
+      {
+        "index": 0,
+        "image": "peak-source.png",
+        "sx": 406,
+        "sy": 232,
+        "sw": 467,
+        "sh": 986,
+        "dx": 196.40999999999997,
+        "dy": 97.94999999999993,
+        "scale": 0.53,
+        "sourceBounds": [
+          406,
+          232,
+          872,
+          1217
+        ],
+        "sourceFloor": 1217,
+        "face": {
+          "bounds": [
+            750,
+            234,
+            811,
+            304
+          ],
+          "center": [
+            780.5,
+            269.0
+          ],
+          "area": 3117
+        }
+      }
+    ]
+  }
+}
