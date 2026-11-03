@@ -1,0 +1,50 @@
+{
+  "idle-source.png": {
+    "navyMedianRGB": [
+      53.0,
+      55.0,
+      81.0
+    ],
+    "method": "read-only sample of opaque blue garment colors; poses also visually compared"
+  },
+  "walk-source.png": {
+    "navyMedianRGB": [
+      47.0,
+      50.0,
+      74.0
+    ],
+    "method": "read-only sample of opaque blue garment colors; poses also visually compared"
+  },
+  "attack1-source.png": {
+    "navyMedianRGB": [
+      61.0,
+      62.0,
+      83.0
+    ],
+    "method": "read-only sample of opaque blue garment colors; poses also visually compared"
+  },
+  "attack2-source.png": {
+    "navyMedianRGB": [
+      58.0,
+      59.0,
+      78.0
+    ],
+    "method": "read-only sample of opaque blue garment colors; poses also visually compared"
+  },
+  "attack3-source.png": {
+    "navyMedianRGB": [
+      53.0,
+      54.0,
+      72.0
+    ],
+    "method": "read-only sample of opaque blue garment colors; poses also visually compared"
+  },
+  "attack4-source.png": {
+    "navyMedianRGB": [
+      61.0,
+      61.0,
+      79.0
+    ],
+    "method": "read-only sample of opaque blue garment colors; poses also visually compared"
+  }
+}

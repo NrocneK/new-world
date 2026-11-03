@@ -1,0 +1,704 @@
+{
+  "version": 1,
+  "reviewRevision": 3,
+  "image": "combat-sheet.png",
+  "columns": 4,
+  "rows": 8,
+  "frameWidth": 512,
+  "frameHeight": 640,
+  "groundY": 620,
+  "loop": false,
+  "durationMs": 1380,
+  "view": "side-profile",
+  "direction": "right",
+  "combo": [
+    "attack1",
+    "attack2",
+    "attack3",
+    "attack4"
+  ],
+  "guardImage": "guard.png",
+  "peakImage": "uppercut-peak.png",
+  "stage": {
+    "width": 768,
+    "height": 848,
+    "actorX": 96,
+    "actorY": 20,
+    "floorY": 640
+  },
+  "vfxManifest": "../../vfx/air-pressure-v2/manifest.json",
+  "handConvention": {
+    "near": "right/hand1",
+    "far": "left/hand2"
+  },
+  "transitions": {
+    "attack3ToAttack4": {
+      "peak": {
+        "action": "attack3",
+        "frameIndex": 4
+      },
+      "from": {
+        "action": "attack3",
+        "frameIndex": 7
+      },
+      "to": {
+        "action": "attack4",
+        "frameIndex": 0
+      },
+      "kind": "identical full cel",
+      "strikingArm": "right/near"
+    }
+  },
+  "actions": {
+    "attack1": {
+      "key": "attack1",
+      "name": "Đấm thẳng · Tay phải / gần",
+      "image": "attack1-sheet.png",
+      "gif": "attack1-preview.gif",
+      "loop": false,
+      "onComplete": "guard",
+      "durationMs": 250,
+      "impact": {
+        "frameIndex": 3,
+        "timeMs": 70,
+        "fist": [
+          343.0,
+          259.0
+        ],
+        "direction": "forward",
+        "anchorMethod": "skin component, manually checked"
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 512,
+          "h": 640,
+          "durationMs": 30,
+          "startMs": 0,
+          "phase": "guard",
+          "source": "shared-guard"
+        },
+        {
+          "index": 1,
+          "x": 512,
+          "y": 0,
+          "w": 512,
+          "h": 640,
+          "durationMs": 20,
+          "startMs": 30,
+          "phase": "load",
+          "source": "generated"
+        },
+        {
+          "index": 2,
+          "x": 1024,
+          "y": 0,
+          "w": 512,
+          "h": 640,
+          "durationMs": 20,
+          "startMs": 50,
+          "phase": "drive",
+          "source": "generated"
+        },
+        {
+          "index": 3,
+          "x": 1536,
+          "y": 0,
+          "w": 512,
+          "h": 640,
+          "durationMs": 40,
+          "startMs": 70,
+          "phase": "contact",
+          "source": "generated"
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 640,
+          "w": 512,
+          "h": 640,
+          "durationMs": 30,
+          "startMs": 110,
+          "phase": "follow-through",
+          "source": "generated"
+        },
+        {
+          "index": 5,
+          "x": 512,
+          "y": 640,
+          "w": 512,
+          "h": 640,
+          "durationMs": 30,
+          "startMs": 140,
+          "phase": "recoil",
+          "source": "generated"
+        },
+        {
+          "index": 6,
+          "x": 1024,
+          "y": 640,
+          "w": 512,
+          "h": 640,
+          "durationMs": 30,
+          "startMs": 170,
+          "phase": "recover",
+          "source": "generated"
+        },
+        {
+          "index": 7,
+          "x": 1536,
+          "y": 640,
+          "w": 512,
+          "h": 640,
+          "durationMs": 50,
+          "startMs": 200,
+          "phase": "guard",
+          "source": "shared-guard"
+        }
+      ]
+    },
+    "attack2": {
+      "key": "attack2",
+      "name": "Đấm thẳng · Tay trái / xa",
+      "image": "attack2-sheet.png",
+      "gif": "attack2-preview.gif",
+      "loop": false,
+      "onComplete": "guard",
+      "durationMs": 250,
+      "impact": {
+        "frameIndex": 3,
+        "timeMs": 70,
+        "fist": [
+          368.0,
+          248.5
+        ],
+        "direction": "forward",
+        "anchorMethod": "skin component, manually checked"
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 512,
+          "h": 640,
+          "durationMs": 30,
+          "startMs": 0,
+          "phase": "guard",
+          "source": "shared-guard"
+        },
+        {
+          "index": 1,
+          "x": 512,
+          "y": 0,
+          "w": 512,
+          "h": 640,
+          "durationMs": 20,
+          "startMs": 30,
+          "phase": "load",
+          "source": "generated"
+        },
+        {
+          "index": 2,
+          "x": 1024,
+          "y": 0,
+          "w": 512,
+          "h": 640,
+          "durationMs": 20,
+          "startMs": 50,
+          "phase": "drive",
+          "source": "generated"
+        },
+        {
+          "index": 3,
+          "x": 1536,
+          "y": 0,
+          "w": 512,
+          "h": 640,
+          "durationMs": 40,
+          "startMs": 70,
+          "phase": "contact",
+          "source": "generated"
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 640,
+          "w": 512,
+          "h": 640,
+          "durationMs": 30,
+          "startMs": 110,
+          "phase": "follow-through",
+          "source": "generated"
+        },
+        {
+          "index": 5,
+          "x": 512,
+          "y": 640,
+          "w": 512,
+          "h": 640,
+          "durationMs": 30,
+          "startMs": 140,
+          "phase": "recoil",
+          "source": "generated"
+        },
+        {
+          "index": 6,
+          "x": 1024,
+          "y": 640,
+          "w": 512,
+          "h": 640,
+          "durationMs": 30,
+          "startMs": 170,
+          "phase": "recover",
+          "source": "generated"
+        },
+        {
+          "index": 7,
+          "x": 1536,
+          "y": 640,
+          "w": 512,
+          "h": 640,
+          "durationMs": 50,
+          "startMs": 200,
+          "phase": "guard",
+          "source": "shared-guard"
+        }
+      ],
+      "continuity": {
+        "strikingHand": "far/left",
+        "guardHand": "near/right",
+        "guardAtCheekFrames": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "description": "Both hands guard before the far hand drives forward and retracts; the near hand never chambers or extends."
+      }
+    },
+    "attack3": {
+      "key": "attack3",
+      "name": "Đấm móc · Tay phải",
+      "image": "attack3-sheet.png",
+      "gif": "attack3-preview.gif",
+      "loop": false,
+      "onComplete": "uppercut-peak",
+      "durationMs": 360,
+      "impact": {
+        "frameIndex": 4,
+        "timeMs": 160,
+        "fist": [
+          225.0,
+          108.5
+        ],
+        "direction": "up",
+        "anchorMethod": "skin component, manually checked",
+        "vfxRoot": [
+          105,
+          620
+        ],
+        "vfxReferenceRise": 304,
+        "vfxReferenceTopY": 68,
+        "vfxScale": 1.5678186835392651,
+        "vfxRotationRad": -0.20384680297504798,
+        "vfxSourceVector": [
+          141.0,
+          -304
+        ],
+        "vfxTargetVector": [
+          120.0,
+          -511.5
+        ]
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 512,
+          "h": 640,
+          "durationMs": 40,
+          "startMs": 0,
+          "phase": "guard",
+          "source": "shared-guard"
+        },
+        {
+          "index": 1,
+          "x": 512,
+          "y": 0,
+          "w": 512,
+          "h": 640,
+          "durationMs": 40,
+          "startMs": 40,
+          "phase": "dip",
+          "source": "generated"
+        },
+        {
+          "index": 2,
+          "x": 1024,
+          "y": 0,
+          "w": 512,
+          "h": 640,
+          "durationMs": 30,
+          "startMs": 80,
+          "phase": "chamber",
+          "source": "generated"
+        },
+        {
+          "index": 3,
+          "x": 1536,
+          "y": 0,
+          "w": 512,
+          "h": 640,
+          "durationMs": 50,
+          "startMs": 110,
+          "phase": "drive-up",
+          "source": "generated"
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 640,
+          "w": 512,
+          "h": 640,
+          "durationMs": 50,
+          "startMs": 160,
+          "phase": "high-peak",
+          "source": "generated"
+        },
+        {
+          "index": 5,
+          "x": 512,
+          "y": 640,
+          "w": 512,
+          "h": 640,
+          "durationMs": 40,
+          "startMs": 210,
+          "phase": "hold-peak",
+          "source": "generated"
+        },
+        {
+          "index": 6,
+          "x": 1024,
+          "y": 640,
+          "w": 512,
+          "h": 640,
+          "durationMs": 50,
+          "startMs": 250,
+          "phase": "hold-peak",
+          "source": "generated"
+        },
+        {
+          "index": 7,
+          "x": 1536,
+          "y": 640,
+          "w": 512,
+          "h": 640,
+          "durationMs": 60,
+          "startMs": 300,
+          "phase": "uppercut-peak",
+          "source": "shared-uppercut-peak"
+        }
+      ],
+      "strikingHand": "right/near"
+    },
+    "attack4": {
+      "key": "attack4",
+      "name": "Đấm đất · Cùng tay phải",
+      "image": "attack4-sheet.png",
+      "gif": "attack4-preview.gif",
+      "loop": false,
+      "onComplete": "guard",
+      "durationMs": 520,
+      "impact": {
+        "frameIndex": 4,
+        "timeMs": 220,
+        "fist": [
+          263.5,
+          603.5
+        ],
+        "direction": "down",
+        "anchorMethod": "skin component, manually checked",
+        "ground": [
+          263.5,
+          620
+        ],
+        "radialDegrees": 360,
+        "vfxScale": 1.2
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 512,
+          "h": 640,
+          "durationMs": 50,
+          "startMs": 0,
+          "phase": "uppercut-peak",
+          "source": "shared-uppercut-peak",
+          "freeHand": "left/far",
+          "freeFist": [
+            236.5,
+            289.0
+          ],
+          "freeFistBounds": [
+            226,
+            274,
+            247,
+            304
+          ]
+        },
+        {
+          "index": 1,
+          "x": 512,
+          "y": 0,
+          "w": 512,
+          "h": 640,
+          "durationMs": 60,
+          "startMs": 50,
+          "phase": "load-from-peak",
+          "source": "generated",
+          "freeHand": "left/far",
+          "freeFist": [
+            238.5,
+            306.0
+          ],
+          "freeFistBounds": [
+            237,
+            301,
+            240,
+            311
+          ]
+        },
+        {
+          "index": 2,
+          "x": 1024,
+          "y": 0,
+          "w": 512,
+          "h": 640,
+          "durationMs": 60,
+          "startMs": 110,
+          "phase": "downstroke",
+          "source": "generated",
+          "freeHand": "left/far",
+          "freeFist": [
+            110.5,
+            295.0
+          ],
+          "freeFistBounds": [
+            94,
+            278,
+            127,
+            312
+          ]
+        },
+        {
+          "index": 3,
+          "x": 1536,
+          "y": 0,
+          "w": 512,
+          "h": 640,
+          "durationMs": 50,
+          "startMs": 170,
+          "phase": "approach-ground",
+          "source": "generated",
+          "freeHand": "left/far",
+          "freeFist": [
+            99.5,
+            300.0
+          ],
+          "freeFistBounds": [
+            81,
+            282,
+            118,
+            318
+          ]
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 640,
+          "w": 512,
+          "h": 640,
+          "durationMs": 90,
+          "startMs": 220,
+          "phase": "contact-ground",
+          "source": "generated",
+          "freeHand": "left/far",
+          "freeFist": [
+            109.5,
+            306.5
+          ],
+          "freeFistBounds": [
+            92,
+            288,
+            127,
+            325
+          ]
+        },
+        {
+          "index": 5,
+          "x": 512,
+          "y": 640,
+          "w": 512,
+          "h": 640,
+          "durationMs": 60,
+          "startMs": 310,
+          "phase": "settle",
+          "source": "generated",
+          "freeHand": "left/far",
+          "freeFist": [
+            105.5,
+            309.0
+          ],
+          "freeFistBounds": [
+            88,
+            291,
+            123,
+            327
+          ]
+        },
+        {
+          "index": 6,
+          "x": 1024,
+          "y": 640,
+          "w": 512,
+          "h": 640,
+          "durationMs": 70,
+          "startMs": 370,
+          "phase": "recover",
+          "source": "reused-downstroke-pose",
+          "freeHand": "left/far",
+          "freeFist": [
+            110.5,
+            295.0
+          ],
+          "freeFistBounds": [
+            94,
+            278,
+            127,
+            312
+          ]
+        },
+        {
+          "index": 7,
+          "x": 1536,
+          "y": 640,
+          "w": 512,
+          "h": 640,
+          "durationMs": 80,
+          "startMs": 440,
+          "phase": "guard",
+          "source": "shared-guard",
+          "freeHand": "left/far",
+          "freeFist": [
+            248.5,
+            247.0
+          ],
+          "freeFistBounds": [
+            235,
+            229,
+            262,
+            265
+          ]
+        }
+      ],
+      "strikingHand": "right/near",
+      "pose": "braced low lunge, rear knee off floor, free arm swept back"
+    }
+  },
+  "effectOverrides": {
+    "attack4": {
+      "image": "ground-impact-source.png",
+      "width": 1536,
+      "height": 1024,
+      "fps": 25,
+      "loop": false,
+      "uniformSourceScale": 1.2,
+      "opacity": 0.65,
+      "blendMode": "source-over",
+      "filter": "none",
+      "attachment": "ground",
+      "frames": [
+        {
+          "order": 0,
+          "x": 0,
+          "y": 0,
+          "w": 384,
+          "h": 512,
+          "anchorX": 192,
+          "anchorY": 422
+        },
+        {
+          "order": 1,
+          "x": 384,
+          "y": 0,
+          "w": 384,
+          "h": 512,
+          "anchorX": 192,
+          "anchorY": 422
+        },
+        {
+          "order": 2,
+          "x": 768,
+          "y": 0,
+          "w": 384,
+          "h": 512,
+          "anchorX": 192,
+          "anchorY": 422
+        },
+        {
+          "order": 3,
+          "x": 1152,
+          "y": 0,
+          "w": 384,
+          "h": 512,
+          "anchorX": 192,
+          "anchorY": 422
+        },
+        {
+          "order": 4,
+          "x": 0,
+          "y": 512,
+          "w": 384,
+          "h": 512,
+          "anchorX": 192,
+          "anchorY": 422
+        },
+        {
+          "order": 5,
+          "x": 384,
+          "y": 512,
+          "w": 384,
+          "h": 512,
+          "anchorX": 192,
+          "anchorY": 422
+        },
+        {
+          "order": 6,
+          "x": 768,
+          "y": 512,
+          "w": 384,
+          "h": 512,
+          "anchorX": 192,
+          "anchorY": 422
+        },
+        {
+          "order": 7,
+          "x": 1152,
+          "y": 512,
+          "w": 384,
+          "h": 512,
+          "anchorX": 192,
+          "anchorY": 422
+        }
+      ],
+      "description": "Thin ground ring, vertical gusts and stone chips; open impact center."
+    }
+  }
+}

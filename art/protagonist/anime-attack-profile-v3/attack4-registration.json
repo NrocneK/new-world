@@ -1,0 +1,237 @@
+{
+  "action": "attack4",
+  "columns": 4,
+  "rows": 2,
+  "frameWidth": 512,
+  "frameHeight": 640,
+  "groundY": 620,
+  "rearFootX": 105,
+  "durationMs": 520,
+  "impactFrame": 4,
+  "frames": [
+    {
+      "index": 0,
+      "sourceX": 68,
+      "sourceY": 0,
+      "sourceWidth": 219,
+      "offsetX": 66.52534562211981,
+      "offsetY": 61.28110599078343,
+      "uniformScale": 1.1152073732718895,
+      "registeredTopY": 92.50691244239633,
+      "registeredBottomY": 620.0,
+      "sourceShoes": [
+        [
+          72,
+          134
+        ],
+        [
+          213,
+          283
+        ]
+      ],
+      "sourceShoeContactY": [
+        501,
+        500
+      ],
+      "rearShoeCenterX": 102.5,
+      "shoeFloorY": 501,
+      "durationMs": 50
+    },
+    {
+      "index": 1,
+      "sourceX": 370,
+      "sourceY": 0,
+      "sourceWidth": 234,
+      "offsetX": 65.96774193548387,
+      "offsetY": 61.28110599078343,
+      "uniformScale": 1.1152073732718895,
+      "registeredTopY": 117.04147465437791,
+      "registeredBottomY": 620.0,
+      "sourceShoes": [
+        [
+          374,
+          437
+        ],
+        [
+          526,
+          600
+        ]
+      ],
+      "sourceShoeContactY": [
+        501,
+        500
+      ],
+      "rearShoeCenterX": 405.0,
+      "shoeFloorY": 501,
+      "durationMs": 60
+    },
+    {
+      "index": 2,
+      "sourceX": 772,
+      "sourceY": 0,
+      "sourceWidth": 273,
+      "offsetX": 64.29493087557603,
+      "offsetY": 61.28110599078343,
+      "uniformScale": 1.1152073732718895,
+      "registeredTopY": 209.60368663594474,
+      "registeredBottomY": 620.0,
+      "sourceShoes": [
+        [
+          775,
+          843
+        ],
+        [
+          965,
+          1041
+        ]
+      ],
+      "sourceShoeContactY": [
+        501,
+        500
+      ],
+      "rearShoeCenterX": 808.5,
+      "shoeFloorY": 501,
+      "durationMs": 60
+    },
+    {
+      "index": 3,
+      "sourceX": 1168,
+      "sourceY": 0,
+      "sourceWidth": 281,
+      "offsetX": 65.96774193548387,
+      "offsetY": 61.28110599078343,
+      "uniformScale": 1.1152073732718895,
+      "registeredTopY": 264.24884792626733,
+      "registeredBottomY": 620.0,
+      "sourceShoes": [
+        [
+          1172,
+          1235
+        ],
+        [
+          1365,
+          1445
+        ]
+      ],
+      "sourceShoeContactY": [
+        501,
+        499
+      ],
+      "rearShoeCenterX": 1203.0,
+      "shoeFloorY": 501,
+      "durationMs": 50
+    },
+    {
+      "index": 4,
+      "sourceX": 34,
+      "sourceY": 512,
+      "sourceWidth": 284,
+      "offsetX": 65.41013824884791,
+      "offsetY": 63.511520737327146,
+      "uniformScale": 1.1152073732718895,
+      "registeredTopY": 286.55299539170505,
+      "registeredBottomY": 620.0,
+      "sourceShoes": [
+        [
+          38,
+          102
+        ],
+        [
+          239,
+          313
+        ]
+      ],
+      "sourceShoeContactY": [
+        499,
+        498
+      ],
+      "rearShoeCenterX": 69.5,
+      "shoeFloorY": 499,
+      "durationMs": 90
+    },
+    {
+      "index": 5,
+      "sourceX": 388,
+      "sourceY": 512,
+      "sourceWidth": 288,
+      "offsetX": 66.52534562211981,
+      "offsetY": 63.511520737327146,
+      "uniformScale": 1.1152073732718895,
+      "registeredTopY": 289.8986175115207,
+      "registeredBottomY": 620.0,
+      "sourceShoes": [
+        [
+          392,
+          454
+        ],
+        [
+          598,
+          672
+        ]
+      ],
+      "sourceShoeContactY": [
+        499,
+        498
+      ],
+      "rearShoeCenterX": 422.5,
+      "shoeFloorY": 499,
+      "durationMs": 60
+    },
+    {
+      "index": 6,
+      "sourceX": 776,
+      "sourceY": 512,
+      "sourceWidth": 277,
+      "offsetX": 64.29493087557603,
+      "offsetY": 62.39631336405523,
+      "uniformScale": 1.1152073732718895,
+      "registeredTopY": 204.0276497695852,
+      "registeredBottomY": 620.0,
+      "sourceShoes": [
+        [
+          780,
+          846
+        ],
+        [
+          973,
+          1049
+        ]
+      ],
+      "sourceShoeContactY": [
+        500,
+        498
+      ],
+      "rearShoeCenterX": 812.5,
+      "shoeFloorY": 500,
+      "durationMs": 70
+    },
+    {
+      "index": 7,
+      "sourceX": 1179,
+      "sourceY": 512,
+      "sourceWidth": 261,
+      "offsetX": 64.29493087557603,
+      "offsetY": 62.39631336405523,
+      "uniformScale": 1.1152073732718895,
+      "registeredTopY": 137.11520737327183,
+      "registeredBottomY": 620.0,
+      "sourceShoes": [
+        [
+          1183,
+          1249
+        ],
+        [
+          1360,
+          1435
+        ]
+      ],
+      "sourceShoeContactY": [
+        500,
+        498
+      ],
+      "rearShoeCenterX": 1215.5,
+      "shoeFloorY": 500,
+      "durationMs": 80
+    }
+  ]
+}
