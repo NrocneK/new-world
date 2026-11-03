@@ -1,0 +1,36 @@
+{
+  "run-preview.gif": {
+    "frames": 16,
+    "durationMs": 670,
+    "size": [
+      512,
+      640
+    ]
+  },
+  "run-preview-slow.gif": {
+    "frames": 16,
+    "durationMs": 1330,
+    "size": [
+      512,
+      640
+    ]
+  },
+  "headTopY": [
+    37,
+    39,
+    39,
+    42,
+    43,
+    40,
+    40,
+    38,
+    37,
+    38,
+    36,
+    37,
+    42,
+    41,
+    40,
+    39
+  ]
+}
