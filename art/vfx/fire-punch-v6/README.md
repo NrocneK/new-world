@@ -1,0 +1,9 @@
+# Fire review06 — foreground fire and tapered hook wall
+
+`/fire-punch-v6` opens on the hook peak. The main near-arm effect is now composited AFTER the actor. Straight punches use a larger fiery head and narrower trailing wake; the new hook wall grows from a fine ground tail into a broad upper crown near/above the fist. The entire effect stays translucent, preserving visibility through continuous fire instead of cutting an oval hole or painting an anatomical fire hand.
+
+Source artwork is generated independently of character sheets: hook-wall.png is imagegen exec-9ed46798-b15a-459c-951f-6cf1f58fa5af, edited from the earlier ground-to-overhead crescent with a much thinner lower tail and thicker upper crown. aura-trail.png is exec-eb49caf1-32d8-403a-ba19-17bd2b95a594, edited to transfer visual mass from the tail to the head while preserving atlas anchors. Original generated files remain in the generated_images directory.
+
+Hook registration uses a single uniform whole-image scale and rigid translation to place opaque bounds at native floor620 and top30. At actor offset20 these become world floor640/top50; the approved peak fist is native y117. A cached progressive vertical reveal develops the full curved artwork as the hook rises. It is a full crescent image rather than a rotated straight plume. This registration bounds the artwork, not a claim of mathematically exact brush centerlines. See wall-registration.json.
+
+Character sheets and timings are referenced from approved attack-profile-v12 without modifications; sound uses the newly synthesized combustion WAVs from fire-punch-v3. Preview supports all24 punch cels, three actions, individual sound audition, toggles, slow playback, repeat and one-shot completion. Straight contact and hook peak were inspected visually for hand visibility, foreground layering, larger head and narrower tail. Browser checks cover all24 frames, three one-shot completions, SFX controls, mobile width and page errors.
