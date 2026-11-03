@@ -13,7 +13,7 @@
 - Tải ZIP: https://di-mon-demo.vercel.app/downloads/di-mon-vfx-v6.zip
 - Tải HTML offline: https://di-mon-demo.vercel.app/downloads/di-mon-vfx-v6.html
 
-Trang chính trong `site/index.html` là màn chơi Chương 01: từ tầng 7 đi xuống qua sàn vỡ của 7 tầng lầu, cứu đồng nghiệp và hạ boss giữ cửa ở tầng trệt. Phòng thử 17 động tác được giữ ở `site/character-lab.html`. Màn chơi có bản HTML offline đóng gói trong ZIP và service worker lưu tài nguyên sau lần tải đầu. Hai đòn đấm thẳng đã thay các khối trắng vẽ bằng Canvas bằng texture khí lực trong `art/vfx/air-pressure-v2/sources/straight-clear.png`, bỏ lớp mây trắng và thu gọn tỷ lệ hiển thị. Bản xem VFX mới là trang phụ `site/vfx-review.html`, dùng cùng nguồn, điểm neo và tỷ lệ cho hai đòn này. Các động tác khác giữ nguyên.
+Trang chính trong `site/index.html` là màn chơi Chương 01: từ tầng 7 đi xuống qua sàn vỡ của 7 tầng lầu, cứu đồng nghiệp và hạ boss giữ cửa ở tầng trệt. Phòng thử tại `site/character-lab.html` hiện gom 10 động tác / 88 khung của tạo hình anime mới, kèm Hỏa quyền mới nhất. Màn chơi có bản HTML offline đóng gói trong ZIP và service worker lưu tài nguyên sau lần tải đầu. Hai đòn đấm thẳng đã thay các khối trắng vẽ bằng Canvas bằng texture khí lực trong `art/vfx/air-pressure-v2/sources/straight-clear.png`, bỏ lớp mây trắng và thu gọn tỷ lệ hiển thị. Bản xem VFX mới là trang phụ `site/vfx-review.html`, dùng cùng nguồn, điểm neo và tỷ lệ cho hai đòn này. Các động tác khác giữ nguyên.
 
 Các tệp tải đã được kiểm tra nằm trong `site/downloads/`:
 
@@ -42,3 +42,9 @@ Màn 2 dùng bộ cảnh vẽ viền/mảng màu mới: `manifest-chibi.json`, `
 Màn 2 hiện dùng một ảnh `street-panorama.png` cuộn xuyên suốt; không còn đổi giữa hai nền tại hố/mốc camera. `level-view.js` áp dụng zoom 0,72 cho cả thế giới để thấy khoảng 1778 đơn vị ngang, giữ HUD/cảm ứng nguyên kích thước. Builder nhúng panorama một lần trong HTML offline và đưa module chiếu vào tên tệp theo hash/cache. Bản lưu và vị trí các nhiệm vụ giữ nguyên.
 
 Màn 2 hiện còn có `actorScale: 0.72` độc lập với camera 0.72: nhóm nhân vật/NPC/quái thu thêm 28% so với cảnh giữ nguyên, kèm vùng đánh, collider và VFX tương ứng. So sánh ảnh cùng camera tại `/actor-size-review`; ảnh trước/sau được chụp trực tiếp từ game và không sửa pixel. Bản lưu và toàn bộ ảnh sprite được giữ nguyên.
+
+## Phòng thử tạo hình mới
+
+Trang cũ `/character-lab` dùng bộ sheet anime đã duyệt: idle, walk, ninja run, chỉnh kính, ba đòn đấm và ba đòn đá. A/D đi, Shift chạy, J đấm, K đá, G chỉnh kính, U bật/tắt thuộc tính lửa. Có chọn từng khung, phát combo, mục tiêu tập và tải riêng sheet PNG.
+
+Nguồn chuẩn nằm ở `character-lab.html` và `character-lab/`; chạy `node tools/build-character-lab.mjs` để xuất trang, `node tests/character-lab-anime.spec.cjs` để kiểm tra. Builder toàn site giữ trang này qua cùng hàm build. Chi tiết nguồn và timing xem `docs/character-lab-anime.md`. Các màn chơi vẫn dùng engine và sprite manifest hiện có.
