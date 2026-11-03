@@ -78,7 +78,11 @@
           "durationMs": 30,
           "startMs": 0,
           "phase": "guard",
-          "source": "shared-guard"
+          "source": "shared-guard",
+          "inspectionFist": [
+            219.5,
+            271.5
+          ]
         },
         {
           "index": 1,
@@ -89,7 +93,11 @@
           "durationMs": 20,
           "startMs": 30,
           "phase": "load",
-          "source": "generated"
+          "source": "generated",
+          "inspectionFist": [
+            203.5,
+            304.0
+          ]
         },
         {
           "index": 2,
@@ -100,7 +108,11 @@
           "durationMs": 20,
           "startMs": 50,
           "phase": "drive",
-          "source": "generated"
+          "source": "generated",
+          "inspectionFist": [
+            287.5,
+            270.5
+          ]
         },
         {
           "index": 3,
@@ -111,7 +123,11 @@
           "durationMs": 40,
           "startMs": 70,
           "phase": "contact",
-          "source": "generated"
+          "source": "generated",
+          "inspectionFist": [
+            343.0,
+            259.0
+          ]
         },
         {
           "index": 4,
@@ -122,7 +138,11 @@
           "durationMs": 30,
           "startMs": 110,
           "phase": "follow-through",
-          "source": "generated"
+          "source": "generated",
+          "inspectionFist": [
+            334.5,
+            260.0
+          ]
         },
         {
           "index": 5,
@@ -133,7 +153,11 @@
           "durationMs": 30,
           "startMs": 140,
           "phase": "recoil",
-          "source": "generated"
+          "source": "generated",
+          "inspectionFist": [
+            284.0,
+            269.5
+          ]
         },
         {
           "index": 6,
@@ -144,7 +168,11 @@
           "durationMs": 30,
           "startMs": 170,
           "phase": "recover",
-          "source": "generated"
+          "source": "generated",
+          "inspectionFist": [
+            217.5,
+            272.5
+          ]
         },
         {
           "index": 7,
@@ -155,7 +183,11 @@
           "durationMs": 50,
           "startMs": 200,
           "phase": "guard",
-          "source": "shared-guard"
+          "source": "shared-guard",
+          "inspectionFist": [
+            219.5,
+            271.5
+          ]
         }
       ]
     },
@@ -187,7 +219,11 @@
           "durationMs": 30,
           "startMs": 0,
           "phase": "guard",
-          "source": "shared-guard"
+          "source": "shared-guard",
+          "inspectionFist": [
+            248.5,
+            247.0
+          ]
         },
         {
           "index": 1,
@@ -198,7 +234,11 @@
           "durationMs": 20,
           "startMs": 30,
           "phase": "load",
-          "source": "generated"
+          "source": "generated",
+          "inspectionFist": [
+            284.0,
+            253.5
+          ]
         },
         {
           "index": 2,
@@ -209,7 +249,11 @@
           "durationMs": 20,
           "startMs": 50,
           "phase": "drive",
-          "source": "generated"
+          "source": "generated",
+          "inspectionFist": [
+            325.5,
+            248.5
+          ]
         },
         {
           "index": 3,
@@ -220,7 +264,11 @@
           "durationMs": 40,
           "startMs": 70,
           "phase": "contact",
-          "source": "generated"
+          "source": "generated",
+          "inspectionFist": [
+            368.0,
+            248.5
+          ]
         },
         {
           "index": 4,
@@ -231,7 +279,11 @@
           "durationMs": 30,
           "startMs": 110,
           "phase": "follow-through",
-          "source": "generated"
+          "source": "generated",
+          "inspectionFist": [
+            343.5,
+            248.0
+          ]
         },
         {
           "index": 5,
@@ -242,7 +294,11 @@
           "durationMs": 30,
           "startMs": 140,
           "phase": "recoil",
-          "source": "generated"
+          "source": "generated",
+          "inspectionFist": [
+            305.0,
+            250.0
+          ]
         },
         {
           "index": 6,
@@ -253,7 +309,11 @@
           "durationMs": 30,
           "startMs": 170,
           "phase": "recover",
-          "source": "generated"
+          "source": "generated",
+          "inspectionFist": [
+            243.0,
+            229.5
+          ]
         },
         {
           "index": 7,
@@ -264,7 +324,11 @@
           "durationMs": 50,
           "startMs": 200,
           "phase": "guard",
-          "source": "shared-guard"
+          "source": "shared-guard",
+          "inspectionFist": [
+            248.5,
+            247.0
+          ]
         }
       ],
       "continuity": {
@@ -324,7 +388,11 @@
           "durationMs": 40,
           "startMs": 0,
           "phase": "guard",
-          "source": "shared-guard"
+          "source": "shared-guard",
+          "inspectionFist": [
+            219.5,
+            271.5
+          ]
         },
         {
           "index": 1,
@@ -335,7 +403,11 @@
           "durationMs": 40,
           "startMs": 40,
           "phase": "dip",
-          "source": "generated"
+          "source": "generated",
+          "inspectionFist": [
+            198.5,
+            388.0
+          ]
         },
         {
           "index": 2,
@@ -346,7 +418,11 @@
           "durationMs": 30,
           "startMs": 80,
           "phase": "chamber",
-          "source": "generated"
+          "source": "generated",
+          "inspectionFist": [
+            173.5,
+            410.0
+          ]
         },
         {
           "index": 3,
@@ -357,7 +433,11 @@
           "durationMs": 50,
           "startMs": 110,
           "phase": "drive-up",
-          "source": "generated"
+          "source": "generated",
+          "inspectionFist": [
+            249.5,
+            237.5
+          ]
         },
         {
           "index": 4,
@@ -368,7 +448,11 @@
           "durationMs": 50,
           "startMs": 160,
           "phase": "high-peak",
-          "source": "generated"
+          "source": "generated",
+          "inspectionFist": [
+            225.0,
+            108.5
+          ]
         },
         {
           "index": 5,
@@ -379,7 +463,11 @@
           "durationMs": 40,
           "startMs": 210,
           "phase": "hold-peak",
-          "source": "generated"
+          "source": "generated",
+          "inspectionFist": [
+            222.0,
+            105.0
+          ]
         },
         {
           "index": 6,
@@ -390,7 +478,11 @@
           "durationMs": 50,
           "startMs": 250,
           "phase": "hold-peak",
-          "source": "generated"
+          "source": "generated",
+          "inspectionFist": [
+            221.5,
+            105.0
+          ]
         },
         {
           "index": 7,
@@ -401,7 +493,11 @@
           "durationMs": 60,
           "startMs": 300,
           "phase": "uppercut-peak",
-          "source": "shared-uppercut-peak"
+          "source": "shared-uppercut-peak",
+          "inspectionFist": [
+            225.0,
+            108.5
+          ]
         }
       ],
       "strikingHand": "right/near"
@@ -451,6 +547,10 @@
             274,
             247,
             304
+          ],
+          "inspectionFist": [
+            225.0,
+            108.5
           ]
         },
         {
@@ -473,6 +573,10 @@
             301,
             240,
             311
+          ],
+          "inspectionFist": [
+            238.5,
+            138.0
           ]
         },
         {
@@ -495,6 +599,10 @@
             278,
             127,
             312
+          ],
+          "inspectionFist": [
+            273.5,
+            512.0
           ]
         },
         {
@@ -517,6 +625,10 @@
             282,
             118,
             318
+          ],
+          "inspectionFist": [
+            269.5,
+            584.5
           ]
         },
         {
@@ -539,6 +651,10 @@
             288,
             127,
             325
+          ],
+          "inspectionFist": [
+            263.5,
+            603.5
           ]
         },
         {
@@ -561,6 +677,10 @@
             291,
             123,
             327
+          ],
+          "inspectionFist": [
+            270.0,
+            604.0
           ]
         },
         {
@@ -583,6 +703,10 @@
             278,
             127,
             312
+          ],
+          "inspectionFist": [
+            273.5,
+            512.0
           ]
         },
         {
@@ -605,6 +729,10 @@
             229,
             262,
             265
+          ],
+          "inspectionFist": [
+            219.5,
+            271.5
           ]
         }
       ],

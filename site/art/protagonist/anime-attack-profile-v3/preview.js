@@ -65,7 +65,7 @@ function render(key,index,effects,complete) {
   ctx.fillStyle='#c3d9cd';ctx.font='13px sans-serif';ctx.fillText(a.name,24,25);
   ctx.fillStyle='#9ab5af';ctx.font='13px monospace';ctx.fillText(String(index+1).padStart(2,'0')+' / 08',24,817);ctx.fillText(showFx.checked?'VFX / SOURCE OVER':'CHARACTER ONLY',canvas.width-198,817);
   canvas.dataset.action=key;canvas.dataset.currentFrame=String(index);canvas.dataset.mode=mode;canvas.dataset.fx=effects.map(e=>e.key).join(',');
-  const p=key==='attack4'?a.impact.ground:a.impact.fist;
+  const p=f.inspectionFist??a.impact.fist;
   const x=meta.stage.actorX+p[0],y=meta.stage.actorY+p[1];
   const sx=Math.max(0,Math.min(canvas.width-140,x-70)),sy=Math.max(0,Math.min(canvas.height-140,y-70));
   zoom.clearRect(0,0,280,280);zoom.drawImage(canvas,sx,sy,140,140,0,0,280,280);
@@ -88,7 +88,7 @@ function animate(now) {
   requestAnimationFrame(animate);
 }
 try {
-  const response=await fetch(root+'combat-sheet.json');if(!response.ok)throw Error('Không tải được dữ liệu attack');meta=await response.json();
+  const response=await fetch(root+'combat-sheet.json?rev=3-hands');if(!response.ok)throw Error('Không tải được dữ liệu attack');meta=await response.json();
   const vfxUrl=new URL(meta.vfxManifest,new URL(root,location.href));const fxResponse=await fetch(vfxUrl);if(!fxResponse.ok)throw Error('Không tải được VFX');vfx=await fxResponse.json();
   await Promise.all(meta.combo.map(async key=>atlases.set(key,await image(root+meta.actions[key].image))));
   for(const key of meta.combo) {

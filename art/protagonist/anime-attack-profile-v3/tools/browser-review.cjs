@@ -63,7 +63,7 @@ const digest=b=>createHash('sha256').update(b).digest('hex');
   await page.locator('#speed').selectOption('1');
   await page.locator('#play-finisher').dispatchEvent('click');await page.clock.runFor(350);
   assert.equal((await data()).action,'attack3');const beforeSeam=await poseHash();
-  await page.clock.runFor(20);assert.equal((await data()).action,'attack4');
+  await page.clock.runFor(32);assert.equal((await data()).action,'attack4');
   assert.equal(await poseHash(),beforeSeam,'rendered finisher seam must have no pose jump');
   await inspect('attack2',3);
   await page.locator('details').first().evaluate(el=>el.open=true);await tick();

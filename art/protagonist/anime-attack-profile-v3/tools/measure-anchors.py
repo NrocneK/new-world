@@ -34,6 +34,20 @@ for key,action in manifest['actions'].items():
  if key=='attack3':action['impact']['vfxRoot']=[105,620]
  report[key]=pick
 
+# Inspection zoom follows the hand in the CURRENT cel, rather than the future
+# impact point. These centers do not assert anatomical handedness.
+for key,action in manifest['actions'].items():
+ atlas=np.array(Image.open(root/action['image']))
+ for frame in action['frames']:
+  data=atlas[frame['y']:frame['y']+640,frame['x']:frame['x']+512];rgb=data[:,:,:3].astype(float)
+  mask=(data[:,:,3]>180)&(rgb[:,:,0]>150)&(rgb[:,:,1]>85)&(rgb[:,:,0]>rgb[:,:,1]*1.12)&(rgb[:,:,1]>rgb[:,:,2]*1.12)
+  choices=components(mask);assert choices
+  i=frame['index']
+  if key=='attack2' or (key=='attack1' and 2<=i<=5) or (key=='attack3' and i==3):hand=max(choices,key=lambda c:c['center'][0])
+  elif (key=='attack3' and i>=4) or (key=='attack4' and i<2):hand=min(choices,key=lambda c:c['center'][1])
+  else:hand=max(choices,key=lambda c:c['center'][1])
+  frame['inspectionFist']=hand['center']
+
 # Locate the far free hand separately for anatomical close-up review.
 # Its side is assigned from the reviewed pose, not inferred from skin color.
 action=manifest['actions']['attack4'];atlas=np.array(Image.open(root/action['image']))
