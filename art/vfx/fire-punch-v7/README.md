@@ -1,0 +1,9 @@
+# Fire review07 — longer wakes, lava arm, detached rising wall
+
+`/fire-punch-v7` opens on the hook. Both straight punches retain the v6 fiery head at scale0.48 and add a narrow wake at horizontal scale0.96/vertical0.30, doubling the horizontal tail extent while preserving head size. The wake and head are foreground layers with reduced opacity.
+
+The hook no longer draws an aura or fiery mass at the fist. A cached runtime heat shader intersects a near-arm mask with the actual approved sprite alpha, retains its shading and applies a shoulder-to-hand dark-red/orange temperature gradient with a small red glow. Peak arm contours are traced separately for the held cels. This is a VFX layer, not a replacement character sheet or a change to limb poses. No repeated geometric vein pattern remains.
+
+The new wall is imagegen exec-bcd023f6-43e1-41fd-8699-34ad6d8e5dbd, using the user's small orange sketch for silhouette/ribbon direction and a technical world-space guide for placement. It is a freely rising flame plume with golden curls, not a crescent bent back to the fist. It stays at a fixed world position with a soft progressive reveal. Whole-image uniform registration places the opaque upper bound at native30 and floor620, and the leftmost upper edge around the hand-height band at native530. The approved hook fist is around native459,117, leaving a visible gap. See wall-registration.json. Wall layer width864 allows the plume to extend right of the actor cel without clipping to the actor atlas width.
+
+Existing approved character PNGs/timings, straight-fire source from v6 and combustion WAVs from v3 are reused. Browser checks cover24 frame selections, three one-shot completions, audio audition, toggles, mobile layout, page errors, and the hook's lava/detached-wall state. Rendered straight contact and hook peak were also inspected visually.
