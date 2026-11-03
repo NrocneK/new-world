@@ -1,0 +1,205 @@
+{
+  "policy": "one fixed scale for all8 poses; planted left shoe anchored; no limb deformation or per-frame zoom",
+  "frames": [
+    {
+      "index": 0,
+      "image": "kick1-source.png",
+      "sx": 75,
+      "sy": 24,
+      "sw": 229,
+      "sh": 465,
+      "scale": 1.0477223427331888,
+      "dx": 265.6236442516269,
+      "dy": 135.9522776572668,
+      "supportShoe": {
+        "bounds": [
+          222,
+          454,
+          300,
+          485
+        ],
+        "center": [
+          261.0,
+          469.5
+        ],
+        "area": 1709
+      },
+      "sourceFloor": 486
+    },
+    {
+      "index": 1,
+      "image": "kick1-source.png",
+      "sx": 452,
+      "sy": 26,
+      "sw": 193,
+      "sh": 463,
+      "scale": 1.0477223427331888,
+      "dx": 302.8177874186551,
+      "dy": 138.04772234273315,
+      "supportShoe": {
+        "bounds": [
+          204,
+          454,
+          281,
+          484
+        ],
+        "center": [
+          242.5,
+          469.0
+        ],
+        "area": 1668
+      },
+      "sourceFloor": 486
+    },
+    {
+      "index": 2,
+      "image": "kick1-source.png",
+      "sx": 827,
+      "sy": 25,
+      "sw": 212,
+      "sh": 464,
+      "scale": 1.0477223427331888,
+      "dx": 326.91540130151844,
+      "dy": 137.0,
+      "supportShoe": {
+        "bounds": [
+          172,
+          454,
+          249,
+          485
+        ],
+        "center": [
+          210.5,
+          469.5
+        ],
+        "area": 1662
+      },
+      "sourceFloor": 486
+    },
+    {
+      "index": 3,
+      "image": "kick1-source.png",
+      "sx": 1186,
+      "sy": 26,
+      "sw": 303,
+      "sh": 463,
+      "scale": 1.0477223427331888,
+      "dx": 310.1518438177874,
+      "dy": 138.04772234273315,
+      "supportShoe": {
+        "bounds": [
+          163,
+          454,
+          240,
+          485
+        ],
+        "center": [
+          201.5,
+          469.5
+        ],
+        "area": 1653
+      },
+      "sourceFloor": 486
+    },
+    {
+      "index": 4,
+      "image": "kick1-source.png",
+      "sx": 44,
+      "sy": 539,
+      "sw": 328,
+      "sh": 462,
+      "scale": 1.0477223427331888,
+      "dx": 303.86550976138824,
+      "dy": 139.09544468546636,
+      "supportShoe": {
+        "bounds": [
+          155,
+          454,
+          232,
+          484
+        ],
+        "center": [
+          193.5,
+          469.0
+        ],
+        "area": 1637
+      },
+      "sourceFloor": 486
+    },
+    {
+      "index": 5,
+      "image": "kick1-source.png",
+      "sx": 449,
+      "sy": 539,
+      "sw": 214,
+      "sh": 462,
+      "scale": 1.0477223427331888,
+      "dx": 325.34381778741863,
+      "dy": 139.09544468546636,
+      "supportShoe": {
+        "bounds": [
+          179,
+          454,
+          257,
+          484
+        ],
+        "center": [
+          218.0,
+          469.0
+        ],
+        "area": 1637
+      },
+      "sourceFloor": 486
+    },
+    {
+      "index": 6,
+      "image": "kick1-source.png",
+      "sx": 851,
+      "sy": 538,
+      "sw": 190,
+      "sh": 463,
+      "scale": 1.0477223427331888,
+      "dx": 351.01301518438174,
+      "dy": 138.04772234273315,
+      "supportShoe": {
+        "bounds": [
+          173,
+          454,
+          250,
+          485
+        ],
+        "center": [
+          211.5,
+          469.5
+        ],
+        "area": 1634
+      },
+      "sourceFloor": 486
+    },
+    {
+      "index": 7,
+      "image": "kick1-source.png",
+      "sx": 1224,
+      "sy": 539,
+      "sw": 226,
+      "sh": 462,
+      "scale": 1.0477223427331888,
+      "dx": 269.290672451193,
+      "dy": 139.09544468546636,
+      "supportShoe": {
+        "bounds": [
+          239,
+          454,
+          318,
+          484
+        ],
+        "center": [
+          278.5,
+          469.0
+        ],
+        "area": 1699
+      },
+      "sourceFloor": 486
+    }
+  ]
+}
