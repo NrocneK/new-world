@@ -1,0 +1,491 @@
+{
+  "version": 1,
+  "image": "di-mon-attack-profile-v1.png",
+  "columns": 4,
+  "rows": 8,
+  "frameWidth": 512,
+  "frameHeight": 512,
+  "groundY": 500,
+  "loop": false,
+  "durationMs": 1380,
+  "view": "side-profile",
+  "direction": "right",
+  "combo": [
+    "attack1",
+    "attack2",
+    "attack3",
+    "attack4"
+  ],
+  "stage": {
+    "width": 640,
+    "height": 720,
+    "actorX": 32,
+    "actorY": 20,
+    "floorY": 520
+  },
+  "actions": {
+    "attack1": {
+      "key": "attack1",
+      "name": "Đấm thẳng · Tay 1",
+      "image": "di-mon-attack-profile-v1.png",
+      "gif": "di-mon-attack1-profile-v1.gif",
+      "loop": false,
+      "onComplete": "guard",
+      "durationMs": 250,
+      "impact": {
+        "frameIndex": 3,
+        "timeMs": 70,
+        "fist": [
+          343.0,
+          139.0
+        ],
+        "direction": "forward",
+        "anchorMethod": "skin component, manually checked"
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 512,
+          "h": 512,
+          "durationMs": 30,
+          "startMs": 0,
+          "phase": "guard",
+          "source": "shared-guard"
+        },
+        {
+          "index": 1,
+          "x": 512,
+          "y": 0,
+          "w": 512,
+          "h": 512,
+          "durationMs": 20,
+          "startMs": 30,
+          "phase": "load",
+          "source": "generated"
+        },
+        {
+          "index": 2,
+          "x": 1024,
+          "y": 0,
+          "w": 512,
+          "h": 512,
+          "durationMs": 20,
+          "startMs": 50,
+          "phase": "drive",
+          "source": "generated"
+        },
+        {
+          "index": 3,
+          "x": 1536,
+          "y": 0,
+          "w": 512,
+          "h": 512,
+          "durationMs": 40,
+          "startMs": 70,
+          "phase": "contact",
+          "source": "generated"
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 512,
+          "w": 512,
+          "h": 512,
+          "durationMs": 30,
+          "startMs": 110,
+          "phase": "follow-through",
+          "source": "generated"
+        },
+        {
+          "index": 5,
+          "x": 512,
+          "y": 512,
+          "w": 512,
+          "h": 512,
+          "durationMs": 30,
+          "startMs": 140,
+          "phase": "recoil",
+          "source": "generated"
+        },
+        {
+          "index": 6,
+          "x": 1024,
+          "y": 512,
+          "w": 512,
+          "h": 512,
+          "durationMs": 30,
+          "startMs": 170,
+          "phase": "recover",
+          "source": "generated"
+        },
+        {
+          "index": 7,
+          "x": 1536,
+          "y": 512,
+          "w": 512,
+          "h": 512,
+          "durationMs": 50,
+          "startMs": 200,
+          "phase": "guard",
+          "source": "shared-guard"
+        }
+      ]
+    },
+    "attack2": {
+      "key": "attack2",
+      "name": "Đấm thẳng · Tay 2",
+      "image": "di-mon-attack-profile-v1.png",
+      "gif": "di-mon-attack2-profile-v1.gif",
+      "loop": false,
+      "onComplete": "guard",
+      "durationMs": 250,
+      "impact": {
+        "frameIndex": 3,
+        "timeMs": 70,
+        "fist": [
+          348.5,
+          132.0
+        ],
+        "direction": "forward",
+        "anchorMethod": "skin component, manually checked"
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 1024,
+          "w": 512,
+          "h": 512,
+          "durationMs": 30,
+          "startMs": 0,
+          "phase": "guard",
+          "source": "shared-guard"
+        },
+        {
+          "index": 1,
+          "x": 512,
+          "y": 1024,
+          "w": 512,
+          "h": 512,
+          "durationMs": 20,
+          "startMs": 30,
+          "phase": "load",
+          "source": "generated"
+        },
+        {
+          "index": 2,
+          "x": 1024,
+          "y": 1024,
+          "w": 512,
+          "h": 512,
+          "durationMs": 20,
+          "startMs": 50,
+          "phase": "drive",
+          "source": "generated"
+        },
+        {
+          "index": 3,
+          "x": 1536,
+          "y": 1024,
+          "w": 512,
+          "h": 512,
+          "durationMs": 40,
+          "startMs": 70,
+          "phase": "contact",
+          "source": "generated"
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 1536,
+          "w": 512,
+          "h": 512,
+          "durationMs": 30,
+          "startMs": 110,
+          "phase": "follow-through",
+          "source": "generated"
+        },
+        {
+          "index": 5,
+          "x": 512,
+          "y": 1536,
+          "w": 512,
+          "h": 512,
+          "durationMs": 30,
+          "startMs": 140,
+          "phase": "recoil",
+          "source": "generated"
+        },
+        {
+          "index": 6,
+          "x": 1024,
+          "y": 1536,
+          "w": 512,
+          "h": 512,
+          "durationMs": 30,
+          "startMs": 170,
+          "phase": "recover",
+          "source": "generated"
+        },
+        {
+          "index": 7,
+          "x": 1536,
+          "y": 1536,
+          "w": 512,
+          "h": 512,
+          "durationMs": 50,
+          "startMs": 200,
+          "phase": "guard",
+          "source": "shared-guard"
+        }
+      ]
+    },
+    "attack3": {
+      "key": "attack3",
+      "name": "Đấm móc",
+      "image": "di-mon-attack-profile-v1.png",
+      "gif": "di-mon-attack3-profile-v1.gif",
+      "loop": false,
+      "onComplete": "guard",
+      "durationMs": 360,
+      "impact": {
+        "frameIndex": 4,
+        "timeMs": 160,
+        "fist": [
+          253.0,
+          48.5
+        ],
+        "direction": "up",
+        "anchorMethod": "skin component, manually checked",
+        "vfxRoot": [
+          105,
+          500
+        ],
+        "vfxReferenceRise": 304,
+        "vfxReferenceTopY": 68,
+        "vfxScale": 1.417868042776291,
+        "vfxRotationRad": -0.11752463962358228,
+        "vfxSourceVector": [
+          141.0,
+          -304
+        ],
+        "vfxTargetVector": [
+          148.0,
+          -451.5
+        ]
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 2048,
+          "w": 512,
+          "h": 512,
+          "durationMs": 40,
+          "startMs": 0,
+          "phase": "guard",
+          "source": "shared-guard"
+        },
+        {
+          "index": 1,
+          "x": 512,
+          "y": 2048,
+          "w": 512,
+          "h": 512,
+          "durationMs": 40,
+          "startMs": 40,
+          "phase": "dip",
+          "source": "generated"
+        },
+        {
+          "index": 2,
+          "x": 1024,
+          "y": 2048,
+          "w": 512,
+          "h": 512,
+          "durationMs": 30,
+          "startMs": 80,
+          "phase": "chamber",
+          "source": "generated"
+        },
+        {
+          "index": 3,
+          "x": 1536,
+          "y": 2048,
+          "w": 512,
+          "h": 512,
+          "durationMs": 50,
+          "startMs": 110,
+          "phase": "drive-up",
+          "source": "generated"
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 2560,
+          "w": 512,
+          "h": 512,
+          "durationMs": 50,
+          "startMs": 160,
+          "phase": "contact",
+          "source": "generated"
+        },
+        {
+          "index": 5,
+          "x": 512,
+          "y": 2560,
+          "w": 512,
+          "h": 512,
+          "durationMs": 40,
+          "startMs": 210,
+          "phase": "follow-up",
+          "source": "generated"
+        },
+        {
+          "index": 6,
+          "x": 1024,
+          "y": 2560,
+          "w": 512,
+          "h": 512,
+          "durationMs": 50,
+          "startMs": 250,
+          "phase": "recover",
+          "source": "generated"
+        },
+        {
+          "index": 7,
+          "x": 1536,
+          "y": 2560,
+          "w": 512,
+          "h": 512,
+          "durationMs": 60,
+          "startMs": 300,
+          "phase": "guard",
+          "source": "shared-guard"
+        }
+      ]
+    },
+    "attack4": {
+      "key": "attack4",
+      "name": "Đấm đất · Một tay",
+      "image": "di-mon-attack-profile-v1.png",
+      "gif": "di-mon-attack4-profile-v1.gif",
+      "loop": false,
+      "onComplete": "guard",
+      "durationMs": 520,
+      "impact": {
+        "frameIndex": 4,
+        "timeMs": 220,
+        "fist": [
+          226.5,
+          486.0
+        ],
+        "direction": "down",
+        "anchorMethod": "skin component, manually checked",
+        "ground": [
+          226.5,
+          500
+        ],
+        "radialDegrees": 360,
+        "vfxScale": 1.1
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 3072,
+          "w": 512,
+          "h": 512,
+          "durationMs": 50,
+          "startMs": 0,
+          "phase": "guard",
+          "source": "shared-guard"
+        },
+        {
+          "index": 1,
+          "x": 512,
+          "y": 3072,
+          "w": 512,
+          "h": 512,
+          "durationMs": 60,
+          "startMs": 50,
+          "phase": "load",
+          "source": "generated"
+        },
+        {
+          "index": 2,
+          "x": 1024,
+          "y": 3072,
+          "w": 512,
+          "h": 512,
+          "durationMs": 60,
+          "startMs": 110,
+          "phase": "raise-one-fist",
+          "source": "generated"
+        },
+        {
+          "index": 3,
+          "x": 1536,
+          "y": 3072,
+          "w": 512,
+          "h": 512,
+          "durationMs": 50,
+          "startMs": 170,
+          "phase": "downstroke",
+          "source": "generated"
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 3584,
+          "w": 512,
+          "h": 512,
+          "durationMs": 90,
+          "startMs": 220,
+          "phase": "contact-ground",
+          "source": "generated"
+        },
+        {
+          "index": 5,
+          "x": 512,
+          "y": 3584,
+          "w": 512,
+          "h": 512,
+          "durationMs": 60,
+          "startMs": 310,
+          "phase": "settle",
+          "source": "generated"
+        },
+        {
+          "index": 6,
+          "x": 1024,
+          "y": 3584,
+          "w": 512,
+          "h": 512,
+          "durationMs": 70,
+          "startMs": 370,
+          "phase": "recover",
+          "source": "generated"
+        },
+        {
+          "index": 7,
+          "x": 1536,
+          "y": 3584,
+          "w": 512,
+          "h": 512,
+          "durationMs": 80,
+          "startMs": 440,
+          "phase": "guard",
+          "source": "shared-guard"
+        }
+      ]
+    }
+  },
+  "guard": {
+    "action": "attack1",
+    "frameIndex": 0
+  },
+  "export": "character-only, combined atlas coordinates"
+}

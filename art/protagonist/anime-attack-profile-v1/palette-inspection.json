@@ -1,0 +1,50 @@
+{
+  "idle-source.png": {
+    "navyMedianRGB": [
+      53.0,
+      55.0,
+      81.0
+    ],
+    "method": "opaque blue garment pixels, read-only; visual palette check also required"
+  },
+  "walk-source.png": {
+    "navyMedianRGB": [
+      47.0,
+      50.0,
+      74.0
+    ],
+    "method": "opaque blue garment pixels, read-only; visual palette check also required"
+  },
+  "attack1-source.png": {
+    "navyMedianRGB": [
+      61.0,
+      62.0,
+      83.0
+    ],
+    "method": "opaque blue garment pixels, read-only; visual palette check also required"
+  },
+  "attack2-source.png": {
+    "navyMedianRGB": [
+      59.0,
+      61.0,
+      82.0
+    ],
+    "method": "opaque blue garment pixels, read-only; visual palette check also required"
+  },
+  "attack3-source.png": {
+    "navyMedianRGB": [
+      57.0,
+      58.0,
+      77.0
+    ],
+    "method": "opaque blue garment pixels, read-only; visual palette check also required"
+  },
+  "attack4-source.png": {
+    "navyMedianRGB": [
+      63.0,
+      63.0,
+      84.0
+    ],
+    "method": "opaque blue garment pixels, read-only; visual palette check also required"
+  }
+}
