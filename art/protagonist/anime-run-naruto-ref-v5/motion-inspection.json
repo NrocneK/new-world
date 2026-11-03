@@ -1,0 +1,19 @@
+{
+  "run-preview.gif": {
+    "frames": 8,
+    "durationMs": 500,
+    "size": [
+      512,
+      640
+    ]
+  },
+  "run-preview-slow.gif": {
+    "frames": 8,
+    "durationMs": 1010,
+    "size": [
+      512,
+      640
+    ]
+  },
+  "referenceMethod": "Real reference GIFs inspected and input as image montages; newly generated artwork, not rotoscope."
+}

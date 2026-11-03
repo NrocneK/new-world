@@ -1,0 +1,41 @@
+{
+  "reviewedOn": "2026-11-03",
+  "primary": {
+    "page": "https://tenor.com/view/naruto-anime-naruto-uzumaki-run-running-gif-5354482",
+    "media": "https://media1.tenor.com/m/fCNJ5gEgwEYAAAAC/naruto-anime.gif",
+    "size": [
+      498,
+      235
+    ],
+    "frames": 10,
+    "durationMs": 500,
+    "sampledFrames": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  "fullBody": {
+    "page": "https://tenor.com/view/naruto-run-ninja-run-silhouette-gif-15663981",
+    "media": "https://media1.tenor.com/m/g5uFjKE6onMAAAAC/naruto-run-ninja.gif",
+    "size": [
+      498,
+      273
+    ],
+    "frames": 48,
+    "durationMs": 2400
+  },
+  "method": "Reference GIFs were inspected frame by frame; sampled reference montage and silhouette montage were supplied directly to image generation with the original hero image. This is a newly generated motion study, not rotoscoped or motion-captured animation.",
+  "adaptation": {
+    "facing": "right",
+    "grounded": true,
+    "character": "original hero, unchanged costume identity",
+    "episodeAttribution": "not independently established from hosting metadata"
+  },
+  "structuralCorrection": "A separate author-drawn alignment guide was used to retain the requested neutral back/pelvis/rear-thigh alignment and grounded foot style."
+}
