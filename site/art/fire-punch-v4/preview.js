@@ -23,7 +23,7 @@ function render(t){const elapsed=(t-start)*Number(document.getElementById('speed
  g.fillStyle='#13252d';g.fillRect(0,0,c.width,c.height);g.strokeStyle='#486467';g.beginPath();g.moveTo(24,640.5);g.lineTo(872,640.5);g.stroke();const visible=document.getElementById('fire-on').checked;
  if(visible&&opacity>0){if(key==='attack3')drawWall(index,opacity);flame(fx,32+trail[0],20+trail[1],opacity,0,false,index);}
  g.drawImage(actors.get(key),f.x,f.y,f.w,f.h,32,20,f.w,f.h);
- if(visible&&opacity>0)flame(fx,32+trail[0],20+trail[1],opacity,angle,true,index);
+ if(visible&&opacity>0)flame(fx,32+trail[0],20+trail[1],opacity,0,true,index);
  g.fillStyle='#a9c1b6';g.font='13px monospace';g.fillText(String(index+1).padStart(2,'0')+' / 08',24,710);g.fillText('HỎA QUYỀN / 04',700,710);
  Object.assign(c.dataset,{action:key,frame:String(index),effect:String(fx),mode});status.textContent=mode==='still'?'Xem từng khung · '+(index+1)+'/8':mode==='done'?'Đã phát xong':'Tụ lửa → Xuất quyền → Tàn lửa';
  for(const b of document.querySelectorAll('button[data-frame]'))b.setAttribute('aria-pressed',String(+b.dataset.frame===index));requestAnimationFrame(render);}
