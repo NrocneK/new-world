@@ -1,0 +1,169 @@
+{
+  "policy": "one fixed scale; world support measured from corresponding right pose; never from raised attacking shoe",
+  "scale": 1.0433839479392624,
+  "sourceOrder": [
+    6,
+    2,
+    2,
+    3,
+    4,
+    2,
+    6
+  ],
+  "referenceOrder": [
+    6,
+    2,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "frames": [
+    {
+      "index": 0,
+      "sourceIndex": 6,
+      "referenceFrameIndex": 6,
+      "image": "kick2-source.png",
+      "sx": 818,
+      "sy": 540,
+      "sw": 223,
+      "sh": 461,
+      "scale": 1.0433839479392624,
+      "dx": 317.382863340564,
+      "dy": 142.13015184381783,
+      "referenceSupport": [
+        464.5,
+        620
+      ]
+    },
+    {
+      "index": 1,
+      "sourceIndex": 2,
+      "referenceFrameIndex": 2,
+      "image": "kick2-source.png",
+      "sx": 816,
+      "sy": 25,
+      "sw": 222,
+      "sh": 465,
+      "scale": 1.0433839479392624,
+      "dx": 325.33947939262475,
+      "dy": 137.95661605206078,
+      "referenceSupport": [
+        473.5,
+        620
+      ]
+    },
+    {
+      "index": 2,
+      "sourceIndex": 2,
+      "referenceFrameIndex": 2,
+      "image": "kick2-source.png",
+      "sx": 816,
+      "sy": 25,
+      "sw": 222,
+      "sh": 465,
+      "scale": 1.0433839479392624,
+      "dx": 325.33947939262475,
+      "dy": 137.95661605206078,
+      "referenceSupport": [
+        473.5,
+        620
+      ]
+    },
+    {
+      "index": 3,
+      "sourceIndex": 3,
+      "referenceFrameIndex": 3,
+      "image": "kick2-source.png",
+      "sx": 1188,
+      "sy": 27,
+      "sw": 300,
+      "sh": 463,
+      "scale": 1.0433839479392624,
+      "dx": 321.6659436008677,
+      "dy": 140.04338394793933,
+      "referenceSupport": [
+        474.0,
+        620
+      ]
+    },
+    {
+      "index": 4,
+      "sourceIndex": 4,
+      "referenceFrameIndex": 4,
+      "image": "kick2-source.png",
+      "sx": 51,
+      "sy": 539,
+      "sw": 323,
+      "sh": 462,
+      "scale": 1.0433839479392624,
+      "dx": 321.14425162689804,
+      "dy": 141.08676789587855,
+      "referenceSupport": [
+        474.0,
+        620
+      ]
+    },
+    {
+      "index": 5,
+      "sourceIndex": 2,
+      "referenceFrameIndex": 5,
+      "image": "kick2-source.png",
+      "sx": 816,
+      "sy": 25,
+      "sw": 222,
+      "sh": 465,
+      "scale": 1.0433839479392624,
+      "dx": 325.33947939262475,
+      "dy": 137.95661605206078,
+      "referenceSupport": [
+        473.5,
+        620
+      ]
+    },
+    {
+      "index": 6,
+      "sourceIndex": 6,
+      "referenceFrameIndex": 6,
+      "image": "kick2-source.png",
+      "sx": 818,
+      "sy": 540,
+      "sw": 223,
+      "sh": 461,
+      "scale": 1.0433839479392624,
+      "dx": 317.382863340564,
+      "dy": 142.13015184381783,
+      "referenceSupport": [
+        464.5,
+        620
+      ]
+    }
+  ],
+  "referenceSupport": {
+    "2": [
+      473.5,
+      620
+    ],
+    "3": [
+      474.0,
+      620
+    ],
+    "4": [
+      474.0,
+      620
+    ],
+    "5": [
+      473.5,
+      620
+    ],
+    "6": [
+      464.5,
+      620
+    ],
+    "7": [
+      381.5,
+      620
+    ]
+  }
+}

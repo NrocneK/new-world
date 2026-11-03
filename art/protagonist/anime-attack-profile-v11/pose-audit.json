@@ -1,0 +1,117 @@
+[
+  {
+    "frame": 3,
+    "rightSupport": [
+      473.5,
+      620
+    ],
+    "leftSupport": [
+      474.0,
+      620
+    ],
+    "supportDelta": [
+      0.5,
+      0
+    ],
+    "hairCenterDelta": [
+      11.5,
+      7.0
+    ],
+    "raisedFootDelta": [
+      20.5,
+      -9.5
+    ]
+  },
+  {
+    "frame": 4,
+    "rightSupport": [
+      474.0,
+      620
+    ],
+    "leftSupport": [
+      474.0,
+      620
+    ],
+    "supportDelta": [
+      0.0,
+      0
+    ],
+    "hairCenterDelta": [
+      9.5,
+      5.5
+    ],
+    "raisedFootDelta": [
+      9.5,
+      -1.5
+    ]
+  },
+  {
+    "frame": 5,
+    "rightSupport": [
+      474.0,
+      620
+    ],
+    "leftSupport": [
+      474.5,
+      620
+    ],
+    "supportDelta": [
+      0.5,
+      0
+    ],
+    "hairCenterDelta": [
+      10.0,
+      1.0
+    ],
+    "raisedFootDelta": [
+      9.0,
+      -8.5
+    ]
+  },
+  {
+    "frame": 6,
+    "rightSupport": [
+      473.5,
+      620
+    ],
+    "leftSupport": [
+      474.0,
+      620
+    ],
+    "supportDelta": [
+      0.5,
+      0
+    ],
+    "hairCenterDelta": [
+      11.5,
+      7.0
+    ],
+    "raisedFootDelta": [
+      20.5,
+      -9.5
+    ]
+  },
+  {
+    "frame": 7,
+    "rightSupport": [
+      464.5,
+      620
+    ],
+    "leftSupport": [
+      464.5,
+      620
+    ],
+    "supportDelta": [
+      0.0,
+      0
+    ],
+    "hairCenterDelta": [
+      5.0,
+      6.5
+    ],
+    "raisedFootDelta": [
+      -2.0,
+      2.5
+    ]
+  }
+]
