@@ -1,0 +1,80 @@
+{
+  "glasses-preview.gif": {
+    "frames": 8,
+    "loop": false,
+    "durationMs": 1360,
+    "frameDurationsMs": [
+      100,
+      140,
+      140,
+      160,
+      240,
+      160,
+      180,
+      240
+    ]
+  },
+  "glasses-preview-slow.gif": {
+    "frames": 8,
+    "loop": false,
+    "durationMs": 2720,
+    "frameDurationsMs": [
+      200,
+      280,
+      280,
+      320,
+      480,
+      320,
+      360,
+      480
+    ]
+  },
+  "soleY": [
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500
+  ],
+  "footSpanX": [
+    [
+      148,
+      235
+    ],
+    [
+      147,
+      236
+    ],
+    [
+      147,
+      236
+    ],
+    [
+      147,
+      236
+    ],
+    [
+      147,
+      236
+    ],
+    [
+      147,
+      236
+    ],
+    [
+      147,
+      236
+    ],
+    [
+      148,
+      235
+    ]
+  ],
+  "canonicalIdleEndpoints": [
+    0,
+    7
+  ]
+}

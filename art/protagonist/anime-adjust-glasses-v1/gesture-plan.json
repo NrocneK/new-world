@@ -1,0 +1,174 @@
+{
+  "loop": false,
+  "durationMs": 1360,
+  "frames": [
+    {
+      "index": 0,
+      "phase": "rest",
+      "shoulder": [
+        180,
+        140
+      ],
+      "elbow": [
+        159.37328739271007,
+        212.10782708566572
+      ],
+      "wrist": [
+        183,
+        278
+      ],
+      "fingertips": [
+        190,
+        305
+      ],
+      "durationMs": 100
+    },
+    {
+      "index": 1,
+      "phase": "lift",
+      "shoulder": [
+        180,
+        140
+      ],
+      "elbow": [
+        158.59650310262413,
+        211.881084581161
+      ],
+      "wrist": [
+        228,
+        221
+      ],
+      "fingertips": [
+        248,
+        207
+      ],
+      "durationMs": 140
+    },
+    {
+      "index": 2,
+      "phase": "approach",
+      "shoulder": [
+        180,
+        140
+      ],
+      "elbow": [
+        229.13597286539547,
+        196.6626523432421
+      ],
+      "wrist": [
+        236,
+        127
+      ],
+      "fingertips": [
+        229,
+        102
+      ],
+      "durationMs": 140
+    },
+    {
+      "index": 3,
+      "phase": "touch rim",
+      "shoulder": [
+        180,
+        140
+      ],
+      "elbow": [
+        252.69324213969725,
+        158.45785868456431
+      ],
+      "wrist": [
+        234,
+        91
+      ],
+      "fingertips": [
+        226,
+        64
+      ],
+      "durationMs": 160
+    },
+    {
+      "index": 4,
+      "phase": "gentle push",
+      "shoulder": [
+        180,
+        140
+      ],
+      "elbow": [
+        253.20414649149393,
+        156.3141943243269
+      ],
+      "wrist": [
+        234,
+        89
+      ],
+      "fingertips": [
+        226,
+        62
+      ],
+      "durationMs": 240
+    },
+    {
+      "index": 5,
+      "phase": "release",
+      "shoulder": [
+        180,
+        140
+      ],
+      "elbow": [
+        221.16871235023456,
+        202.6908057327679
+      ],
+      "wrist": [
+        239,
+        135
+      ],
+      "fingertips": [
+        235,
+        110
+      ],
+      "durationMs": 160
+    },
+    {
+      "index": 6,
+      "phase": "lower",
+      "shoulder": [
+        180,
+        140
+      ],
+      "elbow": [
+        151.95783208690355,
+        209.56031065725415
+      ],
+      "wrist": [
+        220,
+        226
+      ],
+      "fingertips": [
+        234,
+        249
+      ],
+      "durationMs": 180
+    },
+    {
+      "index": 7,
+      "phase": "rest",
+      "shoulder": [
+        180,
+        140
+      ],
+      "elbow": [
+        159.37328739271007,
+        212.10782708566572
+      ],
+      "wrist": [
+        183,
+        278
+      ],
+      "fingertips": [
+        190,
+        305
+      ],
+      "durationMs": 240
+    }
+  ]
+}
