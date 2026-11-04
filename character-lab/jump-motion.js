@@ -1,4 +1,4 @@
-const GRAVITY=1600,GROUND_SPEED=600,AIR_SPEED=540,ANTICIPATION_MS=150,LANDING_MS=200;
+const GRAVITY=1600,GROUND_SPEED=600,AIR_SPEED=720,ANTICIPATION_MS=150,LANDING_MS=400;
 
 export function createJumpMotion(){
  const s={phase:'ground',height:0,velocity:0,count:0,action:'jump',elapsed:0,phaseElapsed:0};
@@ -26,12 +26,12 @@ export function createJumpMotion(){
   return {...s,active:active(),frame:frame()};
  }
  function frame(){
-  if(s.phase==='anticipation')return s.phaseElapsed<60?0:1;
-  if(s.phase==='landing')return s.phaseElapsed<100?6:7;
-  if(s.phase!=='flight')return 7;
-  if(s.action==='jump')return s.phaseElapsed<100?2:s.velocity>100?3:s.velocity>=-140?4:5;
-  if(s.elapsed<50)return 0;if(s.elapsed<100)return 1;if(s.elapsed<190)return 2;
-  return s.velocity>100?3:s.velocity>=-120?4:s.velocity>-330&&s.height>50?5:s.height>35?6:7;
+  if(s.phase==='anticipation')return s.phaseElapsed<40?0:1;
+  if(s.phase==='landing')return 10+[50,110,200,280,350].filter(t=>s.phaseElapsed>=t).length;
+  if(s.phase!=='flight')return 15;
+  if(s.action==='jump')return 2+[60,140,225,310,440,530,630].filter(t=>s.phaseElapsed>=t).length;
+  if(s.elapsed<50)return 0;if(s.elapsed<100)return 1;if(s.elapsed<210)return 2;
+  return s.velocity>110?3:s.velocity>=-130?4:s.velocity>-400&&s.height>60?5:s.height>35?6:7;
  }
  return {request,step,reset,getState:()=>({...s,active:active(),frame:frame()})};
 }
@@ -40,4 +40,9 @@ export function jumpPreviewHeight(id,ms){
  const t=id==='jump'?(ms-ANTICIPATION_MS)/1000:ms/1000;
  if(t<0)return 0;
  return Math.max(0,(id==='airJump'?100:0)+(id==='airJump'?AIR_SPEED:GROUND_SPEED)*t-GRAVITY*t*t/2);
+}
+
+export function jumpCameraOffset(height,zoom=1){
+ // Keep the taller second apex and close-up view inside the stage.
+ return Math.max(0,height-Math.max(0,(558-35)/zoom-300));
 }

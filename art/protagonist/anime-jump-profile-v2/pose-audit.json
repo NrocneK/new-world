@@ -1,0 +1,663 @@
+{
+  "jump": {
+    "sourceScale": 0.9918032786885246,
+    "cels": [
+      {
+        "index": 0,
+        "phase": "ready",
+        "bounds": [
+          145,
+          136,
+          235,
+          620
+        ],
+        "nearGrayComponents": [
+          [
+            149,
+            375,
+            171,
+            560
+          ],
+          [
+            188,
+            577,
+            234,
+            609
+          ],
+          [
+            148,
+            583,
+            215,
+            619
+          ]
+        ]
+      },
+      {
+        "index": 1,
+        "phase": "right-load-left-knee-rise",
+        "bounds": [
+          83,
+          163,
+          303,
+          620
+        ],
+        "nearGrayComponents": [
+          [
+            102,
+            366,
+            122,
+            378
+          ],
+          [
+            100,
+            372,
+            119,
+            383
+          ],
+          [
+            153,
+            380,
+            202,
+            389
+          ],
+          [
+            166,
+            491,
+            195,
+            553
+          ],
+          [
+            153,
+            552,
+            170,
+            582
+          ],
+          [
+            148,
+            585,
+            221,
+            618
+          ]
+        ]
+      },
+      {
+        "index": 2,
+        "phase": "right-toe-push-arms-pull",
+        "bounds": [
+          169,
+          149,
+          353,
+          620
+        ],
+        "nearGrayComponents": [
+          [
+            185,
+            375,
+            207,
+            535
+          ],
+          [
+            169,
+            567,
+            221,
+            618
+          ]
+        ]
+      },
+      {
+        "index": 3,
+        "phase": "right-leg-long-rising",
+        "bounds": [
+          154,
+          136,
+          359,
+          613
+        ],
+        "nearGrayComponents": [
+          [
+            197,
+            380,
+            210,
+            453
+          ],
+          [
+            168,
+            451,
+            206,
+            546
+          ],
+          [
+            155,
+            549,
+            204,
+            610
+          ]
+        ]
+      },
+      {
+        "index": 4,
+        "phase": "right-knee-fold-early",
+        "bounds": [
+          123,
+          136,
+          357,
+          587
+        ],
+        "nearGrayComponents": [
+          [
+            148,
+            450,
+            202,
+            512
+          ],
+          [
+            124,
+            520,
+            162,
+            586
+          ]
+        ]
+      },
+      {
+        "index": 5,
+        "phase": "right-knee-fold-more",
+        "bounds": [
+          128,
+          136,
+          342,
+          507
+        ],
+        "nearGrayComponents": [
+          [
+            179,
+            420,
+            215,
+            433
+          ],
+          [
+            129,
+            436,
+            161,
+            506
+          ]
+        ]
+      },
+      {
+        "index": 6,
+        "phase": "apex-left-knee-high",
+        "bounds": [
+          102,
+          136,
+          328,
+          506
+        ],
+        "nearGrayComponents": [
+          [
+            104,
+            378,
+            151,
+            434
+          ]
+        ]
+      },
+      {
+        "index": 7,
+        "phase": "left-leg-opens-down",
+        "bounds": [
+          90,
+          136,
+          323,
+          560
+        ],
+        "nearGrayComponents": [
+          [
+            91,
+            392,
+            137,
+            453
+          ]
+        ]
+      },
+      {
+        "index": 8,
+        "phase": "left-leg-extends-down",
+        "bounds": [
+          54,
+          136,
+          293,
+          577
+        ],
+        "nearGrayComponents": [
+          [
+            57,
+            402,
+            109,
+            460
+          ],
+          [
+            125,
+            422,
+            159,
+            433
+          ]
+        ]
+      },
+      {
+        "index": 9,
+        "phase": "left-ready-right-trails",
+        "bounds": [
+          56,
+          136,
+          296,
+          603
+        ],
+        "nearGrayComponents": [
+          [
+            125,
+            442,
+            160,
+            455
+          ],
+          [
+            59,
+            447,
+            103,
+            511
+          ]
+        ]
+      },
+      {
+        "index": 10,
+        "phase": "left-first-contact",
+        "bounds": [
+          34,
+          162,
+          266,
+          620
+        ],
+        "nearGrayComponents": [
+          [
+            85,
+            473,
+            123,
+            498
+          ],
+          [
+            36,
+            506,
+            75,
+            577
+          ],
+          [
+            156,
+            588,
+            234,
+            617
+          ]
+        ]
+      },
+      {
+        "index": 11,
+        "phase": "left-brakes-right-settles",
+        "bounds": [
+          67,
+          182,
+          279,
+          620
+        ],
+        "nearGrayComponents": [
+          [
+            92,
+            351,
+            114,
+            385
+          ],
+          [
+            130,
+            360,
+            159,
+            382
+          ],
+          [
+            163,
+            367,
+            177,
+            408
+          ],
+          [
+            92,
+            397,
+            152,
+            406
+          ],
+          [
+            91,
+            404,
+            150,
+            413
+          ],
+          [
+            84,
+            497,
+            146,
+            564
+          ],
+          [
+            68,
+            566,
+            135,
+            618
+          ],
+          [
+            156,
+            587,
+            233,
+            617
+          ]
+        ]
+      },
+      {
+        "index": 12,
+        "phase": "both-low-compression",
+        "bounds": [
+          75,
+          217,
+          294,
+          620
+        ],
+        "nearGrayComponents": [
+          [
+            79,
+            351,
+            124,
+            431
+          ],
+          [
+            119,
+            406,
+            151,
+            425
+          ],
+          [
+            156,
+            416,
+            168,
+            445
+          ],
+          [
+            103,
+            521,
+            148,
+            579
+          ],
+          [
+            93,
+            582,
+            168,
+            617
+          ],
+          [
+            157,
+            583,
+            234,
+            611
+          ]
+        ]
+      },
+      {
+        "index": 13,
+        "phase": "stand-up-half",
+        "bounds": [
+          101,
+          190,
+          286,
+          620
+        ],
+        "nearGrayComponents": [
+          [
+            102,
+            351,
+            125,
+            395
+          ],
+          [
+            141,
+            380,
+            157,
+            392
+          ],
+          [
+            112,
+            505,
+            160,
+            581
+          ],
+          [
+            160,
+            584,
+            234,
+            613
+          ],
+          [
+            104,
+            585,
+            175,
+            618
+          ]
+        ]
+      },
+      {
+        "index": 14,
+        "phase": "stand-up-settle",
+        "bounds": [
+          110,
+          160,
+          235,
+          620
+        ],
+        "nearGrayComponents": [
+          [
+            167,
+            390,
+            188,
+            400
+          ],
+          [
+            170,
+            395,
+            190,
+            405
+          ],
+          [
+            128,
+            496,
+            161,
+            556
+          ],
+          [
+            116,
+            559,
+            131,
+            585
+          ],
+          [
+            160,
+            583,
+            233,
+            613
+          ],
+          [
+            111,
+            588,
+            185,
+            618
+          ]
+        ]
+      },
+      {
+        "index": 15,
+        "phase": "idle",
+        "bounds": [
+          145,
+          136,
+          235,
+          620
+        ],
+        "nearGrayComponents": [
+          [
+            149,
+            375,
+            171,
+            560
+          ],
+          [
+            188,
+            577,
+            234,
+            609
+          ],
+          [
+            148,
+            583,
+            215,
+            619
+          ]
+        ]
+      }
+    ],
+    "gifs": [
+      {
+        "file": "jump-preview.gif",
+        "durationMs": 1300,
+        "frames": 33
+      },
+      {
+        "file": "jump-preview-slow.gif",
+        "durationMs": 2600,
+        "frames": 33
+      }
+    ]
+  },
+  "air-jump": {
+    "sourceScale": 1.0254237288135593,
+    "cels": [
+      {
+        "index": 0,
+        "phase": "air-tuck",
+        "bounds": [
+          128,
+          136,
+          300,
+          535
+        ],
+        "nearGrayComponents": []
+      },
+      {
+        "index": 1,
+        "phase": "air-coil",
+        "bounds": [
+          57,
+          136,
+          256,
+          536
+        ],
+        "nearGrayComponents": []
+      },
+      {
+        "index": 2,
+        "phase": "air-push",
+        "bounds": [
+          142,
+          136,
+          340,
+          620
+        ],
+        "nearGrayComponents": []
+      },
+      {
+        "index": 3,
+        "phase": "second-rise",
+        "bounds": [
+          153,
+          136,
+          332,
+          542
+        ],
+        "nearGrayComponents": []
+      },
+      {
+        "index": 4,
+        "phase": "second-apex",
+        "bounds": [
+          130,
+          136,
+          306,
+          519
+        ],
+        "nearGrayComponents": []
+      },
+      {
+        "index": 5,
+        "phase": "second-fall",
+        "bounds": [
+          89,
+          136,
+          305,
+          583
+        ],
+        "nearGrayComponents": []
+      },
+      {
+        "index": 6,
+        "phase": "fall",
+        "bounds": [
+          137,
+          136,
+          322,
+          615
+        ],
+        "nearGrayComponents": []
+      },
+      {
+        "index": 7,
+        "phase": "prepare-landing",
+        "bounds": [
+          136,
+          136,
+          295,
+          615
+        ],
+        "nearGrayComponents": []
+      }
+    ],
+    "gifs": [
+      {
+        "file": "air-jump-preview.gif",
+        "durationMs": 1100,
+        "frames": 28
+      },
+      {
+        "file": "air-jump-preview-slow.gif",
+        "durationMs": 2200,
+        "frames": 28
+      }
+    ]
+  },
+  "progression": {
+    "rightSoleWhileRising": [
+      610,
+      586,
+      506,
+      434
+    ],
+    "leftSoleWhileExtending": [
+      560,
+      577,
+      603,
+      620
+    ],
+    "leftFirstContact": true,
+    "lowThenStand": true,
+    "airArtworkUnchangedSha256": "317c529026fd9845068f1eefcd7a71e17417ee8e24445b8a3f7650d1f3022a64"
+  }
+}

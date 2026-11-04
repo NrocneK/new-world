@@ -1,0 +1,101 @@
+{
+  "image": "air-jump-sheet.png",
+  "animation": "airJump",
+  "columns": 4,
+  "rows": 2,
+  "frameWidth": 384,
+  "frameHeight": 640,
+  "anchorX": 192,
+  "groundY": 620,
+  "contentTopY": 136,
+  "loop": false,
+  "durationMs": 1100,
+  "view": "strict-side-profile",
+  "direction": "right",
+  "uniformSourceScale": 1.0254237288135593,
+  "reusedCels": {
+    "atlas": "unchanged air-jump-v1 artwork"
+  },
+  "frames": [
+    {
+      "index": 0,
+      "x": 0,
+      "y": 0,
+      "w": 384,
+      "h": 640,
+      "startMs": 0,
+      "durationMs": 50,
+      "phase": "air-tuck"
+    },
+    {
+      "index": 1,
+      "x": 384,
+      "y": 0,
+      "w": 384,
+      "h": 640,
+      "startMs": 50,
+      "durationMs": 50,
+      "phase": "air-coil"
+    },
+    {
+      "index": 2,
+      "x": 768,
+      "y": 0,
+      "w": 384,
+      "h": 640,
+      "startMs": 100,
+      "durationMs": 110,
+      "phase": "air-push"
+    },
+    {
+      "index": 3,
+      "x": 1152,
+      "y": 0,
+      "w": 384,
+      "h": 640,
+      "startMs": 210,
+      "durationMs": 180,
+      "phase": "second-rise"
+    },
+    {
+      "index": 4,
+      "x": 0,
+      "y": 640,
+      "w": 384,
+      "h": 640,
+      "startMs": 390,
+      "durationMs": 160,
+      "phase": "second-apex"
+    },
+    {
+      "index": 5,
+      "x": 384,
+      "y": 640,
+      "w": 384,
+      "h": 640,
+      "startMs": 550,
+      "durationMs": 180,
+      "phase": "second-fall"
+    },
+    {
+      "index": 6,
+      "x": 768,
+      "y": 640,
+      "w": 384,
+      "h": 640,
+      "startMs": 730,
+      "durationMs": 170,
+      "phase": "fall"
+    },
+    {
+      "index": 7,
+      "x": 1152,
+      "y": 640,
+      "w": 384,
+      "h": 640,
+      "startMs": 900,
+      "durationMs": 200,
+      "phase": "prepare-landing"
+    }
+  ]
+}
