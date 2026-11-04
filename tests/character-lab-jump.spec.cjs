@@ -1,0 +1,27 @@
+const {chromium,request}=require('playwright'),assert=require('node:assert/strict');
+(async()=>{
+ const origin=process.env.LAB_ORIGIN||'http://127.0.0.1:4173/site',remote=origin.startsWith('https:'),browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']}),page=await browser.newPage({viewport:{width:1440,height:1000},reducedMotion:'reduce'}),api=remote?await request.newContext({proxy:{server:process.env.HTTPS_PROXY}}):null,errors=[];
+ page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url());});
+ if(remote)await page.route(origin+'/**',async r=>r.fulfill({response:await api.get(r.request().url(),{timeout:60000})}));
+ try{
+  await page.goto(origin+'/character-lab'+(remote?'':'.html'));await page.waitForFunction(()=>window.demo?.ready);
+  for(const key of ['jump','airJump']){
+   await page.locator('[data-motion="'+key+'"]').click();assert.equal(await page.locator('#frameStrip button').count(),8);
+   for(let i=0;i<8;i++){await page.locator('#frameStrip [data-frame="'+i+'"]').click();await page.waitForFunction(({key,i})=>gameCanvas.dataset.action===key&&+gameCanvas.dataset.frame===i,{key,i});}
+   assert((await page.locator('#sheetDownload').getAttribute('href')).includes(key==='jump'?'anime-jump-profile-v1/jump-sheet.png':'anime-air-jump-profile-v1/air-jump-sheet.png'));
+  }
+  await page.evaluate(()=>demo.reset());await page.locator('#gameCanvas').focus();const scroll=await page.evaluate(()=>scrollY);await page.keyboard.press('Space');assert.equal(await page.evaluate(()=>demo.getState().action),'jump');assert(Math.abs(await page.evaluate(()=>scrollY)-scroll)<8);
+  const first=await page.evaluate(()=>{demo.advance(250);return demo.getState();});assert.equal(first.jumpCount,1);assert(first.height>40);assert.equal(first.jumpPhase,'flight');
+  await page.keyboard.press('Space');const second=await page.evaluate(()=>demo.getState());assert.equal(second.action,'airJump');assert.equal(second.jumpCount,2);assert(second.velocityY>450);
+  await page.keyboard.press('Space');assert.equal(await page.evaluate(()=>demo.getState().jumpCount),2);
+  await page.evaluate(()=>demo.advance(260));await page.locator('#playPause').click();const paused=await page.evaluate(()=>demo.getState());await page.waitForTimeout(100);assert.equal(await page.evaluate(()=>demo.getState().height),paused.height);await page.locator('#gameCanvas').screenshot({path:'/tmp/lab-air-jump-check.png'});await page.locator('#playPause').click();
+  const floor=await page.evaluate(()=>{demo.advance(2000);return demo.getState();});assert.equal(floor.action,'idle');assert.equal(floor.height,0);assert.equal(floor.jumpCount,0);
+  await page.keyboard.press('Space');assert.equal(await page.evaluate(()=>demo.getState().jumpCount),1);await page.evaluate(()=>demo.reset());
+  await page.keyboard.down('KeyD');await page.keyboard.down('Shift');await page.evaluate(()=>demo.advance(100));await page.keyboard.press('Space');await page.evaluate(()=>demo.advance(200));await page.keyboard.up('KeyD');await page.keyboard.up('Shift');
+  const before=await page.evaluate(()=>demo.getState());await page.keyboard.press('Space');const after=await page.evaluate(()=>demo.getState());assert.equal(before.vx,290);assert.equal(after.vx,290);assert(after.x>=before.x);assert.equal(after.jumpCount,2);
+  await page.evaluate(()=>demo.reset());await page.locator('#jumpCombo').click();const pair=await page.evaluate(()=>{demo.advance(600);return demo.getState();});assert.equal(pair.action,'airJump');assert.equal(pair.jumpCount,2);assert(pair.height>110);await page.evaluate(()=>demo.advance(2000));assert.equal(await page.evaluate(()=>demo.getState().action),'idle');
+  await page.evaluate(()=>demo.reset());await page.keyboard.down('KeyA');await page.evaluate(()=>demo.advance(80));await page.keyboard.press('Space');await page.keyboard.up('KeyA');await page.evaluate(()=>demo.advance(300));assert.equal(await page.evaluate(()=>demo.getState().facing),-1);await page.locator('#playPause').click();await page.locator('#gameCanvas').screenshot({path:'/tmp/lab-jump-left-check.png'});
+  await page.evaluate(()=>demo.reset());await page.setViewportSize({width:390,height:844});await page.locator('[data-control="jump"]').click();await page.evaluate(()=>demo.advance(200));await page.locator('[data-control="jump"]').click();assert.equal(await page.evaluate(()=>demo.getState().jumpCount),2);await page.evaluate(()=>demo.reset());assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await page.screenshot({path:'/tmp/lab-jump-mobile.png',fullPage:true});
+  assert.deepEqual(errors,[]);console.log('PASS jump lab: both sheets; Space and touch double jump; no third jump; pause; landing reset; running momentum; automatic pair; facing; mobile width');
+ }finally{await browser.close();await api?.dispose();}
+})().catch(e=>{console.error(e);process.exitCode=1;});

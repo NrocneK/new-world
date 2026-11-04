@@ -1,0 +1,201 @@
+{
+  "jump": {
+    "sharedUniformScale": 1.0254237288135593,
+    "cels": [
+      {
+        "index": 0,
+        "visibleBounds": [
+          145,
+          136,
+          235,
+          620
+        ],
+        "phase": "ready"
+      },
+      {
+        "index": 1,
+        "visibleBounds": [
+          82,
+          178,
+          280,
+          620
+        ],
+        "phase": "anticipation"
+      },
+      {
+        "index": 2,
+        "visibleBounds": [
+          142,
+          136,
+          340,
+          620
+        ],
+        "phase": "takeoff"
+      },
+      {
+        "index": 3,
+        "visibleBounds": [
+          119,
+          136,
+          315,
+          574
+        ],
+        "phase": "rise"
+      },
+      {
+        "index": 4,
+        "visibleBounds": [
+          128,
+          136,
+          300,
+          535
+        ],
+        "phase": "apex"
+      },
+      {
+        "index": 5,
+        "visibleBounds": [
+          71,
+          136,
+          281,
+          594
+        ],
+        "phase": "fall"
+      },
+      {
+        "index": 6,
+        "visibleBounds": [
+          130,
+          207,
+          340,
+          620
+        ],
+        "phase": "landing"
+      },
+      {
+        "index": 7,
+        "visibleBounds": [
+          145,
+          136,
+          235,
+          620
+        ],
+        "phase": "recovery"
+      }
+    ],
+    "gifs": [
+      {
+        "file": "jump-preview.gif",
+        "frames": 28,
+        "durationMs": 1100
+      },
+      {
+        "file": "jump-preview-slow.gif",
+        "frames": 28,
+        "durationMs": 2200
+      }
+    ]
+  },
+  "air-jump": {
+    "sharedUniformScale": 1.0254237288135593,
+    "cels": [
+      {
+        "index": 0,
+        "visibleBounds": [
+          128,
+          136,
+          300,
+          535
+        ],
+        "phase": "air-tuck"
+      },
+      {
+        "index": 1,
+        "visibleBounds": [
+          57,
+          136,
+          256,
+          536
+        ],
+        "phase": "air-coil"
+      },
+      {
+        "index": 2,
+        "visibleBounds": [
+          142,
+          136,
+          340,
+          620
+        ],
+        "phase": "air-push"
+      },
+      {
+        "index": 3,
+        "visibleBounds": [
+          153,
+          136,
+          332,
+          542
+        ],
+        "phase": "second-rise"
+      },
+      {
+        "index": 4,
+        "visibleBounds": [
+          130,
+          136,
+          306,
+          519
+        ],
+        "phase": "second-apex"
+      },
+      {
+        "index": 5,
+        "visibleBounds": [
+          89,
+          136,
+          305,
+          583
+        ],
+        "phase": "second-fall"
+      },
+      {
+        "index": 6,
+        "visibleBounds": [
+          137,
+          136,
+          322,
+          615
+        ],
+        "phase": "fall"
+      },
+      {
+        "index": 7,
+        "visibleBounds": [
+          136,
+          136,
+          295,
+          615
+        ],
+        "phase": "prepare-landing"
+      }
+    ],
+    "gifs": [
+      {
+        "file": "air-jump-preview.gif",
+        "frames": 23,
+        "durationMs": 900
+      },
+      {
+        "file": "air-jump-preview-slow.gif",
+        "frames": 23,
+        "durationMs": 1800
+      }
+    ]
+  },
+  "sharedCels": {
+    "jump0=jump7": true,
+    "airJump0=jump4": true,
+    "airJump2=jump2": true
+  }
+}

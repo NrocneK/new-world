@@ -1,0 +1,175 @@
+{
+  "action": "airJump",
+  "source": "air-jump-source.png",
+  "frameWidth": 384,
+  "frameHeight": 640,
+  "columns": 4,
+  "rows": 2,
+  "anchorX": 192,
+  "groundY": 620,
+  "contentTopY": 136,
+  "uniformScale": 1.0254237288135593,
+  "frames": [
+    {
+      "index": 0,
+      "sourceX": 0,
+      "sourceY": 0,
+      "sourceWidth": 384,
+      "sourceHeight": 512,
+      "scale": 1.0254237288135593,
+      "dx": 0.24576271186441545,
+      "dy": 120.61864406779661,
+      "bounds": [
+        131,
+        15,
+        294,
+        418
+      ],
+      "headX": 187.0,
+      "anchor": "airborne-head-reference",
+      "durationMs": 50,
+      "phase": "air-tuck"
+    },
+    {
+      "index": 1,
+      "sourceX": 384,
+      "sourceY": 0,
+      "sourceWidth": 384,
+      "sourceHeight": 512,
+      "scale": 1.0254237288135593,
+      "dx": 3.322033898305108,
+      "dy": 98.0593220338983,
+      "bounds": [
+        52,
+        37,
+        246,
+        427
+      ],
+      "headX": 184.0,
+      "anchor": "airborne-head-reference",
+      "durationMs": 50,
+      "phase": "air-coil"
+    },
+    {
+      "index": 2,
+      "sourceX": 768,
+      "sourceY": 0,
+      "sourceWidth": 384,
+      "sourceHeight": 512,
+      "scale": 1.0254237288135593,
+      "dx": 51.516949152542395,
+      "dy": 126.77118644067797,
+      "bounds": [
+        84,
+        9,
+        285,
+        499
+      ],
+      "headX": 137.0,
+      "anchor": "airborne-head-reference",
+      "durationMs": 90,
+      "phase": "air-push"
+    },
+    {
+      "index": 3,
+      "sourceX": 1152,
+      "sourceY": 0,
+      "sourceWidth": 384,
+      "sourceHeight": 512,
+      "scale": 1.0254237288135593,
+      "dx": 73.05084745762713,
+      "dy": 126.77118644067797,
+      "bounds": [
+        77,
+        9,
+        253,
+        405
+      ],
+      "headX": 116.0,
+      "anchor": "airborne-head-reference",
+      "durationMs": 160,
+      "phase": "second-rise"
+    },
+    {
+      "index": 4,
+      "sourceX": 0,
+      "sourceY": 512,
+      "sourceWidth": 384,
+      "sourceHeight": 512,
+      "scale": 1.0254237288135593,
+      "dx": 5.88559322033899,
+      "dy": 127.79661016949153,
+      "bounds": [
+        121,
+        8,
+        293,
+        381
+      ],
+      "headX": 181.5,
+      "anchor": "airborne-head-reference",
+      "durationMs": 120,
+      "phase": "second-apex"
+    },
+    {
+      "index": 5,
+      "sourceX": 384,
+      "sourceY": 512,
+      "sourceWidth": 384,
+      "sourceHeight": 512,
+      "scale": 1.0254237288135593,
+      "dx": 26.394067796610187,
+      "dy": 131.89830508474577,
+      "bounds": [
+        61,
+        4,
+        271,
+        440
+      ],
+      "headX": 161.5,
+      "anchor": "airborne-head-reference",
+      "durationMs": 150,
+      "phase": "second-fall"
+    },
+    {
+      "index": 6,
+      "sourceX": 768,
+      "sourceY": 512,
+      "sourceWidth": 384,
+      "sourceHeight": 512,
+      "scale": 1.0254237288135593,
+      "dx": 38.18644067796612,
+      "dy": 116.51694915254237,
+      "bounds": [
+        96,
+        19,
+        277,
+        486
+      ],
+      "headX": 150.0,
+      "anchor": "airborne-head-reference",
+      "durationMs": 150,
+      "phase": "fall"
+    },
+    {
+      "index": 7,
+      "sourceX": 1152,
+      "sourceY": 512,
+      "sourceWidth": 384,
+      "sourceHeight": 512,
+      "scale": 1.0254237288135593,
+      "dx": 37.673728813559336,
+      "dy": 126.77118644067797,
+      "bounds": [
+        96,
+        9,
+        251,
+        477
+      ],
+      "headX": 150.5,
+      "anchor": "airborne-head-reference",
+      "durationMs": 130,
+      "phase": "prepare-landing"
+    }
+  ],
+  "policy": "complete cels only; one uniform scale shared by all 16 drawings; no body-part warps; idle endpoints reused; airJump starts with jump apex"
+}

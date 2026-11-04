@@ -6,9 +6,9 @@ const{chromium,request}=require('playwright'),assert=require('node:assert/strict
  try{
  await page.goto(origin+'/character-lab'+(remote?'':'.html'));
  await page.waitForFunction(()=>window.demo?.ready,{timeout:30000});
- assert.equal(await page.locator('[data-motion]').count(),10);assert.equal(await page.evaluate(()=>demo.manifest.totalFrames),88);
+ assert.equal(await page.locator('[data-motion]').count(),12);assert.equal(await page.evaluate(()=>demo.manifest.totalFrames),104);
  assert(!urls.some(u=>u.includes('sprite-manifest.json')||u.includes('design-v2/01_locomotion')));
- for(const [key,count] of [['idle',8],['walk',8],['run',8],['glasses',8],['attack1',8],['attack2',8],['attack3',8],['kick1',8],['kick2',8],['kick3',16]]){
+ for(const [key,count] of [['idle',8],['walk',8],['run',8],['glasses',8],['jump',8],['airJump',8],['attack1',8],['attack2',8],['attack3',8],['kick1',8],['kick2',8],['kick3',16]]){
   await page.locator('[data-motion="'+key+'"]').click();assert.equal(await page.locator('#frameStrip button').count(),count);
   for(let i=0;i<count;i++){await page.locator('#frameStrip [data-frame="'+i+'"]').click();await page.waitForFunction(({key,i})=>document.getElementById('gameCanvas').dataset.action===key&&document.getElementById('gameCanvas').dataset.frame===String(i),{key,i});}
  }
@@ -28,6 +28,6 @@ const{chromium,request}=require('playwright'),assert=require('node:assert/strict
  await page.locator('#motionTabs [data-group="combat"]').click();assert.equal(await page.locator('[data-motion]:visible').count(),6);await page.locator('#motionTabs [data-group="all"]').click();
  await page.setViewportSize({width:390,height:844});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await page.locator('[data-control="right"]').dispatchEvent('pointerdown',{pointerId:1});await page.waitForTimeout(80);await page.locator('[data-control="right"]').dispatchEvent('pointerup',{pointerId:1});
  await page.locator('[data-motion="idle"]').click();await page.evaluate(()=>document.activeElement?.blur());await page.screenshot({path:'/tmp/lab-anime-mobile.png',fullPage:true});
- assert.deepEqual(errors,[]);console.log('PASS anime lab: 10 actions / 88 frames; keyboard walk/run/mirror; idle glasses once/cancel; punch/kick chains including fast support switch; training-target hit; audio/VFX/fire; filters; mobile; no chibi assets or page errors');
+ assert.deepEqual(errors,[]);console.log('PASS anime lab: 12 actions / 104 frames; keyboard walk/run/mirror; idle glasses once/cancel; punch/kick chains including fast support switch; training-target hit; audio/VFX/fire; filters; mobile; no chibi assets or page errors');
  }finally{await browser.close();await api?.dispose();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

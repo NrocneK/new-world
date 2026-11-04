@@ -53,7 +53,7 @@ export function createScene(ctx,{width:W,height:H,ground:GROUND,targetX:TARGET_X
     line(69, 149, 192, 149, '#56654f');
     text('CỔNG 01 / CHƯA ỔN ĐỊNH', 1052, 605, 10, '#7c9b94', 'center');
     text('A / D  DI CHUYỂN', 74, 676, 11, '#62745f');
-    text('J  ĐẤM     K  ĐÁ     U  THUỘC TÍNH LỬA', 1205, 676, 11, '#62745f', 'right');
+    text('SPACE  NHẢY ×2    J  ĐẤM    K  ĐÁ    U  LỬA', 1205, 676, 11, '#62745f', 'right');
     if (state.effectsEnabled) for (const p of ambient) {
       const t = reducedMotion ? 0 : state.time;
       const y = 65 + ((p.y - t * (4 + p.size) + 500) % 440 + 440) % 440;

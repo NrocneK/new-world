@@ -1,0 +1,102 @@
+{
+  "image": "jump-sheet.png",
+  "animation": "jump",
+  "columns": 4,
+  "rows": 2,
+  "frameWidth": 384,
+  "frameHeight": 640,
+  "anchorX": 192,
+  "groundY": 620,
+  "contentTopY": 136,
+  "loop": false,
+  "durationMs": 1100,
+  "view": "strict-side-profile",
+  "direction": "right",
+  "uniformSourceScale": 1.0254237288135593,
+  "reusedCels": {
+    "0": "approved idle 0",
+    "7": "approved idle 0"
+  },
+  "frames": [
+    {
+      "index": 0,
+      "x": 0,
+      "y": 0,
+      "w": 384,
+      "h": 640,
+      "startMs": 0,
+      "durationMs": 60,
+      "phase": "ready"
+    },
+    {
+      "index": 1,
+      "x": 384,
+      "y": 0,
+      "w": 384,
+      "h": 640,
+      "startMs": 60,
+      "durationMs": 90,
+      "phase": "anticipation"
+    },
+    {
+      "index": 2,
+      "x": 768,
+      "y": 0,
+      "w": 384,
+      "h": 640,
+      "startMs": 150,
+      "durationMs": 100,
+      "phase": "takeoff"
+    },
+    {
+      "index": 3,
+      "x": 1152,
+      "y": 0,
+      "w": 384,
+      "h": 640,
+      "startMs": 250,
+      "durationMs": 200,
+      "phase": "rise"
+    },
+    {
+      "index": 4,
+      "x": 0,
+      "y": 640,
+      "w": 384,
+      "h": 640,
+      "startMs": 450,
+      "durationMs": 150,
+      "phase": "apex"
+    },
+    {
+      "index": 5,
+      "x": 384,
+      "y": 640,
+      "w": 384,
+      "h": 640,
+      "startMs": 600,
+      "durationMs": 300,
+      "phase": "fall"
+    },
+    {
+      "index": 6,
+      "x": 768,
+      "y": 640,
+      "w": 384,
+      "h": 640,
+      "startMs": 900,
+      "durationMs": 100,
+      "phase": "landing"
+    },
+    {
+      "index": 7,
+      "x": 1152,
+      "y": 640,
+      "w": 384,
+      "h": 640,
+      "startMs": 1000,
+      "durationMs": 100,
+      "phase": "recovery"
+    }
+  ]
+}
