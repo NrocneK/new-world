@@ -1,0 +1,89 @@
+{
+  "image": "run-sheet.png",
+  "columns": 4,
+  "rows": 2,
+  "frameWidth": 448,
+  "frameHeight": 512,
+  "fps": 16,
+  "groundY": 500,
+  "loop": true,
+  "direction": "right",
+  "view": "strict-side-profile",
+  "gait": "video-reference-run",
+  "grounded": false,
+  "frames": [
+    {
+      "index": 0,
+      "x": 0,
+      "y": 0,
+      "w": 448,
+      "h": 512,
+      "supportLeg": "near",
+      "phase": "contact"
+    },
+    {
+      "index": 1,
+      "x": 448,
+      "y": 0,
+      "w": 448,
+      "h": 512,
+      "supportLeg": "near",
+      "phase": "compression"
+    },
+    {
+      "index": 2,
+      "x": 896,
+      "y": 0,
+      "w": 448,
+      "h": 512,
+      "supportLeg": "near",
+      "phase": "push"
+    },
+    {
+      "index": 3,
+      "x": 1344,
+      "y": 0,
+      "w": 448,
+      "h": 512,
+      "supportLeg": "near",
+      "phase": "flight"
+    },
+    {
+      "index": 4,
+      "x": 0,
+      "y": 512,
+      "w": 448,
+      "h": 512,
+      "supportLeg": "far",
+      "phase": "contact"
+    },
+    {
+      "index": 5,
+      "x": 448,
+      "y": 512,
+      "w": 448,
+      "h": 512,
+      "supportLeg": "far",
+      "phase": "compression"
+    },
+    {
+      "index": 6,
+      "x": 896,
+      "y": 512,
+      "w": 448,
+      "h": 512,
+      "supportLeg": "far",
+      "phase": "push"
+    },
+    {
+      "index": 7,
+      "x": 1344,
+      "y": 512,
+      "w": 448,
+      "h": 512,
+      "supportLeg": "far",
+      "phase": "flight"
+    }
+  ],
+  "contentTopY": 45
+}

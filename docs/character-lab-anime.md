@@ -6,7 +6,7 @@ Public route: `/character-lab` (the original character motion test page). It kee
 | --- | --- |
 | Idle | anime-idle-profile-v1;3360ms breathing/blink loop |
 | Walk | anime-walk-profile-v2;8cels/8FPS |
-| Ninja run | anime-run-naruto-ref-v5;8cels/16FPS |
+| Run | anime-run-video-ref-v1;8cels/16FPS, user video reference |
 | Adjust glasses | anime-adjust-glasses-v1;1360ms independent one-shot |
 | Jump / air jump | anime-jump-profile-v3 (16cels) and anime-air-jump-profile-v2 (8cels), independent actions |
 | Dash / air dash | anime-dash-profile-v1 and anime-air-dash-profile-v1;8cels/400ms each |
@@ -26,7 +26,7 @@ All three kicks create green luminous sweeps. The spinning kick emits from its f
 
 The lab-specific module/manifest is isolated from app.js and the chapter engines. Fire compositing is extracted from the existing v9 preview into a transparent renderer and projected/mirrored with the character. It retains selective far-arm occlusion, the golden arm gradient and the taller767px flame wall at the same relative scale. The original game engine/sprite manifest is not migrated by this lab change.
 
-Canonical sources: character-lab.html and character-lab/. `node tools/build-character-lab.mjs` writes site/character-lab.html and site/art/character-lab-v8/. Previous bundles are preserved for cached pages. The existing full-site builder in the workspace calls the same function. For an independent static preview, serve the repository root and open `/site/character-lab.html`; the deployed route remains `/character-lab`.
+Canonical sources: character-lab.html and character-lab/. `node tools/build-character-lab.mjs` writes site/character-lab.html and site/art/character-lab-v9/. Previous bundles are preserved for cached pages. The existing full-site builder in the workspace calls the same function. For an independent static preview, serve the repository root and open `/site/character-lab.html`; the deployed route remains `/character-lab`.
 
 Validation: `node tests/character-lab-anime.spec.cjs` checks all14 actions/128 frame selections, keyboard walk/run/facing, the once-per-idle glasses trigger and interruption, automatic and manually queued punch/kick chains, the fast right→left switch, training-target contact, filters, sound/fire/VFX controls, mobile width and touch events. Network assertions reject loading the old chibi sprite manifest. Existing protected-source checks confirm8 game-source hashes and33 approved-art hashes remain unchanged. Visual inspection covers the hook/fire integration and the mobile layout. The route is also checked publicly after deployment.
 
@@ -39,3 +39,5 @@ The v3 jump audit verifies the new forward tuck, left-first contact and preserva
 Dash uses a separate `dash-motion.js` controller with analytic horizontal distance, locked facing, acceleration and braking. Ground dash travels195px in400ms and recovers to idle; air dash travels242px while holding height, then resumes falling with zero vertical speed. A120ms recovery interval prevents immediate repeats. Air dash has one charge per flight, restored on landing, and is independent of the two-jump allowance. Attack/jump input cannot replace an active dash. Movement input resumes after the burst. Bounds shorten a burst near the stage edges without teleporting an actor already past the dash margin. Both new sheets use one whole-figure source scale, whole-cel registration and no limb transforms. Ground endpoints reuse approved idle pixels; the air entry reuses the jump-v3 forward-knee apex. Prior action atlases are unchanged.
 
 `node tests/dash-motion.spec.mjs` checks frame-rate independent travel, direction, windup/braking, recovery and air-charge reset. `node tests/character-lab-dash.spec.cjs` checks both PNG/GIF selectors, interactive ground/air travel, pause/reset, independent jump allowance, falling/landing recovery, bounds, automatic air-dash playback and keyboard/touch controls at390px/320px widths. The jump unit suite also verifies post-dash gravity resumes without changing height or jump count. `python art/protagonist/anime-dash-profile-v1/tools/audit.py` checks16 unclipped cels, common scale, exact reused pixels, grounded soles, horizontal airborne silhouette and400ms/800ms GIF durations.
+
+Run selection now uses anime-run-video-ref-v1 from the user video: bent arm swing, moderate lean, toe push and airborne stride. The previous ninja run remains archived unchanged. All other selected action atlases and control physics are preserved.

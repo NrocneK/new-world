@@ -1,0 +1,92 @@
+{
+  "columns": 4,
+  "rows": 2,
+  "frameWidth": 448,
+  "frameHeight": 512,
+  "groundY": 500,
+  "fps": 16,
+  "preserveUpperBodyMotion": true,
+  "origin": "fixed whole-cel grid; no per-frame resize or limb deformation",
+  "frames": [
+    {
+      "index": 0,
+      "sourceX": 0,
+      "sourceY": 0,
+      "sourceWidth": 384,
+      "offsetX": 32,
+      "offsetY": 31,
+      "flight": false,
+      "floorGap": 0
+    },
+    {
+      "index": 1,
+      "sourceX": 384,
+      "sourceY": 0,
+      "sourceWidth": 384,
+      "offsetX": 32,
+      "offsetY": 31,
+      "flight": false,
+      "floorGap": 0
+    },
+    {
+      "index": 2,
+      "sourceX": 768,
+      "sourceY": 0,
+      "sourceWidth": 384,
+      "offsetX": 32,
+      "offsetY": 31,
+      "flight": false,
+      "floorGap": 1
+    },
+    {
+      "index": 3,
+      "sourceX": 1152,
+      "sourceY": 0,
+      "sourceWidth": 384,
+      "offsetX": 32,
+      "offsetY": 31,
+      "flight": true,
+      "floorGap": 90
+    },
+    {
+      "index": 4,
+      "sourceX": 0,
+      "sourceY": 512,
+      "sourceWidth": 384,
+      "offsetX": 32,
+      "offsetY": 24,
+      "flight": false,
+      "floorGap": 2
+    },
+    {
+      "index": 5,
+      "sourceX": 384,
+      "sourceY": 512,
+      "sourceWidth": 384,
+      "offsetX": 32,
+      "offsetY": 24,
+      "flight": false,
+      "floorGap": 0
+    },
+    {
+      "index": 6,
+      "sourceX": 768,
+      "sourceY": 512,
+      "sourceWidth": 384,
+      "offsetX": 32,
+      "offsetY": 24,
+      "flight": false,
+      "floorGap": 5
+    },
+    {
+      "index": 7,
+      "sourceX": 1152,
+      "sourceY": 512,
+      "sourceWidth": 384,
+      "offsetX": 32,
+      "offsetY": 24,
+      "flight": true,
+      "floorGap": 84
+    }
+  ]
+}
