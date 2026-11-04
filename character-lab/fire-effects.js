@@ -1,9 +1,11 @@
+import {createKickEffects} from './kick-effects.js';
 import {createArmHeat} from '../fire-punch-v9/arm-heat.js';
 export async function createCombatRenderer(meta,actors){
  const c=document.createElement('canvas');c.width=896;c.height=920;const g=c.getContext('2d');
  const CAMERA_Y=160,base=new URL('../',import.meta.url);
  async function image(path){const v=new Image();v.src=new URL(path,base);await v.decode();return v;}
  const [fire,wallImage]=await Promise.all([image('fire-punch-v6/aura-trail.png'),image('fire-punch-v9/gold-wall.png')]);
+ const kickEffects=await createKickEffects(meta,actors);
  let key='attack1',a=meta.actions[key],points=a.frames.map(f=>f.inspectionPoint),mode='still';
 const anchors=[[230,232],[695,236],[1190,238],[1662,238],[316,682],[727,688],[1170,686],[1660,685]];
 const cells=anchors.map((p,i)=>{const col=i%4,row=Math.floor(i/4),sx=Math.round(col*fire.width/4),sy=Math.round(row*fire.height/2),w=Math.round((col+1)*fire.width/4)-sx,h=Math.round((row+1)*fire.height/2)-sy,ax=p[0]-sx,ay=p[1]-sy;
@@ -28,8 +30,8 @@ function drawWall(index,opacity,elapsed){if(index<2)return;const progress=mode==
  const f=a.frames[index],p=f.inspectionPoint,trail=!inspect&&post>=0?points[key==='attack3'?6:4]:p;
  let fx=key==='attack3'?[0,1,1,2,2,3,3,4][index]:index;if(post>=0)fx=Math.min(7,5+Math.floor(post/65));
  g.setTransform(1,0,0,1,0,0);g.clearRect(0,0,c.width,c.height);g.translate(0,CAMERA_Y);
- g.drawImage(actors.get(key),f.x,f.y,f.w,f.h,32,20,f.w,f.h);
- if(enabled&&opacity>0){if(key==='attack2')farFire(f,fx,32+trail[0],20+trail[1],opacity,index);else if(key==='attack3'){armHeat(g,index,opacity);drawWall(index,opacity,elapsed);}else if(key==='attack1')flame(fx,32+trail[0],20+trail[1],opacity,index);}
+ g.drawImage(actors.get(key),f.x,f.y,f.w,f.h,32,20,f.w,f.h);c.dataset.kickActive='false';
+ if(enabled&&opacity>0){if(key==='attack2')farFire(f,fx,32+trail[0],20+trail[1],opacity,index);else if(key==='attack3'){armHeat(g,index,opacity);drawWall(index,opacity,elapsed);}else if(key==='attack1')flame(fx,32+trail[0],20+trail[1],opacity,index);else if(key.startsWith('kick')){const result=kickEffects.draw(g,key,index,elapsed,inspect);c.dataset.kickActive=String(result.active);if(result.head){c.dataset.kickHeadX=String(result.head[0]);c.dataset.kickHeadY=String(result.head[1]);}}}
  return c;
  }};
 }
