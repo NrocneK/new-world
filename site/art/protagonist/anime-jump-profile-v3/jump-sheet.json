@@ -1,0 +1,193 @@
+{
+  "image": "jump-sheet.png",
+  "animation": "jump",
+  "columns": 4,
+  "rows": 4,
+  "frameWidth": 384,
+  "frameHeight": 640,
+  "anchorX": 192,
+  "groundY": 620,
+  "contentTopY": 136,
+  "loop": false,
+  "durationMs": 1300,
+  "view": "strict-side-profile",
+  "direction": "right",
+  "uniformSourceScale": 1.0127388535031847,
+  "changedFrameIndices": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "reusedCels": {
+    "0-2": "v2",
+    "11-15": "v2"
+  },
+  "rightKneeDirection": "forward",
+  "frames": [
+    {
+      "index": 0,
+      "x": 0,
+      "y": 0,
+      "w": 384,
+      "h": 640,
+      "startMs": 0,
+      "durationMs": 40,
+      "phase": "ready"
+    },
+    {
+      "index": 1,
+      "x": 384,
+      "y": 0,
+      "w": 384,
+      "h": 640,
+      "startMs": 40,
+      "durationMs": 110,
+      "phase": "right-load-left-knee-rise"
+    },
+    {
+      "index": 2,
+      "x": 768,
+      "y": 0,
+      "w": 384,
+      "h": 640,
+      "startMs": 150,
+      "durationMs": 60,
+      "phase": "right-toe-push-arms-pull"
+    },
+    {
+      "index": 3,
+      "x": 1152,
+      "y": 0,
+      "w": 384,
+      "h": 640,
+      "startMs": 210,
+      "durationMs": 80,
+      "phase": "right-leg-long-rising"
+    },
+    {
+      "index": 4,
+      "x": 0,
+      "y": 640,
+      "w": 384,
+      "h": 640,
+      "startMs": 290,
+      "durationMs": 85,
+      "phase": "right-knee-forward-early"
+    },
+    {
+      "index": 5,
+      "x": 384,
+      "y": 640,
+      "w": 384,
+      "h": 640,
+      "startMs": 375,
+      "durationMs": 85,
+      "phase": "right-knee-forward-more"
+    },
+    {
+      "index": 6,
+      "x": 768,
+      "y": 640,
+      "w": 384,
+      "h": 640,
+      "startMs": 460,
+      "durationMs": 130,
+      "phase": "apex-right-knee-forward-left-high"
+    },
+    {
+      "index": 7,
+      "x": 1152,
+      "y": 640,
+      "w": 384,
+      "h": 640,
+      "startMs": 590,
+      "durationMs": 90,
+      "phase": "left-opens-right-knee-forward"
+    },
+    {
+      "index": 8,
+      "x": 0,
+      "y": 1280,
+      "w": 384,
+      "h": 640,
+      "startMs": 680,
+      "durationMs": 100,
+      "phase": "left-extends-right-lowers-forward"
+    },
+    {
+      "index": 9,
+      "x": 384,
+      "y": 1280,
+      "w": 384,
+      "h": 640,
+      "startMs": 780,
+      "durationMs": 120,
+      "phase": "left-ready-right-lowers-forward"
+    },
+    {
+      "index": 10,
+      "x": 768,
+      "y": 1280,
+      "w": 384,
+      "h": 640,
+      "startMs": 900,
+      "durationMs": 50,
+      "phase": "left-contact-right-forward-off-floor"
+    },
+    {
+      "index": 11,
+      "x": 1152,
+      "y": 1280,
+      "w": 384,
+      "h": 640,
+      "startMs": 950,
+      "durationMs": 60,
+      "phase": "left-brakes-right-settles"
+    },
+    {
+      "index": 12,
+      "x": 0,
+      "y": 1920,
+      "w": 384,
+      "h": 640,
+      "startMs": 1010,
+      "durationMs": 90,
+      "phase": "both-low-compression"
+    },
+    {
+      "index": 13,
+      "x": 384,
+      "y": 1920,
+      "w": 384,
+      "h": 640,
+      "startMs": 1100,
+      "durationMs": 80,
+      "phase": "stand-up-half"
+    },
+    {
+      "index": 14,
+      "x": 768,
+      "y": 1920,
+      "w": 384,
+      "h": 640,
+      "startMs": 1180,
+      "durationMs": 70,
+      "phase": "stand-up-settle"
+    },
+    {
+      "index": 15,
+      "x": 1152,
+      "y": 1920,
+      "w": 384,
+      "h": 640,
+      "startMs": 1250,
+      "durationMs": 50,
+      "phase": "idle"
+    }
+  ]
+}
