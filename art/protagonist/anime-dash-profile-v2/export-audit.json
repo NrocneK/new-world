@@ -1,0 +1,9 @@
+{
+  "frames": 4,
+  "durationMs": 240,
+  "slowDurationMs": 480,
+  "approvedPoseIsFrame": 2,
+  "approvedSourceByteIdentical": true,
+  "noClippedCels": true,
+  "separateVFX": true
+}

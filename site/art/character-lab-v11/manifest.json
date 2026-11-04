@@ -1,0 +1,2005 @@
+{
+  "version": 11,
+  "identity": "anime-side-profile",
+  "count": 14,
+  "totalFrames": 124,
+  "combatMeta": "art/protagonist/anime-attack-profile-v12/combat-sheet.json",
+  "autoGlassesAfterMs": 8000,
+  "actions": [
+    {
+      "id": "idle",
+      "label": "Đứng yên",
+      "group": "move",
+      "image": "art/protagonist/anime-idle-profile-v1/idle-sheet.png",
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 384,
+          "h": 512,
+          "durationMs": 600,
+          "phase": "rest",
+          "eyes": "open",
+          "startMs": 0
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "y": 0,
+          "w": 384,
+          "h": 512,
+          "durationMs": 500,
+          "phase": "inhale",
+          "eyes": "open",
+          "startMs": 600
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "y": 0,
+          "w": 384,
+          "h": 512,
+          "durationMs": 600,
+          "phase": "inhale-peak",
+          "eyes": "open",
+          "startMs": 1100
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "y": 0,
+          "w": 384,
+          "h": 512,
+          "durationMs": 500,
+          "phase": "exhale",
+          "eyes": "open",
+          "startMs": 1700
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 512,
+          "w": 384,
+          "h": 512,
+          "durationMs": 500,
+          "phase": "settle",
+          "eyes": "open",
+          "startMs": 2200
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "y": 512,
+          "w": 384,
+          "h": 512,
+          "durationMs": 80,
+          "phase": "blink-closing",
+          "eyes": "half-closed",
+          "startMs": 2700
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "y": 512,
+          "w": 384,
+          "h": 512,
+          "durationMs": 80,
+          "phase": "blink-closed",
+          "eyes": "closed",
+          "startMs": 2780
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "y": 512,
+          "w": 384,
+          "h": 512,
+          "durationMs": 500,
+          "phase": "rest-open",
+          "eyes": "open",
+          "startMs": 2860
+        }
+      ],
+      "durationMs": 3360,
+      "loop": true,
+      "anchorX": 192,
+      "groundY": 500,
+      "scale": 0.62,
+      "previewGif": "art/protagonist/anime-idle-profile-v1/idle-preview.gif",
+      "slowGif": "art/protagonist/anime-idle-profile-v1/idle-preview-slow.gif"
+    },
+    {
+      "id": "walk",
+      "label": "Đi bộ",
+      "group": "move",
+      "image": "art/protagonist/anime-walk-profile-v2/walk-sheet.png",
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 384,
+          "h": 512,
+          "startMs": 0,
+          "durationMs": 125
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "y": 0,
+          "w": 384,
+          "h": 512,
+          "startMs": 125,
+          "durationMs": 125
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "y": 0,
+          "w": 384,
+          "h": 512,
+          "startMs": 250,
+          "durationMs": 125
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "y": 0,
+          "w": 384,
+          "h": 512,
+          "startMs": 375,
+          "durationMs": 125
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 512,
+          "w": 384,
+          "h": 512,
+          "startMs": 500,
+          "durationMs": 125
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "y": 512,
+          "w": 384,
+          "h": 512,
+          "startMs": 625,
+          "durationMs": 125
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "y": 512,
+          "w": 384,
+          "h": 512,
+          "startMs": 750,
+          "durationMs": 125
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "y": 512,
+          "w": 384,
+          "h": 512,
+          "startMs": 875,
+          "durationMs": 125
+        }
+      ],
+      "durationMs": 1000,
+      "loop": true,
+      "anchorX": 192,
+      "groundY": 480,
+      "scale": 0.62,
+      "previewGif": "art/protagonist/anime-walk-profile-v2/walk-preview.gif",
+      "slowGif": "art/protagonist/anime-walk-profile-v2/walk-preview-slow.gif"
+    },
+    {
+      "id": "run",
+      "label": "Chạy",
+      "group": "move",
+      "image": "art/protagonist/anime-run-approved-v2/run-sheet.png",
+      "frames": [
+        {
+          "file": "art/protagonist/run-frame-review/run-sheet-01-05-leg-swap.png",
+          "rect": [
+            0,
+            0,
+            384,
+            512
+          ],
+          "hipX": 183,
+          "note": "Frame1 approved leg exchange",
+          "index": 0,
+          "sha256": "7e021c46bbe5ba4a61cd26c64cc88e89891eb63f393cea1eef72088387e02a1a",
+          "gap": 0,
+          "x": 0,
+          "y": 0,
+          "w": 448,
+          "h": 512,
+          "scale": 1,
+          "dx": 41,
+          "dy": 26,
+          "bounds": [
+            72,
+            62,
+            377,
+            500
+          ],
+          "startMs": 0,
+          "durationMs": 62.5
+        },
+        {
+          "file": "art/protagonist/run-frame-review/run-sheet-01-05-leg-swap.png",
+          "rect": [
+            384,
+            0,
+            384,
+            512
+          ],
+          "hipX": 165,
+          "note": "Frame2 original",
+          "index": 1,
+          "sha256": "7e021c46bbe5ba4a61cd26c64cc88e89891eb63f393cea1eef72088387e02a1a",
+          "gap": 0,
+          "x": 448,
+          "y": 0,
+          "w": 448,
+          "h": 512,
+          "scale": 1,
+          "dx": 59,
+          "dy": 31,
+          "bounds": [
+            164,
+            79,
+            341,
+            500
+          ],
+          "startMs": 62.5,
+          "durationMs": 62.5
+        },
+        {
+          "file": "art/protagonist/run-frame-review/run-sheet-01-05-leg-swap.png",
+          "rect": [
+            768,
+            0,
+            384,
+            512
+          ],
+          "hipX": 190,
+          "note": "Frame3 original",
+          "index": 2,
+          "sha256": "7e021c46bbe5ba4a61cd26c64cc88e89891eb63f393cea1eef72088387e02a1a",
+          "gap": 0,
+          "x": 896,
+          "y": 0,
+          "w": 448,
+          "h": 512,
+          "scale": 1,
+          "dx": 34,
+          "dy": 32,
+          "bounds": [
+            65,
+            66,
+            326,
+            500
+          ],
+          "startMs": 125,
+          "durationMs": 62.5
+        },
+        {
+          "file": "art/protagonist/run-frame-review/run-sheet-01-05-leg-swap.png",
+          "rect": [
+            1152,
+            0,
+            384,
+            512
+          ],
+          "hipX": 190,
+          "note": "Frame4 original",
+          "index": 3,
+          "sha256": "7e021c46bbe5ba4a61cd26c64cc88e89891eb63f393cea1eef72088387e02a1a",
+          "gap": 84,
+          "x": 1344,
+          "y": 0,
+          "w": 448,
+          "h": 512,
+          "scale": 1,
+          "dx": 34,
+          "dy": 37,
+          "bounds": [
+            48,
+            51,
+            404,
+            416
+          ],
+          "startMs": 187.5,
+          "durationMs": 62.5
+        },
+        {
+          "file": "art/protagonist/run-frame-review/frame-05-arm-candidate-source.png",
+          "hipX": 184,
+          "note": "Frame5 approved arm reconstruction, source based on exchanged legs",
+          "index": 4,
+          "rect": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "sha256": "afcd9c84710fc878b9e8b0efda904be31cd0b0460ae692c748cdc441365c2e91",
+          "gap": 0,
+          "x": 0,
+          "y": 512,
+          "w": 448,
+          "h": 512,
+          "scale": 0.35359116022099446,
+          "dx": 40,
+          "dy": 31,
+          "bounds": [
+            84,
+            65,
+            365,
+            500
+          ],
+          "startMs": 250,
+          "durationMs": 62.5
+        },
+        {
+          "file": "art/protagonist/run-frame-review/frame-06-hem-candidate.png",
+          "hipX": 180,
+          "note": "Frame6 final two-leg anatomy and approved hem",
+          "index": 5,
+          "rect": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "sha256": "623db8b8ce4f105363aeac74bb9e816d6579e43ea2644b2690ff34ffd10d918b",
+          "gap": 0,
+          "x": 448,
+          "y": 512,
+          "w": 448,
+          "h": 512,
+          "scale": 0.35359116022099446,
+          "dx": 44,
+          "dy": 29,
+          "bounds": [
+            167,
+            60,
+            347,
+            500
+          ],
+          "startMs": 312.5,
+          "durationMs": 62.5
+        },
+        {
+          "file": "art/protagonist/run-frame-review/frame-07-shoulder-rebuilt-source.png",
+          "hipX": 180,
+          "note": "Frame7 rebuilt near shoulder/right arm",
+          "index": 6,
+          "rect": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "sha256": "c5f9dd7409894fdb11180b8284f7201eb5850a5665f3c8d84aec48d13a5b1ea4",
+          "gap": 0,
+          "x": 896,
+          "y": 512,
+          "w": 448,
+          "h": 512,
+          "scale": 0.35359116022099446,
+          "dx": 44,
+          "dy": 30,
+          "bounds": [
+            82,
+            66,
+            333,
+            500
+          ],
+          "startMs": 375,
+          "durationMs": 62.5
+        },
+        {
+          "file": "art/protagonist/run-frame-review/frame-08-left-hand-edit-source.png",
+          "hipX": 166,
+          "note": "Frame8 exact image reselected by user; no further hand reflection or redraw",
+          "index": 7,
+          "rect": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "sha256": "b5fc295270f7177f57de02e9ef96f0aab3f670b6b7e56a608dfb02700ca3a043",
+          "gap": 84,
+          "x": 1344,
+          "y": 512,
+          "w": 448,
+          "h": 512,
+          "scale": 0.35359116022099446,
+          "dx": 58,
+          "dy": 23,
+          "bounds": [
+            67,
+            52,
+            426,
+            416
+          ],
+          "startMs": 437.5,
+          "durationMs": 62.5
+        }
+      ],
+      "durationMs": 500,
+      "loop": true,
+      "anchorX": 224,
+      "groundY": 500,
+      "scale": 0.62,
+      "previewGif": "art/protagonist/anime-run-approved-v2/run-preview.gif",
+      "slowGif": "art/protagonist/anime-run-approved-v2/run-preview-slow.gif"
+    },
+    {
+      "id": "glasses",
+      "label": "Chỉnh kính",
+      "group": "move",
+      "image": "art/protagonist/anime-adjust-glasses-v1/glasses-sheet.png",
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 384,
+          "h": 512,
+          "durationMs": 100,
+          "phase": "rest",
+          "source": "canonical-idle",
+          "startMs": 0
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "y": 0,
+          "w": 384,
+          "h": 512,
+          "durationMs": 140,
+          "phase": "lift",
+          "source": "generated-gesture",
+          "startMs": 100
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "y": 0,
+          "w": 384,
+          "h": 512,
+          "durationMs": 140,
+          "phase": "approach",
+          "source": "generated-gesture",
+          "startMs": 240
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "y": 0,
+          "w": 384,
+          "h": 512,
+          "durationMs": 160,
+          "phase": "touch-rim",
+          "source": "generated-gesture",
+          "startMs": 380
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 512,
+          "w": 384,
+          "h": 512,
+          "durationMs": 240,
+          "phase": "adjust",
+          "source": "generated-gesture",
+          "startMs": 540
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "y": 512,
+          "w": 384,
+          "h": 512,
+          "durationMs": 160,
+          "phase": "release",
+          "source": "generated-gesture",
+          "startMs": 780
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "y": 512,
+          "w": 384,
+          "h": 512,
+          "durationMs": 180,
+          "phase": "lower",
+          "source": "generated-gesture",
+          "startMs": 940
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "y": 512,
+          "w": 384,
+          "h": 512,
+          "durationMs": 240,
+          "phase": "rest",
+          "source": "canonical-idle",
+          "startMs": 1120
+        }
+      ],
+      "durationMs": 1360,
+      "loop": false,
+      "anchorX": 192,
+      "groundY": 500,
+      "scale": 0.62,
+      "previewGif": "art/protagonist/anime-adjust-glasses-v1/glasses-preview.gif",
+      "slowGif": "art/protagonist/anime-adjust-glasses-v1/glasses-preview-slow.gif"
+    },
+    {
+      "id": "jump",
+      "label": "Nhảy",
+      "group": "move",
+      "image": "art/protagonist/anime-jump-profile-v3/jump-sheet.png",
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 384,
+          "h": 640,
+          "startMs": 0,
+          "durationMs": 40,
+          "phase": "ready"
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "y": 0,
+          "w": 384,
+          "h": 640,
+          "startMs": 40,
+          "durationMs": 110,
+          "phase": "right-load-left-knee-rise"
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "y": 0,
+          "w": 384,
+          "h": 640,
+          "startMs": 150,
+          "durationMs": 60,
+          "phase": "right-toe-push-arms-pull"
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "y": 0,
+          "w": 384,
+          "h": 640,
+          "startMs": 210,
+          "durationMs": 80,
+          "phase": "right-leg-long-rising"
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 640,
+          "w": 384,
+          "h": 640,
+          "startMs": 290,
+          "durationMs": 85,
+          "phase": "right-knee-forward-early"
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "y": 640,
+          "w": 384,
+          "h": 640,
+          "startMs": 375,
+          "durationMs": 85,
+          "phase": "right-knee-forward-more"
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "y": 640,
+          "w": 384,
+          "h": 640,
+          "startMs": 460,
+          "durationMs": 130,
+          "phase": "apex-right-knee-forward-left-high"
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "y": 640,
+          "w": 384,
+          "h": 640,
+          "startMs": 590,
+          "durationMs": 90,
+          "phase": "left-opens-right-knee-forward"
+        },
+        {
+          "index": 8,
+          "x": 0,
+          "y": 1280,
+          "w": 384,
+          "h": 640,
+          "startMs": 680,
+          "durationMs": 100,
+          "phase": "left-extends-right-lowers-forward"
+        },
+        {
+          "index": 9,
+          "x": 384,
+          "y": 1280,
+          "w": 384,
+          "h": 640,
+          "startMs": 780,
+          "durationMs": 120,
+          "phase": "left-ready-right-lowers-forward"
+        },
+        {
+          "index": 10,
+          "x": 768,
+          "y": 1280,
+          "w": 384,
+          "h": 640,
+          "startMs": 900,
+          "durationMs": 50,
+          "phase": "left-contact-right-forward-off-floor"
+        },
+        {
+          "index": 11,
+          "x": 1152,
+          "y": 1280,
+          "w": 384,
+          "h": 640,
+          "startMs": 950,
+          "durationMs": 60,
+          "phase": "left-brakes-right-settles"
+        },
+        {
+          "index": 12,
+          "x": 0,
+          "y": 1920,
+          "w": 384,
+          "h": 640,
+          "startMs": 1010,
+          "durationMs": 90,
+          "phase": "both-low-compression"
+        },
+        {
+          "index": 13,
+          "x": 384,
+          "y": 1920,
+          "w": 384,
+          "h": 640,
+          "startMs": 1100,
+          "durationMs": 80,
+          "phase": "stand-up-half"
+        },
+        {
+          "index": 14,
+          "x": 768,
+          "y": 1920,
+          "w": 384,
+          "h": 640,
+          "startMs": 1180,
+          "durationMs": 70,
+          "phase": "stand-up-settle"
+        },
+        {
+          "index": 15,
+          "x": 1152,
+          "y": 1920,
+          "w": 384,
+          "h": 640,
+          "startMs": 1250,
+          "durationMs": 50,
+          "phase": "idle"
+        }
+      ],
+      "durationMs": 1300,
+      "loop": false,
+      "anchorX": 192,
+      "groundY": 620,
+      "scale": 0.62,
+      "contentTopY": 136,
+      "previewGif": "art/protagonist/anime-jump-profile-v3/jump-preview.gif",
+      "slowGif": "art/protagonist/anime-jump-profile-v3/jump-preview-slow.gif"
+    },
+    {
+      "id": "airJump",
+      "label": "Air jump",
+      "group": "move",
+      "image": "art/protagonist/anime-air-jump-profile-v2/air-jump-sheet.png",
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 384,
+          "h": 640,
+          "startMs": 0,
+          "durationMs": 50,
+          "phase": "air-tuck"
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "y": 0,
+          "w": 384,
+          "h": 640,
+          "startMs": 50,
+          "durationMs": 50,
+          "phase": "air-coil"
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "y": 0,
+          "w": 384,
+          "h": 640,
+          "startMs": 100,
+          "durationMs": 110,
+          "phase": "air-push"
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "y": 0,
+          "w": 384,
+          "h": 640,
+          "startMs": 210,
+          "durationMs": 180,
+          "phase": "second-rise"
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 640,
+          "w": 384,
+          "h": 640,
+          "startMs": 390,
+          "durationMs": 160,
+          "phase": "second-apex"
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "y": 640,
+          "w": 384,
+          "h": 640,
+          "startMs": 550,
+          "durationMs": 180,
+          "phase": "second-fall"
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "y": 640,
+          "w": 384,
+          "h": 640,
+          "startMs": 730,
+          "durationMs": 170,
+          "phase": "fall"
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "y": 640,
+          "w": 384,
+          "h": 640,
+          "startMs": 900,
+          "durationMs": 200,
+          "phase": "prepare-landing"
+        }
+      ],
+      "durationMs": 1100,
+      "loop": false,
+      "anchorX": 192,
+      "groundY": 620,
+      "scale": 0.62,
+      "contentTopY": 136,
+      "previewGif": "art/protagonist/anime-air-jump-profile-v2/air-jump-preview.gif",
+      "slowGif": "art/protagonist/anime-air-jump-profile-v2/air-jump-preview-slow.gif"
+    },
+    {
+      "id": "dash",
+      "label": "Dash",
+      "group": "move",
+      "image": "art/protagonist/anime-dash-profile-v2/dash-sheet.png",
+      "frames": [
+        {
+          "file": "01-entry.png",
+          "index": 0,
+          "phase": "entry",
+          "durationMs": 40,
+          "sourceSha256": "db73d1fba37a3cca5bfaf126904a81d082a4741e6218dec52f3080652c9ab130",
+          "x": 0,
+          "y": 0,
+          "w": 640,
+          "h": 448,
+          "startMs": 0,
+          "sourceScale": 0.3333333333333333,
+          "offsetX": 46.666666666666686,
+          "offsetY": 97,
+          "bounds": [
+            63.666666666666686,
+            130,
+            520.6666666666667,
+            420
+          ]
+        },
+        {
+          "file": "02-approved-dash.png",
+          "index": 1,
+          "phase": "dash",
+          "durationMs": 60,
+          "sourceSha256": "221b73c5b394a810f635506667bf626bfb06ba5e05d79247a6eec9b6a5560b6a",
+          "x": 640,
+          "y": 0,
+          "w": 640,
+          "h": 448,
+          "startMs": 40,
+          "sourceScale": 0.3333333333333333,
+          "offsetX": 46.666666666666686,
+          "offsetY": 100,
+          "bounds": [
+            61.666666666666686,
+            134,
+            521.6666666666667,
+            420
+          ]
+        },
+        {
+          "file": "03-sustain.png",
+          "index": 2,
+          "phase": "sustain",
+          "durationMs": 80,
+          "sourceSha256": "cab65a3ede80bbbb5a4ffa6d53e1ab3d9ccf17c351321dbe05d1086b472a2d69",
+          "x": 0,
+          "y": 448,
+          "w": 640,
+          "h": 448,
+          "startMs": 100,
+          "sourceScale": 0.3333333333333333,
+          "offsetX": 46.666666666666686,
+          "offsetY": 100,
+          "bounds": [
+            61.666666666666686,
+            133,
+            521.6666666666667,
+            420
+          ]
+        },
+        {
+          "file": "04-recover.png",
+          "index": 3,
+          "phase": "recover",
+          "durationMs": 60,
+          "sourceSha256": "b33115fc296875142c65914ad82f1dd3779c62523a5688cc8d558afc95913042",
+          "x": 640,
+          "y": 448,
+          "w": 640,
+          "h": 448,
+          "startMs": 180,
+          "sourceScale": 0.3333333333333333,
+          "offsetX": 46.666666666666686,
+          "offsetY": 93,
+          "bounds": [
+            69.66666666666669,
+            114,
+            517.6666666666667,
+            420
+          ]
+        }
+      ],
+      "durationMs": 240,
+      "loop": false,
+      "anchorX": 320,
+      "groundY": 420,
+      "scale": 0.62,
+      "previewGif": "art/protagonist/anime-dash-profile-v2/dash-preview.gif",
+      "slowGif": "art/protagonist/anime-dash-profile-v2/dash-preview-slow.gif"
+    },
+    {
+      "id": "airDash",
+      "label": "Air dash",
+      "group": "move",
+      "image": "art/protagonist/anime-air-dash-profile-v1/air-dash-sheet.png",
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "startMs": 0,
+          "durationMs": 30,
+          "phase": "air-coil"
+        },
+        {
+          "index": 1,
+          "x": 640,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "startMs": 30,
+          "durationMs": 30,
+          "phase": "pitch"
+        },
+        {
+          "index": 2,
+          "x": 1280,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "startMs": 60,
+          "durationMs": 40,
+          "phase": "air-push"
+        },
+        {
+          "index": 3,
+          "x": 1920,
+          "y": 0,
+          "w": 640,
+          "h": 640,
+          "startMs": 100,
+          "durationMs": 70,
+          "phase": "horizontal-burst"
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "startMs": 170,
+          "durationMs": 70,
+          "phase": "horizontal-follow"
+        },
+        {
+          "index": 5,
+          "x": 640,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "startMs": 240,
+          "durationMs": 50,
+          "phase": "decelerate"
+        },
+        {
+          "index": 6,
+          "x": 1280,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "startMs": 290,
+          "durationMs": 60,
+          "phase": "air-recover"
+        },
+        {
+          "index": 7,
+          "x": 1920,
+          "y": 640,
+          "w": 640,
+          "h": 640,
+          "startMs": 350,
+          "durationMs": 50,
+          "phase": "fall-ready"
+        }
+      ],
+      "durationMs": 400,
+      "loop": false,
+      "anchorX": 280,
+      "groundY": 620,
+      "scale": 0.62,
+      "contentTopY": 136,
+      "previewGif": "art/protagonist/anime-air-dash-profile-v1/air-dash-preview.gif",
+      "slowGif": "art/protagonist/anime-air-dash-profile-v1/air-dash-preview-slow.gif"
+    },
+    {
+      "id": "attack1",
+      "label": "Đấm phải / gần",
+      "group": "combat",
+      "image": "art/protagonist/anime-attack-profile-v12/attack1-sheet.png",
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 0,
+          "durationMs": 30,
+          "phase": "guard",
+          "inspectionFist": [
+            411.5,
+            271.5
+          ],
+          "inspectionPoint": [
+            411.5,
+            271.5
+          ]
+        },
+        {
+          "index": 1,
+          "x": 768,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 30,
+          "durationMs": 20,
+          "phase": "load",
+          "inspectionFist": [
+            395.5,
+            304
+          ],
+          "inspectionPoint": [
+            395.5,
+            304
+          ]
+        },
+        {
+          "index": 2,
+          "x": 1536,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 50,
+          "durationMs": 20,
+          "phase": "drive",
+          "inspectionFist": [
+            479.5,
+            270.5
+          ],
+          "inspectionPoint": [
+            479.5,
+            270.5
+          ]
+        },
+        {
+          "index": 3,
+          "x": 2304,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 70,
+          "durationMs": 40,
+          "phase": "contact",
+          "inspectionFist": [
+            535,
+            259
+          ],
+          "inspectionPoint": [
+            535,
+            259
+          ]
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 110,
+          "durationMs": 30,
+          "phase": "follow-through",
+          "inspectionFist": [
+            526.5,
+            260
+          ],
+          "inspectionPoint": [
+            526.5,
+            260
+          ]
+        },
+        {
+          "index": 5,
+          "x": 768,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 140,
+          "durationMs": 30,
+          "phase": "recoil",
+          "inspectionFist": [
+            476,
+            269.5
+          ],
+          "inspectionPoint": [
+            476,
+            269.5
+          ]
+        },
+        {
+          "index": 6,
+          "x": 1536,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 170,
+          "durationMs": 30,
+          "phase": "recover",
+          "inspectionFist": [
+            409.5,
+            272.5
+          ],
+          "inspectionPoint": [
+            409.5,
+            272.5
+          ]
+        },
+        {
+          "index": 7,
+          "x": 2304,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 200,
+          "durationMs": 50,
+          "phase": "guard",
+          "inspectionFist": [
+            411.5,
+            271.5
+          ],
+          "inspectionPoint": [
+            411.5,
+            271.5
+          ]
+        }
+      ],
+      "durationMs": 250,
+      "loop": false,
+      "anchorX": 381.5,
+      "groundY": 620,
+      "scale": 0.62,
+      "impactFrame": 3
+    },
+    {
+      "id": "attack2",
+      "label": "Đấm trái / xa",
+      "group": "combat",
+      "image": "art/protagonist/anime-attack-profile-v12/attack2-sheet.png",
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 0,
+          "durationMs": 30,
+          "phase": "guard",
+          "inspectionFist": [
+            440.5,
+            247
+          ],
+          "inspectionPoint": [
+            440.5,
+            247
+          ]
+        },
+        {
+          "index": 1,
+          "x": 768,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 30,
+          "durationMs": 20,
+          "phase": "load",
+          "inspectionFist": [
+            476,
+            253.5
+          ],
+          "inspectionPoint": [
+            476,
+            253.5
+          ]
+        },
+        {
+          "index": 2,
+          "x": 1536,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 50,
+          "durationMs": 20,
+          "phase": "drive",
+          "inspectionFist": [
+            517.5,
+            248.5
+          ],
+          "inspectionPoint": [
+            517.5,
+            248.5
+          ]
+        },
+        {
+          "index": 3,
+          "x": 2304,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 70,
+          "durationMs": 40,
+          "phase": "contact",
+          "inspectionFist": [
+            560,
+            248.5
+          ],
+          "inspectionPoint": [
+            560,
+            248.5
+          ]
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 110,
+          "durationMs": 30,
+          "phase": "follow-through",
+          "inspectionFist": [
+            535.5,
+            248
+          ],
+          "inspectionPoint": [
+            535.5,
+            248
+          ]
+        },
+        {
+          "index": 5,
+          "x": 768,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 140,
+          "durationMs": 30,
+          "phase": "recoil",
+          "inspectionFist": [
+            497,
+            250
+          ],
+          "inspectionPoint": [
+            497,
+            250
+          ]
+        },
+        {
+          "index": 6,
+          "x": 1536,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 170,
+          "durationMs": 30,
+          "phase": "recover",
+          "inspectionFist": [
+            435,
+            229.5
+          ],
+          "inspectionPoint": [
+            435,
+            229.5
+          ]
+        },
+        {
+          "index": 7,
+          "x": 2304,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 200,
+          "durationMs": 50,
+          "phase": "guard",
+          "inspectionFist": [
+            440.5,
+            247
+          ],
+          "inspectionPoint": [
+            440.5,
+            247
+          ]
+        }
+      ],
+      "durationMs": 250,
+      "loop": false,
+      "anchorX": 381.5,
+      "groundY": 620,
+      "scale": 0.62,
+      "impactFrame": 3
+    },
+    {
+      "id": "attack3",
+      "label": "Đấm móc",
+      "group": "combat",
+      "image": "art/protagonist/anime-attack-profile-v12/attack3-sheet.png",
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 0,
+          "durationMs": 40,
+          "phase": "guard",
+          "inspectionFist": [
+            411.5,
+            271.5
+          ],
+          "inspectionPoint": [
+            411.5,
+            271.5
+          ]
+        },
+        {
+          "index": 1,
+          "x": 768,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 40,
+          "durationMs": 40,
+          "phase": "hook-chamber",
+          "inspectionFist": [
+            372,
+            361.5
+          ],
+          "inspectionPoint": [
+            372,
+            361.5
+          ]
+        },
+        {
+          "index": 2,
+          "x": 1536,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 80,
+          "durationMs": 40,
+          "phase": "hook-forward-low",
+          "inspectionFist": [
+            465.5,
+            363
+          ],
+          "inspectionPoint": [
+            465.5,
+            363
+          ]
+        },
+        {
+          "index": 3,
+          "x": 2304,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 120,
+          "durationMs": 55,
+          "phase": "hook-forward",
+          "inspectionFist": [
+            490.5,
+            313.5
+          ],
+          "inspectionPoint": [
+            490.5,
+            313.5
+          ]
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 175,
+          "durationMs": 55,
+          "phase": "hook-arc-up",
+          "inspectionFist": [
+            490,
+            254.5
+          ],
+          "inspectionPoint": [
+            490,
+            254.5
+          ]
+        },
+        {
+          "index": 5,
+          "x": 768,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 230,
+          "durationMs": 50,
+          "phase": "hook-arc-up",
+          "inspectionFist": [
+            463.5,
+            182.5
+          ],
+          "inspectionPoint": [
+            463.5,
+            182.5
+          ]
+        },
+        {
+          "index": 6,
+          "x": 1536,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 280,
+          "durationMs": 40,
+          "phase": "hook-peak",
+          "inspectionFist": [
+            459,
+            117
+          ],
+          "inspectionPoint": [
+            459,
+            117
+          ]
+        },
+        {
+          "index": 7,
+          "x": 2304,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 320,
+          "durationMs": 40,
+          "phase": "hook-peak",
+          "inspectionFist": [
+            459,
+            117
+          ],
+          "inspectionPoint": [
+            459,
+            117
+          ]
+        }
+      ],
+      "durationMs": 360,
+      "loop": false,
+      "anchorX": 381.5,
+      "groundY": 620,
+      "scale": 0.62,
+      "impactFrame": 6
+    },
+    {
+      "id": "kick1",
+      "label": "Đá phải / gần",
+      "group": "combat",
+      "image": "art/protagonist/anime-attack-profile-v12/kick1-sheet.png",
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 0,
+          "durationMs": 50,
+          "phase": "guard",
+          "inspectionPoint": [
+            480,
+            602
+          ]
+        },
+        {
+          "index": 1,
+          "x": 768,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 50,
+          "durationMs": 50,
+          "phase": "front-knee-rise",
+          "inspectionPoint": [
+            482,
+            602.5
+          ]
+        },
+        {
+          "index": 2,
+          "x": 1536,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 100,
+          "durationMs": 90,
+          "phase": "front-knee-chamber",
+          "inspectionPoint": [
+            501.5,
+            424.5
+          ]
+        },
+        {
+          "index": 3,
+          "x": 2304,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 190,
+          "durationMs": 35,
+          "phase": "front-snap-up",
+          "inspectionPoint": [
+            599,
+            257.5
+          ]
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 225,
+          "durationMs": 45,
+          "phase": "front-high-contact",
+          "inspectionPoint": [
+            624.5,
+            195.5
+          ]
+        },
+        {
+          "index": 5,
+          "x": 768,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 270,
+          "durationMs": 80,
+          "phase": "front-refold",
+          "inspectionPoint": [
+            501.5,
+            424.5
+          ]
+        },
+        {
+          "index": 6,
+          "x": 1536,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 350,
+          "durationMs": 65,
+          "phase": "front-lower",
+          "inspectionPoint": [
+            514,
+            495
+          ]
+        },
+        {
+          "index": 7,
+          "x": 2304,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 415,
+          "durationMs": 85,
+          "phase": "guard",
+          "inspectionPoint": [
+            480,
+            602
+          ]
+        }
+      ],
+      "durationMs": 500,
+      "loop": false,
+      "anchorX": 381.5,
+      "groundY": 620,
+      "scale": 0.62,
+      "impactFrame": 4
+    },
+    {
+      "id": "kick2",
+      "label": "Đá trái / xa",
+      "group": "combat",
+      "image": "art/protagonist/anime-attack-profile-v12/kick2-sheet.png",
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 0,
+          "durationMs": 20,
+          "phase": "instant-right-support",
+          "armsSwitched": true,
+          "inspectionPoint": [
+            511,
+            496.5
+          ]
+        },
+        {
+          "index": 1,
+          "x": 768,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 20,
+          "durationMs": 20,
+          "phase": "matched-left-rise",
+          "armsSwitched": true,
+          "inspectionPoint": [
+            522,
+            415
+          ]
+        },
+        {
+          "index": 2,
+          "x": 1536,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 40,
+          "durationMs": 90,
+          "phase": "matched-left-chamber",
+          "armsSwitched": true,
+          "inspectionPoint": [
+            522,
+            415
+          ]
+        },
+        {
+          "index": 3,
+          "x": 2304,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 130,
+          "durationMs": 35,
+          "phase": "matched-left-extension",
+          "armsSwitched": true,
+          "inspectionPoint": [
+            608.5,
+            256
+          ]
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 165,
+          "durationMs": 45,
+          "phase": "matched-left-contact",
+          "armsSwitched": true,
+          "inspectionPoint": [
+            633.5,
+            187
+          ]
+        },
+        {
+          "index": 5,
+          "x": 768,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 210,
+          "durationMs": 80,
+          "phase": "matched-left-refold",
+          "armsSwitched": true,
+          "inspectionPoint": [
+            522,
+            415
+          ]
+        },
+        {
+          "index": 6,
+          "x": 1536,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 290,
+          "durationMs": 65,
+          "phase": "matched-left-lower",
+          "armsSwitched": true,
+          "inspectionPoint": [
+            511,
+            496.5
+          ]
+        },
+        {
+          "index": 7,
+          "x": 2304,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 355,
+          "durationMs": 85,
+          "phase": "guard",
+          "armsSwitched": false,
+          "inspectionPoint": [
+            480,
+            602
+          ]
+        }
+      ],
+      "durationMs": 440,
+      "loop": false,
+      "anchorX": 381.5,
+      "groundY": 620,
+      "scale": 0.62,
+      "impactFrame": 4
+    },
+    {
+      "id": "kick3",
+      "label": "Xoay người đá cao",
+      "group": "combat",
+      "image": "art/protagonist/anime-attack-profile-v12/kick3-sheet.png",
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 0,
+          "durationMs": 60,
+          "phase": "right-profile",
+          "bodyYawDegrees": 0,
+          "inspectionPoint": [
+            480,
+            602
+          ]
+        },
+        {
+          "index": 1,
+          "x": 768,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 60,
+          "durationMs": 50,
+          "phase": "rear-right",
+          "bodyYawDegrees": 30,
+          "inspectionPoint": [
+            483,
+            595
+          ]
+        },
+        {
+          "index": 2,
+          "x": 1536,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 110,
+          "durationMs": 50,
+          "phase": "near-back",
+          "bodyYawDegrees": 60,
+          "inspectionPoint": [
+            534,
+            265.5
+          ]
+        },
+        {
+          "index": 3,
+          "x": 2304,
+          "y": 0,
+          "w": 768,
+          "h": 640,
+          "startMs": 160,
+          "durationMs": 50,
+          "phase": "back",
+          "bodyYawDegrees": 90,
+          "inspectionPoint": [
+            518.5,
+            469.5
+          ]
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 210,
+          "durationMs": 50,
+          "phase": "back-left",
+          "bodyYawDegrees": 120,
+          "inspectionPoint": [
+            462,
+            359
+          ]
+        },
+        {
+          "index": 5,
+          "x": 768,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 260,
+          "durationMs": 50,
+          "phase": "near-left",
+          "bodyYawDegrees": 150,
+          "inspectionPoint": [
+            467.5,
+            358.5
+          ]
+        },
+        {
+          "index": 6,
+          "x": 1536,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 310,
+          "durationMs": 50,
+          "phase": "left-profile",
+          "bodyYawDegrees": 180,
+          "inspectionPoint": [
+            489.5,
+            603
+          ]
+        },
+        {
+          "index": 7,
+          "x": 2304,
+          "y": 640,
+          "w": 768,
+          "h": 640,
+          "startMs": 360,
+          "durationMs": 50,
+          "phase": "front-left",
+          "bodyYawDegrees": 240,
+          "inspectionPoint": [
+            480.5,
+            368.5
+          ]
+        },
+        {
+          "index": 8,
+          "x": 0,
+          "y": 1280,
+          "w": 768,
+          "h": 640,
+          "startMs": 410,
+          "durationMs": 50,
+          "phase": "front",
+          "bodyYawDegrees": 270,
+          "inspectionPoint": [
+            498,
+            279
+          ]
+        },
+        {
+          "index": 9,
+          "x": 768,
+          "y": 1280,
+          "w": 768,
+          "h": 640,
+          "startMs": 460,
+          "durationMs": 50,
+          "phase": "front-right",
+          "bodyYawDegrees": 285,
+          "inspectionPoint": [
+            522,
+            282
+          ]
+        },
+        {
+          "index": 10,
+          "x": 1536,
+          "y": 1280,
+          "w": 768,
+          "h": 640,
+          "startMs": 510,
+          "durationMs": 40,
+          "phase": "front-right-extend",
+          "bodyYawDegrees": 310,
+          "inspectionPoint": [
+            541.5,
+            281.5
+          ]
+        },
+        {
+          "index": 11,
+          "x": 2304,
+          "y": 1280,
+          "w": 768,
+          "h": 640,
+          "startMs": 550,
+          "durationMs": 70,
+          "phase": "high-sweep",
+          "bodyYawDegrees": 335,
+          "inspectionPoint": [
+            615,
+            248.5
+          ]
+        },
+        {
+          "index": 12,
+          "x": 0,
+          "y": 1920,
+          "w": 768,
+          "h": 640,
+          "startMs": 620,
+          "durationMs": 55,
+          "phase": "high-follow-through",
+          "bodyYawDegrees": 360,
+          "inspectionPoint": [
+            644,
+            252
+          ]
+        },
+        {
+          "index": 13,
+          "x": 768,
+          "y": 1920,
+          "w": 768,
+          "h": 640,
+          "startMs": 675,
+          "durationMs": 65,
+          "phase": "retract",
+          "bodyYawDegrees": 360,
+          "inspectionPoint": [
+            520.5,
+            438
+          ]
+        },
+        {
+          "index": 14,
+          "x": 1536,
+          "y": 1920,
+          "w": 768,
+          "h": 640,
+          "startMs": 740,
+          "durationMs": 80,
+          "phase": "lower-foot",
+          "bodyYawDegrees": 360,
+          "inspectionPoint": [
+            484,
+            602.5
+          ]
+        },
+        {
+          "index": 15,
+          "x": 2304,
+          "y": 1920,
+          "w": 768,
+          "h": 640,
+          "startMs": 820,
+          "durationMs": 80,
+          "phase": "guard",
+          "bodyYawDegrees": 360,
+          "inspectionPoint": [
+            480,
+            602
+          ]
+        }
+      ],
+      "durationMs": 900,
+      "loop": false,
+      "anchorX": 381.5,
+      "groundY": 620,
+      "scale": 0.62,
+      "impactFrame": 11
+    }
+  ]
+}

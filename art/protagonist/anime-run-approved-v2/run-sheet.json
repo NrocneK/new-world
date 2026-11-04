@@ -1,0 +1,247 @@
+{
+  "image": "run-sheet.png",
+  "columns": 4,
+  "rows": 2,
+  "frameWidth": 448,
+  "frameHeight": 512,
+  "anchorX": 224,
+  "groundY": 500,
+  "fps": 16,
+  "durationMs": 500,
+  "loop": true,
+  "sourcePolicy": "approved source cels only; uniform whole-figure scaling and translation; no redraw/limb warp",
+  "frames": [
+    {
+      "file": "art/protagonist/run-frame-review/run-sheet-01-05-leg-swap.png",
+      "rect": [
+        0,
+        0,
+        384,
+        512
+      ],
+      "hipX": 183,
+      "note": "Frame1 approved leg exchange",
+      "index": 0,
+      "sha256": "7e021c46bbe5ba4a61cd26c64cc88e89891eb63f393cea1eef72088387e02a1a",
+      "gap": 0,
+      "x": 0,
+      "y": 0,
+      "w": 448,
+      "h": 512,
+      "scale": 1,
+      "dx": 41,
+      "dy": 26,
+      "bounds": [
+        72,
+        62,
+        377,
+        500
+      ],
+      "startMs": 0,
+      "durationMs": 62.5
+    },
+    {
+      "file": "art/protagonist/run-frame-review/run-sheet-01-05-leg-swap.png",
+      "rect": [
+        384,
+        0,
+        384,
+        512
+      ],
+      "hipX": 165,
+      "note": "Frame2 original",
+      "index": 1,
+      "sha256": "7e021c46bbe5ba4a61cd26c64cc88e89891eb63f393cea1eef72088387e02a1a",
+      "gap": 0,
+      "x": 448,
+      "y": 0,
+      "w": 448,
+      "h": 512,
+      "scale": 1,
+      "dx": 59,
+      "dy": 31,
+      "bounds": [
+        164,
+        79,
+        341,
+        500
+      ],
+      "startMs": 62.5,
+      "durationMs": 62.5
+    },
+    {
+      "file": "art/protagonist/run-frame-review/run-sheet-01-05-leg-swap.png",
+      "rect": [
+        768,
+        0,
+        384,
+        512
+      ],
+      "hipX": 190,
+      "note": "Frame3 original",
+      "index": 2,
+      "sha256": "7e021c46bbe5ba4a61cd26c64cc88e89891eb63f393cea1eef72088387e02a1a",
+      "gap": 0,
+      "x": 896,
+      "y": 0,
+      "w": 448,
+      "h": 512,
+      "scale": 1,
+      "dx": 34,
+      "dy": 32,
+      "bounds": [
+        65,
+        66,
+        326,
+        500
+      ],
+      "startMs": 125,
+      "durationMs": 62.5
+    },
+    {
+      "file": "art/protagonist/run-frame-review/run-sheet-01-05-leg-swap.png",
+      "rect": [
+        1152,
+        0,
+        384,
+        512
+      ],
+      "hipX": 190,
+      "note": "Frame4 original",
+      "index": 3,
+      "sha256": "7e021c46bbe5ba4a61cd26c64cc88e89891eb63f393cea1eef72088387e02a1a",
+      "gap": 84,
+      "x": 1344,
+      "y": 0,
+      "w": 448,
+      "h": 512,
+      "scale": 1,
+      "dx": 34,
+      "dy": 37,
+      "bounds": [
+        48,
+        51,
+        404,
+        416
+      ],
+      "startMs": 187.5,
+      "durationMs": 62.5
+    },
+    {
+      "file": "art/protagonist/run-frame-review/frame-05-arm-candidate-source.png",
+      "hipX": 184,
+      "note": "Frame5 approved arm reconstruction, source based on exchanged legs",
+      "index": 4,
+      "rect": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "sha256": "afcd9c84710fc878b9e8b0efda904be31cd0b0460ae692c748cdc441365c2e91",
+      "gap": 0,
+      "x": 0,
+      "y": 512,
+      "w": 448,
+      "h": 512,
+      "scale": 0.35359116022099446,
+      "dx": 40,
+      "dy": 31,
+      "bounds": [
+        84,
+        65,
+        365,
+        500
+      ],
+      "startMs": 250,
+      "durationMs": 62.5
+    },
+    {
+      "file": "art/protagonist/run-frame-review/frame-06-hem-candidate.png",
+      "hipX": 180,
+      "note": "Frame6 final two-leg anatomy and approved hem",
+      "index": 5,
+      "rect": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "sha256": "623db8b8ce4f105363aeac74bb9e816d6579e43ea2644b2690ff34ffd10d918b",
+      "gap": 0,
+      "x": 448,
+      "y": 512,
+      "w": 448,
+      "h": 512,
+      "scale": 0.35359116022099446,
+      "dx": 44,
+      "dy": 29,
+      "bounds": [
+        167,
+        60,
+        347,
+        500
+      ],
+      "startMs": 312.5,
+      "durationMs": 62.5
+    },
+    {
+      "file": "art/protagonist/run-frame-review/frame-07-shoulder-rebuilt-source.png",
+      "hipX": 180,
+      "note": "Frame7 rebuilt near shoulder/right arm",
+      "index": 6,
+      "rect": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "sha256": "c5f9dd7409894fdb11180b8284f7201eb5850a5665f3c8d84aec48d13a5b1ea4",
+      "gap": 0,
+      "x": 896,
+      "y": 512,
+      "w": 448,
+      "h": 512,
+      "scale": 0.35359116022099446,
+      "dx": 44,
+      "dy": 30,
+      "bounds": [
+        82,
+        66,
+        333,
+        500
+      ],
+      "startMs": 375,
+      "durationMs": 62.5
+    },
+    {
+      "file": "art/protagonist/run-frame-review/frame-08-left-hand-edit-source.png",
+      "hipX": 166,
+      "note": "Frame8 exact image reselected by user; no further hand reflection or redraw",
+      "index": 7,
+      "rect": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "sha256": "b5fc295270f7177f57de02e9ef96f0aab3f670b6b7e56a608dfb02700ca3a043",
+      "gap": 84,
+      "x": 1344,
+      "y": 512,
+      "w": 448,
+      "h": 512,
+      "scale": 0.35359116022099446,
+      "dx": 58,
+      "dy": 23,
+      "bounds": [
+        67,
+        52,
+        426,
+        416
+      ],
+      "startMs": 437.5,
+      "durationMs": 62.5
+    }
+  ]
+}

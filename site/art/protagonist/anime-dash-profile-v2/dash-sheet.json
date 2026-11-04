@@ -1,0 +1,102 @@
+{
+  "image": "dash-sheet.png",
+  "animation": "dash",
+  "columns": 2,
+  "rows": 2,
+  "frameWidth": 640,
+  "frameHeight": 448,
+  "anchorX": 320,
+  "groundY": 420,
+  "durationMs": 240,
+  "loop": false,
+  "direction": "right",
+  "nearLeg": "right, trailing extended",
+  "farLeg": "left, folded",
+  "vfx": false,
+  "frames": [
+    {
+      "file": "01-entry.png",
+      "index": 0,
+      "phase": "entry",
+      "durationMs": 40,
+      "sourceSha256": "db73d1fba37a3cca5bfaf126904a81d082a4741e6218dec52f3080652c9ab130",
+      "x": 0,
+      "y": 0,
+      "w": 640,
+      "h": 448,
+      "startMs": 0,
+      "sourceScale": 0.3333333333333333,
+      "offsetX": 46.666666666666686,
+      "offsetY": 97,
+      "bounds": [
+        63.666666666666686,
+        130,
+        520.6666666666667,
+        420
+      ]
+    },
+    {
+      "file": "02-approved-dash.png",
+      "index": 1,
+      "phase": "dash",
+      "durationMs": 60,
+      "sourceSha256": "221b73c5b394a810f635506667bf626bfb06ba5e05d79247a6eec9b6a5560b6a",
+      "x": 640,
+      "y": 0,
+      "w": 640,
+      "h": 448,
+      "startMs": 40,
+      "sourceScale": 0.3333333333333333,
+      "offsetX": 46.666666666666686,
+      "offsetY": 100,
+      "bounds": [
+        61.666666666666686,
+        134,
+        521.6666666666667,
+        420
+      ]
+    },
+    {
+      "file": "03-sustain.png",
+      "index": 2,
+      "phase": "sustain",
+      "durationMs": 80,
+      "sourceSha256": "cab65a3ede80bbbb5a4ffa6d53e1ab3d9ccf17c351321dbe05d1086b472a2d69",
+      "x": 0,
+      "y": 448,
+      "w": 640,
+      "h": 448,
+      "startMs": 100,
+      "sourceScale": 0.3333333333333333,
+      "offsetX": 46.666666666666686,
+      "offsetY": 100,
+      "bounds": [
+        61.666666666666686,
+        133,
+        521.6666666666667,
+        420
+      ]
+    },
+    {
+      "file": "04-recover.png",
+      "index": 3,
+      "phase": "recover",
+      "durationMs": 60,
+      "sourceSha256": "b33115fc296875142c65914ad82f1dd3779c62523a5688cc8d558afc95913042",
+      "x": 640,
+      "y": 448,
+      "w": 640,
+      "h": 448,
+      "startMs": 180,
+      "sourceScale": 0.3333333333333333,
+      "offsetX": 46.666666666666686,
+      "offsetY": 93,
+      "bounds": [
+        69.66666666666669,
+        114,
+        517.6666666666667,
+        420
+      ]
+    }
+  ]
+}

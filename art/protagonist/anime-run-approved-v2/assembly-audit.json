@@ -1,0 +1,8 @@
+{
+  "frames1to7PixelIdenticalToPreviousAssembly": true,
+  "frame8File": "art/protagonist/run-frame-review/frame-08-left-hand-edit-source.png",
+  "frame8SourceSha256": "b5fc295270f7177f57de02e9ef96f0aab3f670b6b7e56a608dfb02700ca3a043",
+  "frame8Selection": "exact full frame resent by user after rejecting first assembly",
+  "normalGifMs": 500,
+  "slowGifMs": 1000
+}

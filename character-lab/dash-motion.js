@@ -1,5 +1,5 @@
-const DURATION=400,COOLDOWN=120;
-const profiles={dash:{windup:60,acceleration:30,cruise:140,brake:80,speed:1000},airDash:{windup:30,acceleration:40,cruise:160,brake:80,speed:1100}};
+const COOLDOWN=120;
+const profiles={dash:{duration:240,windup:40,acceleration:20,cruise:120,brake:60,speed:1218.75},airDash:{duration:400,windup:30,acceleration:40,cruise:160,brake:80,speed:1100}};
 
 export function dashDistance(id,ms){
  const p=profiles[id];if(!p)return 0;
@@ -22,9 +22,10 @@ export function createDashMotion(){
  function step(ms,{grounded=false}={}){
   if(grounded)s.airUsed=false;
   if(!s.active){s.cooldown=Math.max(0,s.cooldown-ms);return {...s,dx:0,completed:false};}
-  const before=s.elapsed;s.elapsed=Math.min(DURATION,s.elapsed+ms);
+  const duration=profiles[s.kind].duration;
+  const before=s.elapsed;s.elapsed=Math.min(duration,s.elapsed+ms);
   const dx=s.facing*(dashDistance(s.kind,s.elapsed)-dashDistance(s.kind,before));
-  const completed=s.elapsed>=DURATION;
+  const completed=s.elapsed>=duration;
   if(completed){s.active=false;s.cooldown=Math.max(0,COOLDOWN-(ms-(s.elapsed-before)));}
   return {...s,dx,completed};
  }
