@@ -1,0 +1,221 @@
+{
+  "action": "dash",
+  "source": "dash-source.png",
+  "frameWidth": 640,
+  "frameHeight": 640,
+  "columns": 4,
+  "rows": 2,
+  "anchorX": 280,
+  "groundY": 620,
+  "contentTopY": 136,
+  "uniformScale": 1.0755555555555556,
+  "frames": [
+    {
+      "index": 0,
+      "source": "dash-source.png",
+      "sourceX": 0,
+      "sourceY": 0,
+      "sourceWidth": 384,
+      "sourceHeight": 512,
+      "dx": 81.02222222222221,
+      "dy": 106.96000000000004,
+      "scale": 1.0755555555555556,
+      "sourceHip": [
+        185,
+        270
+      ],
+      "bounds": [
+        157,
+        27,
+        242,
+        477
+      ],
+      "durationMs": 20,
+      "phase": "ready",
+      "copyFromAtlas": "../anime-idle-profile-v1/idle-sheet.png",
+      "copyCell": [
+        0,
+        0,
+        384,
+        512
+      ],
+      "copyOffset": [
+        88,
+        120
+      ]
+    },
+    {
+      "index": 1,
+      "source": "dash-source.png",
+      "sourceX": 384,
+      "sourceY": 0,
+      "sourceWidth": 384,
+      "sourceHeight": 512,
+      "dx": 104.68444444444444,
+      "dy": 122.01777777777778,
+      "scale": 1.0755555555555556,
+      "sourceHip": [
+        163,
+        276
+      ],
+      "bounds": [
+        64,
+        74,
+        302,
+        463
+      ],
+      "durationMs": 40,
+      "phase": "load"
+    },
+    {
+      "index": 2,
+      "source": "dash-source.png",
+      "sourceX": 768,
+      "sourceY": 0,
+      "sourceWidth": 384,
+      "sourceHeight": 512,
+      "dx": 74.56888888888889,
+      "dy": 119.86666666666667,
+      "scale": 1.0755555555555556,
+      "sourceHip": [
+        191,
+        264
+      ],
+      "bounds": [
+        10,
+        99,
+        339,
+        465
+      ],
+      "durationMs": 40,
+      "phase": "toe-push"
+    },
+    {
+      "index": 3,
+      "source": "dash-source.png",
+      "sourceX": 1152,
+      "sourceY": 0,
+      "sourceWidth": 384,
+      "sourceHeight": 512,
+      "dx": 74.56888888888889,
+      "dy": 126.32,
+      "scale": 1.0755555555555556,
+      "sourceHip": [
+        191,
+        260
+      ],
+      "bounds": [
+        81,
+        90,
+        333,
+        459
+      ],
+      "durationMs": 60,
+      "phase": "burst"
+    },
+    {
+      "index": 4,
+      "source": "dash-source.png",
+      "sourceX": 0,
+      "sourceY": 512,
+      "sourceWidth": 384,
+      "sourceHeight": 512,
+      "dx": 57.359999999999985,
+      "dy": 116.63999999999999,
+      "scale": 1.0755555555555556,
+      "sourceHip": [
+        207,
+        270
+      ],
+      "bounds": [
+        38,
+        91,
+        347,
+        468
+      ],
+      "durationMs": 60,
+      "phase": "drive"
+    },
+    {
+      "index": 5,
+      "source": "dash-source.png",
+      "sourceX": 384,
+      "sourceY": 512,
+      "sourceWidth": 384,
+      "sourceHeight": 512,
+      "dx": 81.02222222222221,
+      "dy": 116.63999999999999,
+      "scale": 1.0755555555555556,
+      "sourceHip": [
+        185,
+        270
+      ],
+      "bounds": [
+        82,
+        62,
+        312,
+        468
+      ],
+      "durationMs": 60,
+      "phase": "brake"
+    },
+    {
+      "index": 6,
+      "source": "dash-source.png",
+      "sourceX": 768,
+      "sourceY": 512,
+      "sourceWidth": 384,
+      "sourceHeight": 512,
+      "dx": 97.15555555555554,
+      "dy": 117.71555555555551,
+      "scale": 1.0755555555555556,
+      "sourceHip": [
+        170,
+        265
+      ],
+      "bounds": [
+        106,
+        37,
+        262,
+        467
+      ],
+      "durationMs": 60,
+      "phase": "recover"
+    },
+    {
+      "index": 7,
+      "source": "dash-source.png",
+      "sourceX": 1152,
+      "sourceY": 512,
+      "sourceWidth": 384,
+      "sourceHeight": 512,
+      "dx": 81.02222222222221,
+      "dy": 106.96000000000004,
+      "scale": 1.0755555555555556,
+      "sourceHip": [
+        185,
+        270
+      ],
+      "bounds": [
+        157,
+        29,
+        242,
+        477
+      ],
+      "durationMs": 60,
+      "phase": "idle",
+      "copyFromAtlas": "../anime-idle-profile-v1/idle-sheet.png",
+      "copyCell": [
+        0,
+        0,
+        384,
+        512
+      ],
+      "copyOffset": [
+        88,
+        120
+      ]
+    }
+  ],
+  "policy": "one whole-figure source scale; ground floor registration, air pelvis registration; no limb warps; approved idle and jump entry reuse"
+}

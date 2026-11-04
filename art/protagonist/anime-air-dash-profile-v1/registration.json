@@ -1,0 +1,210 @@
+{
+  "action": "airDash",
+  "source": "air-dash-source.png",
+  "frameWidth": 640,
+  "frameHeight": 640,
+  "columns": 4,
+  "rows": 2,
+  "anchorX": 280,
+  "groundY": 620,
+  "contentTopY": 136,
+  "uniformScale": 1.0755555555555556,
+  "frames": [
+    {
+      "index": 0,
+      "source": "air-dash-source.png",
+      "sourceX": 0,
+      "sourceY": 0,
+      "sourceWidth": 512,
+      "sourceHeight": 384,
+      "dx": 43.377777777777766,
+      "dy": 96.48888888888888,
+      "scale": 1.0755555555555556,
+      "sourceHip": [
+        220,
+        245
+      ],
+      "bounds": [
+        197,
+        21,
+        345,
+        373
+      ],
+      "durationMs": 30,
+      "phase": "air-coil",
+      "copyFromAtlas": "../anime-jump-profile-v3/jump-sheet.png",
+      "copyCell": [
+        768,
+        640,
+        384,
+        640
+      ],
+      "copyOffset": [
+        88,
+        0
+      ]
+    },
+    {
+      "index": 1,
+      "source": "air-dash-source.png",
+      "sourceX": 512,
+      "sourceY": 0,
+      "sourceWidth": 512,
+      "sourceHeight": 384,
+      "dx": 39.07555555555555,
+      "dy": 112.6222222222222,
+      "scale": 1.0755555555555556,
+      "sourceHip": [
+        224,
+        230
+      ],
+      "bounds": [
+        126,
+        39,
+        375,
+        366
+      ],
+      "durationMs": 30,
+      "phase": "pitch"
+    },
+    {
+      "index": 2,
+      "source": "air-dash-source.png",
+      "sourceX": 0,
+      "sourceY": 384,
+      "sourceWidth": 512,
+      "sourceHeight": 384,
+      "dx": 0.3555555555555543,
+      "dy": 150.26666666666665,
+      "scale": 1.0755555555555556,
+      "sourceHip": [
+        260,
+        195
+      ],
+      "bounds": [
+        78,
+        35,
+        437,
+        356
+      ],
+      "durationMs": 40,
+      "phase": "air-push"
+    },
+    {
+      "index": 3,
+      "source": "air-dash-source.png",
+      "sourceX": 512,
+      "sourceY": 384,
+      "sourceWidth": 512,
+      "sourceHeight": 384,
+      "dx": -10.400000000000034,
+      "dy": 157.79555555555555,
+      "scale": 1.0755555555555556,
+      "sourceHip": [
+        270,
+        188
+      ],
+      "bounds": [
+        34,
+        47,
+        464,
+        322
+      ],
+      "durationMs": 70,
+      "phase": "horizontal-burst"
+    },
+    {
+      "index": 4,
+      "source": "air-dash-source.png",
+      "sourceX": 0,
+      "sourceY": 768,
+      "sourceWidth": 512,
+      "sourceHeight": 384,
+      "dx": 16.48888888888888,
+      "dy": 150.26666666666665,
+      "scale": 1.0755555555555556,
+      "sourceHip": [
+        245,
+        195
+      ],
+      "bounds": [
+        36,
+        34,
+        477,
+        317
+      ],
+      "durationMs": 70,
+      "phase": "horizontal-follow"
+    },
+    {
+      "index": 5,
+      "source": "air-dash-source.png",
+      "sourceX": 512,
+      "sourceY": 768,
+      "sourceWidth": 512,
+      "sourceHeight": 384,
+      "dx": 15.413333333333298,
+      "dy": 150.26666666666665,
+      "scale": 1.0755555555555556,
+      "sourceHip": [
+        246,
+        195
+      ],
+      "bounds": [
+        80,
+        15,
+        433,
+        332
+      ],
+      "durationMs": 50,
+      "phase": "decelerate"
+    },
+    {
+      "index": 6,
+      "source": "air-dash-source.png",
+      "sourceX": 0,
+      "sourceY": 1152,
+      "sourceWidth": 512,
+      "sourceHeight": 384,
+      "dx": 47.67999999999998,
+      "dy": 116.92444444444445,
+      "scale": 1.0755555555555556,
+      "sourceHip": [
+        216,
+        226
+      ],
+      "bounds": [
+        176,
+        11,
+        347,
+        374
+      ],
+      "durationMs": 60,
+      "phase": "air-recover"
+    },
+    {
+      "index": 7,
+      "source": "air-dash-source.png",
+      "sourceX": 512,
+      "sourceY": 1152,
+      "sourceWidth": 512,
+      "sourceHeight": 384,
+      "dx": 58.43555555555554,
+      "dy": 109.39555555555555,
+      "scale": 1.0755555555555556,
+      "sourceHip": [
+        206,
+        233
+      ],
+      "bounds": [
+        172,
+        8,
+        352,
+        373
+      ],
+      "durationMs": 50,
+      "phase": "fall-ready"
+    }
+  ],
+  "policy": "one whole-figure source scale; ground floor registration, air pelvis registration; no limb warps; approved idle and jump entry reuse"
+}

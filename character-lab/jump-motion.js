@@ -33,7 +33,13 @@ export function createJumpMotion(){
   if(s.elapsed<50)return 0;if(s.elapsed<100)return 1;if(s.elapsed<210)return 2;
   return s.velocity>110?3:s.velocity>=-130?4:s.velocity>-400&&s.height>60?5:s.height>35?6:7;
  }
- return {request,step,reset,getState:()=>({...s,active:active(),frame:frame()})};
+ function settleAfterAirDash(){
+  if(s.phase!=='flight')return;
+  s.velocity=0;
+  if(s.action==='jump'){s.phaseElapsed=375;s.elapsed=525;}
+  else s.elapsed=450;
+ }
+ return {request,step,reset,settleAfterAirDash,getState:()=>({...s,active:active(),frame:frame()})};
 }
 
 export function jumpPreviewHeight(id,ms){

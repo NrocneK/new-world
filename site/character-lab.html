@@ -7,8 +7,8 @@
     <meta name="description" content="Điều khiển nhân vật anime trong phòng thử chuyển động của Dị Môn. Di chuyển, né, chiến đấu và thử sức mạnh nguyên tố." />
     <title>Dị Môn — Phòng thử chuyển động</title>
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="./art/character-lab-v7/lab.css" />
-    <script type="module" src="./art/character-lab-v7/lab.js"></script>
+    <link rel="stylesheet" href="./art/character-lab-v8/lab.css" />
+    <script type="module" src="./art/character-lab-v8/lab.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#playground">Đến khu vực chơi thử</a>
@@ -30,7 +30,7 @@
           <p class="eyebrow"><span class="eyebrow-line"></span>NHÂN VẬT 01 <span class="eyebrow-slash">/</span> PHÒNG THỬ CHUYỂN ĐỘNG</p>
           <h1 id="pageTitle">Thức tỉnh.<span>Và thử sức.</span></h1>
           <p class="intro-description">Một nhân viên văn phòng. Hai hướng sức mạnh.<br class="desktop-break" /> Điều khiển nhân vật và tìm nhịp chiến đấu của bạn.</p>
-          <p class="revision-note">A/D để đi · Shift để chạy · Space để nhảy, bấm lại trên không để Air jump · J nối ba đòn đấm · K nối ba đòn đá với vệt sáng xanh lá · G chỉnh kính.</p>
+          <p class="revision-note">A/D để đi · Shift để chạy · Space để nhảy, bấm lại trên không để Air jump · J nối ba đòn đấm · K nối ba đòn đá với vệt sáng xanh lá · L để dash / air dash · G chỉnh kính.</p>
           <p class="revision-note"><a style="color:inherit" href="./level">Chơi Chương 01 →</a> · <a style="color:inherit" href="./fire-punch-v9">Xem riêng Hỏa quyền</a> · <a style="color:inherit" href="#sheet-view">Xem sheet đang chọn</a></p>
         </div>
         <div class="intro-note">
@@ -53,7 +53,7 @@
               </div>
             </div>
             <div class="canvas-wrap">
-              <canvas id="gameCanvas" width="1280" height="720" tabindex="0" aria-label="Thao trường Dị Môn. Dùng A hoặc D để di chuyển, Shift để chạy, J để đấm, K để đá, Space để nhảy hai lần và G để chỉnh kính. Các nút cảm ứng nằm bên dưới.">Trình duyệt của bạn cần hỗ trợ Canvas để chạy bản demo.</canvas>
+              <canvas id="gameCanvas" width="1280" height="720" tabindex="0" aria-label="Thao trường Dị Môn. Dùng A hoặc D để di chuyển, Shift để chạy, J để đấm, K để đá, Space để nhảy hai lần, L để dash trên đất hoặc trên không và G để chỉnh kính. Các nút cảm ứng nằm bên dưới.">Trình duyệt của bạn cần hỗ trợ Canvas để chạy bản demo.</canvas>
               <div class="scene-coordinate" aria-hidden="true"><span class="coordinate-mark"></span>KHU VĂN PHÒNG <span>/</span> TẦNG 07</div>
               <div id="loadingState" class="loading-state" role="status"><span class="loading-spinner"></span><strong>Đang đánh thức nhân vật…</strong><span>Chuẩn bị thao trường</span></div>
               <div id="helpPanel" class="help-panel" hidden>
@@ -64,6 +64,7 @@
  <div><dt><kbd>Space</kbd> / <kbd>W</kbd> / <kbd>↑</kbd></dt><dd>Nhảy; bấm lại trên không để Air jump</dd></div>
  <div><dt><kbd>J</kbd></dt><dd>Đấm; bấm liên tiếp để nối ba đòn</dd></div>
  <div><dt><kbd>K</kbd></dt><dd>Đá; bấm liên tiếp để nối ba đòn</dd></div>
+ <div><dt><kbd>L</kbd> / <kbd>X</kbd></dt><dd>Dash; trên không dùng Air dash một lần mỗi lượt rời đất</dd></div>
  <div><dt><kbd>G</kbd></dt><dd>Chỉnh kính một lần</dd></div>
  <div><dt><kbd>U</kbd></dt><dd>Bật/tắt thuộc tính lửa cho đòn đấm</dd></div>
  <div><dt><kbd>R</kbd></dt><dd>Bắt đầu lại</dd></div>
@@ -89,19 +90,20 @@
             <div class="direction-controls"><button type="button" data-control="left" class="direction-button" aria-label="Di chuyển sang trái"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></button><button type="button" data-control="right" class="direction-button" aria-label="Di chuyển sang phải"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></button><span>DI CHUYỂN</span></div>
             <div class="action-controls">
 <button type="button" data-control="run" aria-pressed="false"><span class="control-icon">»</span><span>Chạy</span><kbd>SHIFT</kbd></button>
+<button type="button" data-control="dash"><span class="control-icon">⇢</span><span>Lướt</span><kbd>L</kbd></button>
 <button type="button" data-control="jump"><span class="control-icon">↑</span><span>Nhảy ×2</span><kbd>SPACE</kbd></button>
 <button type="button" data-control="attack" class="attack-control"><span class="control-icon">✕</span><span>Đấm</span><kbd>J</kbd></button>
 <button type="button" data-control="kick"><span class="control-icon">↗</span><span>Đá</span><kbd>K</kbd></button>
 <button type="button" data-control="glasses"><span class="control-icon">◎</span><span>Chỉnh kính</span><kbd>G</kbd></button>
 <button type="button" data-control="fire" class="fire-control" aria-pressed="true"><span class="control-icon">♨</span><span>Lửa: bật</span><kbd>U</kbd></button></div>
           </div>
-          <p id="controlHints" class="control-hints">Giữ A/D để đi · Shift để chạy · Space để nhảy / Air jump · J để đấm · K để đá · Đứng yên lâu sẽ tự chỉnh kính.</p>
-<div class="lab-sequences"><button id="jumpCombo" type="button">Nhảy → Air jump</button><button id="punchCombo" type="button">Phát ba đòn đấm</button><button id="kickCombo" type="button">Phát ba đòn đá</button><button id="fireToggle" type="button" aria-pressed="true">Thuộc tính lửa: bật</button></div>
+          <p id="controlHints" class="control-hints">Giữ A/D để đi · Shift để chạy · Space để nhảy / Air jump · L để dash / air dash · J để đấm · K để đá · Đứng yên lâu sẽ tự chỉnh kính.</p>
+<div class="lab-sequences"><button id="airDashDemo" type="button">Nhảy → Air dash</button><button id="jumpCombo" type="button">Nhảy → Air jump</button><button id="punchCombo" type="button">Phát ba đòn đấm</button><button id="kickCombo" type="button">Phát ba đòn đá</button><button id="fireToggle" type="button" aria-pressed="true">Thuộc tính lửa: bật</button></div>
 <details id="sheet-view"><summary>Sheet động tác đang chọn</summary><p id="sheetInfo"></p><img id="sheetImage" alt="Sheet động tác đang chọn"><a id="sheetDownload" download>Tải sheet PNG ↓</a><span id="gifLinks" hidden> · <a id="gifDownload" download>Tải GIF ↓</a> · <a id="slowGifDownload" download>GIF chậm ↓</a></span></details>
         </section>
 
         <aside class="motion-panel" aria-labelledby="motionTitle">
-          <div class="motion-heading"><div><span class="section-eyebrow">BỘ CHUYỂN ĐỘNG</span><h2 id="motionTitle">Chọn một động tác</h2></div><span class="motion-count">12</span></div>
+          <div class="motion-heading"><div><span class="section-eyebrow">BỘ CHUYỂN ĐỘNG</span><h2 id="motionTitle">Chọn một động tác</h2></div><span class="motion-count">14</span></div>
           <p class="motion-description">Bấm để xem từng động tác, hoặc tự điều khiển trong thao trường.</p>
           <div id="motionTabs" class="motion-tabs" role="group" aria-label="Lọc động tác"><button type="button" data-group="all" class="is-active" aria-pressed="true">Tất cả</button><button type="button" data-group="move" aria-pressed="false">Di chuyển / nghỉ</button><button type="button" data-group="combat" aria-pressed="false">Cận chiến</button></div>
           <div id="motionGrid" class="motion-grid" aria-label="Danh sách động tác"></div>
@@ -110,6 +112,6 @@
       </div>
     </main>
 
-    <footer class="site-footer"><span>DỊ MÔN <span class="footer-slash">/</span> CHARACTER LAB</span><p>Một bước nhỏ. Khởi đầu của một hành trình.</p><span class="footer-version">12 ĐỘNG TÁC · 112 KHUNG <span aria-hidden="true">↗</span></span></footer>
+    <footer class="site-footer"><span>DỊ MÔN <span class="footer-slash">/</span> CHARACTER LAB</span><p>Một bước nhỏ. Khởi đầu của một hành trình.</p><span class="footer-version">14 ĐỘNG TÁC · 128 KHUNG <span aria-hidden="true">↗</span></span></footer>
   </body>
 </html>

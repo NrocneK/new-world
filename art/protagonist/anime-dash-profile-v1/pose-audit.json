@@ -1,0 +1,192 @@
+{
+  "dash": {
+    "uniformScale": 1.0755555555555556,
+    "cels": [
+      {
+        "index": 0,
+        "phase": "ready",
+        "bounds": [
+          233,
+          136,
+          323,
+          620
+        ]
+      },
+      {
+        "index": 1,
+        "phase": "load",
+        "bounds": [
+          174,
+          202,
+          430,
+          620
+        ]
+      },
+      {
+        "index": 2,
+        "phase": "toe-push",
+        "bounds": [
+          85,
+          227,
+          439,
+          620
+        ]
+      },
+      {
+        "index": 3,
+        "phase": "burst",
+        "bounds": [
+          162,
+          223,
+          431,
+          620
+        ]
+      },
+      {
+        "index": 4,
+        "phase": "drive",
+        "bounds": [
+          98,
+          215,
+          429,
+          620
+        ]
+      },
+      {
+        "index": 5,
+        "phase": "brake",
+        "bounds": [
+          169,
+          183,
+          417,
+          620
+        ]
+      },
+      {
+        "index": 6,
+        "phase": "recover",
+        "bounds": [
+          211,
+          158,
+          379,
+          620
+        ]
+      },
+      {
+        "index": 7,
+        "phase": "idle",
+        "bounds": [
+          233,
+          136,
+          323,
+          620
+        ]
+      }
+    ],
+    "gifs": [
+      {
+        "file": "dash-preview.gif",
+        "durationMs": 400
+      },
+      {
+        "file": "dash-preview-slow.gif",
+        "durationMs": 800
+      }
+    ]
+  },
+  "air-dash": {
+    "uniformScale": 1.0755555555555556,
+    "cels": [
+      {
+        "index": 0,
+        "phase": "air-coil",
+        "bounds": [
+          257,
+          136,
+          406,
+          484
+        ]
+      },
+      {
+        "index": 1,
+        "phase": "pitch",
+        "bounds": [
+          174,
+          155,
+          441,
+          507
+        ]
+      },
+      {
+        "index": 2,
+        "phase": "air-push",
+        "bounds": [
+          84,
+          188,
+          470,
+          533
+        ]
+      },
+      {
+        "index": 3,
+        "phase": "horizontal-burst",
+        "bounds": [
+          26,
+          209,
+          489,
+          504
+        ]
+      },
+      {
+        "index": 4,
+        "phase": "horizontal-follow",
+        "bounds": [
+          56,
+          188,
+          530,
+          491
+        ]
+      },
+      {
+        "index": 5,
+        "phase": "decelerate",
+        "bounds": [
+          102,
+          167,
+          481,
+          507
+        ]
+      },
+      {
+        "index": 6,
+        "phase": "air-recover",
+        "bounds": [
+          238,
+          129,
+          421,
+          519
+        ]
+      },
+      {
+        "index": 7,
+        "phase": "fall-ready",
+        "bounds": [
+          244,
+          118,
+          437,
+          510
+        ]
+      }
+    ],
+    "gifs": [
+      {
+        "file": "air-dash-preview.gif",
+        "durationMs": 400
+      },
+      {
+        "file": "air-dash-preview-slow.gif",
+        "durationMs": 800
+      }
+    ]
+  }
+}
